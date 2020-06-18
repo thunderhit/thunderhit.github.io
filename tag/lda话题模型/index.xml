@@ -5,7 +5,7 @@
     <link>https://thunderhit.github.io/tag/lda%E8%AF%9D%E9%A2%98%E6%A8%A1%E5%9E%8B/</link>
       <atom:link href="https://thunderhit.github.io/tag/lda%E8%AF%9D%E9%A2%98%E6%A8%A1%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
     <description>LDA话题模型</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Tue, 16 Jun 2020 17:31:20 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Mon, 15 Jun 2020 17:31:20 +0800</lastBuildDate>
     <image>
       <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>LDA话题模型</title>
@@ -15,7 +15,7 @@
     <item>
       <title>cntopic: 中文LDA话题模型</title>
       <link>https://thunderhit.github.io/post/cntopic/</link>
-      <pubDate>Tue, 16 Jun 2020 17:31:20 +0800</pubDate>
+      <pubDate>Mon, 15 Jun 2020 17:31:20 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/cntopic/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;

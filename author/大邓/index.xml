@@ -463,298 +463,6 @@ classDiagram
     </item>
     
     <item>
-      <title>pdfdocx: 用python读取pdf和docx文件数据</title>
-      <link>https://thunderhit.github.io/post/pdfdocx/</link>
-      <pubDate>Wed, 17 Jun 2020 20:31:20 +0800</pubDate>
-      <guid>https://thunderhit.github.io/post/pdfdocx/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#pdfdocx&#34;&gt;pdfdocx&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;
-          &lt;ul&gt;
-            &lt;li&gt;&lt;a href=&#34;#github项目地址httpsgithubcomthunderhitpdfdocx&#34;&gt;&lt;a href=&#34;https://github.com/thunderhit/pdfdocx&#34;&gt;github项目地址&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&#34;#拆开pdfdocx&#34;&gt;拆开pdfdocx&lt;/a&gt;&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#如果&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;p&gt;最近运行课件代码，发现pdf文件读取部分的函数失效。这里找到读取pdf文件的可运行代码，为了方便后续学习使用，我已将pdf和docx读取方法封装成pdfdocx包。&lt;/p&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h1 id=&#34;pdfdocx&#34;&gt;pdfdocx&lt;/h1&gt;
-&lt;h3 id=&#34;github项目地址httpsgithubcomthunderhitpdfdocx&#34;&gt;
-&lt;a href=&#34;https://github.com/thunderhit/pdfdocx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github项目地址&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;只有简单的两个读取函数&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;read_pdf(file)&lt;/li&gt;
-&lt;li&gt;read_docx(file)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;file为文件路径，函数运行后返回file文件内的文本数据。&lt;/p&gt;
-&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;pip install pdfdocx
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;使用&#34;&gt;使用&lt;/h3&gt;
-&lt;p&gt;读取pdf文件&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pdfdocx import read_pdf
-p_text = read_pdf(&#39;test/data.pdf&#39;)
-print(p_text)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Run&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;这是来⾃pdf⽂件内的内容
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pdfdocx import read_docx
-d_text = read_pdf(&#39;test/data.docx&#39;)
-print(d_text)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Run&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;这是来⾃docx⽂件内的内容
-&lt;/code&gt;&lt;/pre&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h3 id=&#34;拆开pdfdocx&#34;&gt;拆开pdfdocx&lt;/h3&gt;
-&lt;p&gt;希望大家能安装好，如果安装或者使用失败，可以使用下面的代码作为备选方法。虽然繁琐，能用就好。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;读取pdf&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import StringIO
-from pdfminer.converter import TextConverter
-from pdfminer.layout import LAParams
-from pdfminer.pdfdocument import PDFDocument
-from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
-from pdfminer.pdfpage import PDFPage
-from pdfminer.pdfparser import PDFParser
-import re
-
-
-def read_pdf(file):
-    &amp;quot;&amp;quot;&amp;quot;
-    读取pdf文件，并返回其中的文本内容
-    :param file: pdf文件路径
-    :return: docx中的文本内容
-    &amp;quot;&amp;quot;&amp;quot;
-    output_string = StringIO()
-    with open(file, &#39;rb&#39;) as in_file:
-        parser = PDFParser(in_file)
-        doc = PDFDocument(parser)
-        rsrcmgr = PDFResourceManager()
-        device = TextConverter(rsrcmgr, output_string, laparams=LAParams())
-        interpreter = PDFPageInterpreter(rsrcmgr, device)
-        for page in PDFPage.create_pages(doc):
-            interpreter.process_page(page)
-    text = output_string.getvalue()
-    return re.sub(&#39;[\n\t\s]&#39;, &#39;&#39;, text)
-  
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;读取docx&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import docx
-  
-def read_docx(file):
-    &amp;quot;&amp;quot;&amp;quot;
-    读取docx文件，并返回其中的文本内容
-    :param file: docx文件路径
-    :return: docx中的文本内容
-    &amp;quot;&amp;quot;&amp;quot;
-    text = &#39;&#39;
-    doc = docx.Document(file)
-    for para in doc.paragraphs:
-        text += para.text
-    return text
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
-&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
-&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;python入门&lt;/li&gt;
-&lt;li&gt;网络爬虫&lt;/li&gt;
-&lt;li&gt;数据读取&lt;/li&gt;
-&lt;li&gt;文本分析入门&lt;/li&gt;
-&lt;li&gt;机器学习与文本分析&lt;/li&gt;
-&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;感兴趣的童鞋不妨 戳一下
-&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
-&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;公众号：大邓和他的python&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://github.com/thunderhit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;​&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>eventextraction: 快速构建不同领域(手机、汽车等)的情感词典</title>
-      <link>https://thunderhit.github.io/post/eventextraction/</link>
-      <pubDate>Wed, 17 Jun 2020 18:31:20 +0800</pubDate>
-      <guid>https://thunderhit.github.io/post/eventextraction/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
-&lt;nav id=&#34;TableOfContents&#34;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#一文本事理类型分析&#34;&gt;一、文本事理类型分析&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;
-          &lt;ul&gt;
-            &lt;li&gt;&lt;a href=&#34;#事件图谱事理图谱的类型&#34;&gt;事件图谱（事理图谱）的类型&lt;/a&gt;&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#二安装方法&#34;&gt;二、安装方法&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#三使用&#34;&gt;三、使用&lt;/a&gt;
-      &lt;ul&gt;
-        &lt;li&gt;
-          &lt;ul&gt;
-            &lt;li&gt;&lt;a href=&#34;#31-主函数&#34;&gt;3.1 主函数&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&#34;#32-统计&#34;&gt;3.2 统计&lt;/a&gt;&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#如果&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h1 id=&#34;一文本事理类型分析&#34;&gt;一、文本事理类型分析&lt;/h1&gt;
-&lt;p&gt;中文复合事件抽取，可以用来识别文本的模式，包括条件事件、顺承事件、反转事件。&lt;/p&gt;
-&lt;p&gt;我仅仅是对代码做了简单的修改，增加了函数说明注释和stats函数，可以用于统计文本中各种模式的分布(数量)情况。代码原作者为刘焕勇 &lt;a href=&#34;https://github.com/liuhuanyong&#34;&gt;https://github.com/liuhuanyong&lt;/a&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;h3 id=&#34;事件图谱事理图谱的类型&#34;&gt;事件图谱（事理图谱）的类型&lt;/h3&gt;
-&lt;p&gt;项目地址https://github.com/liuhuanyong/ComplexEventExtraction 项目介绍很详细，感兴趣的一定要去原项目看一下。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;事件&lt;/th&gt;
-&lt;th&gt;含义&lt;/th&gt;
-&lt;th&gt;形式化&lt;/th&gt;
-&lt;th&gt;事件应用&lt;/th&gt;
-&lt;th&gt;图谱场景&lt;/th&gt;
-&lt;th&gt;举例&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;条件事件&lt;/td&gt;
-&lt;td&gt;某事件条件下另一事件发生&lt;/td&gt;
-&lt;td&gt;如果A那么B&lt;/td&gt;
-&lt;td&gt;事件预警&lt;/td&gt;
-&lt;td&gt;时机判定&lt;/td&gt;
-&lt;td&gt;&amp;lt;限制放宽,立即增产&amp;gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;反转事件&lt;/td&gt;
-&lt;td&gt;某事件与另一事件形成对立&lt;/td&gt;
-&lt;td&gt;虽然A但是B&lt;/td&gt;
-&lt;td&gt;预防不测&lt;/td&gt;
-&lt;td&gt;反面教材&lt;/td&gt;
-&lt;td&gt;&amp;lt;起步晚,发展快&amp;gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;顺承事件&lt;/td&gt;
-&lt;td&gt;某事件紧接着另一事件发生&lt;/td&gt;
-&lt;td&gt;A接着B&lt;/td&gt;
-&lt;td&gt;事件演化&lt;/td&gt;
-&lt;td&gt;未来意图识别&lt;/td&gt;
-&lt;td&gt;&amp;lt;去旅游,买火车票&amp;gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;分析出文本中的条件、顺承、反转，理论上就可以构建知识网络(本库做不到这可视化)。
-1、反转事件图谱
-&lt;img src=&#34;img/but.png&#34; alt=&#34;&#34;&gt;
-2、条件事件图谱
-&lt;img src=&#34;img/condition.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;h1 id=&#34;二安装方法&#34;&gt;二、安装方法&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;pip install eventextraction
-&lt;/code&gt;&lt;/pre&gt;
-&lt;br&gt;
-&lt;h1 id=&#34;三使用&#34;&gt;三、使用&lt;/h1&gt;
-&lt;h3 id=&#34;31-主函数&#34;&gt;3.1 主函数&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;from eventextraction import EventsExtraction
-
-extractor = EventsExtraction()
-content = &#39;虽然你做了坏事，但我觉得你是好人。一旦时机成熟，就坚决推行&#39;
-datas = extractor.extract_main(content)
-print(datas)
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;运行结果&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[{&#39;sent&#39;: &#39;虽然你做了坏事，但我觉得你是好人&#39;, &#39;type&#39;: &#39;but&#39;, &#39;tuples&#39;: {&#39;pre_wd&#39;: &#39;虽然&#39;, &#39;pre_part&#39;: &#39;你做了坏事，&#39;, &#39;post_wd&#39;: &#39;但&#39;, &#39;post_part &#39;: &#39;我觉得你是好人&#39;}},
-{&#39;sent&#39;: &#39;一旦时机成熟，就坚决推行&#39;, &#39;type&#39;: &#39;condition&#39;, &#39;tuples&#39;: {&#39;pre_wd&#39;: &#39;一旦&#39;, &#39;pre_part&#39;: &#39;时机成熟，&#39;, &#39;post_wd&#39;: &#39;就&#39;, &#39;post_part &#39;: &#39;坚决推行&#39;}}]
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;32-统计&#34;&gt;3.2 统计&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;from eventextraction import EventsExtraction
-
-extractor = EventsExtraction()
-content = &#39;虽然你做了坏事，但我觉得你是好人。一旦时机成熟，就坚决推行&#39;
-datas = extractor.extract_main(content)
-print(extractor.stats(datas))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;运行结果&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{&#39;but&#39;: 1, &#39;condition&#39;: 1, &#39;seq&#39;: 0, &#39;more&#39;: 0, &#39;other&#39;: 0}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;br&gt;
-&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
-&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
-&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;python入门&lt;/li&gt;
-&lt;li&gt;网络爬虫&lt;/li&gt;
-&lt;li&gt;数据读取&lt;/li&gt;
-&lt;li&gt;文本分析入门&lt;/li&gt;
-&lt;li&gt;机器学习与文本分析&lt;/li&gt;
-&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;感兴趣的童鞋不妨 戳一下
-&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
-&lt;br&gt;
-&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;[github](&lt;a href=&#34;https://github.com/thunderhit&#34;&gt;https://github.com/thunderhit&lt;/a&gt;）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
-&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>《Python数据挖掘与文本分析》培训介绍</title>
       <link>https://thunderhit.github.io/slides/slides%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
@@ -878,9 +586,163 @@ print(extractor.stats(datas))
     </item>
     
     <item>
+      <title>使用Hugo框架建立个人网站</title>
+      <link>https://thunderhit.github.io/post/hugo/</link>
+      <pubDate>Tue, 16 Jun 2020 17:31:20 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/hugo/</guid>
+      <description>&lt;p&gt;在B站看到一位博主用Hugo制作个人博客的视频，感觉挺简单的，真的十几分钟就能看到云端出现自己的博客，当然了想让自己的博客更美观更炫酷，精雕细琢会花很多功夫。现在大家看到的效果，大邓用了一整天的时间，一点点修饰改动出来的。&lt;/p&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#1-安装hugo&#34;&gt;1. 安装Hugo&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#2-新建hugo项目&#34;&gt;2. 新建Hugo项目&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#3-academic主题下载&#34;&gt;3. Academic主题下载&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#4-启动本地博客&#34;&gt;4. 启动本地博客&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#5-在本地新建一篇文章&#34;&gt;5. 在本地新建一篇文章&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#6-将本地博客部署到服务器&#34;&gt;6. 将本地博客部署到服务器&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#实验代码下载&#34;&gt;实验代码下载&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#打赏&#34;&gt;打赏&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;1-安装hugo&#34;&gt;1. 安装Hugo&lt;/h1&gt;
+&lt;p&gt;这里以&lt;strong&gt;Mac&lt;/strong&gt;为例，安装Hugo，命令行输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;brew install hugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2-新建hugo项目&#34;&gt;2. 新建Hugo项目&lt;/h1&gt;
+&lt;p&gt;切换到桌面(我喜欢把项目放到桌面), 命令行执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd desktop
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;新建一个叫做&lt;strong&gt;MyBlog&lt;/strong&gt;的hugo项目文件夹，命令行执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo new site MyBlog
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在可以在桌面看到一个MyBlog文件夹，接下来切换工作目录到MyBlog&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd MyBlog
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;记者目前我们的命令行处于MyBlog的根目录 , 接下来下载网站主题&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;3-academic主题下载&#34;&gt;3. Academic主题下载&lt;/h1&gt;
+&lt;p&gt;Hugo有很多主题，我选择的 &lt;a href=&#34;https://themes.gohugo.io/academic/&#34;&gt;https://themes.gohugo.io/academic/&lt;/a&gt;，&lt;/p&gt;
+&lt;p&gt;在命令行逐行执行下方命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd themes
+
+git clone https://github.com/gcushen/hugo-academic.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    我们可以在 &lt;strong&gt;MyBlog/themes&lt;/strong&gt; 看到多了一个 &lt;strong&gt;hugo-academic文件夹，把hugo-academic改为academic&lt;/strong&gt; ，现在网站已经建立好了~
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    这里切换回项目根目录MyBlog
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;cd ..
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;命令行执行pwd，检查一下目录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pwd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;得到&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/Users/电脑用户名/desktop/MyBlog
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;4-启动本地博客&#34;&gt;4. 启动本地博客&lt;/h1&gt;
+&lt;p&gt;现在我们以academic主题为例，启动博客&lt;/p&gt;
+&lt;p&gt;命令行执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo server -t academic --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    补充: t的意思是主题
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;执行后，在命令行中会提示我们&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://localhost:1313/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在浏览器中复制粘贴上方的链接，我们的Blog毛坯房搭建好了~&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;5-在本地新建一篇文章&#34;&gt;5. 在本地新建一篇文章&lt;/h1&gt;
+&lt;p&gt;依旧是MyBlog根目录，命令行执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo new post/first-article.md
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    在MyBlog/content内新生成了一个post文件夹，并且post内有了一个first-article.md文件。
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;接下来就是在first-article.md内用markdown方式写内容即可。&lt;/p&gt;
+&lt;p&gt;我们测试一下现在的网站,继续回到MyBlog根目录，命令行执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo server -t academic --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在浏览器中我们可以看到有First Ariticle的文章。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;6-将本地博客部署到服务器&#34;&gt;6. 将本地博客部署到服务器&lt;/h1&gt;
+&lt;p&gt;在github新建一个仓库，仓库名命名方式&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;你的github用户名&amp;gt;.github.io
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;比如我的github账号名是thunderhit，那么仓库名为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;thunderhit.github.io
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在MyBlog根目录，命令行执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hugo --theme=academic --baseUrl=&#39;https://thunderhit.github.io/&#39; --buildDrafts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    补充: 主题academic, 网站地址 &lt;code&gt;https://thunderhit.github.io/ &lt;/code&gt;，你们根据自己需要改成自己的仓库名
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;现在我们在MyBlog中多了一个public文件夹，其中有我们新建的文章内容。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;绑定public与github仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;命令行切换到public目录，初始化git&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd public 
+git init
+git add .
+git commit -m &#39;我的hugo博客第一次提交&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;把public与远程github仓库关联&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;依次执行（大家的github地址略微不同，需要改动一下)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git remote add origin git@github.com:thunderhit/thunderhit.github.io.git
+
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;命令行上传完毕后，在浏览器网址栏打开链接 &lt;a href=&#34;https://thunderhit.github.io/&#34;&gt;https://thunderhit.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;就可以看到我们自己的博客了~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;更多&#34;&gt;更多&lt;/h1&gt;
+&lt;p&gt;如果大家想学仔细学Hugo，推荐大家看B站&lt;strong&gt;Up主：ianianying&lt;/strong&gt;的视频&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1iA411v7Gi&amp;page=1&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;实验代码下载&#34;&gt;实验代码下载&lt;/h1&gt;
+&lt;p&gt;如果实验没成功，大家可以下载我的博客项目。项目资源获取方式，【公众号：大邓和他的Python】后台回复关键词&amp;rdquo;&lt;strong&gt;Hugo&lt;/strong&gt;&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;打赏&#34;&gt;打赏&lt;/h1&gt;
+&lt;p&gt;如觉得内容很赞，可酌情打赏^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>cntopic: 中文LDA话题模型</title>
       <link>https://thunderhit.github.io/post/cntopic/</link>
-      <pubDate>Tue, 16 Jun 2020 17:31:20 +0800</pubDate>
+      <pubDate>Mon, 15 Jun 2020 17:31:20 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/cntopic/</guid>
       <description>&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
@@ -1337,156 +1199,294 @@ topic2.load_lda_model(modelpath=&#39;output/model/lda.model&#39;)
     </item>
     
     <item>
-      <title>使用Hugo框架建立个人网站</title>
-      <link>https://thunderhit.github.io/post/hugo/</link>
-      <pubDate>Tue, 16 Jun 2020 17:31:20 +0800</pubDate>
-      <guid>https://thunderhit.github.io/post/hugo/</guid>
-      <description>&lt;p&gt;在B站看到一位博主用Hugo制作个人博客的视频，感觉挺简单的，真的十几分钟就能看到云端出现自己的博客，当然了想让自己的博客更美观更炫酷，精雕细琢会花很多功夫。现在大家看到的效果，大邓用了一整天的时间，一点点修饰改动出来的。&lt;/p&gt;
-&lt;h2&gt;目录&lt;/h2&gt;
+      <title>eventextraction: 快速构建不同领域(手机、汽车等)的情感词典</title>
+      <link>https://thunderhit.github.io/post/eventextraction/</link>
+      <pubDate>Tue, 02 Jun 2020 18:31:20 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/eventextraction/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#1-安装hugo&#34;&gt;1. 安装Hugo&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#2-新建hugo项目&#34;&gt;2. 新建Hugo项目&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#3-academic主题下载&#34;&gt;3. Academic主题下载&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#4-启动本地博客&#34;&gt;4. 启动本地博客&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#5-在本地新建一篇文章&#34;&gt;5. 在本地新建一篇文章&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#6-将本地博客部署到服务器&#34;&gt;6. 将本地博客部署到服务器&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#实验代码下载&#34;&gt;实验代码下载&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#打赏&#34;&gt;打赏&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#一文本事理类型分析&#34;&gt;一、文本事理类型分析&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#事件图谱事理图谱的类型&#34;&gt;事件图谱（事理图谱）的类型&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#二安装方法&#34;&gt;二、安装方法&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#三使用&#34;&gt;三、使用&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#31-主函数&#34;&gt;3.1 主函数&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#32-统计&#34;&gt;3.2 统计&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#如果&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;br&gt;
 &lt;br&gt;
-&lt;h1 id=&#34;1-安装hugo&#34;&gt;1. 安装Hugo&lt;/h1&gt;
-&lt;p&gt;这里以&lt;strong&gt;Mac&lt;/strong&gt;为例，安装Hugo，命令行输入&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;brew install hugo
+&lt;h1 id=&#34;一文本事理类型分析&#34;&gt;一、文本事理类型分析&lt;/h1&gt;
+&lt;p&gt;中文复合事件抽取，可以用来识别文本的模式，包括条件事件、顺承事件、反转事件。&lt;/p&gt;
+&lt;p&gt;我仅仅是对代码做了简单的修改，增加了函数说明注释和stats函数，可以用于统计文本中各种模式的分布(数量)情况。代码原作者为刘焕勇 &lt;a href=&#34;https://github.com/liuhuanyong&#34;&gt;https://github.com/liuhuanyong&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;事件图谱事理图谱的类型&#34;&gt;事件图谱（事理图谱）的类型&lt;/h3&gt;
+&lt;p&gt;项目地址https://github.com/liuhuanyong/ComplexEventExtraction 项目介绍很详细，感兴趣的一定要去原项目看一下。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;事件&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;th&gt;形式化&lt;/th&gt;
+&lt;th&gt;事件应用&lt;/th&gt;
+&lt;th&gt;图谱场景&lt;/th&gt;
+&lt;th&gt;举例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;条件事件&lt;/td&gt;
+&lt;td&gt;某事件条件下另一事件发生&lt;/td&gt;
+&lt;td&gt;如果A那么B&lt;/td&gt;
+&lt;td&gt;事件预警&lt;/td&gt;
+&lt;td&gt;时机判定&lt;/td&gt;
+&lt;td&gt;&amp;lt;限制放宽,立即增产&amp;gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;反转事件&lt;/td&gt;
+&lt;td&gt;某事件与另一事件形成对立&lt;/td&gt;
+&lt;td&gt;虽然A但是B&lt;/td&gt;
+&lt;td&gt;预防不测&lt;/td&gt;
+&lt;td&gt;反面教材&lt;/td&gt;
+&lt;td&gt;&amp;lt;起步晚,发展快&amp;gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;顺承事件&lt;/td&gt;
+&lt;td&gt;某事件紧接着另一事件发生&lt;/td&gt;
+&lt;td&gt;A接着B&lt;/td&gt;
+&lt;td&gt;事件演化&lt;/td&gt;
+&lt;td&gt;未来意图识别&lt;/td&gt;
+&lt;td&gt;&amp;lt;去旅游,买火车票&amp;gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;分析出文本中的条件、顺承、反转，理论上就可以构建知识网络(本库做不到这可视化)。
+1、反转事件图谱
+&lt;img src=&#34;img/but.png&#34; alt=&#34;&#34;&gt;
+2、条件事件图谱
+&lt;img src=&#34;img/condition.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;二安装方法&#34;&gt;二、安装方法&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;pip install eventextraction
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h1 id=&#34;2-新建hugo项目&#34;&gt;2. 新建Hugo项目&lt;/h1&gt;
-&lt;p&gt;切换到桌面(我喜欢把项目放到桌面), 命令行执行&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd desktop
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;新建一个叫做&lt;strong&gt;MyBlog&lt;/strong&gt;的hugo项目文件夹，命令行执行&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hugo new site MyBlog
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;现在可以在桌面看到一个MyBlog文件夹，接下来切换工作目录到MyBlog&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd MyBlog
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;记者目前我们的命令行处于MyBlog的根目录 , 接下来下载网站主题&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h1 id=&#34;3-academic主题下载&#34;&gt;3. Academic主题下载&lt;/h1&gt;
-&lt;p&gt;Hugo有很多主题，我选择的 &lt;a href=&#34;https://themes.gohugo.io/academic/&#34;&gt;https://themes.gohugo.io/academic/&lt;/a&gt;，&lt;/p&gt;
-&lt;p&gt;在命令行逐行执行下方命令&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd themes
+&lt;br&gt;
+&lt;h1 id=&#34;三使用&#34;&gt;三、使用&lt;/h1&gt;
+&lt;h3 id=&#34;31-主函数&#34;&gt;3.1 主函数&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;from eventextraction import EventsExtraction
 
-git clone https://github.com/gcushen/hugo-academic.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    我们可以在 &lt;strong&gt;MyBlog/themes&lt;/strong&gt; 看到多了一个 &lt;strong&gt;hugo-academic文件夹，把hugo-academic改为academic&lt;/strong&gt; ，现在网站已经建立好了~
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-warning&#34;&gt;
-  &lt;div&gt;
-    这里切换回项目根目录MyBlog
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;pre&gt;&lt;code&gt;cd ..
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;命令行执行pwd，检查一下目录&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pwd
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;得到&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/Users/电脑用户名/desktop/MyBlog
-&lt;/code&gt;&lt;/pre&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h1 id=&#34;4-启动本地博客&#34;&gt;4. 启动本地博客&lt;/h1&gt;
-&lt;p&gt;现在我们以academic主题为例，启动博客&lt;/p&gt;
-&lt;p&gt;命令行执行&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hugo server -t academic --buildDrafts
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    补充: t的意思是主题
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;执行后，在命令行中会提示我们&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;http://localhost:1313/
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在浏览器中复制粘贴上方的链接，我们的Blog毛坯房搭建好了~&lt;/p&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h1 id=&#34;5-在本地新建一篇文章&#34;&gt;5. 在本地新建一篇文章&lt;/h1&gt;
-&lt;p&gt;依旧是MyBlog根目录，命令行执行&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hugo new post/first-article.md
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    在MyBlog/content内新生成了一个post文件夹，并且post内有了一个first-article.md文件。
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;接下来就是在first-article.md内用markdown方式写内容即可。&lt;/p&gt;
-&lt;p&gt;我们测试一下现在的网站,继续回到MyBlog根目录，命令行执行&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hugo server -t academic --buildDrafts
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在浏览器中我们可以看到有First Ariticle的文章。&lt;/p&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;h1 id=&#34;6-将本地博客部署到服务器&#34;&gt;6. 将本地博客部署到服务器&lt;/h1&gt;
-&lt;p&gt;在github新建一个仓库，仓库名命名方式&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;你的github用户名&amp;gt;.github.io
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;比如我的github账号名是thunderhit，那么仓库名为&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;thunderhit.github.io
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在MyBlog根目录，命令行执行&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hugo --theme=academic --baseUrl=&#39;https://thunderhit.github.io/&#39; --buildDrafts
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    补充: 主题academic, 网站地址 &lt;code&gt;https://thunderhit.github.io/ &lt;/code&gt;，你们根据自己需要改成自己的仓库名
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;现在我们在MyBlog中多了一个public文件夹，其中有我们新建的文章内容。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;绑定public与github仓库&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;命令行切换到public目录，初始化git&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd public 
-git init
-git add .
-git commit -m &#39;我的hugo博客第一次提交&#39;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;把public与远程github仓库关联&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;依次执行（大家的github地址略微不同，需要改动一下)&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git remote add origin git@github.com:thunderhit/thunderhit.github.io.git
+extractor = EventsExtraction()
+content = &#39;虽然你做了坏事，但我觉得你是好人。一旦时机成熟，就坚决推行&#39;
+datas = extractor.extract_main(content)
+print(datas)
 
-git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;命令行上传完毕后，在浏览器网址栏打开链接 &lt;a href=&#34;https://thunderhit.github.io/&#34;&gt;https://thunderhit.github.io/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;就可以看到我们自己的博客了~&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;featured.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h1 id=&#34;更多&#34;&gt;更多&lt;/h1&gt;
-&lt;p&gt;如果大家想学仔细学Hugo，推荐大家看B站&lt;strong&gt;Up主：ianianying&lt;/strong&gt;的视频&lt;/p&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1iA411v7Gi&amp;page=1&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
+&lt;p&gt;运行结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[{&#39;sent&#39;: &#39;虽然你做了坏事，但我觉得你是好人&#39;, &#39;type&#39;: &#39;but&#39;, &#39;tuples&#39;: {&#39;pre_wd&#39;: &#39;虽然&#39;, &#39;pre_part&#39;: &#39;你做了坏事，&#39;, &#39;post_wd&#39;: &#39;但&#39;, &#39;post_part &#39;: &#39;我觉得你是好人&#39;}},
+{&#39;sent&#39;: &#39;一旦时机成熟，就坚决推行&#39;, &#39;type&#39;: &#39;condition&#39;, &#39;tuples&#39;: {&#39;pre_wd&#39;: &#39;一旦&#39;, &#39;pre_part&#39;: &#39;时机成熟，&#39;, &#39;post_wd&#39;: &#39;就&#39;, &#39;post_part &#39;: &#39;坚决推行&#39;}}]
 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;32-统计&#34;&gt;3.2 统计&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;from eventextraction import EventsExtraction
+
+extractor = EventsExtraction()
+content = &#39;虽然你做了坏事，但我觉得你是好人。一旦时机成熟，就坚决推行&#39;
+datas = extractor.extract_main(content)
+print(extractor.stats(datas))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;but&#39;: 1, &#39;condition&#39;: 1, &#39;seq&#39;: 0, &#39;more&#39;: 0, &#39;other&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[github](&lt;a href=&#34;https://github.com/thunderhit&#34;&gt;https://github.com/thunderhit&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>pdfdocx: 用python读取pdf和docx文件数据</title>
+      <link>https://thunderhit.github.io/post/pdfdocx/</link>
+      <pubDate>Mon, 01 Jun 2020 20:31:20 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/pdfdocx/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#pdfdocx&#34;&gt;pdfdocx&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#github项目地址httpsgithubcomthunderhitpdfdocx&#34;&gt;&lt;a href=&#34;https://github.com/thunderhit/pdfdocx&#34;&gt;github项目地址&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#拆开pdfdocx&#34;&gt;拆开pdfdocx&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#如果&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;最近运行课件代码，发现pdf文件读取部分的函数失效。这里找到读取pdf文件的可运行代码，为了方便后续学习使用，我已将pdf和docx读取方法封装成pdfdocx包。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;pdfdocx&#34;&gt;pdfdocx&lt;/h1&gt;
+&lt;h3 id=&#34;github项目地址httpsgithubcomthunderhitpdfdocx&#34;&gt;
+&lt;a href=&#34;https://github.com/thunderhit/pdfdocx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github项目地址&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;只有简单的两个读取函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;read_pdf(file)&lt;/li&gt;
+&lt;li&gt;read_docx(file)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;file为文件路径，函数运行后返回file文件内的文本数据。&lt;/p&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;pip install pdfdocx
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;使用&#34;&gt;使用&lt;/h3&gt;
+&lt;p&gt;读取pdf文件&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pdfdocx import read_pdf
+p_text = read_pdf(&#39;test/data.pdf&#39;)
+print(p_text)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这是来⾃pdf⽂件内的内容
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pdfdocx import read_docx
+d_text = read_pdf(&#39;test/data.docx&#39;)
+print(d_text)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这是来⾃docx⽂件内的内容
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;拆开pdfdocx&#34;&gt;拆开pdfdocx&lt;/h3&gt;
+&lt;p&gt;希望大家能安装好，如果安装或者使用失败，可以使用下面的代码作为备选方法。虽然繁琐，能用就好。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;读取pdf&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import StringIO
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfdocument import PDFDocument
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.pdfpage import PDFPage
+from pdfminer.pdfparser import PDFParser
+import re
+
+
+def read_pdf(file):
+    &amp;quot;&amp;quot;&amp;quot;
+    读取pdf文件，并返回其中的文本内容
+    :param file: pdf文件路径
+    :return: docx中的文本内容
+    &amp;quot;&amp;quot;&amp;quot;
+    output_string = StringIO()
+    with open(file, &#39;rb&#39;) as in_file:
+        parser = PDFParser(in_file)
+        doc = PDFDocument(parser)
+        rsrcmgr = PDFResourceManager()
+        device = TextConverter(rsrcmgr, output_string, laparams=LAParams())
+        interpreter = PDFPageInterpreter(rsrcmgr, device)
+        for page in PDFPage.create_pages(doc):
+            interpreter.process_page(page)
+    text = output_string.getvalue()
+    return re.sub(&#39;[\n\t\s]&#39;, &#39;&#39;, text)
+  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;读取docx&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import docx
+  
+def read_docx(file):
+    &amp;quot;&amp;quot;&amp;quot;
+    读取docx文件，并返回其中的文本内容
+    :param file: docx文件路径
+    :return: docx中的文本内容
+    &amp;quot;&amp;quot;&amp;quot;
+    text = &#39;&#39;
+    doc = docx.Document(file)
+    for para in doc.paragraphs:
+        text += para.text
+    return text
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h1 id=&#34;实验代码下载&#34;&gt;实验代码下载&lt;/h1&gt;
-&lt;p&gt;如果实验没成功，大家可以下载我的博客项目。项目资源获取方式，【公众号：大邓和他的Python】后台回复关键词&amp;rdquo;&lt;strong&gt;Hugo&lt;/strong&gt;&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h1 id=&#34;打赏&#34;&gt;打赏&lt;/h1&gt;
-&lt;p&gt;如觉得内容很赞，可酌情打赏^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;公众号：大邓和他的python&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/thunderhit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1948,7 +1948,7 @@ print(AC)
     <item>
       <title>cnsenti库:简单易用的中文情感分析库</title>
       <link>https://thunderhit.github.io/post/cnsenti/</link>
-      <pubDate>Mon, 18 May 2020 17:31:20 +0800</pubDate>
+      <pubDate>Mon, 25 May 2020 17:31:20 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/cnsenti/</guid>
       <description>&lt;h1 id=&#34;一cnsenti&#34;&gt;一、cnsenti&lt;/h1&gt;
 &lt;p&gt;中文情感分析库(Chinese Sentiment))可对文本进行情绪分析、正负情感分析。&lt;/p&gt;
