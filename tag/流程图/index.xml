@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>流程图 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <atom:link href="https://thunderhit.github.io/tag/%E6%B5%81%E7%A8%8B%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
+    <description>流程图</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Thu, 18 Jun 2020 12:45:03 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>流程图</title>
+      <link>https://thunderhit.github.io/tag/%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+    </image>
+    
+    <item>
+      <title>在Markdown中用mermaid语法绘制图表</title>
+      <link>https://thunderhit.github.io/post/mermaid/</link>
+      <pubDate>Thu, 18 Jun 2020 12:45:03 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/mermaid/</guid>
+      <description>&lt;p&gt;Mermaid可以用文本方式绘制图表和流程图，相比Visio而言更加的轻量便捷，此外Markdown内部支持Mermaid语法，可以有效避免切换软件，让我们更加专注于内容本身。&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://mermaid-js.github.io/mermaid/#/README&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mermaid官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#图表类型支持&#34;&gt;图表类型支持&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#饼形图&#34;&gt;饼形图&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#流程图&#34;&gt;流程图&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#时序图&#34;&gt;时序图&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#状态图&#34;&gt;状态图&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#甘特图&#34;&gt;甘特图&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#class类图&#34;&gt;class类图&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#heading&#34;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#打赏&#34;&gt;打赏&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h1 id=&#34;图表类型支持&#34;&gt;图表类型支持&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;饼形图(Pie Chart)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流程图（Flow Chart）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;时序图（Sequence Diagram）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;状态图(State Diagram)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;甘特图（Gantt Diagram）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;类图(class Diagram)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;等等&lt;/p&gt;
+  &lt;br&gt;
+&lt;h1 id=&#34;饼形图&#34;&gt;饼形图&lt;/h1&gt;
+&lt;p&gt;饼形图是我们经常用到的图表，在mermaid中最简单，基本上一看就会&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;pie 
+title Pets adopted by volunteers
+&amp;quot;Dogs&amp;quot; : 386
+&amp;quot;Cats&amp;quot; : 85
+&amp;quot;Rats&amp;quot; : 15
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;代码&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;​```mermaid
+pie 
+title Pets adopted by volunteers
+&amp;quot;Dogs&amp;quot; : 386
+&amp;quot;Cats&amp;quot; : 85
+&amp;quot;Rats&amp;quot; : 15 
+​```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用到的关键词&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;关键词&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;pie&lt;/td&gt;
+&lt;td&gt;定义饼形图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;标题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;流程图&#34;&gt;流程图&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph TD
+    A--&amp;gt;B
+    A--&amp;gt;C
+    B--&amp;gt;D
+    C--&amp;gt;D
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;该流程图就是用下方的代码再markdown中实现的&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;​```mermaid
+graph RL;
+    A--&amp;gt;B;
+    A--&amp;gt;C;
+    B--&amp;gt;D;
+    C--&amp;gt;D;
+​```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;关键词解读&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;关键词&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;graph&lt;/td&gt;
+&lt;td&gt;定义流程图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TD&lt;/td&gt;
+&lt;td&gt;流程图方向。mermai的方位还有T、D、L、 R，分别代表上、下、左、右。两个方位组合成一个流动方向。本案例是从上到下，即TD&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;有向箭头&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;p&gt;节点还可以用&lt;code&gt;:::&lt;/code&gt;调用修饰函数，如下&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph LR
+    A:::someclass --&amp;gt; B
+    classDef someclass fill:#f96;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;​```mermaid
+graph LR
+    A:::someclass --&amp;gt; B
+    classDef someclass fill:#f96;
+​```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;时序图&#34;&gt;时序图&lt;/h1&gt;
+&lt;p&gt;时序图用于描述对象之间的传递消息的时间顺序, 即用例中的行为顺序.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;sequenceDiagram
+    participant Alice
+    participant Bob
+    participant John
+    Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
+    loop Healthcheck
+        John-&amp;gt;&amp;gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &amp;lt;br/&amp;gt;prevail!
+    John--&amp;gt;&amp;gt;Alice: Great!
+    John-&amp;gt;&amp;gt;Bob: How about you?
+    Bob--&amp;gt;&amp;gt;John: Jolly good!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;顺序图稍微复杂了一丢丢，代码如下&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;​```mermaid
+sequenceDiagram
+    participant Alice
+    participant Bob
+    participant John
+    
+    Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
+    
+    loop Healthcheck
+        John-&amp;gt;&amp;gt;John: Fight against hypochondria
+    end
+    
+    Note right of John: Rational thoughts &amp;lt;br/&amp;gt;prevail!
+    John--&amp;gt;&amp;gt;Alice: Great!
+    John-&amp;gt;&amp;gt;Bob: How about you?
+    Bob--&amp;gt;&amp;gt;John: Jolly good!
+​```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用到的关键词&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;关键词&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;sequenceDiagram&lt;/td&gt;
+&lt;td&gt;定义顺序表&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;participant&lt;/td&gt;
+&lt;td&gt;定义图中的节点&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;loop 、end&lt;/td&gt;
+&lt;td&gt;循环体代码块，以loop开头，end结束；&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Note&lt;/td&gt;
+&lt;td&gt;提示框&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;right of&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;方位关键词&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;-&amp;gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;实线箭头连接线&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--&amp;gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;虚线箭头&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;状态图&#34;&gt;状态图&lt;/h1&gt;
+&lt;p&gt;通过建立对象的生存周期模型来描述对象随时间变化的动态行为&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;stateDiagram 
+    Start --&amp;gt; First
+    First --&amp;gt; Second
+    First --&amp;gt; Third
+    Second --&amp;gt; End
+    Third --&amp;gt; End
+
+    state First {
+        [*] --&amp;gt; fir
+        fir --&amp;gt; [*]
+    }
+    state Second {
+        [*] --&amp;gt; sec
+        sec --&amp;gt; [*]
+    }
+    state Third {}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;代码&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;​```mermaid
+stateDiagram 
+    Start --&amp;gt; First
+    First --&amp;gt; Second
+    First --&amp;gt; Third
+    Second --&amp;gt; End
+    Third --&amp;gt; End
+
+    state First {
+        [*] --&amp;gt; fir
+        fir --&amp;gt; [*]
+    }
+    state Second {
+        [*] --&amp;gt; sec
+        sec --&amp;gt; [*]
+    }
+    state Third {}
+​```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;代码关键词解读&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;关键词&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;stateDiagram&lt;/td&gt;
+&lt;td&gt;用于定义状态图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;[*]&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;实心黑点&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;--&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;有向实线&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;state&lt;/td&gt;
+&lt;td&gt;用于定义状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;我们可以看到状态state还可以定义内部的流程，如First和Second；Third没有定义内部处理过程。&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;甘特图&#34;&gt;甘特图&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes 2014-01-10 
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;代码如下&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;​```mermaid
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+excludes weekdays 2014-01-10
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+​```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用到的关键词&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;关键词&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;gantt&lt;/td&gt;
+&lt;td&gt;定义甘特图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dataFormat&lt;/td&gt;
+&lt;td&gt;定义日期格式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;标题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;excludes&lt;/td&gt;
+&lt;td&gt;排除项目周期中的放假休息等日期&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;section&lt;/td&gt;
+&lt;td&gt;定义一个项目&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;:done&lt;/code&gt;  、 &lt;code&gt;:active&lt;/code&gt;、&lt;code&gt;:&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;项目中的状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;after&lt;/td&gt;
+&lt;td&gt;紧随其后&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;class类图&#34;&gt;class类图&lt;/h1&gt;
+&lt;p&gt;面向对象的编程会经常看到类，类与类有所属关系。比如中国人是人类的一员，而人类又隶属于灵长类动物。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;classDiagram
+      Animal &amp;lt;|-- Duck
+      Animal &amp;lt;|-- Fish
+      Animal &amp;lt;|-- Zebra
+      Animal : int age
+      Animal : String gender
+      Animal: isMammal()
+      Animal: mate()
+      class Duck{
+          String beakColor
+          swim()
+          quack()
+      }
+      class Fish{
+          int sizeInFeet
+          canEat()
+      }
+      class Zebra{
+          bool is_wild
+          run()
+          eat()
+      }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;代码&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;​```mermaid
+classDiagram
+      Animal &amp;lt;|-- Duck
+      Animal &amp;lt;|-- Fish
+      Animal &amp;lt;|-- Zebra
+      Animal : int age
+      Animal : String gender
+      Animal: isMammal()
+      Animal: mate()
+      class Duck{
+          String beakColor
+          swim()
+          quack()
+      }
+      class Fish{
+          int sizeInFeet
+          canEat()
+      }
+      class Zebra{
+          bool is_wild
+          run()
+          eat()
+      }
+​```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用到的关键词&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;关键词&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;classDiagram&lt;/td&gt;
+&lt;td&gt;定义类图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;lt;--&lt;/td&gt;
+&lt;td&gt;隶属于某类&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Animal : int age&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;定义Animal的年龄属性(属性没有用括号)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Animal: isMammal()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;定义Animal的是否为哺乳动物方法(方法有括号)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;class Duck&lt;/td&gt;
+&lt;td&gt;定义Duck类&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;大家如果熟悉Python，就能理解类的属性和方法区别就是是否有括号。&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;打赏&#34;&gt;打赏&lt;/h1&gt;
+&lt;p&gt;如觉得内容很赞，可酌情打赏^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
