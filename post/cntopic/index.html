@@ -1,0 +1,1549 @@
+<!DOCTYPE html><html lang="zh-Hans" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="大邓">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="简单好用的lda话题模型，支持中英文。该库基于gensim和pyLDAvis，实现了lda话题模型及可视化功能。">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://thunderhit.github.io/post/cntopic/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://thunderhit.github.io/post/cntopic/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Thunderhit">
+  <meta property="og:url" content="https://thunderhit.github.io/post/cntopic/">
+  <meta property="og:title" content="cntopic: 中文LDA话题模型 | Thunderhit">
+  <meta property="og:description" content="简单好用的lda话题模型，支持中英文。该库基于gensim和pyLDAvis，实现了lda话题模型及可视化功能。"><meta property="og:image" content="https://thunderhit.github.io/post/cntopic/featured.jpg">
+  <meta property="twitter:image" content="https://thunderhit.github.io/post/cntopic/featured.jpg"><meta property="og:locale" content="zh-Hans">
+  
+    
+      <meta property="article:published_time" content="2020-06-16T17:31:20&#43;08:00">
+    
+    <meta property="article:modified_time" content="2020-06-16T17:31:20&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thunderhit.github.io/post/cntopic/"
+  },
+  "headline": "cntopic: 中文LDA话题模型",
+  
+  "image": [
+    "https://thunderhit.github.io/post/cntopic/featured.jpg"
+  ],
+  
+  "datePublished": "2020-06-16T17:31:20+08:00",
+  "dateModified": "2020-06-16T17:31:20+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "大邓"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Thunderhit",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "简单好用的lda话题模型，支持中英文。该库基于gensim和pyLDAvis，实现了lda话题模型及可视化功能。"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>cntopic: 中文LDA话题模型 | Thunderhit</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/authors/"><span>Authors</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#skills"><span>Skills</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Packages</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post"><span>Articles</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tags"><span>Topics</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>cntopic: 中文LDA话题模型</h1>
+
+  
+  <p class="page-subtitle">LDA话题分析；可视化</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/%E5%A4%A7%E9%82%93/">大邓</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2020-06-16
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/python%E5%BA%93/">python库</a>, <a href="/category/%E6%95%99%E7%A8%8B/">教程</a>, <a href="/category/%E8%A7%86%E9%A2%91/">视频</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/slides/slides%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/" target="_blank">
+    演示文稿
+  </a>
+  
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 306px;">
+  <div style="position: relative">
+    <img src="/post/cntopic/featured_hu6642974bf16ed882bf8486f57a8a55c3_67243_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2>目录</h2>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cntopic">cntopic</a></li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#使用">使用</a></li>
+    <li><a href="#1-读取文件">1. 读取文件</a></li>
+    <li><a href="#2-准备数据">2. 准备数据</a></li>
+    <li><a href="#3-训练lda模型">3. 训练lda模型</a></li>
+    <li><a href="#4-使用lda模型">4. 使用LDA模型</a>
+      <ul>
+        <li><a href="#41-准备document">4.1 准备document</a></li>
+        <li><a href="#42-预测document对应的话题">4.2 预测document对应的话题</a></li>
+        <li><a href="#43-显示每种话题与对应的特征词之间关系">4.3 显示每种话题与对应的特征词之间关系</a></li>
+        <li><a href="#44-话题分布情况">4.4 话题分布情况</a></li>
+        <li><a href="#45-可视化功能不稳定">4.5 可视化（功能不稳定）</a></li>
+      </ul>
+    </li>
+    <li><a href="#五存储与导入lda模型">五、存储与导入lda模型</a>
+      <ul>
+        <li><a href="#如果">如果</a></li>
+        <li><a href="#更多">更多</a></li>
+        <li><a href="#支持">支持</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<br>
+<br>
+<h1 id="cntopic">cntopic</h1>
+<p>简单好用的lda话题模型，支持中英文。该库基于gensim和pyLDAvis，实现了lda话题模型及可视化功能。</p>
+<iframe
+    src="//player.bilibili.com/player.html?bvid=BV1m54y1B7F9&page=1"
+    scrolling="no"
+    height="768px"
+    width="1024px"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+>
+</iframe>
+
+<p><br><br></p>
+<h1 id="安装">安装</h1>
+<pre><code class="language-python">pip install cntopic
+</code></pre>
+<p><br><br></p>
+<h1 id="使用">使用</h1>
+<p>这里给大家引入一个场景，假设大家采集新闻数据，忘记采集新闻文本对应的新闻类别，如果人工标注又很费工夫。这时候我们可以用lda话题模型帮我们洞察数据中的规律，发现新闻有n种话题群体。这样lda模型对数据自动打标注topic_1, topic_2, topic_3&hellip; ,topic_n。</p>
+<p>我们研究者的工作量仅仅限于解读topic_1, topic_2, topic_3&hellip; ,topic_n分别是什么话题即可。</p>
+<p>lda训练过程，大致分为</p>
+<ol>
+<li>读取文件</li>
+<li>准备数据</li>
+<li>训练lda模型</li>
+<li>使用lda模型</li>
+<li>存储与导入lda模型</li>
+</ol>
+<p><br><br></p>
+<h1 id="1-读取文件">1. 读取文件</h1>
+<p>这里我们用一个新闻数据,一共有10类，每类1000条数据，涵盖</p>
+<p>&lsquo;时尚&rsquo;, &lsquo;财经&rsquo;, &lsquo;科技&rsquo;, &lsquo;教育&rsquo;, &lsquo;家居&rsquo;, &lsquo;体育&rsquo;, &lsquo;时政&rsquo;, &lsquo;游戏&rsquo;, &lsquo;房产&rsquo;, &lsquo;娱乐&rsquo;</p>
+<pre><code class="language-python">import pandas as pd
+
+df = pd.read_csv('chinese_news.csv')
+df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>体育</td>
+      <td>鲍勃库西奖归谁属？ NCAA最强控卫是坎巴还是弗神新浪体育讯如今，本赛季的NCAA进入到了末...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>体育</td>
+      <td>麦基砍28+18+5却充满寂寞 纪录之夜他的痛阿联最懂新浪体育讯上天对每个人都是公平的，贾维...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>体育</td>
+      <td>黄蜂vs湖人首发：科比冲击七连胜 火箭两旧将登场新浪体育讯北京时间3月28日，NBA常规赛洛...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>体育</td>
+      <td>双面谢亚龙作秀终成做作 谁来为低劣行政能力埋单是谁任命了谢亚龙？谁放纵了谢亚龙？谁又该为谢亚...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>体育</td>
+      <td>兔年首战山西换帅后有虎胆 张学文用乔丹名言励志今晚客场挑战浙江稠州银行队，是山西汾酒男篮的兔...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>label标签的分布情况</p>
+<pre><code class="language-python">df['label'].value_counts()
+</code></pre>
+<pre><code>家居    1000
+时尚    1000
+房产    1000
+时政    1000
+教育    1000
+游戏    1000
+财经    1000
+娱乐    1000
+体育    1000
+科技    1000
+Name: label, dtype: int64
+</code></pre>
+<p><br><br></p>
+<h1 id="2-准备数据">2. 准备数据</h1>
+<p>一般准备数据包括:</p>
+<ol>
+<li>分词、数据清洗</li>
+<li>按照模块需求整理数据的格式</li>
+</ol>
+<p>注意在scikit-learn中:</p>
+<ul>
+<li>英文文本不需要分词，原封不动传入即可。</li>
+<li>中文文本需要先分词，后整理为英文那样用空格间隔的字符串。形如”我 爱 中国“</li>
+</ul>
+<pre><code class="language-python">import jieba
+
+def text2tokens(raw_text):
+    #将文本raw_text分词后得到词语列表
+    tokens = jieba.lcut(raw_text)
+    #tokens = raw_text.lower().split(' ') #英文用空格分词即可
+    tokens = [t for t in tokens if len(t)&gt;1] #剔除单字
+    return tokens
+
+#对content列中所有的文本依次进行分词
+documents = [text2tokens(txt) 
+             for txt in df['content']]  
+
+#显示前5个document
+print(documents[:5])
+</code></pre>
+<pre><code>[['鲍勃', '库西', '奖归', 'NCAA', '最强', '控卫', '坎巴', '还是', '弗神', '新浪', '体育讯', '称赞', '得分', '能力', '毋庸置疑',...],
+['球员', '大东', '赛区', '锦标赛', '全国', '锦标赛', '他场', '27.1', '6.1', '篮板', '5.1', '助攻',..],
+['依旧', '如此', '给力', '疯狂', '表现', '开始', '这个', '赛季', '疯狂', '表现', '结束', '这个', '赛季', '我们', '全国', '锦标赛', '前进', '并且', '之前', '曾经', '连赢', '赢得', '大东', ...],
+['赛区', '锦标赛', '冠军', '这些', '归功于', '坎巴', '沃克', '康涅狄格', '大学', '主教练', '吉姆', '卡洪', ...],
+['称赞', '一名', '纯正', '控卫', '而且', '能为', '我们', '得分', '单场', '42', '有过', '单场', '17', '助攻', ...]]
+</code></pre>
+<p><br><br></p>
+<h1 id="3-训练lda模型">3. 训练lda模型</h1>
+<p>现在开始正式使用cntopic模块，开启LDA话题模型分析。步骤包括</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th align="left">功能</th>
+<th align="left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td align="left">准备documents，已经在前面准备好了</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td>1</td>
+<td align="left">初始化Topic类</td>
+<td align="left">topic = Topic(cwd=os.getcwd())</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="left">根据documents数据，构建词典空间</td>
+<td align="left">topic.create_dictionary(documents=documents)</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="left">构建语料(将文本转为文档-词频矩阵)</td>
+<td align="left">topic.create_corpus(documents=documents)</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="left">指定n_topics，构建LDA话题模型</td>
+<td align="left">topic.train_lda_model(n_topics)</td>
+</tr>
+</tbody>
+</table>
+<p>这里我们就按照n_topics=10构建lda话题模型，一般情况n_topics可能要实验多次，找到最佳的n_topics</p>
+<p><img src="img/test.png" alt=""></p>
+<p>运行过程中会在代码所在的文件夹内生成一个output文件夹，内部含有</p>
+<ul>
+<li>dictionary.dict 词典文件</li>
+<li>lda.model.xxx 多个lda模型文件，其中xxx是代指</li>
+</ul>
+<p><img src="img/output.png" alt=""></p>
+<p><img src="img/model.png" alt=""></p>
+<p>上述代码耗时较长，请耐心等待程序运行完毕~</p>
+<pre><code class="language-python">import os
+from cntopic import Topic
+
+topic = Topic(cwd=os.getcwd()) #构建词典dictionary
+topic.create_dictionary(documents=documents) #根据documents数据，构建词典空间
+topic.create_corpus(documents=documents) #构建语料(将文本转为文档-词频矩阵)
+topic.train_lda_model(n_topics=10) #指定n_topics，构建LDA话题模型
+</code></pre>
+<pre><code>&lt;gensim.models.ldamulticore.LdaMulticore at 0x158da5090&gt;
+</code></pre>
+<p><br><br></p>
+<h1 id="4-使用lda模型">4. 使用LDA模型</h1>
+<p>上面的代码大概运行了5分钟，LDA模型已经训练好了。</p>
+<p>现在我们可以利用LDA做一些事情，包括</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th align="left">功能</th>
+<th align="left">代码</th>
+<th align="left">补充</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td align="left">分词后的某文档</td>
+<td align="left">document = [&lsquo;游戏&rsquo;, &lsquo;体育&rsquo;]</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>2</td>
+<td align="left">预测document对应的话题</td>
+<td align="left">topic.get_document_topics(document)</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>3</td>
+<td align="left">显示每种话题与对应的特征词之间关系</td>
+<td align="left">topic.show_topics()</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>4</td>
+<td align="left">数据中不同话题分布情况</td>
+<td align="left">topic.topic_distribution(raw_documents)</td>
+<td align="left">raw_documents是列表或series，如本教程中的df[&lsquo;content&rsquo;]</td>
+</tr>
+<tr>
+<td>5</td>
+<td align="left">可视化LDA话题模型（<strong>功能不稳定</strong>）</td>
+<td align="left">topic.visualize_lda()</td>
+<td align="left">可视化结果在output中查找vis.html文件，浏览器打开即可</td>
+</tr>
+</tbody>
+</table>
+<h2 id="41-准备document">4.1 准备document</h2>
+<p>假设有一个文档 <code>'游戏体育真有意思'</code> 分词处理得到document</p>
+<pre><code class="language-python">document = jieba.lcut('游戏体育真有意思')
+document
+</code></pre>
+<pre><code>['游戏', '体育', '真', '有意思']
+</code></pre>
+<h2 id="42-预测document对应的话题">4.2 预测document对应的话题</h2>
+<p>我们使用topic模型，看看document对应的话题</p>
+<pre><code class="language-python">topic.get_document_topics(document)
+</code></pre>
+<pre><code>[(0, 0.02501536),
+ (1, 0.025016038),
+ (2, 0.28541195),
+ (3, 0.025018401),
+ (4, 0.025018891),
+ (5, 0.025017735),
+ (6, 0.51443774),
+ (7, 0.02502284),
+ (8, 0.025015472),
+ (9, 0.025025582)]
+</code></pre>
+<p>我们的lda话题模型是按照n_topics=10训练的，限制调用topic预测某个document时，得到的结果是这10种话题及对应概率的元组列表。</p>
+<p>从中可以看到概率最大的是 <code>话题6</code>， 概率有0.51443774。</p>
+<p>所以我们可以大致认为document是话题6</p>
+<h2 id="43-显示每种话题与对应的特征词之间关系">4.3 显示每种话题与对应的特征词之间关系</h2>
+<p>但是仅仅告诉每个文档是 <code>话题n</code>，我们仍然不知道 <code>话题n</code>代表的是什么，所以我们需要看看每种 <code>话题n</code>对应的 <code>特征词语</code>。</p>
+<pre><code class="language-python">topic.show_topics()
+</code></pre>
+<pre><code>[(0,
+  '0.042*&quot;基金&quot; + 0.013*&quot;市场&quot; + 0.011*&quot;投资&quot; + 0.009*&quot;公司&quot; + 0.005*&quot;上涨&quot; + 0.004*&quot;股票&quot; + 0.004*&quot;房地产&quot; + 0.004*&quot;指数&quot; + 0.004*&quot;房价&quot; + 0.004*&quot;2008&quot;'),
+ (1,
+  '0.010*&quot;中国&quot; + 0.007*&quot;移民&quot; + 0.006*&quot;项目&quot; + 0.005*&quot;发展&quot; + 0.005*&quot;表示&quot; + 0.005*&quot;经济&quot; + 0.005*&quot;政府&quot; + 0.005*&quot;土地&quot; + 0.004*&quot;政策&quot; + 0.004*&quot;问题&quot;'),
+ (2,
+  '0.014*&quot;比赛&quot; + 0.009*&quot;他们&quot; + 0.008*&quot;球队&quot; + 0.007*&quot;篮板&quot; + 0.006*&quot;我们&quot; + 0.005*&quot;球员&quot; + 0.005*&quot;季后赛&quot; + 0.005*&quot;时间&quot; + 0.005*&quot;热火&quot; + 0.005*&quot;赛季&quot;'),
+ (3,
+  '0.013*&quot;我们&quot; + 0.013*&quot;一个&quot; + 0.009*&quot;自己&quot; + 0.009*&quot;这个&quot; + 0.007*&quot;没有&quot; + 0.007*&quot;他们&quot; + 0.006*&quot;可以&quot; + 0.006*&quot;就是&quot; + 0.006*&quot;很多&quot; + 0.006*&quot;记者&quot;'),
+ (4,
+  '0.020*&quot;电影&quot; + 0.010*&quot;导演&quot; + 0.009*&quot;微博&quot; + 0.008*&quot;影片&quot; + 0.006*&quot;观众&quot; + 0.006*&quot;一个&quot; + 0.005*&quot;自己&quot; + 0.005*&quot;票房&quot; + 0.004*&quot;拍摄&quot; + 0.004*&quot;娱乐&quot;'),
+ (5,
+  '0.018*&quot;学生&quot; + 0.015*&quot;留学&quot; + 0.008*&quot;大学&quot; + 0.008*&quot;可以&quot; + 0.006*&quot;功能&quot; + 0.006*&quot;像素&quot; + 0.006*&quot;拍摄&quot; + 0.006*&quot;采用&quot; + 0.005*&quot;学校&quot; + 0.005*&quot;申请&quot;'),
+ (6,
+  '0.007*&quot;玩家&quot; + 0.006*&quot;封神&quot; + 0.006*&quot;手机&quot; + 0.006*&quot;online&quot; + 0.006*&quot;the&quot; + 0.006*&quot;游戏&quot; + 0.005*&quot;陈水扁&quot; + 0.005*&quot;活动&quot; + 0.005*&quot;to&quot; + 0.005*&quot;一个&quot;'),
+ (7,
+  '0.009*&quot;信息&quot; + 0.009*&quot;考试&quot; + 0.009*&quot;游戏&quot; + 0.007*&quot;工作&quot; + 0.007*&quot;手机&quot; + 0.006*&quot;四六级&quot; + 0.006*&quot;考生&quot; + 0.005*&quot;发展&quot; + 0.004*&quot;可以&quot; + 0.004*&quot;霸王&quot;'),
+ (8,
+  '0.015*&quot;我们&quot; + 0.011*&quot;企业&quot; + 0.011*&quot;产品&quot; + 0.010*&quot;市场&quot; + 0.009*&quot;家具&quot; + 0.009*&quot;品牌&quot; + 0.008*&quot;消费者&quot; + 0.007*&quot;行业&quot; + 0.007*&quot;中国&quot; + 0.007*&quot;一个&quot;'),
+ (9,
+  '0.012*&quot;游戏&quot; + 0.011*&quot;玩家&quot; + 0.010*&quot;可以&quot; + 0.008*&quot;搭配&quot; + 0.008*&quot;活动&quot; + 0.006*&quot;时尚&quot; + 0.005*&quot;OL&quot; + 0.004*&quot;获得&quot; + 0.004*&quot;任务&quot; + 0.004*&quot;手机&quot;')]
+</code></pre>
+<p>根据上面的 <code>话题n</code> 与 <code>特征词</code> 大致可以解读每个 <code>话题n</code> 是什么内容的话题。</p>
+<h2 id="44-话题分布情况">4.4 话题分布情况</h2>
+<p>现在我们想知道数据集中不同 <code>话题n</code> 的分布情况</p>
+<pre><code class="language-python">topic.topic_distribution(raw_documents=df['content'])
+</code></pre>
+<pre><code>9    1670
+1    1443
+0    1318
+5    1265
+4    1015
+2     970
+8     911
+3     865
+7     307
+6     236
+Name: topic, dtype: int64
+</code></pre>
+<p>我们的数据有10类，每类是1000条。而现在LDA话题模型单纯的根据文本的一些线索，按照n_topics=10给我们分出的效果还不错。</p>
+<p>最完美的情况是每个 <code>话题n</code> 都是接近1000, 现在 <code>话题9</code>太多， <code>话题6、 话题7</code>太少。</p>
+<p>不过我们也要注意到某些话题可能存在交集，容易分错，比如</p>
+<ul>
+<li>财经、房产、时政</li>
+<li>体育娱乐</li>
+<li>财经、科技</li>
+</ul>
+<p>等</p>
+<p>综上，目前模型还算可以，表现还能接受。</p>
+<h2 id="45-可视化功能不稳定">4.5 可视化（功能不稳定）</h2>
+<p>现在只有10个话题， 我们用肉眼看还能接受，但是当话题数太多的时，还是借助可视化工具帮助我们科学评判训练结果。</p>
+<p>这就用到topic.visualize_lda()，</p>
+<pre><code class="language-python">topic.visualize_lda()
+</code></pre>
+<p>运行结束后在</p>
+<p><code>代码所在的文件夹output文件夹中找vis.html文件，右键浏览器打开</code>。</p>
+<p><strong>可视化功能不稳定，存在vis.html打不开的情况；希望海涵</strong></p>
+<p><img src="img/vis.gif" alt=""></p>
+<p>图中有左右两大区域</p>
+<ul>
+<li>左侧  话题分布情况，圆形越大话题越多，圆形四散在四个象限</li>
+<li>右侧  某话题对应的特征词，从上到下权重越来越低</li>
+</ul>
+<p>需要注意的是左侧</p>
+<ul>
+<li>尽量圆形均匀分布在四个象限比较好，如果圆形全部集中到有限的区域，模型训练不好</li>
+<li>圆形与圆形交集较少比较好，如果交集太多，说明n_topics设置的太大，应该设置的再小一些</li>
+</ul>
+<p><br><br></p>
+<h1 id="五存储与导入lda模型">五、存储与导入lda模型</h1>
+<p>lda话题模型训练特别慢，如果不保存训练好的模型，实际上是在浪费我们的生命和电脑计算力。</p>
+<p>好消息是cntopic默认为大家存储模型，存储地址是output文件夹内，大家只需要知道如何导入模型即可。</p>
+<p>这里需要导入的有两个模型，使用步骤</p>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>模型</th>
+<th>代码</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>-</td>
+<td>-</td>
+<td>准备documents</td>
+</tr>
+<tr>
+<td>1</td>
+<td>-</td>
+<td>topic = Topic(cwd=os.getcwd())</td>
+<td>初始化</td>
+</tr>
+<tr>
+<td>2</td>
+<td>词典</td>
+<td>topic.load_dictionary(dictpath='output/dictionary.dict&rsquo;)</td>
+<td>直接导入词典，省略topic.create_dictionary()</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-</td>
+<td>topic.create_corpus(documents=documents)</td>
+<td>构建语料(将文本转为文档-词频矩阵)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>lda话题模型</td>
+<td>topic.load_lda_model(modelpath='output/model/lda.model&rsquo;)</td>
+<td>导入lda话题模型， 相当于省略topic.train_lda_model(n_topics)</td>
+</tr>
+</tbody>
+</table>
+<p>现在我们试一试, 为了与之前的区分，这里我们起名topic2</p>
+<pre><code class="language-python">topic2 = Topic(cwd=os.getcwd())
+topic2.load_dictionary(dictpath='output/dictionary.dict')
+topic2.create_corpus(documents=documents)
+topic2.load_lda_model(modelpath='output/model/lda.model')
+</code></pre>
+<p>大家可以自己回去试一试第4部分<code>使用LDA模型</code>的相关功能</p>
+<p><br><br></p>
+<h2 id="如果">如果</h2>
+<p>如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+<a href="https://ke.qq.com/course/482241?tuin=163164df" target="_blank" rel="noopener">《python网络爬虫与文本数据分析》</a>视频课。</p>
+<ul>
+<li>python入门</li>
+<li>网络爬虫</li>
+<li>数据读取</li>
+<li>文本分析入门</li>
+<li>机器学习与文本分析</li>
+<li>文本分析在经管研究中的应用</li>
+</ul>
+<p>感兴趣的童鞋不妨 戳一下
+<a href="https://ke.qq.com/course/482241?tuin=163164df" target="_blank" rel="noopener">《python网络爬虫与文本数据分析》</a>进来看看~</p>
+<p><br><br></p>
+<h2 id="更多">更多</h2>
+<ul>
+<li>
+<a href="https://space.bilibili.com/122592901/channel/detail?cid=66008" target="_blank" rel="noopener">B站</a></li>
+<li>公众号：大邓和他的python</li>
+<li>
+<a href="https://www.zhihu.com/people/deng-xu-dong-hit" target="_blank" rel="noopener">知乎</a></li>
+<li>
+<a href="https://github.com/thunderhit" target="_blank" rel="noopener">github</a></li>
+</ul>
+<p><br><br></p>
+<h2 id="支持">支持</h2>
+<p>分享不易，谢谢大家点赞分享和红包^_^</p>
+<p><img src="img/my_zanshang_qrcode.jpg" alt=""></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/">文本分析</a>
+  
+  <a class="badge badge-light" href="/tag/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+  
+  <a class="badge badge-light" href="/tag/python%E5%BA%93/">python库</a>
+  
+  <a class="badge badge-light" href="/tag/lda%E8%AF%9D%E9%A2%98%E6%A8%A1%E5%9E%8B/">LDA话题模型</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://thunderhit.github.io/post/cntopic/&amp;text=cntopic:%20%e4%b8%ad%e6%96%87LDA%e8%af%9d%e9%a2%98%e6%a8%a1%e5%9e%8b" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://thunderhit.github.io/post/cntopic/&amp;t=cntopic:%20%e4%b8%ad%e6%96%87LDA%e8%af%9d%e9%a2%98%e6%a8%a1%e5%9e%8b" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=cntopic:%20%e4%b8%ad%e6%96%87LDA%e8%af%9d%e9%a2%98%e6%a8%a1%e5%9e%8b&amp;body=https://thunderhit.github.io/post/cntopic/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://thunderhit.github.io/post/cntopic/&amp;title=cntopic:%20%e4%b8%ad%e6%96%87LDA%e8%af%9d%e9%a2%98%e6%a8%a1%e5%9e%8b" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=cntopic:%20%e4%b8%ad%e6%96%87LDA%e8%af%9d%e9%a2%98%e6%a8%a1%e5%9e%8b%20https://thunderhit.github.io/post/cntopic/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://thunderhit.github.io/post/cntopic/&amp;title=cntopic:%20%e4%b8%ad%e6%96%87LDA%e8%af%9d%e9%a2%98%e6%a8%a1%e5%9e%8b" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>相关</h3>
+    <ul>
+      
+      <li><a href="/project/cntopic/">cntopic:快速构建不同领域(手机、汽车等)的情感词典</a></li>
+      
+      <li><a href="/post/pdfdocx/">pdfdocx: 用python读取pdf和docx文件数据</a></li>
+      
+      <li><a href="/post/eventextraction/">eventextraction: 快速构建不同领域(手机、汽车等)的情感词典</a></li>
+      
+      <li><a href="/post/simtext/">simtext: 计算两文档间四大文本相似性指标</a></li>
+      
+      <li><a href="/post/cnsenti/">cnsenti库:简单易用的中文情感分析库</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲",
+        'slides' : "演示文稿"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

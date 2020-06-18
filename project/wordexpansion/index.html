@@ -1,0 +1,1368 @@
+<!DOCTYPE html><html lang="zh-Hans" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="大邓">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="快速构建不同领域(手机、汽车等)的情感词典">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://thunderhit.github.io/project/wordexpansion/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://thunderhit.github.io/project/wordexpansion/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Thunderhit">
+  <meta property="og:url" content="https://thunderhit.github.io/project/wordexpansion/">
+  <meta property="og:title" content="wordexpansion库 | Thunderhit">
+  <meta property="og:description" content="快速构建不同领域(手机、汽车等)的情感词典"><meta property="og:image" content="https://thunderhit.github.io/project/wordexpansion/featured.jpg">
+  <meta property="twitter:image" content="https://thunderhit.github.io/project/wordexpansion/featured.jpg"><meta property="og:locale" content="zh-Hans">
+  
+    
+      <meta property="article:published_time" content="2020-05-15T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-05-15T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thunderhit.github.io/project/wordexpansion/"
+  },
+  "headline": "wordexpansion库",
+  
+  "image": [
+    "https://thunderhit.github.io/project/wordexpansion/featured.jpg"
+  ],
+  
+  "datePublished": "2020-05-15T00:00:00Z",
+  "dateModified": "2020-05-15T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "大邓"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Thunderhit",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "快速构建不同领域(手机、汽车等)的情感词典"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>wordexpansion库 | Thunderhit</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/authors/"><span>Authors</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#skills"><span>Skills</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Packages</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post"><span>Articles</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tags"><span>Topics</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article article-project">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>wordexpansion库</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2020-05-15
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/python%E5%BA%93/">python库</a>, <a href="/category/%E6%95%99%E7%A8%8B/">教程</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/thunderhit/wordexpansion" target="_blank" rel="noopener">
+    <i class="fab fa-fa-github mr-1"></i>
+    Follow
+  </a>
+
+
+</div>
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 306px;">
+  <div style="position: relative">
+    <img src="/project/wordexpansion/featured_hu6642974bf16ed882bf8486f57a8a55c3_66808_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <blockquote>
+<p>README.md为本人所写，代码底层完全为刘焕勇设计。</p>
+<p>大邓项目地址https://github.com/thunderhit/wordexpansion</p>
+<p>原项目(刘焕勇)地址https://github.com/liuhuanyong/SentimentWordExpansion</p>
+</blockquote>
+<h1 id="一项目意义">一、项目意义</h1>
+<p>情感分析大多是基于情感词典对文本数据进行分析，所以情感词典好坏、是否完备充足是文本分析的关键。</p>
+<p>目前常用的词典都是基于形容词，有</p>
+<ul>
+<li>知网HowNet</li>
+<li>大连理工大学情感本体库</li>
+</ul>
+<p>但是形容词类型的词典在某些情况下不适用，比如</p>
+<p><strong>华为手机外壳采用金属制作，更耐摔</strong></p>
+<p>由于句子中没有形容词，使用形容词情感词典计算得到的情感得分为0。但是<strong>耐摔</strong>这个动词具有<strong>正面积极情绪</strong>，这个句子的情感的分理应为<strong>正</strong></p>
+<p>可见能够简单快速构建不同领域(手机、汽车等)的情感词典十分重要。但是人工构建太慢，如果让机器帮我们把最有可能带情感的候选词找出来，人工再去筛选构建词典，那该多好啊。那么如何构建呢？</p>
+<p><br><br></p>
+<h1 id="二构建方法">二、构建方法</h1>
+<p>计算机领域有一个算法叫做SO_PMI，互信息。简单的讲个体之间不是完全独立的，往往物以类聚，人以群分。如果我们一开始设定少量的</p>
+<ul>
+<li>初始正面种子词</li>
+<li>初始负面种子词</li>
+</ul>
+<p>程序会按照“物以类聚人以群分”的思路，</p>
+<ul>
+<li>根据<strong>初始正面种子词</strong>找到很多大概率为<strong>正面情感的候选词</strong></li>
+<li>根据<strong>初始负种子词</strong>找到很多大概率为<strong>负面情感的候选词</strong></li>
+</ul>
+<p>这个包原始作者刘焕勇，项目地址https://github.com/liuhuanyong/SentimentWordExpansion 我仅仅做了简单的封装</p>
+<p><br><br></p>
+<h1 id="三安装">三、安装</h1>
+<h3 id="21-方法一">2.1 方法一</h3>
+<p>最简单的安装,现在由于国内外网络不稳定，运气不好可能需要尝试几次</p>
+<pre><code>pip3 install wordexpansion
+</code></pre>
+<h3 id="22-加镜像站点">2.2 加镜像站点</h3>
+<p>有的童鞋已经把pip默认安装镜像站点改为国内，如果国内镜像还未收录我的这个包，那么可能会安装失败。只能从国外https://pypi.org/simple站点搜索wordexpansion资源并安装</p>
+<pre><code>pip3 install wordexpansion -i https://pypi.org/simple
+</code></pre>
+<h3 id="23-国内镜像安装">2.3 国内镜像安装</h3>
+<p>如果国内镜像站点已经收录，那么使用这个会更快</p>
+<pre><code>pip3 install wordexpansion -i https://pypi.tuna.tsinghua.edu.cn/simple/
+</code></pre>
+<p><br><br></p>
+<h1 id="四使用方法">四、使用方法</h1>
+<h3 id="41-文件目录">4.1 文件目录</h3>
+<p>所有的txt文件，不论输入的还是程序输出的结果，均采用utf-8编码。</p>
+<pre><code>|--test                           #情感词典扩展与构建测试文件夹
+     |--find_newwords.py          #测试代码
+     |--test_corpus.txt           #语料（某领域）文本数据，5.5M
+     |--test_seed_words.txt       #情感种子词，需要手动构建
+      
+     |--neg_candi.txt             #find_newwords.py运行后发现的负面候选词
+     |--pos_candi.txt             #find_newwords.py运行后发现的正面候选词
+
+</code></pre>
+<p>完整项目请移步至https://github.com/thunderhit/wordexpansion</p>
+<h3 id="42-构建种子词">4.2 构建种子词</h3>
+<p>可能我们希望的情感词典几万个，但是种子词100个（正面词50个，负面词50个）说不定就可以。</p>
+<p>手动构建的种子词典<strong>test_seed_words.txt</strong>(编码encoding为utf-8)中</p>
+<ul>
+<li>每行一个词</li>
+<li>每个词用neg或pos标记</li>
+<li>词与标记用空格间隔</li>
+</ul>
+<pre><code>休克	neg
+如出一辙	neg
+渴求	neg
+扎堆	neg
+休整	neg
+关门	neg
+阴晴不定	neg
+喜忧参半	neg
+起起伏伏	neg
+一厢情愿	neg
+松紧	neg
+最全	pos
+雄风	pos
+稳健	pos
+稳定	pos
+拉平	pos
+保供	pos
+修正	pos
+稳	pos
+稳住	pos
+保养	pos
+...
+...
+</code></pre>
+<h3 id="42-准备发现情感新词">4.2 准备发现情感新词</h3>
+<p>已经安装好了<strong>wordexpansion</strong>，现在我们新建一个名为<strong>find_newwords.py</strong>的测试代码</p>
+<p>代码中的</p>
+<pre><code class="language-python">from wordexpansion import ChineseSoPmi
+
+sopmier = ChineseSoPmi(inputtext_file='test_corpus.txt',
+                       seedword_txtfile='test_seed_words.txt',
+                       pos_candi_txt_file='pos_candi.txt',
+                       neg_candi_txtfile='neg_candi.txt')
+sopmier.sopmi()
+</code></pre>
+<p>我们的语料数据<strong>test_corpus.txt</strong> 文件5.5M，100个候选词，运行程序大概耗时60s</p>
+<h3 id="43-输出的结果">4.3 输出的结果</h3>
+<p><strong>find_newwords.py</strong>运行结束后，会在**同文件夹内(find_newwords.py所在的文件夹)**发现有两个新的txt文件</p>
+<ul>
+<li>pos_candi.txt</li>
+<li>neg_candi.txt</li>
+</ul>
+<p>打开<strong>pos_candi.txt</strong>, 我们看到</p>
+<pre><code>word,sopmi,polarity,word_length,postag
+保持,87.28493062512524,pos,2,v
+风险,70.15627986116269,pos,2,n
+货币政策,66.28476448498694,pos,4,n
+发展,64.40272795986517,pos,2,vn
+不要,63.71800916752807,pos,2,df
+理念,61.2024367757337,pos,2,n
+整体,59.415315156715586,pos,2,n
+下,59.321140440512984,pos,1,f
+引导,58.5817208758171,pos,2,v
+投资,57.71720491331896,pos,2,vn
+加强,57.067969337267684,pos,2,v
+自己,53.25503772499689,pos,2,r
+提升,52.80686380719989,pos,2,v
+和,52.12334472663675,pos,1,c
+稳步,51.58193211655792,pos,2,d
+重要,51.095865548255034,pos,2,a
+...
+</code></pre>
+<p>打开<strong>neg_candi.txt</strong>, 我们看到</p>
+<pre><code>word,sopmi,polarity,word_length,postag
+心灵,33.17993872989303,neg,2,n
+期间,31.77900620939178,neg,2,f
+西溪,30.87839808390589,neg,2,ns
+人事,29.594976229171877,neg,2,n
+复杂,29.47870186147108,neg,2,a
+直到,27.86014637934966,neg,2,v
+宰客,27.27304813428452,neg,2,nr
+保险,26.433136238404746,neg,2,n
+迎来,25.83859896903048,neg,2,v
+至少,25.105021416064616,neg,2,d
+融资,25.09148586460598,neg,2,vn
+或,24.48343281812743,neg,1,c
+列,22.20695894382675,neg,1,v
+存在,22.041049266517774,neg,2,v
+...
+</code></pre>
+<p>从上面的结果看，正面候选词较好，负面候选词有点差强人意。虽然差点，但节约了很多很多时间。</p>
+<p>现在电脑已经帮我们找出候选词，我们人类最擅长找毛病，对neg_candi.txt和pos_candi.txt我们人类只需要一个个挑毛病，把不带正负情感的词剔除掉。这样经过一段时间的剔除工作，针对具体研究领域的专业情感词典就构建出来了。</p>
+<p><br><br></p>
+<h1 id="五注意">五、注意：</h1>
+<ol>
+<li>so_pmi算法效果受训练语料影响，语料规模越大，效果越好</li>
+<li>so_pmi算法效率受训练语料影响，语料越大，训练越耗时。100个种子词，5M的数据，大约耗时62.679秒</li>
+<li>候选词的选择，可根据PMI值，词长，词性设定规则，进行筛选  </li>
+<li>所有的txt文件均采用utf-8编码，如果遇到UnicodeDetectorError: &lsquo;gbk&rsquo; codec。。请自行解决文件的encode问题。</li>
+</ol>
+<br>
+<h2 id="如果">如果</h2>
+<p>如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+<a href="https://ke.qq.com/course/482241?tuin=163164df" target="_blank" rel="noopener">《python网络爬虫与文本数据分析》</a>视频课。</p>
+<ul>
+<li>python入门</li>
+<li>网络爬虫</li>
+<li>数据读取</li>
+<li>文本分析入门</li>
+<li>机器学习与文本分析</li>
+<li>文本分析在经管研究中的应用</li>
+</ul>
+<p>感兴趣的童鞋不妨 戳一下
+<a href="https://ke.qq.com/course/482241?tuin=163164df" target="_blank" rel="noopener">《python网络爬虫与文本数据分析》</a>进来看看~</p>
+<br>
+<h2 id="更多">更多</h2>
+<ul>
+<li>
+<a href="https://space.bilibili.com/122592901/channel/detail?cid=66008" target="_blank" rel="noopener">B站</a></li>
+<li>公众号：大邓和他的python</li>
+<li>
+<a href="https://www.zhihu.com/people/deng-xu-dong-hit" target="_blank" rel="noopener">知乎</a></li>
+<li>[github](<a href="https://github.com/thunderhit">https://github.com/thunderhit</a>）</li>
+</ul>
+<br>
+<h2 id="支持">支持</h2>
+<p>分享不易，谢谢大家点赞分享和红包^_^</p>
+<p><img src="img/my_zanshang_qrcode.jpg" alt=""></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/">文本分析</a>
+  
+  <a class="badge badge-light" href="/tag/python%E5%BA%93/">python库</a>
+  
+  <a class="badge badge-light" href="/tag/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/">情感分析</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://thunderhit.github.io/project/wordexpansion/&amp;text=wordexpansion%e5%ba%93" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://thunderhit.github.io/project/wordexpansion/&amp;t=wordexpansion%e5%ba%93" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=wordexpansion%e5%ba%93&amp;body=https://thunderhit.github.io/project/wordexpansion/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://thunderhit.github.io/project/wordexpansion/&amp;title=wordexpansion%e5%ba%93" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=wordexpansion%e5%ba%93%20https://thunderhit.github.io/project/wordexpansion/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://thunderhit.github.io/project/wordexpansion/&amp;title=wordexpansion%e5%ba%93" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+    
+    
+    
+      
+    
+    
+    
+    <div class="media author-card content-widget-hr">
+      
+        
+        <img class="avatar mr-3 avatar-circle" src="/author/%E5%A4%A7%E9%82%93/avatar_hub1a932ecad1e9f051365858858ed9d18_107884_270x270_fill_q90_lanczos_center.jpg" alt="大邓">
+      
+
+      <div class="media-body">
+        <h5 class="card-title"><a href="https://thunderhit.github.io/">大邓</a></h5>
+        <h6 class="card-subtitle">在读博士</h6>
+        <p class="card-text">无才做力，少有斗志，既饶争时~ 有道理，安心搬砖吧(＃￣～￣＃)</p>
+        <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.zhihu.com/people/deng-xu-dong-hit" target="_blank" rel="noopener">
+        <i class="fab fa-zhihu"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/thunderhit" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+</ul>
+
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>相关</h3>
+    <ul>
+      
+      <li><a href="/post/cnsenti/">cnsenti库:简单易用的中文情感分析库</a></li>
+      
+      <li><a href="/project/cnsenti/">cnsenti库</a></li>
+      
+      <li><a href="/post/wordexpansion/">wordexpansion: 快速构建不同领域(手机、汽车等)的情感词典</a></li>
+      
+      <li><a href="/post/pdfdocx/">pdfdocx: 用python读取pdf和docx文件数据</a></li>
+      
+      <li><a href="/post/eventextraction/">eventextraction: 快速构建不同领域(手机、汽车等)的情感词典</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+    <div class="project-related-pages content-widget-hr">
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+    </div>
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲",
+        'slides' : "演示文稿"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

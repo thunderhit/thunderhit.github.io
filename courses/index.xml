@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thunderhit</title>
+    <link>https://thunderhit.github.io/courses/</link>
+      <atom:link href="https://thunderhit.github.io/courses/index.xml" rel="self" type="application/rss+xml" />
+    <description>Thunderhit</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Thunderhit</title>
+      <link>https://thunderhit.github.io/courses/</link>
+    </image>
+    
+    <item>
+      <title>Python网络爬虫与文本分析</title>
+      <link>https://thunderhit.github.io/courses/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/courses/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;br&gt;
+&lt;p&gt;在过去的两年间，Python一路高歌猛进，成功窜上“最火编程语言”的宝座。惊奇的是使用Python最多的人群其实不是程序员，而是数据科学家，尤其是社会科学家，涵盖的学科有经济学、管理学、会计学、社会学、传播学、新闻学等等。&lt;/p&gt;
+&lt;p&gt;大数据时代到来，网络数据正成为潜在宝藏，大量商业信息、社会信息以文本等非结构化、异构型数据格式存储于网页中。非计算机专业背景的人也可借助机器学习、人工智能等方法进行研究。使用网络世界数据进行研究，面临两大难点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数据的批量获取&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文本（非结构化）数据的处理与分析&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参照已发表的社科类文章，希望帮大家解决这两大难点。课程设计的初衷是用最少的时间让大家学到最有用最常用最易用的知识点，降低学习难度。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;课程目录&#34;&gt;课程目录&lt;/h1&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;第一节-课程简介&#34;&gt;第一节 课程简介&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;课程介绍&lt;/li&gt;
+&lt;li&gt;课程知识点分布情况&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第二节-环境配置&#34;&gt;第二节 环境配置&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Mac环境配置&lt;/li&gt;
+&lt;li&gt;Windows环境配置&lt;/li&gt;
+&lt;li&gt;pip安装问题解决办法&lt;/li&gt;
+&lt;li&gt;jupyter notebook使用方法&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第三节-python基本语法&#34;&gt;第三节 python基本语法&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;python跟英文一样也是一门语言，这很文科&lt;/li&gt;
+&lt;li&gt;字符串&lt;/li&gt;
+&lt;li&gt;列表&lt;/li&gt;
+&lt;li&gt;元组&lt;/li&gt;
+&lt;li&gt;字典&lt;/li&gt;
+&lt;li&gt;集合&lt;/li&gt;
+&lt;li&gt;if 条件语句&lt;/li&gt;
+&lt;li&gt;for循环语句&lt;/li&gt;
+&lt;li&gt;try-except异常处理语句&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第四节-python高级语法&#34;&gt;第四节 python高级语法&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;切片-对想要的数据字段进行切片&lt;/li&gt;
+&lt;li&gt;列表推导式&lt;/li&gt;
+&lt;li&gt;函数&lt;/li&gt;
+&lt;li&gt;csv文件存储库&lt;/li&gt;
+&lt;li&gt;os文件路径操作库&lt;/li&gt;
+&lt;li&gt;re正则表达式(文本分析利器)&lt;/li&gt;
+&lt;li&gt;python初学者常见错误&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第五节-网络爬虫原理&#34;&gt;第五节 网络爬虫原理&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;理解访问与请求&lt;/li&gt;
+&lt;li&gt;寻求网址规律&lt;/li&gt;
+&lt;li&gt;requests访问库&lt;/li&gt;
+&lt;li&gt;pyquery网页解析定位库&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第六节-网络爬虫实战&#34;&gt;第六节 网络爬虫实战&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;静态网站-天涯论坛&lt;/li&gt;
+&lt;li&gt;静态网站-大众点评&lt;/li&gt;
+&lt;li&gt;静态网站-boss直聘&lt;/li&gt;
+&lt;li&gt;动态网站-百度企业信用&lt;/li&gt;
+&lt;li&gt;动态网站-京东评论&lt;/li&gt;
+&lt;li&gt;动态网站-B站弹幕&lt;/li&gt;
+&lt;li&gt;动态网站-B站评论&lt;/li&gt;
+&lt;li&gt;如何用pandas采集网页中的表格数据&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第七节-初识文本分析&#34;&gt;第七节 初识文本分析&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;如何从不同格式的文件中读取数据&lt;/li&gt;
+&lt;li&gt;jieba分词、词频统计与可视化&lt;/li&gt;
+&lt;li&gt;海量公司年报的情感分析(中文)&lt;/li&gt;
+&lt;li&gt;英文数据的情感分析&lt;/li&gt;
+&lt;li&gt;如何对excel、csv文件做数据分析(pandas数据分析库)&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第八节-文本分析与机器学习&#34;&gt;第八节 文本分析与机器学习&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;机器学习概论&lt;/li&gt;
+&lt;li&gt;用机器学习做文本分析的步骤&lt;/li&gt;
+&lt;li&gt;机器学习库scikit-learn&lt;/li&gt;
+&lt;li&gt;文本特征工程(描述数据的方式)&lt;/li&gt;
+&lt;li&gt;在线评论情感分类&lt;/li&gt;
+&lt;li&gt;了解聚类Kmeans算法&lt;/li&gt;
+&lt;li&gt;文本相似度计算&lt;/li&gt;
+&lt;li&gt;LDA话题模型&lt;/li&gt;
+&lt;li&gt;计算消费者异质性(特征向量)&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用案例&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;购买方式&#34;&gt;购买方式&lt;/h1&gt;
+&lt;h3 id=&#34;1-腾讯课堂-录播课httpskeqqcomcourse482241tuin163164df&#34;&gt;1. 
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯课堂-录播课&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;大邓个人开课，不能开票报销&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2--小鹅通-直播课httplocalhost1313slidesslides网络爬虫文本分析&#34;&gt;2.  
+&lt;a href=&#34;http://localhost:1313/slides/slides%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e6%96%87%e6%9c%ac%e5%88%86%e6%9e%90/#/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;小鹅通-直播课&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;机构合作，可支持开票报销&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2020年6月29日~7月2日
+&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-现场工作坊&#34;&gt;3. 现场工作坊&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;机构合作，可支持开票报销&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;地点杭州，由于疫情原因，开展不了现场教学，时间待定~&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python自动化办公实战</title>
+      <link>https://thunderhit.github.io/courses/python%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8A%9E%E5%85%AC/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/courses/python%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8A%9E%E5%85%AC/</guid>
+      <description>&lt;br&gt;
+&lt;p&gt;很多职场人士想提高办公效率，python是一门很神奇的工具，ta可以帮我们职场人士做很多事情，尤其是在自动化办公领域，批量自动处理文件简直是职场人士的福音。自动化办公场景包括 excel、ppt、word等文件处理、邮件自动发送、网络爬虫（如数据采集、批量文件下载），这次我就来理一理 python 自动化办公的那些知识点。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;课程目录&#34;&gt;课程目录&lt;/h1&gt;
+&lt;h3 id=&#34;准备篇&#34;&gt;&lt;strong&gt;准备篇&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;想象力丰富的自动化场景&lt;/li&gt;
+&lt;li&gt;快速上手一个小案例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;简单文件处理篇&#34;&gt;&lt;strong&gt;简单文件处理篇&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;批量更改文件名&lt;/li&gt;
+&lt;li&gt;批量检索pdf、word&lt;/li&gt;
+&lt;li&gt;批量读取csv、excel&lt;/li&gt;
+&lt;li&gt;定制excel文件内单元格的格式&lt;/li&gt;
+&lt;li&gt;批量将txt汇总到一个excel中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;网络爬虫&#34;&gt;&lt;strong&gt;网络爬虫&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;网络爬虫原理&lt;/li&gt;
+&lt;li&gt;你的第一个爬虫&lt;/li&gt;
+&lt;li&gt;自动下载某网站的pdf&lt;/li&gt;
+&lt;li&gt;自动下载某网站的图片&lt;/li&gt;
+&lt;li&gt;自动下载某网站视频&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;报告报表自动化&#34;&gt;&lt;strong&gt;报告报表自动化&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;批量生成合同(word)&lt;/li&gt;
+&lt;li&gt;网店口碑可视化（词云图制作）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;邮件自动化&#34;&gt;&lt;strong&gt;邮件自动化&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;如何设置邮箱，让Python控制你的邮箱(163邮箱为例)&lt;/li&gt;
+&lt;li&gt;月底给员工自动群发工资条邮件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;生成图形界面篇&#34;&gt;&lt;strong&gt;生成图形界面篇&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;简单的图形界面设计&lt;/li&gt;
+&lt;li&gt;自动群发邮件软件的可视化窗口实现&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;购买方式&#34;&gt;购买方式&lt;/h1&gt;
+&lt;h3 id=&#34;腾讯课堂-python自动化办公实战httpskeqqcomcourse1524799tuin163164df&#34;&gt;
+&lt;a href=&#34;https://ke.qq.com/course/1524799?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯课堂-Python自动化办公实战&lt;/a&gt;&lt;/h3&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

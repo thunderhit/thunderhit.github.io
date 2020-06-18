@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>机器学习 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+      <atom:link href="https://thunderhit.github.io/tag/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <description>机器学习</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Mon, 29 Jun 2020 18:30:00 +0000</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>机器学习</title>
+      <link>https://thunderhit.github.io/tag/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+    </image>
+    
+    <item>
+      <title>Python＆Stata应用能力提升与实证前沿云特训</title>
+      <link>https://thunderhit.github.io/talk/example/</link>
+      <pubDate>Mon, 29 Jun 2020 18:30:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/talk/example/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>《Python数据挖掘与文本分析》培训介绍</title>
+      <link>https://thunderhit.github.io/slides/slides%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/slides/slides%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
+      <description>
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/img/backgroud-image.jpg&#34;
+  &gt;
+
+&lt;h1 id=&#34;python数据挖掘br与文本分析&#34;&gt;Python数据挖掘&lt;br&gt;与文本分析&lt;/h1&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;按Space键查看PPT&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;地点: 小鹅通云直播&lt;/li&gt;
+&lt;li&gt;时间: 2020年6月29号 ~ 7月2号&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;大数据时代br大家会遇到两大难题&#34;&gt;大数据时代，&lt;br&gt;大家会遇到两大难题:&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1.如何批量快速获取数据&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   2.如何处理分析非结构(多媒体)数据&lt;br&gt; 
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;这门python课解决了&#34;&gt;这门Python课解决了:&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1.入门Python语法&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   2.高效采集网络数据&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   3.非结构数据清洗与分析&lt;br&gt; 
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;课程亮点&#34;&gt;课程亮点&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1. 秉承20%时间学到80%常用易用知识&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   2. 理论+实战，每章节均穿插实战案例&lt;br&gt; 
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;python有什么优点&#34;&gt;Python有什么优点？&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1.语法简单&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   2.功能强大&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   3.免费开源&lt;br&gt; 
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;语法简洁&#34;&gt;语法简洁&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python是一种&amp;quot;说人话&amp;quot;的编程&amp;quot;语言&amp;rdquo;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+&lt;img src=&#34;img/code.png&#34; alt=&#34;&#34;&gt;
+&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;功能强大&#34;&gt;功能强大&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1.Web网站开发&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   2.自动化办公(运营)&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   3.数据分析&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   4.机器学习AI&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   4.游戏开发&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   5.等等 &lt;br&gt; 
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;python培训br含四大模块&#34;&gt;Python培训&lt;br&gt;含四大模块:&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;打通数据处理分析全流程&lt;br&gt;
+&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1.Python语法入门&lt;br&gt; 2.网络爬虫(数据采集)&lt;br&gt; 3.文本(数据)分析&lt;br&gt; 4.机器学习与文本分析&lt;br&gt;
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;报名咨询方式&#34;&gt;报名咨询方式&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;img/%E5%BE%AE%E4%BF%A1.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;培训有对应的录播课br点击下方蓝色链接直接购买br&#34;&gt;培训有对应的录播课，&lt;br&gt;点击下方蓝色链接直接购买&lt;br&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python网络爬虫与文本分析&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;thanks&#34;&gt;Thanks&lt;/h1&gt;
+&lt;hr&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cntopic: 中文LDA话题模型</title>
+      <link>https://thunderhit.github.io/post/cntopic/</link>
+      <pubDate>Tue, 16 Jun 2020 17:31:20 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/cntopic/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#cntopic&#34;&gt;cntopic&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#1-读取文件&#34;&gt;1. 读取文件&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#2-准备数据&#34;&gt;2. 准备数据&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#3-训练lda模型&#34;&gt;3. 训练lda模型&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#4-使用lda模型&#34;&gt;4. 使用LDA模型&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#41-准备document&#34;&gt;4.1 准备document&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#42-预测document对应的话题&#34;&gt;4.2 预测document对应的话题&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#43-显示每种话题与对应的特征词之间关系&#34;&gt;4.3 显示每种话题与对应的特征词之间关系&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#44-话题分布情况&#34;&gt;4.4 话题分布情况&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#45-可视化功能不稳定&#34;&gt;4.5 可视化（功能不稳定）&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#五存储与导入lda模型&#34;&gt;五、存储与导入lda模型&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#如果&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;cntopic&#34;&gt;cntopic&lt;/h1&gt;
+&lt;p&gt;简单好用的lda话题模型，支持中英文。该库基于gensim和pyLDAvis，实现了lda话题模型及可视化功能。&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1m54y1B7F9&amp;page=1&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pip install cntopic
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
+&lt;p&gt;这里给大家引入一个场景，假设大家采集新闻数据，忘记采集新闻文本对应的新闻类别，如果人工标注又很费工夫。这时候我们可以用lda话题模型帮我们洞察数据中的规律，发现新闻有n种话题群体。这样lda模型对数据自动打标注topic_1, topic_2, topic_3&amp;hellip; ,topic_n。&lt;/p&gt;
+&lt;p&gt;我们研究者的工作量仅仅限于解读topic_1, topic_2, topic_3&amp;hellip; ,topic_n分别是什么话题即可。&lt;/p&gt;
+&lt;p&gt;lda训练过程，大致分为&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;读取文件&lt;/li&gt;
+&lt;li&gt;准备数据&lt;/li&gt;
+&lt;li&gt;训练lda模型&lt;/li&gt;
+&lt;li&gt;使用lda模型&lt;/li&gt;
+&lt;li&gt;存储与导入lda模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;1-读取文件&#34;&gt;1. 读取文件&lt;/h1&gt;
+&lt;p&gt;这里我们用一个新闻数据,一共有10类，每类1000条数据，涵盖&lt;/p&gt;
+&lt;p&gt;&amp;lsquo;时尚&amp;rsquo;, &amp;lsquo;财经&amp;rsquo;, &amp;lsquo;科技&amp;rsquo;, &amp;lsquo;教育&amp;rsquo;, &amp;lsquo;家居&amp;rsquo;, &amp;lsquo;体育&amp;rsquo;, &amp;lsquo;时政&amp;rsquo;, &amp;lsquo;游戏&amp;rsquo;, &amp;lsquo;房产&amp;rsquo;, &amp;lsquo;娱乐&amp;rsquo;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+df = pd.read_csv(&#39;chinese_news.csv&#39;)
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;label&lt;/th&gt;
+      &lt;th&gt;content&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;体育&lt;/td&gt;
+      &lt;td&gt;鲍勃库西奖归谁属？ NCAA最强控卫是坎巴还是弗神新浪体育讯如今，本赛季的NCAA进入到了末...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;体育&lt;/td&gt;
+      &lt;td&gt;麦基砍28+18+5却充满寂寞 纪录之夜他的痛阿联最懂新浪体育讯上天对每个人都是公平的，贾维...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;体育&lt;/td&gt;
+      &lt;td&gt;黄蜂vs湖人首发：科比冲击七连胜 火箭两旧将登场新浪体育讯北京时间3月28日，NBA常规赛洛...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;体育&lt;/td&gt;
+      &lt;td&gt;双面谢亚龙作秀终成做作 谁来为低劣行政能力埋单是谁任命了谢亚龙？谁放纵了谢亚龙？谁又该为谢亚...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;体育&lt;/td&gt;
+      &lt;td&gt;兔年首战山西换帅后有虎胆 张学文用乔丹名言励志今晚客场挑战浙江稠州银行队，是山西汾酒男篮的兔...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;label标签的分布情况&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;label&#39;].value_counts()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;家居    1000
+时尚    1000
+房产    1000
+时政    1000
+教育    1000
+游戏    1000
+财经    1000
+娱乐    1000
+体育    1000
+科技    1000
+Name: label, dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2-准备数据&#34;&gt;2. 准备数据&lt;/h1&gt;
+&lt;p&gt;一般准备数据包括:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;分词、数据清洗&lt;/li&gt;
+&lt;li&gt;按照模块需求整理数据的格式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意在scikit-learn中:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;英文文本不需要分词，原封不动传入即可。&lt;/li&gt;
+&lt;li&gt;中文文本需要先分词，后整理为英文那样用空格间隔的字符串。形如”我 爱 中国“&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import jieba
+
+def text2tokens(raw_text):
+    #将文本raw_text分词后得到词语列表
+    tokens = jieba.lcut(raw_text)
+    #tokens = raw_text.lower().split(&#39; &#39;) #英文用空格分词即可
+    tokens = [t for t in tokens if len(t)&amp;gt;1] #剔除单字
+    return tokens
+
+#对content列中所有的文本依次进行分词
+documents = [text2tokens(txt) 
+             for txt in df[&#39;content&#39;]]  
+
+#显示前5个document
+print(documents[:5])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[[&#39;鲍勃&#39;, &#39;库西&#39;, &#39;奖归&#39;, &#39;NCAA&#39;, &#39;最强&#39;, &#39;控卫&#39;, &#39;坎巴&#39;, &#39;还是&#39;, &#39;弗神&#39;, &#39;新浪&#39;, &#39;体育讯&#39;, &#39;称赞&#39;, &#39;得分&#39;, &#39;能力&#39;, &#39;毋庸置疑&#39;,...],
+[&#39;球员&#39;, &#39;大东&#39;, &#39;赛区&#39;, &#39;锦标赛&#39;, &#39;全国&#39;, &#39;锦标赛&#39;, &#39;他场&#39;, &#39;27.1&#39;, &#39;6.1&#39;, &#39;篮板&#39;, &#39;5.1&#39;, &#39;助攻&#39;,..],
+[&#39;依旧&#39;, &#39;如此&#39;, &#39;给力&#39;, &#39;疯狂&#39;, &#39;表现&#39;, &#39;开始&#39;, &#39;这个&#39;, &#39;赛季&#39;, &#39;疯狂&#39;, &#39;表现&#39;, &#39;结束&#39;, &#39;这个&#39;, &#39;赛季&#39;, &#39;我们&#39;, &#39;全国&#39;, &#39;锦标赛&#39;, &#39;前进&#39;, &#39;并且&#39;, &#39;之前&#39;, &#39;曾经&#39;, &#39;连赢&#39;, &#39;赢得&#39;, &#39;大东&#39;, ...],
+[&#39;赛区&#39;, &#39;锦标赛&#39;, &#39;冠军&#39;, &#39;这些&#39;, &#39;归功于&#39;, &#39;坎巴&#39;, &#39;沃克&#39;, &#39;康涅狄格&#39;, &#39;大学&#39;, &#39;主教练&#39;, &#39;吉姆&#39;, &#39;卡洪&#39;, ...],
+[&#39;称赞&#39;, &#39;一名&#39;, &#39;纯正&#39;, &#39;控卫&#39;, &#39;而且&#39;, &#39;能为&#39;, &#39;我们&#39;, &#39;得分&#39;, &#39;单场&#39;, &#39;42&#39;, &#39;有过&#39;, &#39;单场&#39;, &#39;17&#39;, &#39;助攻&#39;, ...]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;3-训练lda模型&#34;&gt;3. 训练lda模型&lt;/h1&gt;
+&lt;p&gt;现在开始正式使用cntopic模块，开启LDA话题模型分析。步骤包括&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Step&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;代码&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;准备documents，已经在前面准备好了&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;初始化Topic类&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic = Topic(cwd=os.getcwd())&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;根据documents数据，构建词典空间&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.create_dictionary(documents=documents)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;构建语料(将文本转为文档-词频矩阵)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.create_corpus(documents=documents)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;指定n_topics，构建LDA话题模型&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.train_lda_model(n_topics)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;这里我们就按照n_topics=10构建lda话题模型，一般情况n_topics可能要实验多次，找到最佳的n_topics&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/test.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;运行过程中会在代码所在的文件夹内生成一个output文件夹，内部含有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;dictionary.dict 词典文件&lt;/li&gt;
+&lt;li&gt;lda.model.xxx 多个lda模型文件，其中xxx是代指&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;img/output.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/model.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;上述代码耗时较长，请耐心等待程序运行完毕~&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+from cntopic import Topic
+
+topic = Topic(cwd=os.getcwd()) #构建词典dictionary
+topic.create_dictionary(documents=documents) #根据documents数据，构建词典空间
+topic.create_corpus(documents=documents) #构建语料(将文本转为文档-词频矩阵)
+topic.train_lda_model(n_topics=10) #指定n_topics，构建LDA话题模型
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;gensim.models.ldamulticore.LdaMulticore at 0x158da5090&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;4-使用lda模型&#34;&gt;4. 使用LDA模型&lt;/h1&gt;
+&lt;p&gt;上面的代码大概运行了5分钟，LDA模型已经训练好了。&lt;/p&gt;
+&lt;p&gt;现在我们可以利用LDA做一些事情，包括&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Step&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;代码&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;补充&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;分词后的某文档&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;document = [&amp;lsquo;游戏&amp;rsquo;, &amp;lsquo;体育&amp;rsquo;]&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;预测document对应的话题&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.get_document_topics(document)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;显示每种话题与对应的特征词之间关系&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.show_topics()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;数据中不同话题分布情况&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.topic_distribution(raw_documents)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;raw_documents是列表或series，如本教程中的df[&amp;lsquo;content&amp;rsquo;]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;可视化LDA话题模型（&lt;strong&gt;功能不稳定&lt;/strong&gt;）&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.visualize_lda()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;可视化结果在output中查找vis.html文件，浏览器打开即可&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;41-准备document&#34;&gt;4.1 准备document&lt;/h2&gt;
+&lt;p&gt;假设有一个文档 &lt;code&gt;&#39;游戏体育真有意思&#39;&lt;/code&gt; 分词处理得到document&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;document = jieba.lcut(&#39;游戏体育真有意思&#39;)
+document
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;游戏&#39;, &#39;体育&#39;, &#39;真&#39;, &#39;有意思&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;42-预测document对应的话题&#34;&gt;4.2 预测document对应的话题&lt;/h2&gt;
+&lt;p&gt;我们使用topic模型，看看document对应的话题&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;topic.get_document_topics(document)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(0, 0.02501536),
+ (1, 0.025016038),
+ (2, 0.28541195),
+ (3, 0.025018401),
+ (4, 0.025018891),
+ (5, 0.025017735),
+ (6, 0.51443774),
+ (7, 0.02502284),
+ (8, 0.025015472),
+ (9, 0.025025582)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们的lda话题模型是按照n_topics=10训练的，限制调用topic预测某个document时，得到的结果是这10种话题及对应概率的元组列表。&lt;/p&gt;
+&lt;p&gt;从中可以看到概率最大的是 &lt;code&gt;话题6&lt;/code&gt;， 概率有0.51443774。&lt;/p&gt;
+&lt;p&gt;所以我们可以大致认为document是话题6&lt;/p&gt;
+&lt;h2 id=&#34;43-显示每种话题与对应的特征词之间关系&#34;&gt;4.3 显示每种话题与对应的特征词之间关系&lt;/h2&gt;
+&lt;p&gt;但是仅仅告诉每个文档是 &lt;code&gt;话题n&lt;/code&gt;，我们仍然不知道 &lt;code&gt;话题n&lt;/code&gt;代表的是什么，所以我们需要看看每种 &lt;code&gt;话题n&lt;/code&gt;对应的 &lt;code&gt;特征词语&lt;/code&gt;。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;topic.show_topics()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(0,
+  &#39;0.042*&amp;quot;基金&amp;quot; + 0.013*&amp;quot;市场&amp;quot; + 0.011*&amp;quot;投资&amp;quot; + 0.009*&amp;quot;公司&amp;quot; + 0.005*&amp;quot;上涨&amp;quot; + 0.004*&amp;quot;股票&amp;quot; + 0.004*&amp;quot;房地产&amp;quot; + 0.004*&amp;quot;指数&amp;quot; + 0.004*&amp;quot;房价&amp;quot; + 0.004*&amp;quot;2008&amp;quot;&#39;),
+ (1,
+  &#39;0.010*&amp;quot;中国&amp;quot; + 0.007*&amp;quot;移民&amp;quot; + 0.006*&amp;quot;项目&amp;quot; + 0.005*&amp;quot;发展&amp;quot; + 0.005*&amp;quot;表示&amp;quot; + 0.005*&amp;quot;经济&amp;quot; + 0.005*&amp;quot;政府&amp;quot; + 0.005*&amp;quot;土地&amp;quot; + 0.004*&amp;quot;政策&amp;quot; + 0.004*&amp;quot;问题&amp;quot;&#39;),
+ (2,
+  &#39;0.014*&amp;quot;比赛&amp;quot; + 0.009*&amp;quot;他们&amp;quot; + 0.008*&amp;quot;球队&amp;quot; + 0.007*&amp;quot;篮板&amp;quot; + 0.006*&amp;quot;我们&amp;quot; + 0.005*&amp;quot;球员&amp;quot; + 0.005*&amp;quot;季后赛&amp;quot; + 0.005*&amp;quot;时间&amp;quot; + 0.005*&amp;quot;热火&amp;quot; + 0.005*&amp;quot;赛季&amp;quot;&#39;),
+ (3,
+  &#39;0.013*&amp;quot;我们&amp;quot; + 0.013*&amp;quot;一个&amp;quot; + 0.009*&amp;quot;自己&amp;quot; + 0.009*&amp;quot;这个&amp;quot; + 0.007*&amp;quot;没有&amp;quot; + 0.007*&amp;quot;他们&amp;quot; + 0.006*&amp;quot;可以&amp;quot; + 0.006*&amp;quot;就是&amp;quot; + 0.006*&amp;quot;很多&amp;quot; + 0.006*&amp;quot;记者&amp;quot;&#39;),
+ (4,
+  &#39;0.020*&amp;quot;电影&amp;quot; + 0.010*&amp;quot;导演&amp;quot; + 0.009*&amp;quot;微博&amp;quot; + 0.008*&amp;quot;影片&amp;quot; + 0.006*&amp;quot;观众&amp;quot; + 0.006*&amp;quot;一个&amp;quot; + 0.005*&amp;quot;自己&amp;quot; + 0.005*&amp;quot;票房&amp;quot; + 0.004*&amp;quot;拍摄&amp;quot; + 0.004*&amp;quot;娱乐&amp;quot;&#39;),
+ (5,
+  &#39;0.018*&amp;quot;学生&amp;quot; + 0.015*&amp;quot;留学&amp;quot; + 0.008*&amp;quot;大学&amp;quot; + 0.008*&amp;quot;可以&amp;quot; + 0.006*&amp;quot;功能&amp;quot; + 0.006*&amp;quot;像素&amp;quot; + 0.006*&amp;quot;拍摄&amp;quot; + 0.006*&amp;quot;采用&amp;quot; + 0.005*&amp;quot;学校&amp;quot; + 0.005*&amp;quot;申请&amp;quot;&#39;),
+ (6,
+  &#39;0.007*&amp;quot;玩家&amp;quot; + 0.006*&amp;quot;封神&amp;quot; + 0.006*&amp;quot;手机&amp;quot; + 0.006*&amp;quot;online&amp;quot; + 0.006*&amp;quot;the&amp;quot; + 0.006*&amp;quot;游戏&amp;quot; + 0.005*&amp;quot;陈水扁&amp;quot; + 0.005*&amp;quot;活动&amp;quot; + 0.005*&amp;quot;to&amp;quot; + 0.005*&amp;quot;一个&amp;quot;&#39;),
+ (7,
+  &#39;0.009*&amp;quot;信息&amp;quot; + 0.009*&amp;quot;考试&amp;quot; + 0.009*&amp;quot;游戏&amp;quot; + 0.007*&amp;quot;工作&amp;quot; + 0.007*&amp;quot;手机&amp;quot; + 0.006*&amp;quot;四六级&amp;quot; + 0.006*&amp;quot;考生&amp;quot; + 0.005*&amp;quot;发展&amp;quot; + 0.004*&amp;quot;可以&amp;quot; + 0.004*&amp;quot;霸王&amp;quot;&#39;),
+ (8,
+  &#39;0.015*&amp;quot;我们&amp;quot; + 0.011*&amp;quot;企业&amp;quot; + 0.011*&amp;quot;产品&amp;quot; + 0.010*&amp;quot;市场&amp;quot; + 0.009*&amp;quot;家具&amp;quot; + 0.009*&amp;quot;品牌&amp;quot; + 0.008*&amp;quot;消费者&amp;quot; + 0.007*&amp;quot;行业&amp;quot; + 0.007*&amp;quot;中国&amp;quot; + 0.007*&amp;quot;一个&amp;quot;&#39;),
+ (9,
+  &#39;0.012*&amp;quot;游戏&amp;quot; + 0.011*&amp;quot;玩家&amp;quot; + 0.010*&amp;quot;可以&amp;quot; + 0.008*&amp;quot;搭配&amp;quot; + 0.008*&amp;quot;活动&amp;quot; + 0.006*&amp;quot;时尚&amp;quot; + 0.005*&amp;quot;OL&amp;quot; + 0.004*&amp;quot;获得&amp;quot; + 0.004*&amp;quot;任务&amp;quot; + 0.004*&amp;quot;手机&amp;quot;&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据上面的 &lt;code&gt;话题n&lt;/code&gt; 与 &lt;code&gt;特征词&lt;/code&gt; 大致可以解读每个 &lt;code&gt;话题n&lt;/code&gt; 是什么内容的话题。&lt;/p&gt;
+&lt;h2 id=&#34;44-话题分布情况&#34;&gt;4.4 话题分布情况&lt;/h2&gt;
+&lt;p&gt;现在我们想知道数据集中不同 &lt;code&gt;话题n&lt;/code&gt; 的分布情况&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;topic.topic_distribution(raw_documents=df[&#39;content&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;9    1670
+1    1443
+0    1318
+5    1265
+4    1015
+2     970
+8     911
+3     865
+7     307
+6     236
+Name: topic, dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们的数据有10类，每类是1000条。而现在LDA话题模型单纯的根据文本的一些线索，按照n_topics=10给我们分出的效果还不错。&lt;/p&gt;
+&lt;p&gt;最完美的情况是每个 &lt;code&gt;话题n&lt;/code&gt; 都是接近1000, 现在 &lt;code&gt;话题9&lt;/code&gt;太多， &lt;code&gt;话题6、 话题7&lt;/code&gt;太少。&lt;/p&gt;
+&lt;p&gt;不过我们也要注意到某些话题可能存在交集，容易分错，比如&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;财经、房产、时政&lt;/li&gt;
+&lt;li&gt;体育娱乐&lt;/li&gt;
+&lt;li&gt;财经、科技&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;等&lt;/p&gt;
+&lt;p&gt;综上，目前模型还算可以，表现还能接受。&lt;/p&gt;
+&lt;h2 id=&#34;45-可视化功能不稳定&#34;&gt;4.5 可视化（功能不稳定）&lt;/h2&gt;
+&lt;p&gt;现在只有10个话题， 我们用肉眼看还能接受，但是当话题数太多的时，还是借助可视化工具帮助我们科学评判训练结果。&lt;/p&gt;
+&lt;p&gt;这就用到topic.visualize_lda()，&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;topic.visualize_lda()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行结束后在&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;代码所在的文件夹output文件夹中找vis.html文件，右键浏览器打开&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可视化功能不稳定，存在vis.html打不开的情况；希望海涵&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/vis.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;图中有左右两大区域&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;左侧  话题分布情况，圆形越大话题越多，圆形四散在四个象限&lt;/li&gt;
+&lt;li&gt;右侧  某话题对应的特征词，从上到下权重越来越低&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;需要注意的是左侧&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;尽量圆形均匀分布在四个象限比较好，如果圆形全部集中到有限的区域，模型训练不好&lt;/li&gt;
+&lt;li&gt;圆形与圆形交集较少比较好，如果交集太多，说明n_topics设置的太大，应该设置的再小一些&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;五存储与导入lda模型&#34;&gt;五、存储与导入lda模型&lt;/h1&gt;
+&lt;p&gt;lda话题模型训练特别慢，如果不保存训练好的模型，实际上是在浪费我们的生命和电脑计算力。&lt;/p&gt;
+&lt;p&gt;好消息是cntopic默认为大家存储模型，存储地址是output文件夹内，大家只需要知道如何导入模型即可。&lt;/p&gt;
+&lt;p&gt;这里需要导入的有两个模型，使用步骤&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;步骤&lt;/th&gt;
+&lt;th&gt;模型&lt;/th&gt;
+&lt;th&gt;代码&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;准备documents&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;topic = Topic(cwd=os.getcwd())&lt;/td&gt;
+&lt;td&gt;初始化&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;词典&lt;/td&gt;
+&lt;td&gt;topic.load_dictionary(dictpath=&#39;output/dictionary.dict&amp;rsquo;)&lt;/td&gt;
+&lt;td&gt;直接导入词典，省略topic.create_dictionary()&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;topic.create_corpus(documents=documents)&lt;/td&gt;
+&lt;td&gt;构建语料(将文本转为文档-词频矩阵)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;lda话题模型&lt;/td&gt;
+&lt;td&gt;topic.load_lda_model(modelpath=&#39;output/model/lda.model&amp;rsquo;)&lt;/td&gt;
+&lt;td&gt;导入lda话题模型， 相当于省略topic.train_lda_model(n_topics)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;现在我们试一试, 为了与之前的区分，这里我们起名topic2&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;topic2 = Topic(cwd=os.getcwd())
+topic2.load_dictionary(dictpath=&#39;output/dictionary.dict&#39;)
+topic2.create_corpus(documents=documents)
+topic2.load_lda_model(modelpath=&#39;output/model/lda.model&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;大家可以自己回去试一试第4部分&lt;code&gt;使用LDA模型&lt;/code&gt;的相关功能&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/thunderhit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python网络爬虫与文本分析</title>
+      <link>https://thunderhit.github.io/courses/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/courses/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;br&gt;
+&lt;p&gt;在过去的两年间，Python一路高歌猛进，成功窜上“最火编程语言”的宝座。惊奇的是使用Python最多的人群其实不是程序员，而是数据科学家，尤其是社会科学家，涵盖的学科有经济学、管理学、会计学、社会学、传播学、新闻学等等。&lt;/p&gt;
+&lt;p&gt;大数据时代到来，网络数据正成为潜在宝藏，大量商业信息、社会信息以文本等非结构化、异构型数据格式存储于网页中。非计算机专业背景的人也可借助机器学习、人工智能等方法进行研究。使用网络世界数据进行研究，面临两大难点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数据的批量获取&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文本（非结构化）数据的处理与分析&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参照已发表的社科类文章，希望帮大家解决这两大难点。课程设计的初衷是用最少的时间让大家学到最有用最常用最易用的知识点，降低学习难度。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;课程目录&#34;&gt;课程目录&lt;/h1&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;第一节-课程简介&#34;&gt;第一节 课程简介&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;课程介绍&lt;/li&gt;
+&lt;li&gt;课程知识点分布情况&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第二节-环境配置&#34;&gt;第二节 环境配置&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Mac环境配置&lt;/li&gt;
+&lt;li&gt;Windows环境配置&lt;/li&gt;
+&lt;li&gt;pip安装问题解决办法&lt;/li&gt;
+&lt;li&gt;jupyter notebook使用方法&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第三节-python基本语法&#34;&gt;第三节 python基本语法&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;python跟英文一样也是一门语言，这很文科&lt;/li&gt;
+&lt;li&gt;字符串&lt;/li&gt;
+&lt;li&gt;列表&lt;/li&gt;
+&lt;li&gt;元组&lt;/li&gt;
+&lt;li&gt;字典&lt;/li&gt;
+&lt;li&gt;集合&lt;/li&gt;
+&lt;li&gt;if 条件语句&lt;/li&gt;
+&lt;li&gt;for循环语句&lt;/li&gt;
+&lt;li&gt;try-except异常处理语句&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第四节-python高级语法&#34;&gt;第四节 python高级语法&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;切片-对想要的数据字段进行切片&lt;/li&gt;
+&lt;li&gt;列表推导式&lt;/li&gt;
+&lt;li&gt;函数&lt;/li&gt;
+&lt;li&gt;csv文件存储库&lt;/li&gt;
+&lt;li&gt;os文件路径操作库&lt;/li&gt;
+&lt;li&gt;re正则表达式(文本分析利器)&lt;/li&gt;
+&lt;li&gt;python初学者常见错误&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第五节-网络爬虫原理&#34;&gt;第五节 网络爬虫原理&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;理解访问与请求&lt;/li&gt;
+&lt;li&gt;寻求网址规律&lt;/li&gt;
+&lt;li&gt;requests访问库&lt;/li&gt;
+&lt;li&gt;pyquery网页解析定位库&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第六节-网络爬虫实战&#34;&gt;第六节 网络爬虫实战&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;静态网站-天涯论坛&lt;/li&gt;
+&lt;li&gt;静态网站-大众点评&lt;/li&gt;
+&lt;li&gt;静态网站-boss直聘&lt;/li&gt;
+&lt;li&gt;动态网站-百度企业信用&lt;/li&gt;
+&lt;li&gt;动态网站-京东评论&lt;/li&gt;
+&lt;li&gt;动态网站-B站弹幕&lt;/li&gt;
+&lt;li&gt;动态网站-B站评论&lt;/li&gt;
+&lt;li&gt;如何用pandas采集网页中的表格数据&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第七节-初识文本分析&#34;&gt;第七节 初识文本分析&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;如何从不同格式的文件中读取数据&lt;/li&gt;
+&lt;li&gt;jieba分词、词频统计与可视化&lt;/li&gt;
+&lt;li&gt;海量公司年报的情感分析(中文)&lt;/li&gt;
+&lt;li&gt;英文数据的情感分析&lt;/li&gt;
+&lt;li&gt;如何对excel、csv文件做数据分析(pandas数据分析库)&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第八节-文本分析与机器学习&#34;&gt;第八节 文本分析与机器学习&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;机器学习概论&lt;/li&gt;
+&lt;li&gt;用机器学习做文本分析的步骤&lt;/li&gt;
+&lt;li&gt;机器学习库scikit-learn&lt;/li&gt;
+&lt;li&gt;文本特征工程(描述数据的方式)&lt;/li&gt;
+&lt;li&gt;在线评论情感分类&lt;/li&gt;
+&lt;li&gt;了解聚类Kmeans算法&lt;/li&gt;
+&lt;li&gt;文本相似度计算&lt;/li&gt;
+&lt;li&gt;LDA话题模型&lt;/li&gt;
+&lt;li&gt;计算消费者异质性(特征向量)&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用案例&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;购买方式&#34;&gt;购买方式&lt;/h1&gt;
+&lt;h3 id=&#34;1-腾讯课堂-录播课httpskeqqcomcourse482241tuin163164df&#34;&gt;1. 
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯课堂-录播课&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;大邓个人开课，不能开票报销&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2--小鹅通-直播课httplocalhost1313slidesslides网络爬虫文本分析&#34;&gt;2.  
+&lt;a href=&#34;http://localhost:1313/slides/slides%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e6%96%87%e6%9c%ac%e5%88%86%e6%9e%90/#/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;小鹅通-直播课&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;机构合作，可支持开票报销&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2020年6月29日~7月2日
+&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-现场工作坊&#34;&gt;3. 现场工作坊&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;机构合作，可支持开票报销&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;地点杭州，由于疫情原因，开展不了现场教学，时间待定~&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cntopic:快速构建不同领域(手机、汽车等)的情感词典</title>
+      <link>https://thunderhit.github.io/project/cntopic/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/project/cntopic/</guid>
+      <description>&lt;h1 id=&#34;cntopic&#34;&gt;cntopic&lt;/h1&gt;
+&lt;p&gt;简单好用的lda话题模型，支持中英文。该库基于gensim和pyLDAvis，实现了lda话题模型及可视化功能。&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1m54y1B7F9&amp;page=1&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pip install cntopic
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;使用&#34;&gt;使用&lt;/h1&gt;
+&lt;p&gt;这里给大家引入一个场景，假设大家采集新闻数据，忘记采集新闻文本对应的新闻类别，如果人工标注又很费工夫。这时候我们可以用lda话题模型帮我们洞察数据中的规律，发现新闻有n种话题群体。这样lda模型对数据自动打标注topic_1, topic_2, topic_3&amp;hellip; ,topic_n。&lt;/p&gt;
+&lt;p&gt;我们研究者的工作量仅仅限于解读topic_1, topic_2, topic_3&amp;hellip; ,topic_n分别是什么话题即可。&lt;/p&gt;
+&lt;p&gt;lda训练过程，大致分为&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;读取文件&lt;/li&gt;
+&lt;li&gt;准备数据&lt;/li&gt;
+&lt;li&gt;训练lda模型&lt;/li&gt;
+&lt;li&gt;使用lda模型&lt;/li&gt;
+&lt;li&gt;存储与导入lda模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;1-读取文件&#34;&gt;1. 读取文件&lt;/h1&gt;
+&lt;p&gt;这里我们用一个新闻数据,一共有10类，每类1000条数据，涵盖&lt;/p&gt;
+&lt;p&gt;&amp;lsquo;时尚&amp;rsquo;, &amp;lsquo;财经&amp;rsquo;, &amp;lsquo;科技&amp;rsquo;, &amp;lsquo;教育&amp;rsquo;, &amp;lsquo;家居&amp;rsquo;, &amp;lsquo;体育&amp;rsquo;, &amp;lsquo;时政&amp;rsquo;, &amp;lsquo;游戏&amp;rsquo;, &amp;lsquo;房产&amp;rsquo;, &amp;lsquo;娱乐&amp;rsquo;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+df = pd.read_csv(&#39;chinese_news.csv&#39;)
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;label&lt;/th&gt;
+      &lt;th&gt;content&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;体育&lt;/td&gt;
+      &lt;td&gt;鲍勃库西奖归谁属？ NCAA最强控卫是坎巴还是弗神新浪体育讯如今，本赛季的NCAA进入到了末...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;体育&lt;/td&gt;
+      &lt;td&gt;麦基砍28+18+5却充满寂寞 纪录之夜他的痛阿联最懂新浪体育讯上天对每个人都是公平的，贾维...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;体育&lt;/td&gt;
+      &lt;td&gt;黄蜂vs湖人首发：科比冲击七连胜 火箭两旧将登场新浪体育讯北京时间3月28日，NBA常规赛洛...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;体育&lt;/td&gt;
+      &lt;td&gt;双面谢亚龙作秀终成做作 谁来为低劣行政能力埋单是谁任命了谢亚龙？谁放纵了谢亚龙？谁又该为谢亚...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;体育&lt;/td&gt;
+      &lt;td&gt;兔年首战山西换帅后有虎胆 张学文用乔丹名言励志今晚客场挑战浙江稠州银行队，是山西汾酒男篮的兔...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;label标签的分布情况&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;label&#39;].value_counts()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;家居    1000
+时尚    1000
+房产    1000
+时政    1000
+教育    1000
+游戏    1000
+财经    1000
+娱乐    1000
+体育    1000
+科技    1000
+Name: label, dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2-准备数据&#34;&gt;2. 准备数据&lt;/h1&gt;
+&lt;p&gt;一般准备数据包括:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;分词、数据清洗&lt;/li&gt;
+&lt;li&gt;按照模块需求整理数据的格式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意在scikit-learn中:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;英文文本不需要分词，原封不动传入即可。&lt;/li&gt;
+&lt;li&gt;中文文本需要先分词，后整理为英文那样用空格间隔的字符串。形如”我 爱 中国“&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import jieba
+
+def text2tokens(raw_text):
+    #将文本raw_text分词后得到词语列表
+    tokens = jieba.lcut(raw_text)
+    #tokens = raw_text.lower().split(&#39; &#39;) #英文用空格分词即可
+    tokens = [t for t in tokens if len(t)&amp;gt;1] #剔除单字
+    return tokens
+
+#对content列中所有的文本依次进行分词
+documents = [text2tokens(txt) 
+             for txt in df[&#39;content&#39;]]  
+
+#显示前5个document
+print(documents[:5])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[[&#39;鲍勃&#39;, &#39;库西&#39;, &#39;奖归&#39;, &#39;NCAA&#39;, &#39;最强&#39;, &#39;控卫&#39;, &#39;坎巴&#39;, &#39;还是&#39;, &#39;弗神&#39;, &#39;新浪&#39;, &#39;体育讯&#39;, &#39;称赞&#39;, &#39;得分&#39;, &#39;能力&#39;, &#39;毋庸置疑&#39;,...],
+[&#39;球员&#39;, &#39;大东&#39;, &#39;赛区&#39;, &#39;锦标赛&#39;, &#39;全国&#39;, &#39;锦标赛&#39;, &#39;他场&#39;, &#39;27.1&#39;, &#39;6.1&#39;, &#39;篮板&#39;, &#39;5.1&#39;, &#39;助攻&#39;,..],
+[&#39;依旧&#39;, &#39;如此&#39;, &#39;给力&#39;, &#39;疯狂&#39;, &#39;表现&#39;, &#39;开始&#39;, &#39;这个&#39;, &#39;赛季&#39;, &#39;疯狂&#39;, &#39;表现&#39;, &#39;结束&#39;, &#39;这个&#39;, &#39;赛季&#39;, &#39;我们&#39;, &#39;全国&#39;, &#39;锦标赛&#39;, &#39;前进&#39;, &#39;并且&#39;, &#39;之前&#39;, &#39;曾经&#39;, &#39;连赢&#39;, &#39;赢得&#39;, &#39;大东&#39;, ...],
+[&#39;赛区&#39;, &#39;锦标赛&#39;, &#39;冠军&#39;, &#39;这些&#39;, &#39;归功于&#39;, &#39;坎巴&#39;, &#39;沃克&#39;, &#39;康涅狄格&#39;, &#39;大学&#39;, &#39;主教练&#39;, &#39;吉姆&#39;, &#39;卡洪&#39;, ...],
+[&#39;称赞&#39;, &#39;一名&#39;, &#39;纯正&#39;, &#39;控卫&#39;, &#39;而且&#39;, &#39;能为&#39;, &#39;我们&#39;, &#39;得分&#39;, &#39;单场&#39;, &#39;42&#39;, &#39;有过&#39;, &#39;单场&#39;, &#39;17&#39;, &#39;助攻&#39;, ...]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;3-训练lda模型&#34;&gt;3. 训练lda模型&lt;/h1&gt;
+&lt;p&gt;现在开始正式使用cntopic模块，开启LDA话题模型分析。步骤包括&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Step&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;代码&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;准备documents，已经在前面准备好了&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;初始化Topic类&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic = Topic(cwd=os.getcwd())&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;根据documents数据，构建词典空间&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.create_dictionary(documents=documents)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;构建语料(将文本转为文档-词频矩阵)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.create_corpus(documents=documents)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;指定n_topics，构建LDA话题模型&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.train_lda_model(n_topics)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;这里我们就按照n_topics=10构建lda话题模型，一般情况n_topics可能要实验多次，找到最佳的n_topics&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/test.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;运行过程中会在代码所在的文件夹内生成一个output文件夹，内部含有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;dictionary.dict 词典文件&lt;/li&gt;
+&lt;li&gt;lda.model.xxx 多个lda模型文件，其中xxx是代指&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;img/output.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/model.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;上述代码耗时较长，请耐心等待程序运行完毕~&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
+from cntopic import Topic
+
+topic = Topic(cwd=os.getcwd()) #构建词典dictionary
+topic.create_dictionary(documents=documents) #根据documents数据，构建词典空间
+topic.create_corpus(documents=documents) #构建语料(将文本转为文档-词频矩阵)
+topic.train_lda_model(n_topics=10) #指定n_topics，构建LDA话题模型
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;gensim.models.ldamulticore.LdaMulticore at 0x158da5090&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;4-使用lda模型&#34;&gt;4. 使用LDA模型&lt;/h1&gt;
+&lt;p&gt;上面的代码大概运行了5分钟，LDA模型已经训练好了。&lt;/p&gt;
+&lt;p&gt;现在我们可以利用LDA做一些事情，包括&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Step&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;代码&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;补充&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;分词后的某文档&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;document = [&amp;lsquo;游戏&amp;rsquo;, &amp;lsquo;体育&amp;rsquo;]&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;预测document对应的话题&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.get_document_topics(document)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;显示每种话题与对应的特征词之间关系&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.show_topics()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;数据中不同话题分布情况&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.topic_distribution(raw_documents)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;raw_documents是列表或series，如本教程中的df[&amp;lsquo;content&amp;rsquo;]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;可视化LDA话题模型（&lt;strong&gt;功能不稳定&lt;/strong&gt;）&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;topic.visualize_lda()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;可视化结果在output中查找vis.html文件，浏览器打开即可&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;41-准备document&#34;&gt;4.1 准备document&lt;/h2&gt;
+&lt;p&gt;假设有一个文档 &lt;code&gt;&#39;游戏体育真有意思&#39;&lt;/code&gt; 分词处理得到document&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;document = jieba.lcut(&#39;游戏体育真有意思&#39;)
+document
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;游戏&#39;, &#39;体育&#39;, &#39;真&#39;, &#39;有意思&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;42-预测document对应的话题&#34;&gt;4.2 预测document对应的话题&lt;/h2&gt;
+&lt;p&gt;我们使用topic模型，看看document对应的话题&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;topic.get_document_topics(document)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(0, 0.02501536),
+ (1, 0.025016038),
+ (2, 0.28541195),
+ (3, 0.025018401),
+ (4, 0.025018891),
+ (5, 0.025017735),
+ (6, 0.51443774),
+ (7, 0.02502284),
+ (8, 0.025015472),
+ (9, 0.025025582)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们的lda话题模型是按照n_topics=10训练的，限制调用topic预测某个document时，得到的结果是这10种话题及对应概率的元组列表。&lt;/p&gt;
+&lt;p&gt;从中可以看到概率最大的是 &lt;code&gt;话题6&lt;/code&gt;， 概率有0.51443774。&lt;/p&gt;
+&lt;p&gt;所以我们可以大致认为document是话题6&lt;/p&gt;
+&lt;h2 id=&#34;43-显示每种话题与对应的特征词之间关系&#34;&gt;4.3 显示每种话题与对应的特征词之间关系&lt;/h2&gt;
+&lt;p&gt;但是仅仅告诉每个文档是 &lt;code&gt;话题n&lt;/code&gt;，我们仍然不知道 &lt;code&gt;话题n&lt;/code&gt;代表的是什么，所以我们需要看看每种 &lt;code&gt;话题n&lt;/code&gt;对应的 &lt;code&gt;特征词语&lt;/code&gt;。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;topic.show_topics()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(0,
+  &#39;0.042*&amp;quot;基金&amp;quot; + 0.013*&amp;quot;市场&amp;quot; + 0.011*&amp;quot;投资&amp;quot; + 0.009*&amp;quot;公司&amp;quot; + 0.005*&amp;quot;上涨&amp;quot; + 0.004*&amp;quot;股票&amp;quot; + 0.004*&amp;quot;房地产&amp;quot; + 0.004*&amp;quot;指数&amp;quot; + 0.004*&amp;quot;房价&amp;quot; + 0.004*&amp;quot;2008&amp;quot;&#39;),
+ (1,
+  &#39;0.010*&amp;quot;中国&amp;quot; + 0.007*&amp;quot;移民&amp;quot; + 0.006*&amp;quot;项目&amp;quot; + 0.005*&amp;quot;发展&amp;quot; + 0.005*&amp;quot;表示&amp;quot; + 0.005*&amp;quot;经济&amp;quot; + 0.005*&amp;quot;政府&amp;quot; + 0.005*&amp;quot;土地&amp;quot; + 0.004*&amp;quot;政策&amp;quot; + 0.004*&amp;quot;问题&amp;quot;&#39;),
+ (2,
+  &#39;0.014*&amp;quot;比赛&amp;quot; + 0.009*&amp;quot;他们&amp;quot; + 0.008*&amp;quot;球队&amp;quot; + 0.007*&amp;quot;篮板&amp;quot; + 0.006*&amp;quot;我们&amp;quot; + 0.005*&amp;quot;球员&amp;quot; + 0.005*&amp;quot;季后赛&amp;quot; + 0.005*&amp;quot;时间&amp;quot; + 0.005*&amp;quot;热火&amp;quot; + 0.005*&amp;quot;赛季&amp;quot;&#39;),
+ (3,
+  &#39;0.013*&amp;quot;我们&amp;quot; + 0.013*&amp;quot;一个&amp;quot; + 0.009*&amp;quot;自己&amp;quot; + 0.009*&amp;quot;这个&amp;quot; + 0.007*&amp;quot;没有&amp;quot; + 0.007*&amp;quot;他们&amp;quot; + 0.006*&amp;quot;可以&amp;quot; + 0.006*&amp;quot;就是&amp;quot; + 0.006*&amp;quot;很多&amp;quot; + 0.006*&amp;quot;记者&amp;quot;&#39;),
+ (4,
+  &#39;0.020*&amp;quot;电影&amp;quot; + 0.010*&amp;quot;导演&amp;quot; + 0.009*&amp;quot;微博&amp;quot; + 0.008*&amp;quot;影片&amp;quot; + 0.006*&amp;quot;观众&amp;quot; + 0.006*&amp;quot;一个&amp;quot; + 0.005*&amp;quot;自己&amp;quot; + 0.005*&amp;quot;票房&amp;quot; + 0.004*&amp;quot;拍摄&amp;quot; + 0.004*&amp;quot;娱乐&amp;quot;&#39;),
+ (5,
+  &#39;0.018*&amp;quot;学生&amp;quot; + 0.015*&amp;quot;留学&amp;quot; + 0.008*&amp;quot;大学&amp;quot; + 0.008*&amp;quot;可以&amp;quot; + 0.006*&amp;quot;功能&amp;quot; + 0.006*&amp;quot;像素&amp;quot; + 0.006*&amp;quot;拍摄&amp;quot; + 0.006*&amp;quot;采用&amp;quot; + 0.005*&amp;quot;学校&amp;quot; + 0.005*&amp;quot;申请&amp;quot;&#39;),
+ (6,
+  &#39;0.007*&amp;quot;玩家&amp;quot; + 0.006*&amp;quot;封神&amp;quot; + 0.006*&amp;quot;手机&amp;quot; + 0.006*&amp;quot;online&amp;quot; + 0.006*&amp;quot;the&amp;quot; + 0.006*&amp;quot;游戏&amp;quot; + 0.005*&amp;quot;陈水扁&amp;quot; + 0.005*&amp;quot;活动&amp;quot; + 0.005*&amp;quot;to&amp;quot; + 0.005*&amp;quot;一个&amp;quot;&#39;),
+ (7,
+  &#39;0.009*&amp;quot;信息&amp;quot; + 0.009*&amp;quot;考试&amp;quot; + 0.009*&amp;quot;游戏&amp;quot; + 0.007*&amp;quot;工作&amp;quot; + 0.007*&amp;quot;手机&amp;quot; + 0.006*&amp;quot;四六级&amp;quot; + 0.006*&amp;quot;考生&amp;quot; + 0.005*&amp;quot;发展&amp;quot; + 0.004*&amp;quot;可以&amp;quot; + 0.004*&amp;quot;霸王&amp;quot;&#39;),
+ (8,
+  &#39;0.015*&amp;quot;我们&amp;quot; + 0.011*&amp;quot;企业&amp;quot; + 0.011*&amp;quot;产品&amp;quot; + 0.010*&amp;quot;市场&amp;quot; + 0.009*&amp;quot;家具&amp;quot; + 0.009*&amp;quot;品牌&amp;quot; + 0.008*&amp;quot;消费者&amp;quot; + 0.007*&amp;quot;行业&amp;quot; + 0.007*&amp;quot;中国&amp;quot; + 0.007*&amp;quot;一个&amp;quot;&#39;),
+ (9,
+  &#39;0.012*&amp;quot;游戏&amp;quot; + 0.011*&amp;quot;玩家&amp;quot; + 0.010*&amp;quot;可以&amp;quot; + 0.008*&amp;quot;搭配&amp;quot; + 0.008*&amp;quot;活动&amp;quot; + 0.006*&amp;quot;时尚&amp;quot; + 0.005*&amp;quot;OL&amp;quot; + 0.004*&amp;quot;获得&amp;quot; + 0.004*&amp;quot;任务&amp;quot; + 0.004*&amp;quot;手机&amp;quot;&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;根据上面的 &lt;code&gt;话题n&lt;/code&gt; 与 &lt;code&gt;特征词&lt;/code&gt; 大致可以解读每个 &lt;code&gt;话题n&lt;/code&gt; 是什么内容的话题。&lt;/p&gt;
+&lt;h2 id=&#34;44-话题分布情况&#34;&gt;4.4 话题分布情况&lt;/h2&gt;
+&lt;p&gt;现在我们想知道数据集中不同 &lt;code&gt;话题n&lt;/code&gt; 的分布情况&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;topic.topic_distribution(raw_documents=df[&#39;content&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;9    1670
+1    1443
+0    1318
+5    1265
+4    1015
+2     970
+8     911
+3     865
+7     307
+6     236
+Name: topic, dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们的数据有10类，每类是1000条。而现在LDA话题模型单纯的根据文本的一些线索，按照n_topics=10给我们分出的效果还不错。&lt;/p&gt;
+&lt;p&gt;最完美的情况是每个 &lt;code&gt;话题n&lt;/code&gt; 都是接近1000, 现在 &lt;code&gt;话题9&lt;/code&gt;太多， &lt;code&gt;话题6、 话题7&lt;/code&gt;太少。&lt;/p&gt;
+&lt;p&gt;不过我们也要注意到某些话题可能存在交集，容易分错，比如&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;财经、房产、时政&lt;/li&gt;
+&lt;li&gt;体育娱乐&lt;/li&gt;
+&lt;li&gt;财经、科技&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;等&lt;/p&gt;
+&lt;p&gt;综上，目前模型还算可以，表现还能接受。&lt;/p&gt;
+&lt;h2 id=&#34;45-可视化功能不稳定&#34;&gt;4.5 可视化（功能不稳定）&lt;/h2&gt;
+&lt;p&gt;现在只有10个话题， 我们用肉眼看还能接受，但是当话题数太多的时，还是借助可视化工具帮助我们科学评判训练结果。&lt;/p&gt;
+&lt;p&gt;这就用到topic.visualize_lda()，&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;topic.visualize_lda()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行结束后在&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;代码所在的文件夹output文件夹中找vis.html文件，右键浏览器打开&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可视化功能不稳定，存在vis.html打不开的情况；希望海涵&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/vis.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;图中有左右两大区域&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;左侧  话题分布情况，圆形越大话题越多，圆形四散在四个象限&lt;/li&gt;
+&lt;li&gt;右侧  某话题对应的特征词，从上到下权重越来越低&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;需要注意的是左侧&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;尽量圆形均匀分布在四个象限比较好，如果圆形全部集中到有限的区域，模型训练不好&lt;/li&gt;
+&lt;li&gt;圆形与圆形交集较少比较好，如果交集太多，说明n_topics设置的太大，应该设置的再小一些&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;五存储与导入lda模型&#34;&gt;五、存储与导入lda模型&lt;/h1&gt;
+&lt;p&gt;lda话题模型训练特别慢，如果不保存训练好的模型，实际上是在浪费我们的生命和电脑计算力。&lt;/p&gt;
+&lt;p&gt;好消息是cntopic默认为大家存储模型，存储地址是output文件夹内，大家只需要知道如何导入模型即可。&lt;/p&gt;
+&lt;p&gt;这里需要导入的有两个模型，使用步骤&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;步骤&lt;/th&gt;
+&lt;th&gt;模型&lt;/th&gt;
+&lt;th&gt;代码&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;准备documents&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;topic = Topic(cwd=os.getcwd())&lt;/td&gt;
+&lt;td&gt;初始化&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;词典&lt;/td&gt;
+&lt;td&gt;topic.load_dictionary(dictpath=&#39;output/dictionary.dict&amp;rsquo;)&lt;/td&gt;
+&lt;td&gt;直接导入词典，省略topic.create_dictionary()&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;topic.create_corpus(documents=documents)&lt;/td&gt;
+&lt;td&gt;构建语料(将文本转为文档-词频矩阵)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;lda话题模型&lt;/td&gt;
+&lt;td&gt;topic.load_lda_model(modelpath=&#39;output/model/lda.model&amp;rsquo;)&lt;/td&gt;
+&lt;td&gt;导入lda话题模型， 相当于省略topic.train_lda_model(n_topics)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;现在我们试一试, 为了与之前的区分，这里我们起名topic2&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;topic2 = Topic(cwd=os.getcwd())
+topic2.load_dictionary(dictpath=&#39;output/dictionary.dict&#39;)
+topic2.create_corpus(documents=documents)
+topic2.load_lda_model(modelpath=&#39;output/model/lda.model&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;大家可以自己回去试一试第4部分&lt;code&gt;使用LDA模型&lt;/code&gt;的相关功能&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/thunderhit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

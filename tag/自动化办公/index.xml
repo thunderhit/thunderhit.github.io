@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自动化办公 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8A%9E%E5%85%AC/</link>
+      <atom:link href="https://thunderhit.github.io/tag/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8A%9E%E5%85%AC/index.xml" rel="self" type="application/rss+xml" />
+    <description>自动化办公</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>自动化办公</title>
+      <link>https://thunderhit.github.io/tag/%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8A%9E%E5%85%AC/</link>
+    </image>
+    
+    <item>
+      <title>Python自动化办公实战</title>
+      <link>https://thunderhit.github.io/courses/python%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8A%9E%E5%85%AC/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/courses/python%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8A%9E%E5%85%AC/</guid>
+      <description>&lt;br&gt;
+&lt;p&gt;很多职场人士想提高办公效率，python是一门很神奇的工具，ta可以帮我们职场人士做很多事情，尤其是在自动化办公领域，批量自动处理文件简直是职场人士的福音。自动化办公场景包括 excel、ppt、word等文件处理、邮件自动发送、网络爬虫（如数据采集、批量文件下载），这次我就来理一理 python 自动化办公的那些知识点。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;课程目录&#34;&gt;课程目录&lt;/h1&gt;
+&lt;h3 id=&#34;准备篇&#34;&gt;&lt;strong&gt;准备篇&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;想象力丰富的自动化场景&lt;/li&gt;
+&lt;li&gt;快速上手一个小案例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;简单文件处理篇&#34;&gt;&lt;strong&gt;简单文件处理篇&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;批量更改文件名&lt;/li&gt;
+&lt;li&gt;批量检索pdf、word&lt;/li&gt;
+&lt;li&gt;批量读取csv、excel&lt;/li&gt;
+&lt;li&gt;定制excel文件内单元格的格式&lt;/li&gt;
+&lt;li&gt;批量将txt汇总到一个excel中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;网络爬虫&#34;&gt;&lt;strong&gt;网络爬虫&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;网络爬虫原理&lt;/li&gt;
+&lt;li&gt;你的第一个爬虫&lt;/li&gt;
+&lt;li&gt;自动下载某网站的pdf&lt;/li&gt;
+&lt;li&gt;自动下载某网站的图片&lt;/li&gt;
+&lt;li&gt;自动下载某网站视频&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;报告报表自动化&#34;&gt;&lt;strong&gt;报告报表自动化&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;批量生成合同(word)&lt;/li&gt;
+&lt;li&gt;网店口碑可视化（词云图制作）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;邮件自动化&#34;&gt;&lt;strong&gt;邮件自动化&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;如何设置邮箱，让Python控制你的邮箱(163邮箱为例)&lt;/li&gt;
+&lt;li&gt;月底给员工自动群发工资条邮件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;生成图形界面篇&#34;&gt;&lt;strong&gt;生成图形界面篇&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;简单的图形界面设计&lt;/li&gt;
+&lt;li&gt;自动群发邮件软件的可视化窗口实现&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;购买方式&#34;&gt;购买方式&lt;/h1&gt;
+&lt;h3 id=&#34;腾讯课堂-python自动化办公实战httpskeqqcomcourse1524799tuin163164df&#34;&gt;
+&lt;a href=&#34;https://ke.qq.com/course/1524799?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯课堂-Python自动化办公实战&lt;/a&gt;&lt;/h3&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

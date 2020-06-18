@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>事件抽取 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/%E4%BA%8B%E4%BB%B6%E6%8A%BD%E5%8F%96/</link>
+      <atom:link href="https://thunderhit.github.io/tag/%E4%BA%8B%E4%BB%B6%E6%8A%BD%E5%8F%96/index.xml" rel="self" type="application/rss+xml" />
+    <description>事件抽取</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Wed, 17 Jun 2020 20:31:20 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>事件抽取</title>
+      <link>https://thunderhit.github.io/tag/%E4%BA%8B%E4%BB%B6%E6%8A%BD%E5%8F%96/</link>
+    </image>
+    
+    <item>
+      <title>pdfdocx: 用python读取pdf和docx文件数据</title>
+      <link>https://thunderhit.github.io/post/pdfdocx/</link>
+      <pubDate>Wed, 17 Jun 2020 20:31:20 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/pdfdocx/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#pdfdocx&#34;&gt;pdfdocx&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#github项目地址httpsgithubcomthunderhitpdfdocx&#34;&gt;&lt;a href=&#34;https://github.com/thunderhit/pdfdocx&#34;&gt;github项目地址&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#拆开pdfdocx&#34;&gt;拆开pdfdocx&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#如果&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;最近运行课件代码，发现pdf文件读取部分的函数失效。这里找到读取pdf文件的可运行代码，为了方便后续学习使用，我已将pdf和docx读取方法封装成pdfdocx包。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;pdfdocx&#34;&gt;pdfdocx&lt;/h1&gt;
+&lt;h3 id=&#34;github项目地址httpsgithubcomthunderhitpdfdocx&#34;&gt;
+&lt;a href=&#34;https://github.com/thunderhit/pdfdocx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github项目地址&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;只有简单的两个读取函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;read_pdf(file)&lt;/li&gt;
+&lt;li&gt;read_docx(file)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;file为文件路径，函数运行后返回file文件内的文本数据。&lt;/p&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;pip install pdfdocx
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;使用&#34;&gt;使用&lt;/h3&gt;
+&lt;p&gt;读取pdf文件&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pdfdocx import read_pdf
+p_text = read_pdf(&#39;test/data.pdf&#39;)
+print(p_text)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这是来⾃pdf⽂件内的内容
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pdfdocx import read_docx
+d_text = read_pdf(&#39;test/data.docx&#39;)
+print(d_text)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;这是来⾃docx⽂件内的内容
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;拆开pdfdocx&#34;&gt;拆开pdfdocx&lt;/h3&gt;
+&lt;p&gt;希望大家能安装好，如果安装或者使用失败，可以使用下面的代码作为备选方法。虽然繁琐，能用就好。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;读取pdf&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import StringIO
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfdocument import PDFDocument
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.pdfpage import PDFPage
+from pdfminer.pdfparser import PDFParser
+import re
+
+
+def read_pdf(file):
+    &amp;quot;&amp;quot;&amp;quot;
+    读取pdf文件，并返回其中的文本内容
+    :param file: pdf文件路径
+    :return: docx中的文本内容
+    &amp;quot;&amp;quot;&amp;quot;
+    output_string = StringIO()
+    with open(file, &#39;rb&#39;) as in_file:
+        parser = PDFParser(in_file)
+        doc = PDFDocument(parser)
+        rsrcmgr = PDFResourceManager()
+        device = TextConverter(rsrcmgr, output_string, laparams=LAParams())
+        interpreter = PDFPageInterpreter(rsrcmgr, device)
+        for page in PDFPage.create_pages(doc):
+            interpreter.process_page(page)
+    text = output_string.getvalue()
+    return re.sub(&#39;[\n\t\s]&#39;, &#39;&#39;, text)
+  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;读取docx&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import docx
+  
+def read_docx(file):
+    &amp;quot;&amp;quot;&amp;quot;
+    读取docx文件，并返回其中的文本内容
+    :param file: docx文件路径
+    :return: docx中的文本内容
+    &amp;quot;&amp;quot;&amp;quot;
+    text = &#39;&#39;
+    doc = docx.Document(file)
+    for para in doc.paragraphs:
+        text += para.text
+    return text
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;公众号：大邓和他的python&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/thunderhit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>eventextraction: 快速构建不同领域(手机、汽车等)的情感词典</title>
+      <link>https://thunderhit.github.io/post/eventextraction/</link>
+      <pubDate>Wed, 17 Jun 2020 18:31:20 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/eventextraction/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#一文本事理类型分析&#34;&gt;一、文本事理类型分析&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#事件图谱事理图谱的类型&#34;&gt;事件图谱（事理图谱）的类型&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#二安装方法&#34;&gt;二、安装方法&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#三使用&#34;&gt;三、使用&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#31-主函数&#34;&gt;3.1 主函数&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#32-统计&#34;&gt;3.2 统计&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#如果&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;一文本事理类型分析&#34;&gt;一、文本事理类型分析&lt;/h1&gt;
+&lt;p&gt;中文复合事件抽取，可以用来识别文本的模式，包括条件事件、顺承事件、反转事件。&lt;/p&gt;
+&lt;p&gt;我仅仅是对代码做了简单的修改，增加了函数说明注释和stats函数，可以用于统计文本中各种模式的分布(数量)情况。代码原作者为刘焕勇 &lt;a href=&#34;https://github.com/liuhuanyong&#34;&gt;https://github.com/liuhuanyong&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;事件图谱事理图谱的类型&#34;&gt;事件图谱（事理图谱）的类型&lt;/h3&gt;
+&lt;p&gt;项目地址https://github.com/liuhuanyong/ComplexEventExtraction 项目介绍很详细，感兴趣的一定要去原项目看一下。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;事件&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;th&gt;形式化&lt;/th&gt;
+&lt;th&gt;事件应用&lt;/th&gt;
+&lt;th&gt;图谱场景&lt;/th&gt;
+&lt;th&gt;举例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;条件事件&lt;/td&gt;
+&lt;td&gt;某事件条件下另一事件发生&lt;/td&gt;
+&lt;td&gt;如果A那么B&lt;/td&gt;
+&lt;td&gt;事件预警&lt;/td&gt;
+&lt;td&gt;时机判定&lt;/td&gt;
+&lt;td&gt;&amp;lt;限制放宽,立即增产&amp;gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;反转事件&lt;/td&gt;
+&lt;td&gt;某事件与另一事件形成对立&lt;/td&gt;
+&lt;td&gt;虽然A但是B&lt;/td&gt;
+&lt;td&gt;预防不测&lt;/td&gt;
+&lt;td&gt;反面教材&lt;/td&gt;
+&lt;td&gt;&amp;lt;起步晚,发展快&amp;gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;顺承事件&lt;/td&gt;
+&lt;td&gt;某事件紧接着另一事件发生&lt;/td&gt;
+&lt;td&gt;A接着B&lt;/td&gt;
+&lt;td&gt;事件演化&lt;/td&gt;
+&lt;td&gt;未来意图识别&lt;/td&gt;
+&lt;td&gt;&amp;lt;去旅游,买火车票&amp;gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;分析出文本中的条件、顺承、反转，理论上就可以构建知识网络(本库做不到这可视化)。
+1、反转事件图谱
+&lt;img src=&#34;img/but.png&#34; alt=&#34;&#34;&gt;
+2、条件事件图谱
+&lt;img src=&#34;img/condition.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;二安装方法&#34;&gt;二、安装方法&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;pip install eventextraction
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;三使用&#34;&gt;三、使用&lt;/h1&gt;
+&lt;h3 id=&#34;31-主函数&#34;&gt;3.1 主函数&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;from eventextraction import EventsExtraction
+
+extractor = EventsExtraction()
+content = &#39;虽然你做了坏事，但我觉得你是好人。一旦时机成熟，就坚决推行&#39;
+datas = extractor.extract_main(content)
+print(datas)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[{&#39;sent&#39;: &#39;虽然你做了坏事，但我觉得你是好人&#39;, &#39;type&#39;: &#39;but&#39;, &#39;tuples&#39;: {&#39;pre_wd&#39;: &#39;虽然&#39;, &#39;pre_part&#39;: &#39;你做了坏事，&#39;, &#39;post_wd&#39;: &#39;但&#39;, &#39;post_part &#39;: &#39;我觉得你是好人&#39;}},
+{&#39;sent&#39;: &#39;一旦时机成熟，就坚决推行&#39;, &#39;type&#39;: &#39;condition&#39;, &#39;tuples&#39;: {&#39;pre_wd&#39;: &#39;一旦&#39;, &#39;pre_part&#39;: &#39;时机成熟，&#39;, &#39;post_wd&#39;: &#39;就&#39;, &#39;post_part &#39;: &#39;坚决推行&#39;}}]
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;32-统计&#34;&gt;3.2 统计&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;from eventextraction import EventsExtraction
+
+extractor = EventsExtraction()
+content = &#39;虽然你做了坏事，但我觉得你是好人。一旦时机成熟，就坚决推行&#39;
+datas = extractor.extract_main(content)
+print(extractor.stats(datas))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;but&#39;: 1, &#39;condition&#39;: 1, &#39;seq&#39;: 0, &#39;more&#39;: 0, &#39;other&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[github](&lt;a href=&#34;https://github.com/thunderhit&#34;&gt;https://github.com/thunderhit&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网络爬虫 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/</link>
+      <atom:link href="https://thunderhit.github.io/tag/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
+    <description>网络爬虫</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Mon, 29 Jun 2020 18:30:00 +0000</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>网络爬虫</title>
+      <link>https://thunderhit.github.io/tag/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB/</link>
+    </image>
+    
+    <item>
+      <title>Python＆Stata应用能力提升与实证前沿云特训</title>
+      <link>https://thunderhit.github.io/talk/example/</link>
+      <pubDate>Mon, 29 Jun 2020 18:30:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/talk/example/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>《Python数据挖掘与文本分析》培训介绍</title>
+      <link>https://thunderhit.github.io/slides/slides%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/slides/slides%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
+      <description>
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/img/backgroud-image.jpg&#34;
+  &gt;
+
+&lt;h1 id=&#34;python数据挖掘br与文本分析&#34;&gt;Python数据挖掘&lt;br&gt;与文本分析&lt;/h1&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;按Space键查看PPT&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;地点: 小鹅通云直播&lt;/li&gt;
+&lt;li&gt;时间: 2020年6月29号 ~ 7月2号&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;大数据时代br大家会遇到两大难题&#34;&gt;大数据时代，&lt;br&gt;大家会遇到两大难题:&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1.如何批量快速获取数据&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   2.如何处理分析非结构(多媒体)数据&lt;br&gt; 
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;这门python课解决了&#34;&gt;这门Python课解决了:&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1.入门Python语法&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   2.高效采集网络数据&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   3.非结构数据清洗与分析&lt;br&gt; 
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;课程亮点&#34;&gt;课程亮点&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1. 秉承20%时间学到80%常用易用知识&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   2. 理论+实战，每章节均穿插实战案例&lt;br&gt; 
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;python有什么优点&#34;&gt;Python有什么优点？&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1.语法简单&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   2.功能强大&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   3.免费开源&lt;br&gt; 
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;语法简洁&#34;&gt;语法简洁&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python是一种&amp;quot;说人话&amp;quot;的编程&amp;quot;语言&amp;rdquo;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+&lt;img src=&#34;img/code.png&#34; alt=&#34;&#34;&gt;
+&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;功能强大&#34;&gt;功能强大&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1.Web网站开发&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   2.自动化办公(运营)&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   3.数据分析&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   4.机器学习AI&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   4.游戏开发&lt;br&gt; 
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   5.等等 &lt;br&gt; 
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;python培训br含四大模块&#34;&gt;Python培训&lt;br&gt;含四大模块:&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;打通数据处理分析全流程&lt;br&gt;
+&lt;span class=&#34;fragment &#34; &gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+   1.Python语法入门&lt;br&gt; 2.网络爬虫(数据采集)&lt;br&gt; 3.文本(数据)分析&lt;br&gt; 4.机器学习与文本分析&lt;br&gt;
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;报名咨询方式&#34;&gt;报名咨询方式&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;img/%E5%BE%AE%E4%BF%A1.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;培训有对应的录播课br点击下方蓝色链接直接购买br&#34;&gt;培训有对应的录播课，&lt;br&gt;点击下方蓝色链接直接购买&lt;br&gt;&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Python网络爬虫与文本分析&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;thanks&#34;&gt;Thanks&lt;/h1&gt;
+&lt;hr&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python网络爬虫与文本分析</title>
+      <link>https://thunderhit.github.io/courses/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/courses/python%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;br&gt;
+&lt;p&gt;在过去的两年间，Python一路高歌猛进，成功窜上“最火编程语言”的宝座。惊奇的是使用Python最多的人群其实不是程序员，而是数据科学家，尤其是社会科学家，涵盖的学科有经济学、管理学、会计学、社会学、传播学、新闻学等等。&lt;/p&gt;
+&lt;p&gt;大数据时代到来，网络数据正成为潜在宝藏，大量商业信息、社会信息以文本等非结构化、异构型数据格式存储于网页中。非计算机专业背景的人也可借助机器学习、人工智能等方法进行研究。使用网络世界数据进行研究，面临两大难点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;数据的批量获取&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文本（非结构化）数据的处理与分析&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参照已发表的社科类文章，希望帮大家解决这两大难点。课程设计的初衷是用最少的时间让大家学到最有用最常用最易用的知识点，降低学习难度。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;课程目录&#34;&gt;课程目录&lt;/h1&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;第一节-课程简介&#34;&gt;第一节 课程简介&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;课程介绍&lt;/li&gt;
+&lt;li&gt;课程知识点分布情况&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第二节-环境配置&#34;&gt;第二节 环境配置&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Mac环境配置&lt;/li&gt;
+&lt;li&gt;Windows环境配置&lt;/li&gt;
+&lt;li&gt;pip安装问题解决办法&lt;/li&gt;
+&lt;li&gt;jupyter notebook使用方法&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第三节-python基本语法&#34;&gt;第三节 python基本语法&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;python跟英文一样也是一门语言，这很文科&lt;/li&gt;
+&lt;li&gt;字符串&lt;/li&gt;
+&lt;li&gt;列表&lt;/li&gt;
+&lt;li&gt;元组&lt;/li&gt;
+&lt;li&gt;字典&lt;/li&gt;
+&lt;li&gt;集合&lt;/li&gt;
+&lt;li&gt;if 条件语句&lt;/li&gt;
+&lt;li&gt;for循环语句&lt;/li&gt;
+&lt;li&gt;try-except异常处理语句&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第四节-python高级语法&#34;&gt;第四节 python高级语法&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;切片-对想要的数据字段进行切片&lt;/li&gt;
+&lt;li&gt;列表推导式&lt;/li&gt;
+&lt;li&gt;函数&lt;/li&gt;
+&lt;li&gt;csv文件存储库&lt;/li&gt;
+&lt;li&gt;os文件路径操作库&lt;/li&gt;
+&lt;li&gt;re正则表达式(文本分析利器)&lt;/li&gt;
+&lt;li&gt;python初学者常见错误&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第五节-网络爬虫原理&#34;&gt;第五节 网络爬虫原理&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;理解访问与请求&lt;/li&gt;
+&lt;li&gt;寻求网址规律&lt;/li&gt;
+&lt;li&gt;requests访问库&lt;/li&gt;
+&lt;li&gt;pyquery网页解析定位库&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第六节-网络爬虫实战&#34;&gt;第六节 网络爬虫实战&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;静态网站-天涯论坛&lt;/li&gt;
+&lt;li&gt;静态网站-大众点评&lt;/li&gt;
+&lt;li&gt;静态网站-boss直聘&lt;/li&gt;
+&lt;li&gt;动态网站-百度企业信用&lt;/li&gt;
+&lt;li&gt;动态网站-京东评论&lt;/li&gt;
+&lt;li&gt;动态网站-B站弹幕&lt;/li&gt;
+&lt;li&gt;动态网站-B站评论&lt;/li&gt;
+&lt;li&gt;如何用pandas采集网页中的表格数据&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第七节-初识文本分析&#34;&gt;第七节 初识文本分析&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;如何从不同格式的文件中读取数据&lt;/li&gt;
+&lt;li&gt;jieba分词、词频统计与可视化&lt;/li&gt;
+&lt;li&gt;海量公司年报的情感分析(中文)&lt;/li&gt;
+&lt;li&gt;英文数据的情感分析&lt;/li&gt;
+&lt;li&gt;如何对excel、csv文件做数据分析(pandas数据分析库)&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;第八节-文本分析与机器学习&#34;&gt;第八节 文本分析与机器学习&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;机器学习概论&lt;/li&gt;
+&lt;li&gt;用机器学习做文本分析的步骤&lt;/li&gt;
+&lt;li&gt;机器学习库scikit-learn&lt;/li&gt;
+&lt;li&gt;文本特征工程(描述数据的方式)&lt;/li&gt;
+&lt;li&gt;在线评论情感分类&lt;/li&gt;
+&lt;li&gt;了解聚类Kmeans算法&lt;/li&gt;
+&lt;li&gt;文本相似度计算&lt;/li&gt;
+&lt;li&gt;LDA话题模型&lt;/li&gt;
+&lt;li&gt;计算消费者异质性(特征向量)&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用案例&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;购买方式&#34;&gt;购买方式&lt;/h1&gt;
+&lt;h3 id=&#34;1-腾讯课堂-录播课httpskeqqcomcourse482241tuin163164df&#34;&gt;1. 
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯课堂-录播课&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;大邓个人开课，不能开票报销&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2--小鹅通-直播课httplocalhost1313slidesslides网络爬虫文本分析&#34;&gt;2.  
+&lt;a href=&#34;http://localhost:1313/slides/slides%e7%bd%91%e7%bb%9c%e7%88%ac%e8%99%ab%e6%96%87%e6%9c%ac%e5%88%86%e6%9e%90/#/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;小鹅通-直播课&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;机构合作，可支持开票报销&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;2020年6月29日~7月2日
+&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-现场工作坊&#34;&gt;3. 现场工作坊&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;机构合作，可支持开票报销&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;地点杭州，由于疫情原因，开展不了现场教学，时间待定~&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python自动化办公实战</title>
+      <link>https://thunderhit.github.io/courses/python%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8A%9E%E5%85%AC/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/courses/python%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8A%9E%E5%85%AC/</guid>
+      <description>&lt;br&gt;
+&lt;p&gt;很多职场人士想提高办公效率，python是一门很神奇的工具，ta可以帮我们职场人士做很多事情，尤其是在自动化办公领域，批量自动处理文件简直是职场人士的福音。自动化办公场景包括 excel、ppt、word等文件处理、邮件自动发送、网络爬虫（如数据采集、批量文件下载），这次我就来理一理 python 自动化办公的那些知识点。&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;课程目录&#34;&gt;课程目录&lt;/h1&gt;
+&lt;h3 id=&#34;准备篇&#34;&gt;&lt;strong&gt;准备篇&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;想象力丰富的自动化场景&lt;/li&gt;
+&lt;li&gt;快速上手一个小案例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;简单文件处理篇&#34;&gt;&lt;strong&gt;简单文件处理篇&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;批量更改文件名&lt;/li&gt;
+&lt;li&gt;批量检索pdf、word&lt;/li&gt;
+&lt;li&gt;批量读取csv、excel&lt;/li&gt;
+&lt;li&gt;定制excel文件内单元格的格式&lt;/li&gt;
+&lt;li&gt;批量将txt汇总到一个excel中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;网络爬虫&#34;&gt;&lt;strong&gt;网络爬虫&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;网络爬虫原理&lt;/li&gt;
+&lt;li&gt;你的第一个爬虫&lt;/li&gt;
+&lt;li&gt;自动下载某网站的pdf&lt;/li&gt;
+&lt;li&gt;自动下载某网站的图片&lt;/li&gt;
+&lt;li&gt;自动下载某网站视频&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;报告报表自动化&#34;&gt;&lt;strong&gt;报告报表自动化&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;批量生成合同(word)&lt;/li&gt;
+&lt;li&gt;网店口碑可视化（词云图制作）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;邮件自动化&#34;&gt;&lt;strong&gt;邮件自动化&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;如何设置邮箱，让Python控制你的邮箱(163邮箱为例)&lt;/li&gt;
+&lt;li&gt;月底给员工自动群发工资条邮件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;生成图形界面篇&#34;&gt;&lt;strong&gt;生成图形界面篇&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;简单的图形界面设计&lt;/li&gt;
+&lt;li&gt;自动群发邮件软件的可视化窗口实现&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;购买方式&#34;&gt;购买方式&lt;/h1&gt;
+&lt;h3 id=&#34;腾讯课堂-python自动化办公实战httpskeqqcomcourse1524799tuin163164df&#34;&gt;
+&lt;a href=&#34;https://ke.qq.com/course/1524799?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯课堂-Python自动化办公实战&lt;/a&gt;&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>shreport: 批量下载上交所定期报告</title>
+      <link>https://thunderhit.github.io/post/shreport/</link>
+      <pubDate>Thu, 28 May 2020 20:31:20 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/shreport/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#一简介&#34;&gt;一、简介&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#二安装&#34;&gt;二、安装&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#三功能说明&#34;&gt;三、功能说明&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#四快速入门&#34;&gt;四、快速入门&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#41--获取上证交易所上市公司目录&#34;&gt;4.1  获取上证交易所上市公司目录&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#42下载某公司所有定期报告文件&#34;&gt;4.2下载某公司所有定期报告文件&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#43-获取某公司的所有定期报告相关信息&#34;&gt;4.3 获取某公司的所有定期报告相关信息&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#44-获取某公司的所有定期报告url&#34;&gt;4.4 获取某公司的所有定期报告url&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#五获取cookies&#34;&gt;五、获取cookies&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#如果&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;一简介&#34;&gt;一、简介&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;上海证券交易所上市公司定期报告下载,项目地址 https://github.com/thunderhit/shreport
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;github地址 &lt;a href=&#34;https://github.com/thunderhit/shreport&#34;&gt;https://github.com/thunderhit/shreport&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;pypi地址 &lt;a href=&#34;https://pypi.org/project/shreport&#34;&gt;https://pypi.org/project/shreport&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;获取上证交易所所有公司目录&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;上市公司历年报告(季报、半年报、年报)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV15A411h7RJ&amp;page=1&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;二安装&#34;&gt;二、安装&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;pip install shreport
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;三功能说明&#34;&gt;三、功能说明&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;companys()
+  上证所有上市公司名录，公司名及股票代码
+  :return: 返回DataFrame
+
+pdfurls(code)
+  仅获取定期报告pdf下载链接
+  :param code:  股票代码
+  :return: 年报pdf链接
+  
+disclosure(self, code)
+   获得该公司的股票代码、报告类型、年份、定期报告披露日期、定期报告pdf下载链接, 返回DataFrame
+  :param code:  股票代码
+  
+  
+download(code, savepath)
+  下载该公司（code）的所有季度报告、半年报、年报pdf文件
+  :param code:  上市公司股票代码
+  :param savepath:  数据存储所在文件夹的路径，建议使用相对路径
+ 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;四快速入门&#34;&gt;四、快速入门&lt;/h2&gt;
+&lt;p&gt;一定要先获得cookies后才能使用下面的所有代码，这里先直接看代码使用情况，cookies获取可见文档&lt;/p&gt;
+&lt;h3 id=&#34;41--获取上证交易所上市公司目录&#34;&gt;4.1  获取上证交易所上市公司目录&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from shreport import SH
+
+cookies = {&amp;quot;Cookie&amp;quot;: &#39;您的cookies&#39;}
+sh = SH(cookies)
+df = sh.companys()
+
+#将查询结果存储
+#df.to_excel(&#39;上证交易所上市公司名录.xlsx&#39;)
+
+#显示前5条数据
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;code&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;白云机场&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600004&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;东风汽车&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600006&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;中国国贸&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600007&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;首创股份&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600008&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;42下载某公司所有定期报告文件&#34;&gt;4.2下载某公司所有定期报告文件&lt;/h3&gt;
+&lt;p&gt;绝大多数报告文件名格式&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件&lt;/th&gt;
+&lt;th&gt;文件名&lt;/th&gt;
+&lt;th&gt;例子&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;季度报&lt;/td&gt;
+&lt;td&gt;公司代码-年份-数字&lt;/td&gt;
+&lt;td&gt;600000-2000-1.pdf、600000-2000-3.pdf&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;半年报&lt;/td&gt;
+&lt;td&gt;公司代码-年份-z&lt;/td&gt;
+&lt;td&gt;600000-2000-z.pdf&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;年报&lt;/td&gt;
+&lt;td&gt;公司代码-年份-n&lt;/td&gt;
+&lt;td&gt;600000-2000-n.pdf&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;代码&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pathlib import Path
+from shreport import SH
+
+cookies = {&amp;quot;Cookie&amp;quot;: &#39;您的cookies&#39;}
+sh = SH(cookies)
+#获取当前代码所在的文件夹路径
+cwd = Path().cwd() 
+#以浦发银行为例股票代码600000
+sh.download(code=&#39;600000&#39;, savepath=cwd)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;=======请耐心等待，正在获取600000数据
+=======准备获取600000年报文件链接========
+=======年报文件链接已获取完毕=============
+已成功下载600000_2000_1.pdf
+已成功下载600000_2000_z.pdf
+已成功下载600000_2000_3.pdf
+已成功下载600000_2000_n.pdf
+......
+已成功下载600000_2019_1.pdf
+已成功下载600000_2019_z.pdf
+已成功下载600000_2019_3.pdf
+已成功下载600000_2000_n.pdf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;43-获取某公司的所有定期报告相关信息&#34;&gt;4.3 获取某公司的所有定期报告相关信息&lt;/h3&gt;
+&lt;p&gt;如果暂时不想下载定期报告pdf文件，可以可以先获取某公司的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;股票代码&lt;/li&gt;
+&lt;li&gt;报告类型&lt;/li&gt;
+&lt;li&gt;年份&lt;/li&gt;
+&lt;li&gt;定期报告披露日期&lt;/li&gt;
+&lt;li&gt;定期报告pdf下载链接&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;结果返回DataFrame&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from shreport import SH
+
+cookies = {&amp;quot;Cookie&amp;quot;: &#39;您的cookies&#39;}
+sh = SH(cookies)
+
+
+#获取浦发银行披露信息
+df = sh.disclosure(code=&#39;600000&#39;)
+
+#存储数据
+#df.to_excel(&#39;600000.xlsx&#39;)
+
+#前5条信息
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;company&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;code&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;year&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;date&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;pdf&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;半年报&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2000-07-28&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2000_1.pdf&#34;&gt;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2000_1.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;第三季度季报&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002-10-30&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-10-30/600000_2002_3.pdf&#34;&gt;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-10-30/600000_2002_3.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;半年报&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002-08-17&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-08-17/600000_2002_z.pdf&#34;&gt;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-08-17/600000_2002_z.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;第一季度季报&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002-04-27&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2002_1.pdf&#34;&gt;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2002_1.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;年报&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2001&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002-03-21&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2001_n.pdf&#34;&gt;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2001_n.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;44-获取某公司的所有定期报告url&#34;&gt;4.4 获取某公司的所有定期报告url&lt;/h3&gt;
+&lt;p&gt;如果暂时不想下载定期报告pdf文件，可以只得到该公司所有的报告文件链接&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from shreport import SH
+
+cookies = {&amp;quot;Cookie&amp;quot;: &#39;您的cookies&#39;}
+sh = SH(cookies)
+#以浦发银行为例股票代码600000
+urls = sh.pdfurls(code=&#39;600000&#39;)
+urls
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;=======准备获取600000年报文件链接========
+=======年报文件链接已获取完毕=============
+[&#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2000_1.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-10-30/600000_2002_3.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-08-17/600000_2002_z.pdf&#39;,
+ .......
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2002_1.pdf&#39;,
+
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2019-03-26/600000_2018_n.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2018-10-31/600000_2018_3.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2018-08-30/600000_2018_z.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2018-04-28/600000_2017_n.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2018-04-28/600000_2018_1.pdf&#39;]
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;五获取cookies&#34;&gt;五、获取cookies&lt;/h2&gt;
+&lt;p&gt;一定要先获得cookies后才能使用所有的代码，获取方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器访问http://www.sse.com.cn/disclosure/overview/&lt;/li&gt;
+&lt;li&gt;按F12（mac按option+command+I)打开开发者工具的Network&lt;/li&gt;
+&lt;li&gt;刷新网页，耐心寻找与www.sse.com.cn有关的任意网址，找到cookies&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;img/cookies.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/thunderhit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>shreport库</title>
+      <link>https://thunderhit.github.io/project/shreport/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/project/shreport/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#一简介&#34;&gt;一、简介&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#二安装&#34;&gt;二、安装&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#三功能说明&#34;&gt;三、功能说明&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#四快速入门&#34;&gt;四、快速入门&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#41--获取上证交易所上市公司目录&#34;&gt;4.1  获取上证交易所上市公司目录&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#42下载某公司所有定期报告文件&#34;&gt;4.2下载某公司所有定期报告文件&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#43-获取某公司的所有定期报告相关信息&#34;&gt;4.3 获取某公司的所有定期报告相关信息&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#44-获取某公司的所有定期报告url&#34;&gt;4.4 获取某公司的所有定期报告url&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#五获取cookies&#34;&gt;五、获取cookies&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#如果&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h2 id=&#34;一简介&#34;&gt;一、简介&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;上海证券交易所上市公司定期报告下载,项目地址 https://github.com/thunderhit/shreport
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;github地址 &lt;a href=&#34;https://github.com/thunderhit/shreport&#34;&gt;https://github.com/thunderhit/shreport&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;pypi地址 &lt;a href=&#34;https://pypi.org/project/shreport&#34;&gt;https://pypi.org/project/shreport&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;能：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;获取上证交易所所有公司目录&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;上市公司历年报告(季报、半年报、年报)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV15A411h7RJ&amp;page=1&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;二安装&#34;&gt;二、安装&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;pip install shreport
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;三功能说明&#34;&gt;三、功能说明&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;companys()
+  上证所有上市公司名录，公司名及股票代码
+  :return: 返回DataFrame
+
+pdfurls(code)
+  仅获取定期报告pdf下载链接
+  :param code:  股票代码
+  :return: 年报pdf链接
+  
+disclosure(self, code)
+   获得该公司的股票代码、报告类型、年份、定期报告披露日期、定期报告pdf下载链接, 返回DataFrame
+  :param code:  股票代码
+  
+  
+download(code, savepath)
+  下载该公司（code）的所有季度报告、半年报、年报pdf文件
+  :param code:  上市公司股票代码
+  :param savepath:  数据存储所在文件夹的路径，建议使用相对路径
+ 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;四快速入门&#34;&gt;四、快速入门&lt;/h2&gt;
+&lt;p&gt;一定要先获得cookies后才能使用下面的所有代码，这里先直接看代码使用情况，cookies获取可见文档&lt;/p&gt;
+&lt;h3 id=&#34;41--获取上证交易所上市公司目录&#34;&gt;4.1  获取上证交易所上市公司目录&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from shreport import SH
+
+cookies = {&amp;quot;Cookie&amp;quot;: &#39;您的cookies&#39;}
+sh = SH(cookies)
+df = sh.companys()
+
+#将查询结果存储
+#df.to_excel(&#39;上证交易所上市公司名录.xlsx&#39;)
+
+#显示前5条数据
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;code&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;白云机场&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600004&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;东风汽车&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600006&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;中国国贸&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600007&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;首创股份&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600008&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;42下载某公司所有定期报告文件&#34;&gt;4.2下载某公司所有定期报告文件&lt;/h3&gt;
+&lt;p&gt;绝大多数报告文件名格式&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;文件&lt;/th&gt;
+&lt;th&gt;文件名&lt;/th&gt;
+&lt;th&gt;例子&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;季度报&lt;/td&gt;
+&lt;td&gt;公司代码-年份-数字&lt;/td&gt;
+&lt;td&gt;600000-2000-1.pdf、600000-2000-3.pdf&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;半年报&lt;/td&gt;
+&lt;td&gt;公司代码-年份-z&lt;/td&gt;
+&lt;td&gt;600000-2000-z.pdf&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;年报&lt;/td&gt;
+&lt;td&gt;公司代码-年份-n&lt;/td&gt;
+&lt;td&gt;600000-2000-n.pdf&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;代码&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pathlib import Path
+from shreport import SH
+
+cookies = {&amp;quot;Cookie&amp;quot;: &#39;您的cookies&#39;}
+sh = SH(cookies)
+#获取当前代码所在的文件夹路径
+cwd = Path().cwd() 
+#以浦发银行为例股票代码600000
+sh.download(code=&#39;600000&#39;, savepath=cwd)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;=======请耐心等待，正在获取600000数据
+=======准备获取600000年报文件链接========
+=======年报文件链接已获取完毕=============
+已成功下载600000_2000_1.pdf
+已成功下载600000_2000_z.pdf
+已成功下载600000_2000_3.pdf
+已成功下载600000_2000_n.pdf
+......
+已成功下载600000_2019_1.pdf
+已成功下载600000_2019_z.pdf
+已成功下载600000_2019_3.pdf
+已成功下载600000_2000_n.pdf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;43-获取某公司的所有定期报告相关信息&#34;&gt;4.3 获取某公司的所有定期报告相关信息&lt;/h3&gt;
+&lt;p&gt;如果暂时不想下载定期报告pdf文件，可以可以先获取某公司的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;股票代码&lt;/li&gt;
+&lt;li&gt;报告类型&lt;/li&gt;
+&lt;li&gt;年份&lt;/li&gt;
+&lt;li&gt;定期报告披露日期&lt;/li&gt;
+&lt;li&gt;定期报告pdf下载链接&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;结果返回DataFrame&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from shreport import SH
+
+cookies = {&amp;quot;Cookie&amp;quot;: &#39;您的cookies&#39;}
+sh = SH(cookies)
+
+
+#获取浦发银行披露信息
+df = sh.disclosure(code=&#39;600000&#39;)
+
+#存储数据
+#df.to_excel(&#39;600000.xlsx&#39;)
+
+#前5条信息
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;company&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;code&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;year&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;date&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;pdf&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;半年报&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2000-07-28&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2000_1.pdf&#34;&gt;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2000_1.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;第三季度季报&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002-10-30&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-10-30/600000_2002_3.pdf&#34;&gt;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-10-30/600000_2002_3.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;半年报&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002-08-17&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-08-17/600000_2002_z.pdf&#34;&gt;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-08-17/600000_2002_z.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;第一季度季报&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002-04-27&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2002_1.pdf&#34;&gt;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2002_1.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;浦发银行&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;600000&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;年报&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2001&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2002-03-21&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2001_n.pdf&#34;&gt;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2001_n.pdf&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;44-获取某公司的所有定期报告url&#34;&gt;4.4 获取某公司的所有定期报告url&lt;/h3&gt;
+&lt;p&gt;如果暂时不想下载定期报告pdf文件，可以只得到该公司所有的报告文件链接&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from shreport import SH
+
+cookies = {&amp;quot;Cookie&amp;quot;: &#39;您的cookies&#39;}
+sh = SH(cookies)
+#以浦发银行为例股票代码600000
+urls = sh.pdfurls(code=&#39;600000&#39;)
+urls
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;=======准备获取600000年报文件链接========
+=======年报文件链接已获取完毕=============
+[&#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2000_1.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-10-30/600000_2002_3.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2002-08-17/600000_2002_z.pdf&#39;,
+ .......
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/600000_2002_1.pdf&#39;,
+
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2019-03-26/600000_2018_n.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2018-10-31/600000_2018_3.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2018-08-30/600000_2018_z.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2018-04-28/600000_2017_n.pdf&#39;,
+ &#39;http://www.sse.com.cn/disclosure/listedinfo/announcement/c/2018-04-28/600000_2018_1.pdf&#39;]
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;五获取cookies&#34;&gt;五、获取cookies&lt;/h2&gt;
+&lt;p&gt;一定要先获得cookies后才能使用所有的代码，获取方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器访问http://www.sse.com.cn/disclosure/overview/&lt;/li&gt;
+&lt;li&gt;按F12（mac按option+command+I)打开开发者工具的Network&lt;/li&gt;
+&lt;li&gt;刷新网页，耐心寻找与www.sse.com.cn有关的任意网址，找到cookies&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;img/cookies.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/thunderhit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

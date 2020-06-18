@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>情感分析 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/</link>
+      <atom:link href="https://thunderhit.github.io/tag/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    <description>情感分析</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Mon, 18 May 2020 17:31:20 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>情感分析</title>
+      <link>https://thunderhit.github.io/tag/%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/</link>
+    </image>
+    
+    <item>
+      <title>cnsenti库:简单易用的中文情感分析库</title>
+      <link>https://thunderhit.github.io/post/cnsenti/</link>
+      <pubDate>Mon, 18 May 2020 17:31:20 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/cnsenti/</guid>
+      <description>&lt;h1 id=&#34;一cnsenti&#34;&gt;一、cnsenti&lt;/h1&gt;
+&lt;p&gt;中文情感分析库(Chinese Sentiment))可对文本进行情绪分析、正负情感分析。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/thunderhit/cnsenti&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github地址&lt;/a&gt; &lt;code&gt;https://github.com/thunderhit/cnsenti&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://pypi.org/project/cnsenti/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pypi地址&lt;/a&gt;  &lt;code&gt;https://pypi.org/project/cnsenti/&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;特性&#34;&gt;特性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;情感分析默认使用的知网Hownet&lt;/li&gt;
+&lt;li&gt;情感分析可支持导入自定义txt情感词典(pos和neg)&lt;/li&gt;
+&lt;li&gt;情绪分析使用大连理工大学情感本体库，可以计算文本中的七大情绪词分布&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;pip install cnsenti
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;二快速上手&#34;&gt;二、快速上手&lt;/h1&gt;
+&lt;p&gt;中文文本情感词正负情感词统计&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Sentiment
+
+senti = Sentiment()
+test_text= &#39;我好开心啊，非常非常非常高兴！今天我得了一百分，我很兴奋开心，愉快，开心&#39;
+result = senti.sentiment_count(test_text)
+print(result)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;words&#39;: 24, 
+&#39;sentences&#39;: 2, 
+&#39;pos&#39;: 4, 
+&#39;neg&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;中文文本情绪统计&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Emotion
+
+emotion = Emotion()
+test_text = &#39;我好开心啊，非常非常非常高兴！今天我得了一百分，我很兴奋开心，愉快，开心&#39;
+result = emotion.emotion_count(test_text)
+print(result)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;words&#39;: 22, 
+&#39;sentences&#39;: 2, 
+&#39;好&#39;: 0, 
+&#39;乐&#39;: 4, 
+&#39;哀&#39;: 0, 
+&#39;怒&#39;: 0, 
+&#39;惧&#39;: 0, 
+&#39;恶&#39;: 0, 
+&#39;惊&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;三文档&#34;&gt;三、文档&lt;/h1&gt;
+&lt;p&gt;cnsenti包括Emotion和Sentiment两大类，其中&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Emotion&lt;/strong&gt; 情绪计算类,包括**emotion_count(text)**方法&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sentiment&lt;/strong&gt; 正负情感计算类，包括**sentiment_count(text)&lt;strong&gt;和&lt;/strong&gt;sentiment_calculate(text)**两种方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;31-emotion_counttext&#34;&gt;3.1 emotion_count(text)&lt;/h3&gt;
+&lt;p&gt;emotion_count(text)y用于统计文本中各种情绪形容词出现的词语数。使用大连理工大学情感本体库词典，支持&lt;strong&gt;七种情绪统计(好、乐、哀、怒、惧、恶、惊)&lt;/strong&gt;。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Emotion
+
+emotion = Emotion()
+test_text = &#39;我好开心啊，非常非常非常高兴！今天我得了一百分，我很兴奋开心，愉快，开心&#39;
+result = emotion.emotion_count(test_text)
+print(result)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;返回&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;words&#39;: 22, 
+&#39;sentences&#39;: 2, 
+&#39;好&#39;: 0, 
+&#39;乐&#39;: 4, 
+&#39;哀&#39;: 0, 
+&#39;怒&#39;: 0, 
+&#39;惧&#39;: 0, 
+&#39;恶&#39;: 0, 
+&#39;惊&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;words&lt;/strong&gt; 中文文本的词语数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sentences&lt;/strong&gt; 中文文本的句子数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;好、乐、哀、怒、惧、恶、惊&lt;/strong&gt;  text中各自情绪出现的词语数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;32-sentiment_counttext&#34;&gt;3.2 sentiment_count(text)&lt;/h3&gt;
+&lt;p&gt;隶属于Sentiment类，可对文本text中的正、负面词进行统计。默认使用Hownet词典，后面会讲到如何导入自定义正、负情感txt词典文件。这里以默认hownet词典进行统计。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Sentiment
+
+senti = Sentiment()
+test_text = &#39;我好开心啊，非常非常非常高兴！今天我得了一百分，我很兴奋开心，愉快，开心&#39;
+result = senti.sentiment_count(test_text)
+print(result)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;words&#39;: 24, 
+&#39;sentences&#39;: 2, 
+&#39;pos&#39;: 4, 
+&#39;neg&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;words 文本中词语数&lt;/li&gt;
+&lt;li&gt;sentences 文本中句子数&lt;/li&gt;
+&lt;li&gt;pos 文本中正面词总个数&lt;/li&gt;
+&lt;li&gt;neg 文本中负面词总个数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;33-sentiment_calculatetext&#34;&gt;3.3 sentiment_calculate(text)&lt;/h3&gt;
+&lt;p&gt;隶属于Sentiment类，可更加精准的计算文本的情感信息。相比于sentiment_count只统计文本正负情感词个数，sentiment_calculate还考虑了&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;情感词前是否有强度副词的修饰作用&lt;/li&gt;
+&lt;li&gt;情感词前是否有否定词的情感语义反转作用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;比如&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Sentiment
+
+senti = Sentiment()
+test_text = &#39;我好开心啊，非常非常非常高兴！今天我得了一百分，我很兴奋开心，愉快，开心&#39;
+result1 = senti.sentiment_count(test_text)
+result2 = senti.sentiment_calculate(test_text)
+print(&#39;sentiment_count&#39;,result1)
+print(&#39;sentiment_calculate&#39;,result2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sentiment_count 
+{&#39;words&#39;: 22, 
+&#39;sentences&#39;: 2, 
+&#39;pos&#39;: 4, 
+&#39;neg&#39;: 0}
+
+sentiment_calculate 
+{&#39;sentences&#39;: 2, 
+&#39;words&#39;: 22, 
+&#39;pos&#39;: 27.0, 
+&#39;neg&#39;: 0.0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;34-自定义词典&#34;&gt;3.4 自定义词典&lt;/h3&gt;
+&lt;p&gt;我们先看看没有情感形容词的情形&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Sentiment
+senti = Sentiment()      #两txt均为utf-8编码
+test_text = &#39;这家公司是行业的引领者，是中流砥柱。&#39;
+result1 = senti.sentiment_count(test_text)
+result2 = senti.sentiment_calculate(test_text)
+print(&#39;sentiment_count&#39;,result1)
+print(&#39;sentiment_calculate&#39;,result2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sentiment_count {&#39;words&#39;: 10, &#39;sentences&#39;: 1, &#39;pos&#39;: 0, &#39;neg&#39;: 0}
+sentiment_calculate {&#39;sentences&#39;: 1, &#39;words&#39;: 10, &#39;pos&#39;: 0, &#39;neg&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如我所料，虽然句子是正面的，但是因为cnsenti自带的情感词典仅仅是形容词情感词典，对于很多场景而言，适用性有限，所以pos=0。&lt;/p&gt;
+&lt;h4 id=&#34;341-自定词典格式&#34;&gt;3.4.1 自定词典格式&lt;/h4&gt;
+&lt;p&gt;好在cnsenti支持导入自定义词典，但目前&lt;strong&gt;只有Sentiment类支持导入自定义正负情感词典&lt;/strong&gt;，自定义词典需要满足&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;必须为txt文件&lt;/li&gt;
+&lt;li&gt;原则上建议encoding为utf-8&lt;/li&gt;
+&lt;li&gt;txt文件每行只有一个词&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;342-sentiment自定义词典参数&#34;&gt;3.4.2 Sentiment自定义词典参数&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;senti = Sentiment(pos=&#39;正面词自定义.txt&#39;,  
+                  neg=&#39;负面词自定义.txt&#39;, 
+                  merge=True,  
+                  encoding=&#39;utf-8&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;pos 正面情感词典txt文件路径&lt;/li&gt;
+&lt;li&gt;neg 负面情感词典txt文件路径&lt;/li&gt;
+&lt;li&gt;merge 布尔值；merge=True，cnsenti会融合自定义词典和cnsenti自带词典；merge=False，cnsenti只使用自定义词典&lt;/li&gt;
+&lt;li&gt;encoding  两txt均为utf-8编码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;343-自定义词典使用案例&#34;&gt;3.4.3 自定义词典使用案例&lt;/h4&gt;
+&lt;p&gt;这部分我放到test文件夹内,代码和自定义词典均在test内，所以我使用相对路径设定自定义词典的路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-terminal&#34;&gt;|test
+   |---代码.py
+   |---正面词自定义.txt
+   |---负面词自定义.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;正面词自定义.txt&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;中流砥柱
+引领者
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Sentiment
+
+senti = Sentiment(pos=&#39;正面词自定义.txt&#39;,  #正面词典txt文件相对路径
+                  neg=&#39;负面词自定义.txt&#39;,  #负面词典txt文件相对路径
+                  merge=True,             #融合cnsenti自带词典和用户导入的自定义词典
+                  encoding=&#39;utf-8&#39;)      #两txt均为utf-8编码
+
+test_text = &#39;这家公司是行业的引领者，是中流砥柱。今年的业绩非常好。&#39;
+result1 = senti.sentiment_count(test_text)
+result2 = senti.sentiment_calculate(test_text)
+print(&#39;sentiment_count&#39;,result1)
+print(&#39;sentiment_calculate&#39;,result2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sentiment_count {&#39;words&#39;: 16, &#39;sentences&#39;: 2, &#39;pos&#39;: 2, &#39;neg&#39;: 0}
+sentiment_calculate {&#39;sentences&#39;: 2, &#39;words&#39;: 16, &#39;pos&#39;: 5, &#39;neg&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上面参数我们传入了正面自定义词典和负面自定义词典，并且使用了融合模式（merge=True），可以利用cnsenti自带的词典和刚刚导入的自定义词典进行情感计算。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;补充：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我设计的这个库目前仅能支持两类型pos和neg，如果你的研究问题是两分类问题，如好坏、美丑、善恶、正邪、友好敌对，你就可以定义两个txt文件，分别赋值给pos和neg，就可以使用cnsenti库。&lt;/p&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;四关于词典&#34;&gt;四、关于词典&lt;/h1&gt;
+&lt;p&gt;目前比较有可解释性的文本分析方法是词典法，算法逻辑都很清晰。词典的好坏决定了情感分析的好坏。如果没有词典，也就限制了你进行文本情感计算。&lt;/p&gt;
+&lt;p&gt;目前大多数人使用的是形容词情感词典，如大连理工大学情感本体库和知网Hownet，优点是直接拿来用，缺点也很明显，对于很多带情感却无形容词的文本无能为力。如&lt;strong&gt;这手机很耐摔&lt;/strong&gt;， 使用形容词情感词典计算得分pos和neg均为0。类似问题在不同研究对象的文本数据应该都是挺普遍的，所以人工构建情感词典还是很有必要的。&lt;/p&gt;
+&lt;p&gt;我封装了刘焕勇基于so_pmi算法的新词发现代码，将该库其命名为&lt;strong&gt;wordexpansion&lt;/strong&gt;。wordexpansion可以极大的提高提高自定义词典的构建速度，感兴趣的童鞋详情可以访问
+&lt;a href=&#34;https://github.com/thunderhit/wordexpansion&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;wordexpansion项目地址&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/thunderhit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cnsenti库</title>
+      <link>https://thunderhit.github.io/project/cnsenti/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/project/cnsenti/</guid>
+      <description>&lt;h1 id=&#34;一cnsenti&#34;&gt;一、cnsenti&lt;/h1&gt;
+&lt;p&gt;中文情感分析库(Chinese Sentiment))可对文本进行情绪分析、正负情感分析。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://github.com/thunderhit/cnsenti&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github地址&lt;/a&gt; &lt;code&gt;https://github.com/thunderhit/cnsenti&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://pypi.org/project/cnsenti/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pypi地址&lt;/a&gt;  &lt;code&gt;https://pypi.org/project/cnsenti/&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;特性&#34;&gt;特性&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;情感分析默认使用的知网Hownet&lt;/li&gt;
+&lt;li&gt;情感分析可支持导入自定义txt情感词典(pos和neg)&lt;/li&gt;
+&lt;li&gt;情绪分析使用大连理工大学情感本体库，可以计算文本中的七大情绪词分布&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;pip install cnsenti
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;二快速上手&#34;&gt;二、快速上手&lt;/h1&gt;
+&lt;p&gt;中文文本情感词正负情感词统计&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Sentiment
+
+senti = Sentiment()
+test_text= &#39;我好开心啊，非常非常非常高兴！今天我得了一百分，我很兴奋开心，愉快，开心&#39;
+result = senti.sentiment_count(test_text)
+print(result)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;words&#39;: 24, 
+&#39;sentences&#39;: 2, 
+&#39;pos&#39;: 4, 
+&#39;neg&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;中文文本情绪统计&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Emotion
+
+emotion = Emotion()
+test_text = &#39;我好开心啊，非常非常非常高兴！今天我得了一百分，我很兴奋开心，愉快，开心&#39;
+result = emotion.emotion_count(test_text)
+print(result)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;words&#39;: 22, 
+&#39;sentences&#39;: 2, 
+&#39;好&#39;: 0, 
+&#39;乐&#39;: 4, 
+&#39;哀&#39;: 0, 
+&#39;怒&#39;: 0, 
+&#39;惧&#39;: 0, 
+&#39;恶&#39;: 0, 
+&#39;惊&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;三文档&#34;&gt;三、文档&lt;/h1&gt;
+&lt;p&gt;cnsenti包括Emotion和Sentiment两大类，其中&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Emotion&lt;/strong&gt; 情绪计算类,包括**emotion_count(text)**方法&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sentiment&lt;/strong&gt; 正负情感计算类，包括**sentiment_count(text)&lt;strong&gt;和&lt;/strong&gt;sentiment_calculate(text)**两种方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;31-emotion_counttext&#34;&gt;3.1 emotion_count(text)&lt;/h3&gt;
+&lt;p&gt;emotion_count(text)y用于统计文本中各种情绪形容词出现的词语数。使用大连理工大学情感本体库词典，支持&lt;strong&gt;七种情绪统计(好、乐、哀、怒、惧、恶、惊)&lt;/strong&gt;。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Emotion
+
+emotion = Emotion()
+test_text = &#39;我好开心啊，非常非常非常高兴！今天我得了一百分，我很兴奋开心，愉快，开心&#39;
+result = emotion.emotion_count(test_text)
+print(result)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;返回&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;words&#39;: 22, 
+&#39;sentences&#39;: 2, 
+&#39;好&#39;: 0, 
+&#39;乐&#39;: 4, 
+&#39;哀&#39;: 0, 
+&#39;怒&#39;: 0, 
+&#39;惧&#39;: 0, 
+&#39;恶&#39;: 0, 
+&#39;惊&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;words&lt;/strong&gt; 中文文本的词语数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sentences&lt;/strong&gt; 中文文本的句子数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;好、乐、哀、怒、惧、恶、惊&lt;/strong&gt;  text中各自情绪出现的词语数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;32-sentiment_counttext&#34;&gt;3.2 sentiment_count(text)&lt;/h3&gt;
+&lt;p&gt;隶属于Sentiment类，可对文本text中的正、负面词进行统计。默认使用Hownet词典，后面会讲到如何导入自定义正、负情感txt词典文件。这里以默认hownet词典进行统计。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Sentiment
+
+senti = Sentiment()
+test_text = &#39;我好开心啊，非常非常非常高兴！今天我得了一百分，我很兴奋开心，愉快，开心&#39;
+result = senti.sentiment_count(test_text)
+print(result)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;words&#39;: 24, 
+&#39;sentences&#39;: 2, 
+&#39;pos&#39;: 4, 
+&#39;neg&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;words 文本中词语数&lt;/li&gt;
+&lt;li&gt;sentences 文本中句子数&lt;/li&gt;
+&lt;li&gt;pos 文本中正面词总个数&lt;/li&gt;
+&lt;li&gt;neg 文本中负面词总个数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;33-sentiment_calculatetext&#34;&gt;3.3 sentiment_calculate(text)&lt;/h3&gt;
+&lt;p&gt;隶属于Sentiment类，可更加精准的计算文本的情感信息。相比于sentiment_count只统计文本正负情感词个数，sentiment_calculate还考虑了&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;情感词前是否有强度副词的修饰作用&lt;/li&gt;
+&lt;li&gt;情感词前是否有否定词的情感语义反转作用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;比如&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Sentiment
+
+senti = Sentiment()
+test_text = &#39;我好开心啊，非常非常非常高兴！今天我得了一百分，我很兴奋开心，愉快，开心&#39;
+result1 = senti.sentiment_count(test_text)
+result2 = senti.sentiment_calculate(test_text)
+print(&#39;sentiment_count&#39;,result1)
+print(&#39;sentiment_calculate&#39;,result2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sentiment_count 
+{&#39;words&#39;: 22, 
+&#39;sentences&#39;: 2, 
+&#39;pos&#39;: 4, 
+&#39;neg&#39;: 0}
+
+sentiment_calculate 
+{&#39;sentences&#39;: 2, 
+&#39;words&#39;: 22, 
+&#39;pos&#39;: 27.0, 
+&#39;neg&#39;: 0.0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;34-自定义词典&#34;&gt;3.4 自定义词典&lt;/h3&gt;
+&lt;p&gt;我们先看看没有情感形容词的情形&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Sentiment
+senti = Sentiment()      #两txt均为utf-8编码
+test_text = &#39;这家公司是行业的引领者，是中流砥柱。&#39;
+result1 = senti.sentiment_count(test_text)
+result2 = senti.sentiment_calculate(test_text)
+print(&#39;sentiment_count&#39;,result1)
+print(&#39;sentiment_calculate&#39;,result2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sentiment_count {&#39;words&#39;: 10, &#39;sentences&#39;: 1, &#39;pos&#39;: 0, &#39;neg&#39;: 0}
+sentiment_calculate {&#39;sentences&#39;: 1, &#39;words&#39;: 10, &#39;pos&#39;: 0, &#39;neg&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如我所料，虽然句子是正面的，但是因为cnsenti自带的情感词典仅仅是形容词情感词典，对于很多场景而言，适用性有限，所以pos=0。&lt;/p&gt;
+&lt;h4 id=&#34;341-自定词典格式&#34;&gt;3.4.1 自定词典格式&lt;/h4&gt;
+&lt;p&gt;好在cnsenti支持导入自定义词典，但目前&lt;strong&gt;只有Sentiment类支持导入自定义正负情感词典&lt;/strong&gt;，自定义词典需要满足&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;必须为txt文件&lt;/li&gt;
+&lt;li&gt;原则上建议encoding为utf-8&lt;/li&gt;
+&lt;li&gt;txt文件每行只有一个词&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;342-sentiment自定义词典参数&#34;&gt;3.4.2 Sentiment自定义词典参数&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;senti = Sentiment(pos=&#39;正面词自定义.txt&#39;,  
+                  neg=&#39;负面词自定义.txt&#39;, 
+                  merge=True,  
+                  encoding=&#39;utf-8&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;pos 正面情感词典txt文件路径&lt;/li&gt;
+&lt;li&gt;neg 负面情感词典txt文件路径&lt;/li&gt;
+&lt;li&gt;merge 布尔值；merge=True，cnsenti会融合自定义词典和cnsenti自带词典；merge=False，cnsenti只使用自定义词典&lt;/li&gt;
+&lt;li&gt;encoding  两txt均为utf-8编码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;343-自定义词典使用案例&#34;&gt;3.4.3 自定义词典使用案例&lt;/h4&gt;
+&lt;p&gt;这部分我放到test文件夹内,代码和自定义词典均在test内，所以我使用相对路径设定自定义词典的路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-terminal&#34;&gt;|test
+   |---代码.py
+   |---正面词自定义.txt
+   |---负面词自定义.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;正面词自定义.txt&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;中流砥柱
+引领者
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from cnsenti import Sentiment
+
+senti = Sentiment(pos=&#39;正面词自定义.txt&#39;,  #正面词典txt文件相对路径
+                  neg=&#39;负面词自定义.txt&#39;,  #负面词典txt文件相对路径
+                  merge=True,             #融合cnsenti自带词典和用户导入的自定义词典
+                  encoding=&#39;utf-8&#39;)      #两txt均为utf-8编码
+
+test_text = &#39;这家公司是行业的引领者，是中流砥柱。今年的业绩非常好。&#39;
+result1 = senti.sentiment_count(test_text)
+result2 = senti.sentiment_calculate(test_text)
+print(&#39;sentiment_count&#39;,result1)
+print(&#39;sentiment_calculate&#39;,result2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sentiment_count {&#39;words&#39;: 16, &#39;sentences&#39;: 2, &#39;pos&#39;: 2, &#39;neg&#39;: 0}
+sentiment_calculate {&#39;sentences&#39;: 2, &#39;words&#39;: 16, &#39;pos&#39;: 5, &#39;neg&#39;: 0}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上面参数我们传入了正面自定义词典和负面自定义词典，并且使用了融合模式（merge=True），可以利用cnsenti自带的词典和刚刚导入的自定义词典进行情感计算。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;补充：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我设计的这个库目前仅能支持两类型pos和neg，如果你的研究问题是两分类问题，如好坏、美丑、善恶、正邪、友好敌对，你就可以定义两个txt文件，分别赋值给pos和neg，就可以使用cnsenti库。&lt;/p&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;四关于词典&#34;&gt;四、关于词典&lt;/h1&gt;
+&lt;p&gt;目前比较有可解释性的文本分析方法是词典法，算法逻辑都很清晰。词典的好坏决定了情感分析的好坏。如果没有词典，也就限制了你进行文本情感计算。&lt;/p&gt;
+&lt;p&gt;目前大多数人使用的是形容词情感词典，如大连理工大学情感本体库和知网Hownet，优点是直接拿来用，缺点也很明显，对于很多带情感却无形容词的文本无能为力。如&lt;strong&gt;这手机很耐摔&lt;/strong&gt;， 使用形容词情感词典计算得分pos和neg均为0。类似问题在不同研究对象的文本数据应该都是挺普遍的，所以人工构建情感词典还是很有必要的。&lt;/p&gt;
+&lt;p&gt;我封装了刘焕勇基于so_pmi算法的新词发现代码，将该库其命名为&lt;strong&gt;wordexpansion&lt;/strong&gt;。wordexpansion可以极大的提高提高自定义词典的构建速度，感兴趣的童鞋详情可以访问
+&lt;a href=&#34;https://github.com/thunderhit/wordexpansion&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;wordexpansion项目地址&lt;/a&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/thunderhit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>wordexpansion: 快速构建不同领域(手机、汽车等)的情感词典</title>
+      <link>https://thunderhit.github.io/post/wordexpansion/</link>
+      <pubDate>Fri, 15 May 2020 20:31:20 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/wordexpansion/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#一项目意义&#34;&gt;一、项目意义&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#二构建方法&#34;&gt;二、构建方法&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#三安装&#34;&gt;三、安装&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#21-方法一&#34;&gt;2.1 方法一&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#22-加镜像站点&#34;&gt;2.2 加镜像站点&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#23-国内镜像安装&#34;&gt;2.3 国内镜像安装&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#四使用方法&#34;&gt;四、使用方法&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#41-文件目录&#34;&gt;4.1 文件目录&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#42-构建种子词&#34;&gt;4.2 构建种子词&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#42-准备发现情感新词&#34;&gt;4.2 准备发现情感新词&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#43-输出的结果&#34;&gt;4.3 输出的结果&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#五注意&#34;&gt;五、注意：&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#如果&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#simtext&#34;&gt;simtext&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#参考文献&#34;&gt;参考文献&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#如果-1&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#更多-1&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持一下&#34;&gt;支持一下&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;blockquote&gt;
+&lt;p&gt;README.md为本人所写，代码底层完全为刘焕勇设计。&lt;/p&gt;
+&lt;p&gt;大邓项目地址https://github.com/thunderhit/wordexpansion&lt;/p&gt;
+&lt;p&gt;原项目(刘焕勇)地址https://github.com/liuhuanyong/SentimentWordExpansion&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;一项目意义&#34;&gt;一、项目意义&lt;/h1&gt;
+&lt;p&gt;情感分析大多是基于情感词典对文本数据进行分析，所以情感词典好坏、是否完备充足是文本分析的关键。&lt;/p&gt;
+&lt;p&gt;目前常用的词典都是基于形容词，有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;知网HowNet&lt;/li&gt;
+&lt;li&gt;大连理工大学情感本体库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是形容词类型的词典在某些情况下不适用，比如&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;华为手机外壳采用金属制作，更耐摔&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由于句子中没有形容词，使用形容词情感词典计算得到的情感得分为0。但是&lt;strong&gt;耐摔&lt;/strong&gt;这个动词具有&lt;strong&gt;正面积极情绪&lt;/strong&gt;，这个句子的情感的分理应为&lt;strong&gt;正&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;可见能够简单快速构建不同领域(手机、汽车等)的情感词典十分重要。但是人工构建太慢，如果让机器帮我们把最有可能带情感的候选词找出来，人工再去筛选构建词典，那该多好啊。那么如何构建呢？&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;二构建方法&#34;&gt;二、构建方法&lt;/h1&gt;
+&lt;p&gt;计算机领域有一个算法叫做SO_PMI，互信息。简单的讲个体之间不是完全独立的，往往物以类聚，人以群分。如果我们一开始设定少量的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;初始正面种子词&lt;/li&gt;
+&lt;li&gt;初始负面种子词&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;程序会按照“物以类聚人以群分”的思路，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;根据&lt;strong&gt;初始正面种子词&lt;/strong&gt;找到很多大概率为&lt;strong&gt;正面情感的候选词&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;根据&lt;strong&gt;初始负种子词&lt;/strong&gt;找到很多大概率为&lt;strong&gt;负面情感的候选词&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个包原始作者刘焕勇，项目地址https://github.com/liuhuanyong/SentimentWordExpansion 我仅仅做了简单的封装&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;三安装&#34;&gt;三、安装&lt;/h1&gt;
+&lt;h3 id=&#34;21-方法一&#34;&gt;2.1 方法一&lt;/h3&gt;
+&lt;p&gt;最简单的安装,现在由于国内外网络不稳定，运气不好可能需要尝试几次&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip3 install wordexpansion
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;22-加镜像站点&#34;&gt;2.2 加镜像站点&lt;/h3&gt;
+&lt;p&gt;有的童鞋已经把pip默认安装镜像站点改为国内，如果国内镜像还未收录我的这个包，那么可能会安装失败。只能从国外https://pypi.org/simple站点搜索wordexpansion资源并安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip3 install wordexpansion -i https://pypi.org/simple
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;23-国内镜像安装&#34;&gt;2.3 国内镜像安装&lt;/h3&gt;
+&lt;p&gt;如果国内镜像站点已经收录，那么使用这个会更快&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip3 install wordexpansion -i https://pypi.tuna.tsinghua.edu.cn/simple/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;四使用方法&#34;&gt;四、使用方法&lt;/h1&gt;
+&lt;h3 id=&#34;41-文件目录&#34;&gt;4.1 文件目录&lt;/h3&gt;
+&lt;p&gt;所有的txt文件，不论输入的还是程序输出的结果，均采用utf-8编码。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;|--test                           #情感词典扩展与构建测试文件夹
+     |--find_newwords.py          #测试代码
+     |--test_corpus.txt           #语料（某领域）文本数据，5.5M
+     |--test_seed_words.txt       #情感种子词，需要手动构建
+      
+     |--neg_candi.txt             #find_newwords.py运行后发现的负面候选词
+     |--pos_candi.txt             #find_newwords.py运行后发现的正面候选词
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完整项目请移步至https://github.com/thunderhit/wordexpansion&lt;/p&gt;
+&lt;h3 id=&#34;42-构建种子词&#34;&gt;4.2 构建种子词&lt;/h3&gt;
+&lt;p&gt;可能我们希望的情感词典几万个，但是种子词100个（正面词50个，负面词50个）说不定就可以。&lt;/p&gt;
+&lt;p&gt;手动构建的种子词典&lt;strong&gt;test_seed_words.txt&lt;/strong&gt;(编码encoding为utf-8)中&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每行一个词&lt;/li&gt;
+&lt;li&gt;每个词用neg或pos标记&lt;/li&gt;
+&lt;li&gt;词与标记用空格间隔&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;休克	neg
+如出一辙	neg
+渴求	neg
+扎堆	neg
+休整	neg
+关门	neg
+阴晴不定	neg
+喜忧参半	neg
+起起伏伏	neg
+一厢情愿	neg
+松紧	neg
+最全	pos
+雄风	pos
+稳健	pos
+稳定	pos
+拉平	pos
+保供	pos
+修正	pos
+稳	pos
+稳住	pos
+保养	pos
+...
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;42-准备发现情感新词&#34;&gt;4.2 准备发现情感新词&lt;/h3&gt;
+&lt;p&gt;已经安装好了&lt;strong&gt;wordexpansion&lt;/strong&gt;，现在我们新建一个名为&lt;strong&gt;find_newwords.py&lt;/strong&gt;的测试代码&lt;/p&gt;
+&lt;p&gt;代码中的&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from wordexpansion import ChineseSoPmi
+
+sopmier = ChineseSoPmi(inputtext_file=&#39;test_corpus.txt&#39;,
+                       seedword_txtfile=&#39;test_seed_words.txt&#39;,
+                       pos_candi_txt_file=&#39;pos_candi.txt&#39;,
+                       neg_candi_txtfile=&#39;neg_candi.txt&#39;)
+sopmier.sopmi()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们的语料数据&lt;strong&gt;test_corpus.txt&lt;/strong&gt; 文件5.5M，100个候选词，运行程序大概耗时60s&lt;/p&gt;
+&lt;h3 id=&#34;43-输出的结果&#34;&gt;4.3 输出的结果&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;find_newwords.py&lt;/strong&gt;运行结束后，会在**同文件夹内(find_newwords.py所在的文件夹)**发现有两个新的txt文件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pos_candi.txt&lt;/li&gt;
+&lt;li&gt;neg_candi.txt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;打开&lt;strong&gt;pos_candi.txt&lt;/strong&gt;, 我们看到&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;word,sopmi,polarity,word_length,postag
+保持,87.28493062512524,pos,2,v
+风险,70.15627986116269,pos,2,n
+货币政策,66.28476448498694,pos,4,n
+发展,64.40272795986517,pos,2,vn
+不要,63.71800916752807,pos,2,df
+理念,61.2024367757337,pos,2,n
+整体,59.415315156715586,pos,2,n
+下,59.321140440512984,pos,1,f
+引导,58.5817208758171,pos,2,v
+投资,57.71720491331896,pos,2,vn
+加强,57.067969337267684,pos,2,v
+自己,53.25503772499689,pos,2,r
+提升,52.80686380719989,pos,2,v
+和,52.12334472663675,pos,1,c
+稳步,51.58193211655792,pos,2,d
+重要,51.095865548255034,pos,2,a
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开&lt;strong&gt;neg_candi.txt&lt;/strong&gt;, 我们看到&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;word,sopmi,polarity,word_length,postag
+心灵,33.17993872989303,neg,2,n
+期间,31.77900620939178,neg,2,f
+西溪,30.87839808390589,neg,2,ns
+人事,29.594976229171877,neg,2,n
+复杂,29.47870186147108,neg,2,a
+直到,27.86014637934966,neg,2,v
+宰客,27.27304813428452,neg,2,nr
+保险,26.433136238404746,neg,2,n
+迎来,25.83859896903048,neg,2,v
+至少,25.105021416064616,neg,2,d
+融资,25.09148586460598,neg,2,vn
+或,24.48343281812743,neg,1,c
+列,22.20695894382675,neg,1,v
+存在,22.041049266517774,neg,2,v
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;从上面的结果看，正面候选词较好，负面候选词有点差强人意。虽然差点，但节约了很多很多时间。&lt;/p&gt;
+&lt;p&gt;现在电脑已经帮我们找出候选词，我们人类最擅长找毛病，对neg_candi.txt和pos_candi.txt我们人类只需要一个个挑毛病，把不带正负情感的词剔除掉。这样经过一段时间的剔除工作，针对具体研究领域的专业情感词典就构建出来了。&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;五注意&#34;&gt;五、注意：&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;so_pmi算法效果受训练语料影响，语料规模越大，效果越好&lt;/li&gt;
+&lt;li&gt;so_pmi算法效率受训练语料影响，语料越大，训练越耗时。100个种子词，5M的数据，大约耗时62.679秒&lt;/li&gt;
+&lt;li&gt;候选词的选择，可根据PMI值，词长，词性设定规则，进行筛选  &lt;/li&gt;
+&lt;li&gt;所有的txt文件均采用utf-8编码，如果遇到UnicodeDetectorError: &amp;lsquo;gbk&amp;rsquo; codec。。请自行解决文件的encode问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[github](&lt;a href=&#34;https://github.com/thunderhit/wordexpansion&#34;&gt;https://github.com/thunderhit/wordexpansion&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;simtext&#34;&gt;simtext&lt;/h1&gt;
+&lt;p&gt;simtext可以计算两文档间四大文本相似性指标，分别为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sim_Cosine    cosine相似性&lt;/li&gt;
+&lt;li&gt;Sim_Jaccard   Jaccard相似性&lt;/li&gt;
+&lt;li&gt;Sim_MinEdit  最小编辑距离&lt;/li&gt;
+&lt;li&gt;Sim_Simple  微软Word中的track changes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;具体算法介绍可翻看Cohen, Lauren, Christopher Malloy&amp;amp;Quoc Nguyen(2018) 第60页&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/%E8%AE%BA%E6%96%87%E4%B8%AD%E7%9A%84%E5%85%AC%E5%BC%8F.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;pip install simtext
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;使用&#34;&gt;使用&lt;/h3&gt;
+&lt;p&gt;中文文本相似性&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from simtext import similarity
+
+text1 = &#39;在宏观经济背景下，为继续优化贷款结构，重点发展可以抵抗经济周期不良的贷款&#39;
+text2 = &#39;在宏观经济背景下，为继续优化贷款结构，重点发展可三年专业化、集约化、综合金融+物联网金融四大金融特色的基础上&#39;
+
+sim = similarity()
+res = sim.compute(text1, text2)
+print(res)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;Sim_Cosine&#39;: 0.46475800154489, 
+&#39;Sim_Jaccard&#39;: 0.3333333333333333, 
+&#39;Sim_MinEdit&#39;: 29, 
+&#39;Sim_Simple&#39;: 0.9889595182335229}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;英文文本相似性&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from simtext import similarity
+
+A = &#39;We expect demand to increase.&#39;
+B = &#39;We expect worldwide demand to increase.&#39;
+C = &#39;We expect weakness in sales&#39;
+
+sim = similarity()
+AB = sim.compute(A, B)
+AC = sim.compute(A, C)
+
+print(AB)
+print(AC)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;Sim_Cosine&#39;: 0.9128709291752769, 
+&#39;Sim_Jaccard&#39;: 0.8333333333333334, 
+&#39;Sim_MinEdit&#39;: 2, 
+&#39;Sim_Simple&#39;: 0.9545454545454546}
+
+{&#39;Sim_Cosine&#39;: 0.39999999999999997, 
+&#39;Sim_Jaccard&#39;: 0.25, 
+&#39;Sim_MinEdit&#39;: 4, 
+&#39;Sim_Simple&#39;: 0.9315789473684211}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;参考文献&#34;&gt;参考文献&lt;/h3&gt;
+&lt;p&gt;Cohen, Lauren, Christopher Malloy, and Quoc Nguyen. &lt;em&gt;Lazy prices&lt;/em&gt;. No. w25084. National Bureau of Economic Research, 2018.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;如果-1&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h2 id=&#34;更多-1&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/thunderhit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;支持一下&#34;&gt;支持一下&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>wordexpansion库</title>
+      <link>https://thunderhit.github.io/project/wordexpansion/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/project/wordexpansion/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;README.md为本人所写，代码底层完全为刘焕勇设计。&lt;/p&gt;
+&lt;p&gt;大邓项目地址https://github.com/thunderhit/wordexpansion&lt;/p&gt;
+&lt;p&gt;原项目(刘焕勇)地址https://github.com/liuhuanyong/SentimentWordExpansion&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;一项目意义&#34;&gt;一、项目意义&lt;/h1&gt;
+&lt;p&gt;情感分析大多是基于情感词典对文本数据进行分析，所以情感词典好坏、是否完备充足是文本分析的关键。&lt;/p&gt;
+&lt;p&gt;目前常用的词典都是基于形容词，有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;知网HowNet&lt;/li&gt;
+&lt;li&gt;大连理工大学情感本体库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是形容词类型的词典在某些情况下不适用，比如&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;华为手机外壳采用金属制作，更耐摔&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;由于句子中没有形容词，使用形容词情感词典计算得到的情感得分为0。但是&lt;strong&gt;耐摔&lt;/strong&gt;这个动词具有&lt;strong&gt;正面积极情绪&lt;/strong&gt;，这个句子的情感的分理应为&lt;strong&gt;正&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;可见能够简单快速构建不同领域(手机、汽车等)的情感词典十分重要。但是人工构建太慢，如果让机器帮我们把最有可能带情感的候选词找出来，人工再去筛选构建词典，那该多好啊。那么如何构建呢？&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;二构建方法&#34;&gt;二、构建方法&lt;/h1&gt;
+&lt;p&gt;计算机领域有一个算法叫做SO_PMI，互信息。简单的讲个体之间不是完全独立的，往往物以类聚，人以群分。如果我们一开始设定少量的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;初始正面种子词&lt;/li&gt;
+&lt;li&gt;初始负面种子词&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;程序会按照“物以类聚人以群分”的思路，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;根据&lt;strong&gt;初始正面种子词&lt;/strong&gt;找到很多大概率为&lt;strong&gt;正面情感的候选词&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;根据&lt;strong&gt;初始负种子词&lt;/strong&gt;找到很多大概率为&lt;strong&gt;负面情感的候选词&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个包原始作者刘焕勇，项目地址https://github.com/liuhuanyong/SentimentWordExpansion 我仅仅做了简单的封装&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;三安装&#34;&gt;三、安装&lt;/h1&gt;
+&lt;h3 id=&#34;21-方法一&#34;&gt;2.1 方法一&lt;/h3&gt;
+&lt;p&gt;最简单的安装,现在由于国内外网络不稳定，运气不好可能需要尝试几次&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip3 install wordexpansion
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;22-加镜像站点&#34;&gt;2.2 加镜像站点&lt;/h3&gt;
+&lt;p&gt;有的童鞋已经把pip默认安装镜像站点改为国内，如果国内镜像还未收录我的这个包，那么可能会安装失败。只能从国外https://pypi.org/simple站点搜索wordexpansion资源并安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip3 install wordexpansion -i https://pypi.org/simple
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;23-国内镜像安装&#34;&gt;2.3 国内镜像安装&lt;/h3&gt;
+&lt;p&gt;如果国内镜像站点已经收录，那么使用这个会更快&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip3 install wordexpansion -i https://pypi.tuna.tsinghua.edu.cn/simple/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;四使用方法&#34;&gt;四、使用方法&lt;/h1&gt;
+&lt;h3 id=&#34;41-文件目录&#34;&gt;4.1 文件目录&lt;/h3&gt;
+&lt;p&gt;所有的txt文件，不论输入的还是程序输出的结果，均采用utf-8编码。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;|--test                           #情感词典扩展与构建测试文件夹
+     |--find_newwords.py          #测试代码
+     |--test_corpus.txt           #语料（某领域）文本数据，5.5M
+     |--test_seed_words.txt       #情感种子词，需要手动构建
+      
+     |--neg_candi.txt             #find_newwords.py运行后发现的负面候选词
+     |--pos_candi.txt             #find_newwords.py运行后发现的正面候选词
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完整项目请移步至https://github.com/thunderhit/wordexpansion&lt;/p&gt;
+&lt;h3 id=&#34;42-构建种子词&#34;&gt;4.2 构建种子词&lt;/h3&gt;
+&lt;p&gt;可能我们希望的情感词典几万个，但是种子词100个（正面词50个，负面词50个）说不定就可以。&lt;/p&gt;
+&lt;p&gt;手动构建的种子词典&lt;strong&gt;test_seed_words.txt&lt;/strong&gt;(编码encoding为utf-8)中&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每行一个词&lt;/li&gt;
+&lt;li&gt;每个词用neg或pos标记&lt;/li&gt;
+&lt;li&gt;词与标记用空格间隔&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;休克	neg
+如出一辙	neg
+渴求	neg
+扎堆	neg
+休整	neg
+关门	neg
+阴晴不定	neg
+喜忧参半	neg
+起起伏伏	neg
+一厢情愿	neg
+松紧	neg
+最全	pos
+雄风	pos
+稳健	pos
+稳定	pos
+拉平	pos
+保供	pos
+修正	pos
+稳	pos
+稳住	pos
+保养	pos
+...
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;42-准备发现情感新词&#34;&gt;4.2 准备发现情感新词&lt;/h3&gt;
+&lt;p&gt;已经安装好了&lt;strong&gt;wordexpansion&lt;/strong&gt;，现在我们新建一个名为&lt;strong&gt;find_newwords.py&lt;/strong&gt;的测试代码&lt;/p&gt;
+&lt;p&gt;代码中的&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from wordexpansion import ChineseSoPmi
+
+sopmier = ChineseSoPmi(inputtext_file=&#39;test_corpus.txt&#39;,
+                       seedword_txtfile=&#39;test_seed_words.txt&#39;,
+                       pos_candi_txt_file=&#39;pos_candi.txt&#39;,
+                       neg_candi_txtfile=&#39;neg_candi.txt&#39;)
+sopmier.sopmi()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们的语料数据&lt;strong&gt;test_corpus.txt&lt;/strong&gt; 文件5.5M，100个候选词，运行程序大概耗时60s&lt;/p&gt;
+&lt;h3 id=&#34;43-输出的结果&#34;&gt;4.3 输出的结果&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;find_newwords.py&lt;/strong&gt;运行结束后，会在**同文件夹内(find_newwords.py所在的文件夹)**发现有两个新的txt文件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pos_candi.txt&lt;/li&gt;
+&lt;li&gt;neg_candi.txt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;打开&lt;strong&gt;pos_candi.txt&lt;/strong&gt;, 我们看到&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;word,sopmi,polarity,word_length,postag
+保持,87.28493062512524,pos,2,v
+风险,70.15627986116269,pos,2,n
+货币政策,66.28476448498694,pos,4,n
+发展,64.40272795986517,pos,2,vn
+不要,63.71800916752807,pos,2,df
+理念,61.2024367757337,pos,2,n
+整体,59.415315156715586,pos,2,n
+下,59.321140440512984,pos,1,f
+引导,58.5817208758171,pos,2,v
+投资,57.71720491331896,pos,2,vn
+加强,57.067969337267684,pos,2,v
+自己,53.25503772499689,pos,2,r
+提升,52.80686380719989,pos,2,v
+和,52.12334472663675,pos,1,c
+稳步,51.58193211655792,pos,2,d
+重要,51.095865548255034,pos,2,a
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开&lt;strong&gt;neg_candi.txt&lt;/strong&gt;, 我们看到&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;word,sopmi,polarity,word_length,postag
+心灵,33.17993872989303,neg,2,n
+期间,31.77900620939178,neg,2,f
+西溪,30.87839808390589,neg,2,ns
+人事,29.594976229171877,neg,2,n
+复杂,29.47870186147108,neg,2,a
+直到,27.86014637934966,neg,2,v
+宰客,27.27304813428452,neg,2,nr
+保险,26.433136238404746,neg,2,n
+迎来,25.83859896903048,neg,2,v
+至少,25.105021416064616,neg,2,d
+融资,25.09148586460598,neg,2,vn
+或,24.48343281812743,neg,1,c
+列,22.20695894382675,neg,1,v
+存在,22.041049266517774,neg,2,v
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;从上面的结果看，正面候选词较好，负面候选词有点差强人意。虽然差点，但节约了很多很多时间。&lt;/p&gt;
+&lt;p&gt;现在电脑已经帮我们找出候选词，我们人类最擅长找毛病，对neg_candi.txt和pos_candi.txt我们人类只需要一个个挑毛病，把不带正负情感的词剔除掉。这样经过一段时间的剔除工作，针对具体研究领域的专业情感词典就构建出来了。&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;五注意&#34;&gt;五、注意：&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;so_pmi算法效果受训练语料影响，语料规模越大，效果越好&lt;/li&gt;
+&lt;li&gt;so_pmi算法效率受训练语料影响，语料越大，训练越耗时。100个种子词，5M的数据，大约耗时62.679秒&lt;/li&gt;
+&lt;li&gt;候选词的选择，可根据PMI值，词长，词性设定规则，进行筛选  &lt;/li&gt;
+&lt;li&gt;所有的txt文件均采用utf-8编码，如果遇到UnicodeDetectorError: &amp;lsquo;gbk&amp;rsquo; codec。。请自行解决文件的encode问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
+&lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;视频课。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;python入门&lt;/li&gt;
+&lt;li&gt;网络爬虫&lt;/li&gt;
+&lt;li&gt;数据读取&lt;/li&gt;
+&lt;li&gt;文本分析入门&lt;/li&gt;
+&lt;li&gt;机器学习与文本分析&lt;/li&gt;
+&lt;li&gt;文本分析在经管研究中的应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感兴趣的童鞋不妨 戳一下
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;《python网络爬虫与文本数据分析》&lt;/a&gt;进来看看~&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;更多&#34;&gt;更多&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://space.bilibili.com/122592901/channel/detail?cid=66008&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;B站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公众号：大邓和他的python&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.zhihu.com/people/deng-xu-dong-hit&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[github](&lt;a href=&#34;https://github.com/thunderhit&#34;&gt;https://github.com/thunderhit&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
