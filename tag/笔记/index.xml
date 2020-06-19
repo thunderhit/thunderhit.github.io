@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>笔记 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/%E7%AC%94%E8%AE%B0/</link>
+      <atom:link href="https://thunderhit.github.io/tag/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <description>笔记</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 19 Jun 2020 18:12:27 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>笔记</title>
+      <link>https://thunderhit.github.io/tag/%E7%AC%94%E8%AE%B0/</link>
+    </image>
+    
+    <item>
+      <title>半小时学会Markdown标记语法</title>
+      <link>https://thunderhit.github.io/post/typora%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%85%8D%E8%B4%B9markdown%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Fri, 19 Jun 2020 18:12:27 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/typora%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%85%8D%E8%B4%B9markdown%E8%BD%AF%E4%BB%B6/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#n级标题&#34;&gt;N级标题&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#this-is-an-h1&#34;&gt;This is an H1&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#this-is-an-h2&#34;&gt;This is an H2&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#this-is-an-h3&#34;&gt;This is an H3&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#加粗斜体&#34;&gt;加粗、斜体&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#高亮&#34;&gt;高亮&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#下划线&#34;&gt;下划线&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#删除线&#34;&gt;删除线&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#引用&#34;&gt;引用&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#列表&#34;&gt;列表&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#有序列表&#34;&gt;有序列表&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#无序列表&#34;&gt;无序列表&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#代码块&#34;&gt;代码块&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#表格&#34;&gt;表格&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#超链接&#34;&gt;超链接&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#插入图片&#34;&gt;插入图片&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#任务清单&#34;&gt;任务清单&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#数学公式&#34;&gt;数学公式&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#mermaid图表&#34;&gt;mermaid图表&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;p&gt;学习编程的过程需要敲大量代码，遇到很多错误，好脑子不如烂笔头，能一边敲代码一边做笔记，学起来事倍功半，今天分享大家一个做笔记的工具软件Typora。&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1vC4y1a727&amp;page=1&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;h2 id=&#34;n级标题&#34;&gt;N级标题&lt;/h2&gt;
+&lt;p&gt;一个&lt;code&gt;#&lt;/code&gt;就是一个级，最多支持六级标题。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# This is an H1
+
+## This is an H2
+
+### This is an H3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果如下&lt;/p&gt;
+&lt;h1 id=&#34;this-is-an-h1&#34;&gt;This is an H1&lt;/h1&gt;
+&lt;h2 id=&#34;this-is-an-h2&#34;&gt;This is an H2&lt;/h2&gt;
+&lt;h3 id=&#34;this-is-an-h3&#34;&gt;This is an H3&lt;/h3&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;加粗斜体&#34;&gt;加粗、斜体&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;**加粗的文本**
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;加粗的文本&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;*斜体文本*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;斜体文本&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;高亮&#34;&gt;高亮&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;==highlight==
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;==highlight==&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;下划线&#34;&gt;下划线&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;u&amp;gt;下划线内容&amp;lt;/u&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;u&gt;下划线内容&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;删除线&#34;&gt;删除线&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt; ~~Mistaken text.~~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;del&gt;Mistaken text.&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;引用&#34;&gt;引用&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; This is another blockquote with one paragraph. There is three empty line to seperate two blockquote.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果如下&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is another blockquote with one paragraph. There is three empty line to seperate two blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;列表&#34;&gt;列表&lt;/h2&gt;
+&lt;h3 id=&#34;有序列表&#34;&gt;有序列表&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ordered list:
+1.  Red
+2. 	Green
+3.	Blue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ordered list:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Red&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Green&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Blue&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    注意&lt;code&gt;.&lt;/code&gt;之后留一个空格再书写内容
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;无序列表&#34;&gt;无序列表&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;un-ordered list:
+- Red
+- Green
+- Blue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果如下&lt;/p&gt;
+&lt;p&gt;un-ordered list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Red&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Green&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Blue&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    注意&lt;code&gt;.&lt;/code&gt;之后同样留一个空格再书写内容
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;代码块&#34;&gt;代码块&lt;/h2&gt;
+&lt;p&gt;一般情况下，word等office软件不支持代码高亮，且存储代码容易乱行。以typora为首的markdown语法完美支持各种代码，这里以Python代码为例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;​```python
+import requests
+url = &#39;https://www.baidu.com/&#39;
+resp = requests.get(url)
+​```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果如下&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import requests
+url = &#39;https://www.baidu.com/&#39;
+resp = requests.get(url)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;表格&#34;&gt;表格&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;| First Column  | Second Column |
+| ------------- | ------------- |
+| Content Cell1  | Content Cell2  |
+| Content Cell3  | Content Cell4  |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;First Column&lt;/th&gt;
+&lt;th&gt;Second Column&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Content Cell1&lt;/td&gt;
+&lt;td&gt;Content Cell2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Content Cell3&lt;/td&gt;
+&lt;td&gt;Content Cell4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;超链接&#34;&gt;超链接&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;[百度](https://www.baidu.com/)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.baidu.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;百度&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;插入图片&#34;&gt;插入图片&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;![](图片文件路径或网址)
+
+![](https://thunderhit.github.io/post/hugo/featured_hu9a15b8275a5635099198061a5e2dc1dd_3029870_720x0_resize_lanczos_2.png)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果如下&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://thunderhit.github.io/post/hugo/featured_hu9a15b8275a5635099198061a5e2dc1dd_3029870_720x0_resize_lanczos_2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;任务清单&#34;&gt;任务清单&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;某日任务清单
+- [x] 6点起床
+- [ ] 步数达到10000步
+- [x] 读一小时书
+- [x] 日消费不超过50元
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 6点起床&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 步数达到10000步&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 读一小时书&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 日消费不超过50元&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;数学公式&#34;&gt;数学公式&lt;/h2&gt;
+&lt;p&gt;在markdown中用&lt;code&gt;$&lt;/code&gt;夹住Latex公式表达式&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$\lim_{x \to \infty} \exp(-x) = 0$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果如下&lt;/p&gt;
+&lt;p&gt;$\lim_{x \to \infty} \exp(-x) = 0$&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;mermaid图表&#34;&gt;mermaid图表&lt;/h2&gt;
+&lt;p&gt;Typora中可以绘制流程图、序列图、状态图、甘特图、饼形图、类图等，这里以流程图为例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;​```mermaid
+graph LR
+	A--&amp;gt;B
+	B--&amp;gt;C
+	C--&amp;gt;D
+​```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph LR
+	A--&amp;gt;B
+	B--&amp;gt;C
+	C--&amp;gt;D
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更多mermaid可以看&lt;br&gt;
+&lt;a href=&#34;https://thunderhit.github.io/post/mermaid/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;在Markdown中用mermaid语法绘制图表&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

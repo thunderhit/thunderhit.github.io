@@ -153,8 +153,8 @@ print(extractor.stats(datas))
 &lt;/ul&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -299,8 +299,8 @@ def read_docx(file):
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     

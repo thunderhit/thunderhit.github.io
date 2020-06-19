@@ -466,8 +466,8 @@ topic2.load_lda_model(modelpath=&#39;output/model/lda.model&#39;)
 &lt;/ul&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -612,8 +612,8 @@ print(extractor.stats(datas))
 &lt;/ul&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -758,8 +758,8 @@ def read_docx(file):
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1063,7 +1063,7 @@ urls
 &lt;li&gt;按F12（mac按option+command+I)打开开发者工具的Network&lt;/li&gt;
 &lt;li&gt;刷新网页，耐心寻找与www.sse.com.cn有关的任意网址，找到cookies&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;img/cookies.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;cookies.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
 &lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
@@ -1091,8 +1091,8 @@ urls
 &lt;/ul&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1131,7 +1131,7 @@ urls
 &lt;li&gt;Sim_Simple  微软Word中的track changes&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;具体算法介绍可翻看Cohen, Lauren, Christopher Malloy&amp;amp;Quoc Nguyen(2018) 第60页&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/%E8%AE%BA%E6%96%87%E4%B8%AD%E7%9A%84%E5%85%AC%E5%BC%8F.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%E8%AE%BA%E6%96%87%E4%B8%AD%E7%9A%84%E5%85%AC%E5%BC%8F.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;pip install simtext
@@ -1214,7 +1214,7 @@ print(AC)
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;支持一下&#34;&gt;支持一下&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1461,8 +1461,8 @@ sentiment_calculate {&#39;sentences&#39;: 2, &#39;words&#39;: 16, &#39;pos&#39;:
 &lt;/ul&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1709,8 +1709,8 @@ sentiment_calculate {&#39;sentences&#39;: 2, &#39;words&#39;: 16, &#39;pos&#39;:
 &lt;/ul&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -1826,7 +1826,7 @@ print(extractor.stats(datas))
 &lt;br&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
 &lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -2163,7 +2163,8 @@ print(AC)
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;支持一下&#34;&gt;支持一下&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -2592,8 +2593,8 @@ topic2.load_lda_model(modelpath=&#39;output/model/lda.model&#39;)
 &lt;/ul&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -2784,7 +2785,7 @@ sopmier.sopmi()
 &lt;br&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
 &lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -2794,6 +2795,25 @@ sopmier.sopmi()
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       <guid>https://thunderhit.github.io/project/simtext/</guid>
       <description>&lt;br&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#simtext&#34;&gt;simtext&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#使用&#34;&gt;使用&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#参考文献&#34;&gt;参考文献&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#如果&#34;&gt;如果&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#更多&#34;&gt;更多&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
 &lt;h1 id=&#34;simtext&#34;&gt;simtext&lt;/h1&gt;
 &lt;p&gt;simtext可以计算两文档间四大文本相似性指标，分别为：&lt;/p&gt;
 &lt;ul&gt;
@@ -2803,7 +2823,7 @@ sopmier.sopmi()
 &lt;li&gt;Sim_Simple  微软Word中的track changes&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;具体算法介绍可翻看Cohen, Lauren, Christopher Malloy&amp;amp;Quoc Nguyen(2018) 第60页&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/%E8%AE%BA%E6%96%87%E4%B8%AD%E7%9A%84%E5%85%AC%E5%BC%8F.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%E8%AE%BA%E6%96%87%E4%B8%AD%E7%9A%84%E5%85%AC%E5%BC%8F.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;pip install simtext
@@ -2885,8 +2905,10 @@ print(AC)
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;支持一下&#34;&gt;支持一下&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -3187,7 +3209,7 @@ urls
 &lt;li&gt;按F12（mac按option+command+I)打开开发者工具的Network&lt;/li&gt;
 &lt;li&gt;刷新网页，耐心寻找与www.sse.com.cn有关的任意网址，找到cookies&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;img/cookies.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;cookies.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;如果&#34;&gt;如果&lt;/h2&gt;
 &lt;p&gt;如果您是经管人文社科专业背景，编程小白，面临海量文本数据采集和处理分析艰巨任务，个人建议学习
@@ -3215,8 +3237,8 @@ urls
 &lt;/ul&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -3339,8 +3361,8 @@ def read_docx(file):
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
-&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     

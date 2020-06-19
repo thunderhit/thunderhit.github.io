@@ -30,9 +30,11 @@
     &lt;li&gt;&lt;a href=&#34;#时序图&#34;&gt;时序图&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#状态图&#34;&gt;状态图&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#甘特图&#34;&gt;甘特图&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#class类图&#34;&gt;class类图&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#heading&#34;&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#打赏&#34;&gt;打赏&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#class类图&#34;&gt;class类图&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;h1 id=&#34;图表类型支持&#34;&gt;图表类型支持&lt;/h1&gt;
@@ -441,10 +443,9 @@ classDiagram
 &lt;/table&gt;
 &lt;p&gt;大家如果熟悉Python，就能理解类的属性和方法区别就是是否有括号。&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
-&lt;h1 id=&#34;打赏&#34;&gt;打赏&lt;/h1&gt;
-&lt;p&gt;如觉得内容很赞，可酌情打赏^_^&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
