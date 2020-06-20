@@ -412,6 +412,1297 @@ graph LR
     </item>
     
     <item>
+      <title>Python内置常用函数</title>
+      <link>https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#heading&#34;&gt;&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#数学相关&#34;&gt;数学相关&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#类型转换&#34;&gt;类型转换&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#功能函数&#34;&gt;功能函数&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#eval&#34;&gt;eval()&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#ziplst1-lst2lst3&#34;&gt;zip(lst1, lst2,lst3&amp;hellip;)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#typehelp&#34;&gt;type/help&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#mapfunc-lst映射运算&#34;&gt;map(func, lst)映射运算&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#printvalue-endn&#34;&gt;print(value, end=&amp;rsquo;\n&amp;rsquo;)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#openfile-moder-encodingnone&#34;&gt;open(file, mode=&#39;r&amp;rsquo;, encoding=None)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#重点函数&#34;&gt;重点函数&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=11&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;p&gt;有三大类&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数学相关函数&lt;/li&gt;
+&lt;li&gt;类型转化函数&lt;/li&gt;
+&lt;li&gt;功能函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;数学相关&#34;&gt;数学相关&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;函数&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;例子&lt;/th&gt;
+&lt;th&gt;运行结果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;abs(a)&lt;/td&gt;
+&lt;td&gt;对a取绝对值&lt;/td&gt;
+&lt;td&gt;abs(-1)&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;max(lst)、min(lst)&lt;/td&gt;
+&lt;td&gt;寻找lst中的最大、最小值&lt;/td&gt;
+&lt;td&gt;max([3, 2, 9])&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;sum(lst)&lt;/td&gt;
+&lt;td&gt;对lst内所有数字求和&lt;/td&gt;
+&lt;td&gt;sum([3, 2, 9])&lt;/td&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;sorted(lst， reverse)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;对lst排序； 参数reverse为布尔值控制升降序&lt;/td&gt;
+&lt;td&gt;sorted([3, 2, 9])&lt;/td&gt;
+&lt;td&gt;[2, 3, 9]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;range(start, end, step)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;生成以步长step，生成从start到end的数列,默认step=1，结果取不到end&lt;/td&gt;
+&lt;td&gt;list(range(1,5))&lt;/td&gt;
+&lt;td&gt;[1, 2, 3,4]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#取绝对值
+abs(-1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#取最大
+max([3, 2, 9])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#取最小
+min([3, 2, 9])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#求和
+sum([3, 2, 9])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;14
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#排序
+sorted([3,2,9])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[2, 3, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#排序(方向调整)
+sorted([3,2,9], reverse=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[9, 3, 2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#生成序列
+list(range(1, 10))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 2, 3, 4, 5, 6, 7, 8, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;list(range(1, 10, 2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 3, 5, 7, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;类型转换&#34;&gt;类型转换&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;函数&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;例子&lt;/th&gt;
+&lt;th&gt;运行结果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;int(string)&lt;/td&gt;
+&lt;td&gt;将字符串数改为整数型&lt;/td&gt;
+&lt;td&gt;int(&amp;lsquo;9&amp;rsquo;)&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;float(int/str)&lt;/td&gt;
+&lt;td&gt;将int或str改为浮点型&lt;/td&gt;
+&lt;td&gt;float(9)、float(&amp;lsquo;9&amp;rsquo;)&lt;/td&gt;
+&lt;td&gt;9.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;list(iterable)&lt;/td&gt;
+&lt;td&gt;将可迭代对象为列表。这里的iterable可以为字符串，可以是列表&lt;/td&gt;
+&lt;td&gt;list(range(1,5))&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;[1,2,3,4] &lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;enumerate(lst)&lt;/td&gt;
+&lt;td&gt;返回带有索引值的序列seq,&lt;strong&gt;需要list(seq)处理后才能看到seq&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;list(enumerate([&amp;lsquo;a&amp;rsquo;, &amp;lsquo;b&amp;rsquo;, &amp;lsquo;c&amp;rsquo;]))&lt;/td&gt;
+&lt;td&gt;[(0,&amp;lsquo;a&amp;rsquo;), (1, &amp;lsquo;b&amp;rsquo;), (2, &amp;lsquo;c&amp;rsquo;)]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tuple(lst)&lt;/td&gt;
+&lt;td&gt;将lst变为tuple&lt;/td&gt;
+&lt;td&gt;tuple([1,2,3])&lt;/td&gt;
+&lt;td&gt;(1,2,3)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;set(lst)&lt;/td&gt;
+&lt;td&gt;将lst变为集合&lt;/td&gt;
+&lt;td&gt;set([1,4,4,4,3])&lt;/td&gt;
+&lt;td&gt;{1,3,4}&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = 9
+b = 9
+
+a+b
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;18
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#变转化为整数
+int(&#39;9&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#转化为小数
+float(&#39;9&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;9.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;float(9)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;9.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#转化为列表
+list(range(1, 5))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 2, 3, 4]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#给列表中每个元素分配一个索引值
+names = [&#39;张三&#39;, &#39;李四&#39;, &#39;王五&#39;]
+
+list(enumerate(names))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(0, &#39;张三&#39;), (1, &#39;李四&#39;), (2, &#39;王五&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;功能函数&#34;&gt;功能函数&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;函数&lt;/th&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;例子&lt;/th&gt;
+&lt;th&gt;运行结果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;eval(expression)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;执行一个字符串表达式&lt;/td&gt;
+&lt;td&gt;eval(&amp;lsquo;1+1&amp;rsquo;)&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;zip(lst1,lst2&amp;hellip;)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;将lst1,lst2&amp;hellip;合并,返回zip对象。&lt;strong&gt;需要list处理一下zip对象&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;list(zip([1,2,3],[4,5,6]))&lt;/td&gt;
+&lt;td&gt;[(1, 4), (2, 5), (3, 6)]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;type(x)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;查看X的类型&lt;/td&gt;
+&lt;td&gt;type(&amp;lsquo;2&amp;rsquo;)&lt;/td&gt;
+&lt;td&gt;&amp;lt;class &amp;lsquo;str&#39;&amp;gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;help(x)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;查看X的相关信息&lt;/td&gt;
+&lt;td&gt;help([1, 2])&lt;/td&gt;
+&lt;td&gt;Help on list object..&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;map(func, lst)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;对lst中的每一个个体都进行func操作&lt;/td&gt;
+&lt;td&gt;list(map(sum, [[1,1], [1,2]]))&lt;/td&gt;
+&lt;td&gt;[2, 3]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;print(value, end=&amp;rsquo;\n&amp;rsquo;)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;打印value&lt;/td&gt;
+&lt;td&gt;print(&amp;lsquo;abc&amp;rsquo;)&lt;/td&gt;
+&lt;td&gt;abc&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;open(file， encoding)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;打开file文件， encoding是file的文件编码&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;eval&#34;&gt;eval()&lt;/h3&gt;
+&lt;p&gt;eval(str_expression)&lt;/p&gt;
+&lt;p&gt;str_expression 是字符串表达式，可以是变量、函数等&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = 9
+b = 9
+c = &#39;a+b&#39;
+
+print(a+b)
+print(c)
+print(eval(c))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;18
+a+b
+18
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;eval(&#39;a+b&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;18
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d = &#39;hello world&#39;
+print(&#39;d&#39;)
+print(eval(&#39;d&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;d
+hello world
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def hello():
+    print(&#39;hello python&#39;)
+    
+print(&#39;hello()&#39;)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;hello()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;eval(&#39;hello()&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;hello python
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ziplst1-lst2lst3&#34;&gt;zip(lst1, lst2,lst3&amp;hellip;)&lt;/h3&gt;
+&lt;p&gt;将lst1， lst2， lst3按照顺序进行合并&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = [&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Unique&#39;]
+sexs = [&#39;male&#39;, &#39;femal&#39;, &#39;male&#39;, &#39;male&#39;]
+ages = [25, 22, 30, 40]
+
+list(zip(names, sexs, ages))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;David&#39;, &#39;male&#39;, 25),
+ (&#39;Mary&#39;, &#39;femal&#39;, 22),
+ (&#39;Henry&#39;, &#39;male&#39;, 30),
+ (&#39;Unique&#39;, &#39;male&#39;, 40)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;typehelp&#34;&gt;type/help&lt;/h3&gt;
+&lt;p&gt;查看数据类型、查看感兴趣对象的介绍&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = [1,3,5]
+type(a)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;help(a)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Help on list object:
+
+class list(object)
+ |  list(iterable=(), /)
+ |  
+ |  Built-in mutable sequence.
+ |  
+ |  If no argument is given, the constructor creates a new empty list.
+ |  The argument must be an iterable if specified.
+ |  
+ |  Methods defined here:
+ |  
+.........
+ |  append(self, object, /)
+ |      Append object to the end of the list.
+ |  
+ |  
+ |  count(self, value, /)
+ |      Return number of occurrences of value.
+ |  
+ |  extend(self, iterable, /)
+ |      Extend list by appending elements from the iterable.
+ |  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(print)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;builtin_function_or_method
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;help(print)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;mapfunc-lst映射运算&#34;&gt;map(func, lst)映射运算&lt;/h3&gt;
+&lt;p&gt;将func运算映射到lst上每个元素&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lst = [[1,1], [1,2], [1,2], [1,2], [1,2], [1,2], [1,2]]
+
+res = map(sum, lst)
+list(res)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[2, 3, 3, 3, 3, 3, 3]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;printvalue-endn&#34;&gt;print(value, end=&amp;rsquo;\n&amp;rsquo;)&lt;/h3&gt;
+&lt;p&gt;打印value，默认使用换行结束&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;help(print)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;hello world!&#39;)
+print(&#39;hello python!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;hello world!
+hello python!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;hello world!&#39;, end=&#39;\t&#39;)
+print(&#39;hello python!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;hello world!	hello python!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;openfile-moder-encodingnone&#34;&gt;open(file, mode=&#39;r&amp;rsquo;, encoding=None)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;file 文件路径&lt;/li&gt;
+&lt;li&gt;mode 操作方式们，最常用的是r和a+。r读取， a+是追加写入&lt;/li&gt;
+&lt;li&gt;encoding 编码方式 ，常见的文件编码方式主要是utf-8和gbk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;读取返回io对象&lt;/p&gt;
+&lt;p&gt;io对象有read()方法&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;相对路径&lt;/p&gt;
+&lt;p&gt;data&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;绝对路径&lt;/p&gt;
+&lt;p&gt;C:Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    建议大家都要用相对路径
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# 读取数据
+open(&#39;data/test.txt&#39;, encoding=&#39;utf-8&#39;).read()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;章节设计\n\n第一部分  环境配置\n第二部分  快速入门python\n第三部分  网络爬虫\n第四部分  简单的文本分析\n第五部分  进阶文本分析&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# 新建文件/在已有的文件内插入内容
+f = open(&#39;data/test2.txt&#39;, mode=&#39;a+&#39;, encoding=&#39;utf-8&#39;)
+f.write(&#39;我在学python，现在是下午五点&#39;)
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# 新建文件/在已有的文件内插入内容
+f = open(&#39;data/test2.txt&#39;, mode=&#39;a+&#39;, encoding=&#39;utf-8&#39;)
+f.write(&#39;\nLife is short, so to learn Python&#39;)
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# 新建文件/在已有的文件内插入内容
+f = open(&#39;data/test2.txt&#39;, mode=&#39;a+&#39;, encoding=&#39;utf-8&#39;)
+f.write(&#39;\nLife is short, so to learn Python&#39;)
+f.write(&#39;\nLife is short, so to learn music&#39;)
+f.write(&#39;\nLife is short, so to learn english&#39;)
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;重点函数&#34;&gt;重点函数&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; sorted(lst， ascending)&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; range(start, end, step)&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; enumerate(lst)&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; eval(expression)&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; zip(lst1, lst2..)&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; map(func, lst)&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; print(x)&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; open(file, mode, encoding)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>python常见错误及其解决办法</title>
+      <link>https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#1-忘记写冒号&#34;&gt;1. 忘记写冒号&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#2-误用-&#34;&gt;2. 误用 &lt;code&gt;=&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#3-错误的缩进&#34;&gt;3. 错误的缩进&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#4-变量没有定义&#34;&gt;4. 变量没有定义&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#5-中英文输入法导致的错误&#34;&gt;5. 中英文输入法导致的错误&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#6-不同数据类型的拼接&#34;&gt;6. 不同数据类型的拼接&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#7-索引位置问题&#34;&gt;7. 索引位置问题&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#8-使用字典中不存在的键&#34;&gt;8. 使用字典中不存在的键&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#9-忘了括号&#34;&gt;9. 忘了括号&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#10-漏传参数&#34;&gt;10. 漏传参数&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#11-缺失依赖库&#34;&gt;11. 缺失依赖库&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#12-使用了python中的关键词&#34;&gt;12. 使用了python中的关键词&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#13-文件编码问题&#34;&gt;13. 文件编码问题&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#那怎么找到正确的编码参数呢&#34;&gt;那怎么找到正确的编码参数呢？&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#14-路径字符串写法&#34;&gt;14. 路径字符串写法&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=15&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;h3 id=&#34;1-忘记写冒号&#34;&gt;1. 忘记写冒号&lt;/h3&gt;
+&lt;p&gt;在 if、elif、else、for、while、def语句后面忘记添加 &lt;code&gt;:&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;age = 42
+
+if age == 42
+    print(&#39;Hello!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-10-1f5acea116cf&amp;gt;&amp;quot;, line 3
+    if age == 42
+                ^
+SyntaxError: invalid syntax
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;age = 42
+
+if age == 42:
+    print(&#39;Hello!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Hello!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-误用-&#34;&gt;2. 误用 &lt;code&gt;=&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;=&lt;/code&gt; 是赋值操作，而判断两个值是否相等是 &lt;code&gt;==&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;gender = &#39;男&#39;
+
+if gender = &#39;男&#39;:
+    print(&#39;Man&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-12-c3ceea5a9004&amp;gt;&amp;quot;, line 3
+    if gender = &#39;男&#39;:
+              ^
+SyntaxError: invalid syntax
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;gender = &#39;男&#39;
+
+if gender == &#39;男&#39;:
+    print(&#39;Man&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Man
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-错误的缩进&#34;&gt;3. 错误的缩进&lt;/h3&gt;
+&lt;p&gt;Python用缩进区分代码块，常见的错误用法：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;Hello!&#39;)
+ print(&#39;Howdy!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-14-784bdb6e1df5&amp;gt;&amp;quot;, line 2
+    print(&#39;Howdy!&#39;)
+    ^
+IndentationError: unexpected indent
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;Hello!&#39;)
+print(&#39;Howdy!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Hello!
+Howdy!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;num = 25
+if num == 25:
+print(&#39;Hello!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-16-8e4debcdf119&amp;gt;&amp;quot;, line 3
+    print(&#39;Hello!&#39;)
+        ^
+IndentationError: expected an indented block
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;num = 25
+if num == 25:
+    print(&#39;Hello!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Hello!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-变量没有定义&#34;&gt;4. 变量没有定义&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;if c in [&#39;New York&#39;, &#39;Bei Jing&#39;, &#39;Tokyo&#39;]:
+    print(&#39;This is a mega city&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-21-d91d0b36da73&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 if c in [&#39;New York&#39;, &#39;Bei Jing&#39;, &#39;Tokyo&#39;]:
+      2     print(&#39;This is a mega c&#39;)
+
+
+NameError: name &#39;c&#39; is not defined
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;city =&#39;New York&#39;
+if city in [&#39;New York&#39;, &#39;Bei Jing&#39;, &#39;Tokyo&#39;]:
+    print(&#39;This is a mega city&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;This is a mega city
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-中英文输入法导致的错误&#34;&gt;5. 中英文输入法导致的错误&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;英文冒号&lt;/li&gt;
+&lt;li&gt;英文括号&lt;/li&gt;
+&lt;li&gt;英文逗号&lt;/li&gt;
+&lt;li&gt;英文单双引号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;if 5&amp;gt;3：
+    print(&#39;5比3大&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-23-47f8b985b82d&amp;gt;&amp;quot;, line 1
+    if 5&amp;gt;3：
+          ^
+SyntaxError: invalid character in identifier
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;if 5&amp;gt;3:
+    print(&#39;5比3大&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;5比3大
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;spam = [1, 2， 3]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-26-a003060d051a&amp;gt;&amp;quot;, line 1
+    spam = [1, 2， 3]
+                ^
+SyntaxError: invalid character in identifier
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;spam = [1, 2, 3]
+spam
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 2, 3]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;if 5&amp;gt;3:
+    print(&#39;5比3大’)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-30-ac2e4eb87092&amp;gt;&amp;quot;, line 2
+    print(&#39;5比3大’)
+                 ^
+SyntaxError: EOL while scanning string literal
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;if 5&amp;gt;3:
+    print(&#39;5比3大&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;5比3大
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;6-不同数据类型的拼接&#34;&gt;6. 不同数据类型的拼接&lt;/h3&gt;
+&lt;p&gt;同种数据类型  &lt;strong&gt;字符串/列表/元组&lt;/strong&gt;   支持拼接&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;字典/集合&lt;/strong&gt;不支持拼接&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;I have &#39; + 12 + &#39; eggs.&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-32-20c7c89a2ec6&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 &#39;I have &#39; + 12 + &#39; eggs.&#39;
+
+
+TypeError: can only concatenate str (not &amp;quot;int&amp;quot;) to str
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;I have {} eggs.&#39;.format(12)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;I have 12 eggs.&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]+&#39;def&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-35-0e8919333d6b&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]+&#39;def&#39;
+
+
+TypeError: can only concatenate list (not &amp;quot;str&amp;quot;) to list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-36-90742621216d&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)+[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+
+
+TypeError: can only concatenate tuple (not &amp;quot;list&amp;quot;) to tuple
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;set([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;])+set([&#39;d&#39;, &#39;e&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-37-ddf5fb1e6c8c&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 set([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;])+set([&#39;d&#39;, &#39;e&#39;])
+
+
+TypeError: unsupported operand type(s) for +: &#39;set&#39; and &#39;set&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;grades1 = {&#39;Mary&#39;:99, &#39;Henry&#39;:77}
+grades2 = {&#39;David&#39;:88, &#39;Unique&#39;:89}
+
+grades1+grades2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-38-1b1456844331&amp;gt; in &amp;lt;module&amp;gt;
+      2 grades2 = {&#39;David&#39;:88, &#39;Unique&#39;:89}
+      3 
+----&amp;gt; 4 grades1+grades2
+
+
+TypeError: unsupported operand type(s) for +: &#39;dict&#39; and &#39;dict&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;7-索引位置问题&#34;&gt;7. 索引位置问题&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;spam = [&#39;cat&#39;, &#39;dog&#39;, &#39;mouse&#39;]
+print(spam[5])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+IndexError                                Traceback (most recent call last)
+
+&amp;lt;ipython-input-41-e0a79346266d&amp;gt; in &amp;lt;module&amp;gt;
+      1 spam = [&#39;cat&#39;, &#39;dog&#39;, &#39;mouse&#39;]
+----&amp;gt; 2 print(spam[5])
+
+
+IndexError: list index out of range
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;8-使用字典中不存在的键&#34;&gt;8. 使用字典中不存在的键&lt;/h3&gt;
+&lt;p&gt;在字典对象中访问 key 可以使用 &lt;code&gt;[]&lt;/code&gt;，&lt;/p&gt;
+&lt;p&gt;但是如果该 key 不存在，就会导致：KeyError: &amp;lsquo;zebra&amp;rsquo;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;spam = {&#39;cat&#39;: &#39;Zophie&#39;, 
+        &#39;dog&#39;: &#39;Basil&#39;, 
+        &#39;mouse&#39;: &#39;Whiskers&#39;}
+
+print(spam[&#39;zebra&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+KeyError                                  Traceback (most recent call last)
+
+&amp;lt;ipython-input-42-92c9b44ff034&amp;gt; in &amp;lt;module&amp;gt;
+      3         &#39;mouse&#39;: &#39;Whiskers&#39;}
+      4 
+----&amp;gt; 5 print(spam[&#39;zebra&#39;])
+
+
+KeyError: &#39;zebra&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;为了避免这种情况，可以使用 get 方法&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;spam = {&#39;cat&#39;: &#39;Zophie&#39;, 
+        &#39;dog&#39;: &#39;Basil&#39;, 
+        &#39;mouse&#39;: &#39;Whiskers&#39;}
+
+print(spam.get(&#39;zebra&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;None
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;key 不存在时，get 默认返回 None&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;9-忘了括号&#34;&gt;9. 忘了括号&lt;/h3&gt;
+&lt;p&gt;当函数中传入的是函数或者方法时，容易漏写括号&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;spam = {&#39;cat&#39;: &#39;Zophie&#39;, 
+        &#39;dog&#39;: &#39;Basil&#39;, 
+        &#39;mouse&#39;: &#39;Whiskers&#39;}
+
+print(spam.get(&#39;zebra&#39;)  #end of funtion
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-44-d105cc86097c&amp;gt;&amp;quot;, line 5
+    print(spam.get(&#39;zebra&#39;)  #end of funtion
+                                            ^
+SyntaxError: unexpected EOF while parsing
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;spam = {&#39;cat&#39;: &#39;Zophie&#39;, 
+        &#39;dog&#39;: &#39;Basil&#39;, 
+        &#39;mouse&#39;: &#39;Whiskers&#39;}
+
+print(spam.get(&#39;zebra&#39;)) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;None
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;10-漏传参数&#34;&gt;10. 漏传参数&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def diyadd(x, y, z):
+    return x+y+z
+
+diyadd(1, 2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-46-7184f3f906ca&amp;gt; in &amp;lt;module&amp;gt;
+      2     return x+y+z
+      3 
+----&amp;gt; 4 diyadd(1, 2)
+
+
+TypeError: diyadd() missing 1 required positional argument: &#39;z&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;diyadd(1, 2, 4)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;11-缺失依赖库&#34;&gt;11. 缺失依赖库&lt;/h3&gt;
+&lt;p&gt;电脑中没有相关的库&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import packagename
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+ModuleNotFoundError                       Traceback (most recent call last)
+
+&amp;lt;ipython-input-48-6d7d6f569116&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 import packagename
+
+
+ModuleNotFoundError: No module named &#39;packagename&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;!pip install packagename
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;12-使用了python中的关键词&#34;&gt;12. 使用了python中的关键词&lt;/h3&gt;
+&lt;p&gt;如try、except、def、class、object、None、True、False等&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;try = 5
+print(try)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-49-508e87fe2ff3&amp;gt;&amp;quot;, line 1
+    try = 5
+        ^
+SyntaxError: invalid syntax
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = 5
+print(a)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def = 6
+print(def)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-51-c797890e9b85&amp;gt;&amp;quot;, line 1
+    def = 6
+        ^
+SyntaxError: invalid syntax
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d = 6
+print(d)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;13-文件编码问题&#34;&gt;13. 文件编码问题&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+df = pd.read_csv(&#39;data/twitter_sentiment.csv&#39;)
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;UnicodeDecodeError: &#39;utf-8&#39; codec can&#39;t decode bytes in position 7-8: invalid continuation byte
+UnicodeDecodeError                        Traceback (most recent call last)
+
+&amp;lt;ipython-input-53-f7ee81cff3e5&amp;gt; in &amp;lt;module&amp;gt;
+      1 import pandas as pd
+      2 
+----&amp;gt; 3 df = pd.read_csv(&#39;data/twitter_sentiment.csv&#39;)
+      4 df.head()
+pandas\_libs\parsers.pyx in pandas._libs.parsers._string_box_utf8()
+UnicodeDecodeError: &#39;utf-8&#39; codec can&#39;t decode bytes in position 7-8: invalid continuation byte
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+#gbk/utf-8只能解决大部分编码问题，但不能解决全部问题
+df = pd.read_csv(&#39;data/twitter_sentiment.csv&#39;, encoding=&#39;gbk&#39;)
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+UnicodeDecodeError                        Traceback (most recent call last)
+
+&amp;lt;ipython-input-55-6aa161f42239&amp;gt; in &amp;lt;module&amp;gt;
+      2 
+      3 #gbk/utf-8只能解决大部分编码问题，但不能解决全部问题
+----&amp;gt; 4 df = pd.read_csv(&#39;data/twitter_sentiment.csv&#39;, encoding=&#39;gbk&#39;)
+      5 df.head()
+
+
+c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages\pandas\io\parsers.py in parser_f(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)
+    674         )
+    675 
+-&amp;gt; 1891         self._reader = parsers.TextReader(src, **kwds)
+   1892         self.unnamed_cols = self._reader.unnamed_cols
+   1893 
+   pandas\_libs\parsers.pyx in pandas._libs.parsers.TextReader.__cinit__()
+    pandas\_libs\parsers.pyx in pandas._libs.parsers.TextReader._get_header()
+    pandas\_libs\parsers.pyx in pandas._libs.parsers.TextReader._tokenize_rows()
+    pandas\_libs\parsers.pyx in pandas._libs.parsers.raise_parser_error()
+    UnicodeDecodeError: &#39;gbk&#39; codec can&#39;t decode byte 0xbd in position 10717: 	illegal multibyte sequence
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上面的程序会提示编码错误， 尝试encoding编码参数传入utf-8、gbk，也没有解决问题。&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;那怎么找到正确的编码参数呢&#34;&gt;那怎么找到正确的编码参数呢？&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import chardet
+
+#读取为二进制数据
+binary_data = open(&#39;data/twitter_sentiment.csv&#39;, &#39;rb&#39;).read()
+
+#传给chardet.detect，稍等片刻
+chardet.detect(binary_data)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;encoding&#39;: &#39;Windows-1252&#39;, &#39;confidence&#39;: 0.7291192008535122, &#39;language&#39;: &#39;&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+
+df = pd.read_csv(&#39;data/twitter_sentiment.csv&#39;, encoding=&#39;Windows-1252&#39;)
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;ItemID&lt;/th&gt;
+      &lt;th&gt;Sentiment&lt;/th&gt;
+      &lt;th&gt;SentimentText&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;is so sad for my APL frie...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;I missed the New Moon trail...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;omg its already 7:30 :O&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;.. Omgaga. Im sooo  im gunna CRy. I&#39;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;i think mi bf is cheating on me!!!   ...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;14-路径字符串写法&#34;&gt;14. 路径字符串写法&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mac&amp;amp;Win 推荐使用 &lt;code&gt;/&lt;/code&gt; 写法&lt;/li&gt;
+&lt;li&gt;如果使用&lt;code&gt;\&lt;/code&gt; 写法，安全起见，请换成&lt;code&gt;\\&lt;/code&gt;  （Mac不支持&lt;code&gt;\\&lt;/code&gt; ）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;\n
+\t
+\d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;open(&#39;data/test.txt&#39;, encoding=&#39;utf-8&#39;).read()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;章节设计\n\n第一部分  环境配置\n第二部分  快速入门python\n第三部分  网络爬虫\n第四部分  简单的文本分析\n第五部分  进阶文本分析&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;open(&#39;data\test.txt&#39;, encoding=&#39;utf-8&#39;).read()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+OSError                                   Traceback (most recent call last)
+
+&amp;lt;ipython-input-59-d855ed58b500&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 open(&#39;data\test.txt&#39;, encoding=&#39;utf-8&#39;).read()
+
+
+OSError: [Errno 22] Invalid argument: &#39;data\test.txt&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;open(&#39;data\\test.txt&#39;, encoding=&#39;utf-8&#39;).read()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;章节设计\n\n第一部分  环境配置\n第二部分  快速入门python\n第三部分  网络爬虫\n第四部分  简单的文本分析\n第五部分  进阶文本分析&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;open(&#39;data\Test.txt&#39;, encoding=&#39;utf-8&#39;).read()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;章节设计\n\n第一部分  环境配置\n第二部分  快速入门python\n第三部分  网络爬虫\n第四部分  简单的文本分析\n第五部分  进阶文本分析&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Python跟英语一样是一门语言</title>
+      <link>https://thunderhit.github.io/post/01-python%E8%B7%9F%E8%8B%B1%E8%AF%AD%E4%B8%80%E6%A0%B7%E6%98%AF%E4%B8%80%E9%97%A8%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/01-python%E8%B7%9F%E8%8B%B1%E8%AF%AD%E4%B8%80%E6%A0%B7%E6%98%AF%E4%B8%80%E9%97%A8%E8%AF%AD%E8%A8%80/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#输出数字a的绝对数&#34;&gt;输出数字a的绝对数&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#python与英语对比&#34;&gt;Python与英语对比&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#每天进步一点点&#34;&gt;每天进步一点点&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#python是面向对象的编程语言&#34;&gt;Python是面向对象的编程语言&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#python中的数据类型&#34;&gt;Python中的数据类型&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=3&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;h3 id=&#34;输出数字a的绝对数&#34;&gt;输出数字a的绝对数&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = -50
+
+if a &amp;gt;= 0:
+    print(a)
+else:
+    print(-a)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;50
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There is such a number a, if a is greater than or equal to 0, we will print a; if a is less than 0, we will print -a&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;python与英语对比&#34;&gt;Python与英语对比&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;英语&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Python&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;例如&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;单词&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;数据类型&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;列表、字符串、字典等&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;逻辑语句&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;if条件判读语句、for循环语句等&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;每天进步一点点&#34;&gt;每天进步一点点&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#mac
+#!pip3 install matplotlib
+
+
+#win
+!pip install matplotlib
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Requirement already satisfied: matplotlib in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (3.2.1)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&amp;gt;=2.0.1 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (2.4.7)
+Requirement already satisfied: cycler&amp;gt;=0.10 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: numpy&amp;gt;=1.11 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (1.18.2)
+Requirement already satisfied: kiwisolver&amp;gt;=1.0.1 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (1.2.0)
+Requirement already satisfied: python-dateutil&amp;gt;=2.1 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (2.8.1)
+Requirement already satisfied: six in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from cycler&amp;gt;=0.10-&amp;gt;matplotlib) (1.14.0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import math
+%matplotlib inline
+
+ability = 1
+scale = 1.01
+records = []
+
+days = range(1, 365)
+for day in days:
+    ability = ability*scale
+    records.append(ability)
+    
+plt.plot(days, records)
+plt.title(&#39;Be better everyday!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Text(0.5, 1.0, &#39;Be better everyday!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_8_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;python是面向对象的编程语言&#34;&gt;Python是面向对象的编程语言&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;类型&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;实例(对象)&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;实例(对象)&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;方法&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;猪&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;村东头老王家的猪&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;把猪把粮食变成肉&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;猪.产肉&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;牛&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;村东头老张家的耕牛&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;把粮食变成畜力&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;牛.耕地&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;列表&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;hobbies = [&#39;跑步&#39;,  &#39;乒乓球&#39;， &#39;篮球&#39;，&#39;篮球&#39;]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;统计某群体爱好的分布, 查看各爱好的人数&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;hobbies.count(&#39;篮球&#39;)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;字符串&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;str1 = &amp;quot;Hello，World!&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;将文本内容由World更改为Python&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;str1.replace(&#39;World&#39;, &#39;Python&#39;)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;字典&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;grade = {&#39;David&#39;:98, &#39;Mary&#39;:88,...}&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;方便数据检索&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;grade.get(&#39;David&#39;)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&amp;hellip;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;python中的数据类型&#34;&gt;Python中的数据类型&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;数据类型&lt;/th&gt;
+&lt;th&gt;例子&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;数字&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;a = 5&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;字符串&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;my_str = &amp;quot;abcdefg&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;列表&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;my_list = [1, 2, 3]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;元组&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;my_tuple = (1, 2, 3)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;字典&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;my_dict = {&#39;David&#39;: 25, &#39;Mark&#39;:30}&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;空值&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;None&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Windows电脑Python环境配置</title>
       <link>https://thunderhit.github.io/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEwin/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
@@ -536,6 +1827,2699 @@ graph LR
 &lt;p&gt;&lt;img src=&#34;../../img/%E6%B7%98%E5%AE%9D.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>内置库-数据存储csv库</title>
+      <link>https://thunderhit.github.io/post/11-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8Bcsv%E6%96%87%E4%BB%B6%E5%BA%93/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/11-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8Bcsv%E6%96%87%E4%BB%B6%E5%BA%93/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#csv存储数据代码步骤&#34;&gt;csv存储数据代码步骤&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#很多数据的存储&#34;&gt;很多数据的存储&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=13&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;csv存储数据代码步骤&#34;&gt;csv存储数据代码步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;新建一个csv文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import csv
+path = &#39;data/test.csv&#39;
+csvf = open(path, &#39;a+&#39;, encoding=&#39;utf-8&#39;, newline=&#39;&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;定义字段名，并初始化csv文件为writer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fieldnames = [&#39;name&#39;, &#39;age&#39;]
+writer = csv.DictWriter(csvf, fieldnames=fieldnames)
+writer.writeheader()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;将待存储数据整理为字典格式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;test_data = {&#39;name&#39;: &#39;David&#39;,
+             &#39;age&#39;: 25}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;用writer往csv中存储数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;writer.writerow(test_data)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;最后记得关闭csv文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;csvf.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import csv
+
+csvf = open(&#39;data/test1.csv&#39;, &#39;a+&#39;, encoding=&#39;utf-8&#39;, newline=&#39;&#39;)
+fieldnames = [&#39;name&#39;, &#39;age&#39;]
+writer = csv.DictWriter(csvf, fieldnames=fieldnames)
+writer.writeheader()
+
+
+csvf.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import csv
+
+csvf = open(&#39;data/test2.csv&#39;, &#39;a+&#39;, encoding=&#39;utf-8&#39;, newline=&#39;&#39;)
+fieldnames = [&#39;name&#39;, &#39;age&#39;]
+writer = csv.DictWriter(csvf, fieldnames=fieldnames)
+writer.writeheader()
+
+test_data = {&#39;name&#39;: &#39;David&#39;,
+             &#39;age&#39;: 25}
+writer.writerow(test_data)
+
+csvf.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;很多数据的存储&#34;&gt;很多数据的存储&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;datas = [{&#39;name&#39;: &#39;David&#39;, &#39;age&#39;: 25}, 
+         {&#39;name&#39;: &#39;Mary&#39;, &#39;age&#39;: 30},
+         {&#39;name&#39;: &#39;Henry&#39;, &#39;age&#39;: 35}]
+
+datas
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[{&#39;name&#39;: &#39;David&#39;, &#39;age&#39;: 25},
+ {&#39;name&#39;: &#39;Mary&#39;, &#39;age&#39;: 30},
+ {&#39;name&#39;: &#39;Henry&#39;, &#39;age&#39;: 35}]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import csv
+
+csvf = open(&#39;data/test2.csv&#39;, &#39;a+&#39;, encoding=&#39;utf-8&#39;, newline=&#39;&#39;)
+fieldnames = [&#39;name&#39;, &#39;age&#39;]
+writer = csv.DictWriter(csvf, fieldnames=fieldnames)
+writer.writeheader()
+
+for data in datas:
+    writer.writerow(data)
+
+csvf.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>内置库-文件路径pathlib库</title>
+      <link>https://thunderhit.github.io/post/10-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84pathlib%E5%BA%93/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/10-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84pathlib%E5%BA%93/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#绝对vs相对&#34;&gt;绝对vs相对&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#pathlibpath属性方法&#34;&gt;pathlib.Path()属性方法&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#cwd&#34;&gt;cwd()&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#joinpathgrandpadir-fatherdir-file&#34;&gt;joinpath(&amp;hellip;grandpadir, fatherdir, &amp;hellip;file)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#iterdir&#34;&gt;iterdir()&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#globpattern&#34;&gt;glob(pattern)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#is_file&#34;&gt;is_file()&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#is_dir&#34;&gt;is_dir()&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#exists&#34;&gt;exists()&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#mkdirparentstrue-exist_oktrue&#34;&gt;mkdir(parents=True, exist_ok=True)&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=12&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;绝对vs相对&#34;&gt;绝对vs相对&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;相对路径 &lt;code&gt;&#39;img&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;绝对路径  &lt;code&gt;&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/img&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pathlib
+
+#当前代码所在的文件夹的相对路径
+pathlib.Path()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;WindowsPath(&#39;.&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pathlib import Path
+
+#当前代码所在的文件夹的相对路径
+Path()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;WindowsPath(&#39;.&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;pathlibpath属性方法&#34;&gt;pathlib.Path()属性方法&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;方法&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;cwd()&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;获取代码所在的当前工作路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;joinpath(&amp;hellip;grandpadir, fatherdir, &amp;hellip;file)&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;生成路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;iterdir()&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;返回某路径下的文件(夹)目录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;glob(pattern)&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;返回符合pattern的所有文件的文件路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;is_file()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;判断某路径是否为文件，返回布尔值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;is_dir()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;判断某路径是否为文件夹，返回布尔值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;exists()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;判断某路径是否存在，返回布尔值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;mkdir(parents=True, exist_ok=True)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;创建某路径对应的文件夹&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cwd&#34;&gt;cwd()&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获取当前代码所在文件夹的绝对路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Path().cwd()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;joinpathgrandpadir-fatherdir-file&#34;&gt;joinpath(&amp;hellip;grandpadir, fatherdir, &amp;hellip;file)&lt;/h3&gt;
+&lt;p&gt;把&amp;hellip;grandpadir, fatherdir, &amp;hellip;file加入到某路径中&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获得data文件夹的路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Path().cwd().joinpath(&#39;data&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获得data/test.txt文件的路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Path().cwd().joinpath(&#39;data&#39;, &#39;test.txt&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test.txt&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;iterdir&#34;&gt;iterdir()&lt;/h3&gt;
+&lt;p&gt;返回某路径下的文件(夹)目录&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;例：获得&lt;strong&gt;02-Python语法入门&lt;/strong&gt;文件夹里的所有文件(夹)路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;list(Path().cwd().iterdir())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/.ipynb_checkpoints&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/01-Python跟英语一样是一门语言.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/02-数据类型之字符串.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/03-数据类型之列表元组集合.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/04-数据类型之字典.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/05-数据类型之布尔值&amp;amp;None.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/06-逻辑语句(if&amp;amp;for&amp;amp;tryexcept).ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/07-列表推导式.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/08-理解函数.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/09-常用内置函数.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/09-常用函数.md&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/10-内置库之文件路径pathlib库.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/11-内置库之csv文件库.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/12. 内置库之正则表达式re库.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/13-初学python常出错误汇总.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/img&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;globpattern&#34;&gt;glob(pattern)&lt;/h3&gt;
+&lt;p&gt;查找某路径内满足pattern的所有文件路径 。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pattern=&#39;*.*&#39;&lt;/code&gt; 匹配任意格式任意名字的文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pattern=&#39;*.txt&#39;&lt;/code&gt; 匹配出所有的txt文件&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获得data文件夹内的所有的文件路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;list(Path().cwd().joinpath(&#39;data&#39;).glob(&#39;*.*&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test.txt&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test2.csv&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test2.txt&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/twitter_sentiment.csv&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获得data文件夹内的所有的txt额路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;list(Path().cwd().joinpath(&#39;data&#39;).glob(&#39;*.txt&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test.txt&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test2.txt&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获得data/reports内的pdf路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dirs = Path().cwd().joinpath(&#39;data&#39;, &#39;reports&#39;).iterdir()
+dirs = list(dirs)
+for dir in dirs:
+    files = dir.glob(&#39;*.*&#39;)
+    for file in files:
+        print(file)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600000\600000_20010901_1.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600004\600004_2006_n.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600004\600004_2006_z.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600007\600007_2001_n.pdf
+.......
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600007\600007_2002_1.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\603937\603937_2018_z.pdf
+......
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\603937\603937_2019_3.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\603937\603937_2019_z.pdf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;例**：获得data/reports内的 含有&amp;rdquo;_n&amp;rdquo; 额pdf路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dirs = Path().cwd().joinpath(&#39;data&#39;, &#39;reports&#39;).iterdir()
+dirs = list(dirs)
+for dir in dirs:
+    files = dir.glob(&#39;*_n.pdf&#39;)
+    for file in files:
+        print(file)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600000\600000_2006_n.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600000\600000_2008_n.pdf
+........
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\601872\601872_2014_n.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\601872\601872_2015_n.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\601872\601872_2016_n.pdf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;is_file&#34;&gt;is_file()&lt;/h3&gt;
+&lt;p&gt;判断某路径是否为一个文件。返回布尔值：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;True 真实存在的文件路径&lt;/li&gt;
+&lt;li&gt;False 不真实存在或者文件夹路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt; &amp;lsquo;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test.txt&amp;rsquo;是文件路径？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test.txt&#39;)
+fpath.is_file()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt; &amp;lsquo;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test222.txt&amp;rsquo;是文件路径？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test222.txt&#39;)
+fpath.is_file()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&#39;)
+fpath.is_file()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;is_dir&#34;&gt;is_dir()&lt;/h3&gt;
+&lt;p&gt;判断某路径是否为一个文件夹。返回布尔值，True、False&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;： &amp;lsquo;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&amp;rsquo; 是 文件夹路径？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&#39;)
+fpath.is_dir()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;exists&#34;&gt;exists()&lt;/h3&gt;
+&lt;p&gt;判断某路径是否存在。返回布尔值，True、False&lt;/p&gt;
+&lt;p&gt;例： &amp;lsquo;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&amp;rsquo; 是否存在？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&#39;)
+fpath.exists()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/datasss&#39;)
+fpath.exists()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;mkdirparentstrue-exist_oktrue&#34;&gt;mkdir(parents=True, exist_ok=True)&lt;/h3&gt;
+&lt;p&gt;创建某路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;path = Path().cwd().joinpath(&#39;data&#39;, &#39;stocks&#39;, &#39;800000&#39;)
+path.mkdir(parents=True, exist_ok=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>内置库-正则表达式re库</title>
+      <link>https://thunderhit.github.io/post/12.-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre%E5%BA%93/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/12.-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre%E5%BA%93/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#一正则表达式中的符号&#34;&gt;一、正则表达式中的符号&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#11-正则字符&#34;&gt;1.1 正则字符&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#12-限定字符&#34;&gt;1.2 限定字符&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#13-定位字符&#34;&gt;1.3 定位字符&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#二re库常用方法&#34;&gt;二、re库常用方法&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#三只需要掌握&#34;&gt;三、只需要掌握&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#31-检索找到自己需要的正则表达式&#34;&gt;3.1 检索找到自己需要的正则表达式&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#32-最简单最好用表达式&#34;&gt;3.2 最简单最好用表达式(.*?)&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#四案例&#34;&gt;四、案例&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#41-找出文本中出现的年份&#34;&gt;4.1 找出文本中出现的年份&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#42-resplitpattern-string&#34;&gt;4.2 re.split(pattern, string)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#43-resubpattern-repl-string&#34;&gt;4.3 re.sub(pattern, repl, string)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#44--统一表达&#34;&gt;4.4 . 统一表达&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#45-分割文本数据的章节&#34;&gt;4.5 分割文本数据的章节&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#46-抽取出数字&#34;&gt;4.6 抽取出数字&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=14&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;一正则表达式中的符号&#34;&gt;一、正则表达式中的符号&lt;/h2&gt;
+&lt;p&gt;按照符号的功能，我将其分为三类，一般情况下表达式都是由这三种符号组成的。&lt;/p&gt;
+&lt;h3 id=&#34;11-正则字符&#34;&gt;1.1 正则字符&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;正则符号&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;描述&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;匹配自己时&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;转义字符。例如， &amp;lsquo;n&amp;rsquo; 匹配字符 &amp;lsquo;n&amp;rsquo;。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&#39;\n&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;( )&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;标记一个子表达式的开始和结束位置。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\(   \)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;.&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配除换行符 &lt;code&gt;\n&lt;/code&gt; 之外的任何单字符。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\. &lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;|&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;|左右两侧均可参与匹配&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\d&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配字符串中的单个数字&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;a-zA-Z&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配全部英文字符&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;0-9&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配全部数字&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\s&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配字符串中的&lt;code&gt;\n&lt;/code&gt;,&lt;code&gt;\t&lt;/code&gt;,&lt;code&gt;空格&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;[]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;中括号内任意正则符号均可参与匹配&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\[   \]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;^&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;当在方括号表达式中使用，^对其后的正则表达式进行了反义表达。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\^&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;12-限定字符&#34;&gt;1.2 限定字符&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;正则符号&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;描述&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;匹配自己时&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;*&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配前面的子表达式零次或多次。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\*&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;?&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配前面的子表达式零次或一次&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;\?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配前面的子表达式一次或多次。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\+&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;{m}&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;n 是一个非负整数。匹配确定的 m 次。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;{m,}&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;m 是一个非负整数。至少匹配m 次。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;{m, n}&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;m 和 n 均为非负整数，其中m &amp;lt;= n。最少匹配 m 次且最多匹配 n 次。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;13-定位字符&#34;&gt;1.3 定位字符&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;正则符号&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;描述&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;匹配自己时&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;^&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配输入字符串的开始位置。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\^&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配输入字符串的结尾位置&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\b&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配一个单词边界，即字与空格间的位置&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\B&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;非单词边界匹配&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;二re库常用方法&#34;&gt;二、re库常用方法&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;re库常用函数&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;re.findall(pattern, string)&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;根据pattern返回匹配结果（列表）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;|&lt;code&gt;re.split(pattern, string)&lt;/code&gt; |使用pattern分割string，返回列表     &lt;br&gt;
+|&lt;code&gt;re.sub(pattern, repl, string)&lt;/code&gt;|使用repl替换string中的pattern|&lt;/p&gt;
+&lt;p&gt;&lt;br&gt; &lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;三只需要掌握&#34;&gt;三、只需要掌握&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;搜索引擎检索到自己需要的正则表达式&lt;/li&gt;
+&lt;li&gt;最简单最好用表达式&lt;code&gt;(.*?)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在
+&lt;a href=&#34;http://c.runoob.com/front-end/854&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;正则表达式测试网站&lt;/a&gt;验证自己的正则表达式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;31-检索找到自己需要的正则表达式&#34;&gt;3.1 检索找到自己需要的正则表达式&lt;/h3&gt;
+&lt;p&gt;比如我只需要中文，其余字符统统不要。&lt;/p&gt;
+&lt;p&gt;我会在百度搜&lt;strong&gt;中文正则表达式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;发现很多网页中网友提到````，于是&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[\u4e00-\u9fa5]&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+pattern = &#39;[\u4e00-\u9fa5]+&#39;
+
+string = &amp;quot;&amp;quot;&amp;quot;Python是一门面向对象的编程语言，诞生于1991年。\
+目前以广泛应用在网站开发、游戏软件开发、数据采集、机器学习等多个领域。\
+一般情况下Python是Java的20%，所以说人生苦短，我用Python。&amp;quot;&amp;quot;&amp;quot;
+
+chinese_words = re.findall(pattern, string)
+chinese_text = &#39;&#39;.join(chinese_words)
+chinese_text
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;是一门面向对象的编程语言诞生于年目前以广泛应用在网站开发游戏软件开发数据采集机器学习等多个领域一般情况下是的所以说人生苦短我用&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;32-最简单最好用表达式&#34;&gt;3.2 最简单最好用表达式(.*?)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;pattern设计步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;正则符号&lt;/strong&gt;组成&lt;strong&gt;正则表达式&lt;/strong&gt;，用于&lt;strong&gt;匹配&lt;/strong&gt;需要的字符。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;找到重复的一致的规律&lt;/li&gt;
+&lt;li&gt;复制粘贴到pattern中&lt;/li&gt;
+&lt;li&gt;扣掉&lt;strong&gt;想要的数据&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;替换为&lt;code&gt;(.*?)&lt;/code&gt;  或者&lt;code&gt;相应的正则符号表达式*&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;比如现在需要快速挖掘出intros中的姓名、籍贯和年龄&lt;/p&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+
+pattern = &#39;我叫(.*?)，来自(.*?)，今年(.*?)岁。&#39;
+
+intros = [&#39;我叫张三，来自山东，今年25岁。&#39;,
+          &#39;我叫李四，来自河北，今年28岁。&#39;,
+          &#39;我叫王五，来自河南，今年24岁。&#39;]
+
+for intro in intros:
+    info = re.findall(pattern, intro)
+    print(info)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;张三&#39;, &#39;山东&#39;, &#39;25&#39;)]
+[(&#39;李四&#39;, &#39;河北&#39;, &#39;28&#39;)]
+[(&#39;王五&#39;, &#39;河南&#39;, &#39;24&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    特别需要注意的是pattern中的(.*?)左右两侧必须有字符，否则匹配失败
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+
+pattern = &#39;(.*?)，来自(.*?)，今年(.*?)&#39;
+
+intros = [&#39;我叫张三，来自山东，今年25岁。&#39;,
+          &#39;我叫李四，来自河北，今年28岁。&#39;,
+          &#39;我叫王五，来自河南，今年24岁。&#39;]
+
+for intro in intros:
+    info = re.findall(pattern, intro)
+    print(info)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;我叫张三&#39;, &#39;山东&#39;, &#39;&#39;)]
+[(&#39;我叫李四&#39;, &#39;河北&#39;, &#39;&#39;)]
+[(&#39;我叫王五&#39;, &#39;河南&#39;, &#39;&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&#39;(.*?)，来自(.*?)，今年(.*?)&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;中最左侧和最右侧的&lt;code&gt;(.*?)&lt;/code&gt;没有被其他字符左右包裹，导致匹配姓名和年龄失败。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+
+pattern = &#39;叫(.*?)，来自(.*?)，今年(.*?)岁&#39;
+
+intros = [&#39;我叫张三，来自山东，今年25岁。&#39;,
+          &#39;我叫李四，来自河北，今年28岁。&#39;,
+          &#39;我叫王五，来自河南，今年24岁。&#39;]
+
+for intro in intros:
+    info = re.findall(pattern, intro)
+    print(info)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;张三&#39;, &#39;山东&#39;, &#39;25&#39;)]
+[(&#39;李四&#39;, &#39;河北&#39;, &#39;28&#39;)]
+[(&#39;王五&#39;, &#39;河南&#39;, &#39;24&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;四案例&#34;&gt;四、案例&lt;/h2&gt;
+&lt;h3 id=&#34;41-找出文本中出现的年份&#34;&gt;4.1 找出文本中出现的年份&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+
+pattern = &#39;\d{4}&#39;
+string = &amp;quot;&amp;quot;&amp;quot;Python是一门面向对象的编程语言，诞生于1991年。\
+目前以广泛应用在网站开发、游戏软件开发、数据采集、机器学习等多个领域。\
+一般情况下Python是Java的20%，所以说人生苦短，我用Python。&amp;quot;&amp;quot;&amp;quot;
+
+re.findall(pattern, string)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;1991&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;42-resplitpattern-string&#34;&gt;4.2 re.split(pattern, string)&lt;/h3&gt;
+&lt;p&gt;断句&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pattern = &#39;；|。&#39;
+
+string = &amp;quot;&amp;quot;&amp;quot;Python是一门面向对象的编程语言，诞生于1991年；\
+目前以广泛应用在网站开发、游戏软件开发、数据采集、机器学习等多个领域。\
+一般情况下Python是Java的20%，所以说人生苦短，我用Python。&amp;quot;&amp;quot;&amp;quot;
+
+res = re.split(pattern, string)
+res = [r for r in res if r]
+res
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Python是一门面向对象的编程语言，诞生于1991年&#39;,
+ &#39;目前以广泛应用在网站开发、游戏软件开发、数据采集、机器学习等多个领域&#39;,
+ &#39;一般情况下Python是Java的20%，所以说人生苦短，我用Python&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;43-resubpattern-repl-string&#34;&gt;4.3 re.sub(pattern, repl, string)&lt;/h3&gt;
+&lt;p&gt;将数字替换为NUM&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pattern = &#39;\d+&#39;
+
+repl = &#39;NUM&#39;
+
+string = &amp;quot;&amp;quot;&amp;quot;Python是一门面向对象的编程语言，诞生于1991年。\
+一般情况下Python是Java的20%，所以说人生苦短，我用Python。&amp;quot;&amp;quot;&amp;quot;
+
+re.sub(pattern, repl, string)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Python是一门面向对象的编程语言，诞生于NUM年。一般情况下Python是Java的NUM%，所以说人生苦短，我用Python。&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;44--统一表达&#34;&gt;4.4 . 统一表达&lt;/h3&gt;
+&lt;p&gt;将指代同一个主体的不同表达词语统一为同一个词&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;text = &#39;中国铁路工程集团有限公司成立于1950年3月，总部位于北京。目前中国中铁已经发展成中国和亚洲最大的多功能综合型建设集团。&#39;
+
+pattern = &#39;中国铁路工程集团有限公司|中国中铁&#39;
+
+repl = &#39;中铁&#39;
+
+re.sub(pattern, repl, text)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;中铁成立于1950年3月，总部位于北京。目前中铁已经发展成中国和亚洲最大的多功能综合型建设集团。&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;text = &#39;中国铁路工程集团有限公司成立于1950年3月，总部位于北京。目前中国中铁已经发展成中国和亚洲最大的多功能综合型建设集团。&#39;
+
+pattern = &#39;[中国铁路工程集团有限公司|中国中铁]+&#39;
+
+repl = &#39;中铁&#39;
+
+re.sub(pattern, repl, text)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;中铁成立于1950年3月，总部位于北京。目前中铁已经发展成中铁和亚洲最大的多功能综合型建设中铁。&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;45-分割文本数据的章节&#34;&gt;4.5 分割文本数据的章节&lt;/h3&gt;
+&lt;p&gt;一二三四五六七八九十零百&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;text = &amp;quot;&amp;quot;&amp;quot; 第一篇 Python简介 第二篇 Python入门语法 第三篇 Python网络爬虫 第四篇 文本数据编码 第五篇 数据分析 第六篇 可视化&amp;quot;&amp;quot;&amp;quot;
+
+pattern = &#39;第[一二三四五六七八九十零百]+篇&#39;
+
+res = re.split(pattern, text)
+res = [r.replace(&#39; &#39;, &#39;&#39;) for r in res if &#39; &#39;!=r]
+res
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Python简介&#39;, &#39;Python入门语法&#39;, &#39;Python网络爬虫&#39;, &#39;文本数据编码&#39;, &#39;数据分析&#39;, &#39;可视化&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;46-抽取出数字&#34;&gt;4.6 抽取出数字&lt;/h3&gt;
+&lt;p&gt;比如日期数据&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;text = &#39;中国铁路工程集团有限公司成立于1950年3月，总部位于北京。目前中国中铁已经发展成中国和亚洲最大的多功能综合型建设集团。&#39;
+
+pattern = &#39;\d+&#39;
+
+&#39;-&#39;.join(re.findall(pattern, text))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;1950-3&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>列表推导式</title>
+      <link>https://thunderhit.github.io/post/07-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/07-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#问题1-用列表表示集合x&#34;&gt;问题1 用列表表示集合X&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#问题2-表示集合y&#34;&gt;问题2 表示集合Y&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#列表推导式&#34;&gt;列表推导式&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#理解列表推导式&#34;&gt;理解列表推导式&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#带条件的列表推导式&#34;&gt;带条件的列表推导式&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#问题3-全部小写&#34;&gt;问题3 全部小写&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#问题4-计算lower_words列表数据的单词词频&#34;&gt;问题4 计算lower_words列表数据的单词词频&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#问题5&#34;&gt;问题5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=9&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题1-用列表表示集合x&#34;&gt;问题1 用列表表示集合X&lt;/h2&gt;
+&lt;p&gt;$X= {x| x \in [1,2,3,4,5,6,7,8,9,10]}$&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X = [1,2,3,4,5,6,7,8,9,10]
+X
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X = list(range(1, 10))
+X
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 2, 3, 4, 5, 6, 7, 8, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题2-表示集合y&#34;&gt;问题2 表示集合Y&lt;/h2&gt;
+&lt;p&gt;$Y = {x^2| x \in [1,2,3,4,5,6,7,8,9,10]}$&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Y = []
+
+for x in X:
+    Y.append(x*x)
+    
+Y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 4, 9, 16, 25, 36, 49, 64, 81]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;列表推导式&#34;&gt;列表推导式&lt;/h1&gt;
+&lt;p&gt;实现步骤&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先复制X&lt;/li&gt;
+&lt;li&gt;再对X中的元素x进行操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#先复制X
+[x for x in X]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 2, 3, 4, 5, 6, 7, 8, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#再对x进行操作
+[x*x for x in X]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 4, 9, 16, 25, 36, 49, 64, 81]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;理解列表推导式&#34;&gt;理解列表推导式&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F%E7%90%86%E8%A7%A3.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;带条件的列表推导式&#34;&gt;带条件的列表推导式&lt;/h2&gt;
+&lt;p&gt;$C= {x^2 | (x \in X) \cap (x&amp;gt;5)}$&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#复制X
+[x 
+ for x in X]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 2, 3, 4, 5, 6, 7, 8, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#X中的要大于5
+#[x for x in X if x&amp;gt;5]
+
+
+[x 
+ for x in X 
+ if x&amp;gt;5]
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[6, 7, 8, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#对满足条件的x进行操作
+#[x*x for x in X if x&amp;gt;5]
+
+[x*x 
+ for x in X 
+ if x&amp;gt;5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[36, 49, 64, 81]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题3-全部小写&#34;&gt;问题3 全部小写&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words = [&#39;Life&#39;, &#39;is&#39;, &#39;short&#39;, &#39;so&#39;, &#39;we&#39;, &#39;use&#39;, &#39;Python&#39;, &#39;python&#39;, 
+         &#39;is&#39;, &#39;easy&#39;, &#39;to&#39;, &#39;learn&#39;, &#39;and&#39;, &#39;easy&#39;, &#39;to&#39;, &#39;use&#39;]
+words
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Life&#39;,
+ &#39;is&#39;,
+ &#39;short&#39;,
+ &#39;so&#39;,
+ &#39;we&#39;,
+ &#39;use&#39;,
+ &#39;Python&#39;,
+ &#39;python&#39;,
+ &#39;is&#39;,
+ &#39;easy&#39;,
+ &#39;to&#39;,
+ &#39;learn&#39;,
+ &#39;and&#39;,
+ &#39;easy&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lower_words = [w.lower() for w in words]
+lower_words
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;life&#39;,
+ &#39;is&#39;,
+ &#39;short&#39;,
+ &#39;so&#39;,
+ &#39;we&#39;,
+ &#39;use&#39;,
+ &#39;python&#39;,
+ &#39;python&#39;,
+ &#39;is&#39;,
+ &#39;easy&#39;,
+ &#39;to&#39;,
+ &#39;learn&#39;,
+ &#39;and&#39;,
+ &#39;easy&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题4-计算lower_words列表数据的单词词频&#34;&gt;问题4 计算lower_words列表数据的单词词频&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;wordset = set(lower_words)
+[(w, lower_words.count(w)) for w in wordset]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;so&#39;, 1),
+ (&#39;and&#39;, 1),
+ (&#39;learn&#39;, 1),
+ (&#39;use&#39;, 2),
+ (&#39;to&#39;, 2),
+ (&#39;we&#39;, 1),
+ (&#39;easy&#39;, 2),
+ (&#39;python&#39;, 2),
+ (&#39;is&#39;, 2),
+ (&#39;short&#39;, 1),
+ (&#39;life&#39;, 1)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#1 生产词语集合
+wordset = set(lower_words)
+print(wordset)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;so&#39;, &#39;and&#39;, &#39;learn&#39;, &#39;use&#39;, &#39;to&#39;, &#39;we&#39;, &#39;easy&#39;, &#39;python&#39;, &#39;is&#39;, &#39;short&#39;, &#39;life&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#2. wordset复制wordset自己
+[w for w in wordset]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#3. 对wordset中每个词语w进行一些操作
+[lower_words.count(w) for w in wordset]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 1, 1, 2, 2, 1, 2, 2, 2, 1, 1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#3. 词频和词语一起显示
+[(w,lower_words.count(w)) for w in wordset]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;so&#39;, 1),
+ (&#39;and&#39;, 1),
+ (&#39;learn&#39;, 1),
+ (&#39;use&#39;, 2),
+ (&#39;to&#39;, 2),
+ (&#39;we&#39;, 1),
+ (&#39;easy&#39;, 2),
+ (&#39;python&#39;, 2),
+ (&#39;is&#39;, 2),
+ (&#39;short&#39;, 1),
+ (&#39;life&#39;, 1)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题5&#34;&gt;问题5&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d = {&#39;x&#39;: &#39;A&#39;, 
+     &#39;y&#39;: &#39;B&#39;, 
+     &#39;z&#39;: &#39;C&#39; }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如何将d中的 键值对 拼接,输出为&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[&#39;xA&#39;, &#39;yB&#39;, &#39;zC]&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d = {&#39;x&#39;: &#39;A&#39;, 
+     &#39;y&#39;: &#39;B&#39;, 
+     &#39;z&#39;: &#39;C&#39; }
+
+d.items()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dict_items([(&#39;x&#39;, &#39;A&#39;), (&#39;y&#39;, &#39;B&#39;), (&#39;z&#39;, &#39;C&#39;)])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#1 自己复制d.items()自己
+[i for i in d.items()]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;x&#39;, &#39;A&#39;), (&#39;y&#39;, &#39;B&#39;), (&#39;z&#39;, &#39;C&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#2 对任何一个元素都要进行字符串的拼接操作
+[i[0]+i[1] for i in d.items()]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;xA&#39;, &#39;yB&#39;, &#39;zC&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>数据类型-列表元组集合</title>
+      <link>https://thunderhit.github.io/post/03-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%88%97%E8%A1%A8%E5%85%83%E7%BB%84%E9%9B%86%E5%90%88/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/03-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%88%97%E8%A1%A8%E5%85%83%E7%BB%84%E9%9B%86%E5%90%88/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#列表list&#34;&gt;列表list&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#定义&#34;&gt;定义&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#拼接&#34;&gt;拼接&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#拆包&#34;&gt;拆包&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#切片&#34;&gt;切片&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#列表常用方法&#34;&gt;列表常用方法&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#元组tuple&#34;&gt;元组tuple&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#集合&#34;&gt;集合&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#集合的方法&#34;&gt;集合的方法&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=5&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;列表list&#34;&gt;列表list&lt;/h1&gt;
+&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;list是一种有序的集合,内部可以由任何数据类型的组成的&lt;/p&gt;
+&lt;p&gt;现在有5位员工的汇总信息，&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;id&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;姓名&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;年龄&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;性别&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;爱好&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;David&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;25&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Basketball, Pingpang, Hiking&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Mary&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;23&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Reading, Movies&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Henry&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;23&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Diving, Hiking&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Swift&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;21&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Football, Music&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;5&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Lenard&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;26&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Stay at Home&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = [&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+
+ages = [25, 23, 23, 21, 26]
+
+hobbies = [[&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;],
+          [&#39;Reading&#39;, &#39;Movies&#39;],
+          [&#39;Diving&#39;, &#39;Hiking&#39;],
+          [&#39;Football&#39;, &#39;Music&#39;],
+          [&#39;Stay at Home&#39;]]
+
+print(type(names))
+print(type(ages))
+print(type(hobbies))
+
+print(names)
+print(ages)
+print(hobbies)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &#39;list&#39;&amp;gt;
+&amp;lt;class &#39;list&#39;&amp;gt;
+&amp;lt;class &#39;list&#39;&amp;gt;
+[&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+[25, 23, 23, 21, 26]
+[[&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;], [&#39;Reading&#39;, &#39;Movies&#39;], [&#39;Diving&#39;, &#39;Hiking&#39;], [&#39;Football&#39;, &#39;Music&#39;], [&#39;Stay at Home&#39;]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;拼接&#34;&gt;拼接&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a1 = [&#39;Michael&#39;, &#39;Bob&#39;]
+a2 = [&#39;David&#39;, &#39;Lee&#39;]
+
+print(a1 + a2)
+print(a2 + a1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Michael&#39;, &#39;Bob&#39;, &#39;David&#39;, &#39;Lee&#39;]
+[&#39;David&#39;, &#39;Lee&#39;, &#39;Michael&#39;, &#39;Bob&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;拆包&#34;&gt;拆包&lt;/h2&gt;
+&lt;p&gt;等号两边长度相同&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name, age = [&#39;David&#39;, 25]
+print(name)
+print(age)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;David
+25
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;切片&#34;&gt;切片&lt;/h2&gt;
+&lt;p&gt;列表的切片与字符串类似&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;id&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;姓名&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;年龄&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;性别&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;爱好&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;正索引&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;倒索引&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;David&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;25&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Basketball, Pingpang, Hiking&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Mary&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;23&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Reading, Movies&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Henry&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;23&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Diving, Hiking&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Swift&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;21&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Football, Music&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;5&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Lenard&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;26&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Stay at Home&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = [&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+names
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(names[2])
+print(names[-3])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Henry
+Henry
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(names[0:3])
+print(names[-5:-2])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;]
+[&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(names[2:])
+print(names[-3:])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+[&#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(names[:2])
+print(names[:-3])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;David&#39;, &#39;Mary&#39;]
+[&#39;David&#39;, &#39;Mary&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;列表常用方法&#34;&gt;列表常用方法&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;常用方法&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;list.append(a)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;向list中添加元素a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;list.extend(lst)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;向list中添加列表lst&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;list.count(a)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;统计list中a的个数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = [&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+
+print(names)
+names.append(&#39;Mary&#39;)
+print(names)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+[&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;, &#39;Mary&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = [&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+
+print(names)
+
+names.extend([&#39;Mary&#39;])
+
+print(names)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+[&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;, &#39;Mary&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ages = [25, 23, 23, 21, 26]
+print(ages.count(23))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;one = [&#39;David&#39;]
+print(one[-1])
+print(one[0])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;David
+David
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;元组tuple&#34;&gt;元组tuple&lt;/h1&gt;
+&lt;p&gt;形似列表，也有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;元组拼接&lt;/li&gt;
+&lt;li&gt;切片&lt;/li&gt;
+&lt;li&gt;拆包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name_list = [&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+name_tuple = (&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;)
+
+print(type(name_list))
+print(type(name_tuple))
+
+print(name_list)
+print(name_tuple)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &#39;list&#39;&amp;gt;
+&amp;lt;class &#39;tuple&#39;&amp;gt;
+[&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
+(&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(name_list==name_tuple)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;集合&#34;&gt;集合&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names2 = [&#39;David&#39;, &#39;Mary&#39;, &#39;David&#39;, &#39;Swift&#39;, &#39;David&#39;]
+print(set(names2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;Swift&#39;, &#39;Mary&#39;, &#39;David&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;集合的方法&#34;&gt;集合的方法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;setdata.add(ele)  向setdata中加入ele&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name_set = set(names2)
+
+print(name_set)
+
+name_set.add(&#39;William&#39;)
+
+print(name_set)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;Swift&#39;, &#39;Mary&#39;, &#39;David&#39;}
+{&#39;William&#39;, &#39;Swift&#39;, &#39;Mary&#39;, &#39;David&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name_set[2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-20-98cb669cc173&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 name_set[2]
+
+
+TypeError: &#39;set&#39; object is not subscriptable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    集合不能切片
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>数据类型-字典</title>
+      <link>https://thunderhit.github.io/post/04-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E5%85%B8/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/04-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E5%85%B8/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#字典&#34;&gt;字典&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#空字典&#34;&gt;空字典&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#填充&#34;&gt;填充&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#更新&#34;&gt;更新&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#完整的信息&#34;&gt;完整的信息&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#字典的方法&#34;&gt;字典的方法&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=6&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;字典&#34;&gt;字典&lt;/h1&gt;
+&lt;p&gt;字典是有key，有value的 key-value-pair类型数据（键-值对）&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;id&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;姓名&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;年龄&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;性别&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;爱好&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;David&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;25&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Basketball, Pingpang, Hiking&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Mary&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;23&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Female&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Reading, Movies&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Henry&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;23&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Male&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Diving, Hiking&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;将上面的员工信息以关键词&lt;code&gt;name、age、hobbies&lt;/code&gt; 组织成字典数据&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;空字典&#34;&gt;空字典&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;david = dict()
+print(david)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;填充&#34;&gt;填充&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;david[&#39;age&#39;] = 23
+print(david)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;age&#39;: 23}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;david[&#39;hobbies&#39;] = [&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;]
+print(david)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;age&#39;: 23, &#39;hobbies&#39;: [&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;]}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;david[&#39;gender&#39;] = &#39;Male&#39;
+print(david)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;age&#39;: 23, &#39;hobbies&#39;: [&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;], &#39;gender&#39;: &#39;Male&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;更新&#34;&gt;更新&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;david[&#39;age&#39;] = 25
+print(david)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;age&#39;: 25, &#39;hobbies&#39;: [&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;], &#39;gender&#39;: &#39;Male&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;完整的信息&#34;&gt;完整的信息&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;infos =  {&#39;David&#39;:{&#39;age&#39;:25, 
+                   &#39;gender&#39;:&#39;Male&#39;,
+                   &#39;hobbies&#39;:[&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;]},
+          &#39;Mary&#39;:{&#39;age&#39;:23,
+                  &#39;gender&#39;: &#39;Female&#39;,
+                  &#39;hobbies&#39;: [&#39;Reading&#39;, &#39;Movies&#39;]},
+          &#39;Henry&#39;:{&#39;age&#39;:23,
+                  &#39;gender&#39;: &#39;Male&#39;,
+                  &#39;hobbies&#39;: [&#39;Diving&#39;, &#39;Hiking&#39;]}
+         }
+
+print(infos)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;David&#39;: {&#39;age&#39;: 25, &#39;gender&#39;: &#39;Male&#39;, &#39;hobbies&#39;: [&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;]}, &#39;Mary&#39;: {&#39;age&#39;: 23, &#39;gender&#39;: &#39;Female&#39;, &#39;hobbies&#39;: [&#39;Reading&#39;, &#39;Movies&#39;]}, &#39;Henry&#39;: {&#39;age&#39;: 23, &#39;gender&#39;: &#39;Male&#39;, &#39;hobbies&#39;: [&#39;Diving&#39;, &#39;Hiking&#39;]}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;字典的方法&#34;&gt;字典的方法&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;方法&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;效果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;dictdata.items()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;返回dictdata所有item&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;dictdata.keys()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;返回dictdata的所有关键词&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;dictdata.values()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;返回dictdata的所有值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;dictdata.get(keystr)&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;获取关键词keystr对应的值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;dictdata[keystr]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;获取关键词keystr对应的值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;infos.items()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dict_items([(&#39;David&#39;, {&#39;age&#39;: 25, &#39;gender&#39;: &#39;Male&#39;, &#39;hobbies&#39;: [&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;]}), (&#39;Mary&#39;, {&#39;age&#39;: 23, &#39;gender&#39;: &#39;Female&#39;, &#39;hobbies&#39;: [&#39;Reading&#39;, &#39;Movies&#39;]}), (&#39;Henry&#39;, {&#39;age&#39;: 23, &#39;gender&#39;: &#39;Male&#39;, &#39;hobbies&#39;: [&#39;Diving&#39;, &#39;Hiking&#39;]})])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#把infos.items()转化为列表
+list(infos.items())[0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(&#39;David&#39;,
+ {&#39;age&#39;: 25,
+  &#39;gender&#39;: &#39;Male&#39;,
+  &#39;hobbies&#39;: [&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;]})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;infos.keys()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dict_keys([&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;infos.values()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dict_values([{&#39;age&#39;: 25, &#39;gender&#39;: &#39;Male&#39;, &#39;hobbies&#39;: [&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;]}, {&#39;age&#39;: 23, &#39;gender&#39;: &#39;Female&#39;, &#39;hobbies&#39;: [&#39;Reading&#39;, &#39;Movies&#39;]}, {&#39;age&#39;: 23, &#39;gender&#39;: &#39;Male&#39;, &#39;hobbies&#39;: [&#39;Diving&#39;, &#39;Hiking&#39;]}])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(infos[&#39;David&#39;])
+print(infos.get(&#39;David&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;age&#39;: 25, &#39;gender&#39;: &#39;Male&#39;, &#39;hobbies&#39;: [&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;]}
+{&#39;age&#39;: 25, &#39;gender&#39;: &#39;Male&#39;, &#39;hobbies&#39;: [&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;]}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    两种功能等同，但是get获取方法更加安全稳定。
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;例如&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(infos[&#39;Will&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+KeyError                                  Traceback (most recent call last)
+
+&amp;lt;ipython-input-16-f7c283c8ad8e&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 print(infos[&#39;Will&#39;])
+
+
+KeyError: &#39;Will&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(infos.get(&#39;Will&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;None
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>数据类型-字符串string</title>
+      <link>https://thunderhit.github.io/post/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#字符串string&#34;&gt;字符串string&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#定义&#34;&gt;定义&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#拼接&#34;&gt;拼接+&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#切片&#34;&gt;切片&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#切片总结&#34;&gt;切片总结&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#字符串常用方法&#34;&gt;字符串常用方法&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#转义符&#34;&gt;转义符\&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#r&#34;&gt;r&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=4&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;字符串string&#34;&gt;字符串string&lt;/h1&gt;
+&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;字符串是以  &lt;strong&gt;单引号&lt;/strong&gt;  或  &lt;strong&gt;双引号&lt;/strong&gt;  或 &lt;strong&gt;三引号&lt;/strong&gt; 括起来的任意文本，如&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lsquo;abc&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;abc&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&amp;lsquo;&amp;lsquo;abc&amp;rsquo;&amp;rsquo;&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;&amp;ldquo;&amp;ldquo;abc&amp;rdquo;&amp;rdquo;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = &#39;abc&#39;
+a
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;abc&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;quot;abc&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;abc&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;&#39;&#39;abc&#39;&#39;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;abc&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;quot;&amp;quot;&amp;quot;abc&amp;quot;&amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;abc&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;abc&#39;)
+print(&amp;quot;abc&amp;quot;)
+print(&#39;&#39;&#39;abc&#39;&#39;&#39;)
+print(&amp;quot;&amp;quot;&amp;quot;abc&amp;quot;&amp;quot;&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;abc
+abc
+abc
+abc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;abc&#39;)
+print(&#39;efg&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;abc
+efg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;注意**:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这里所说的引号都是英文引号&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt; 或 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; 本身不是字符串的一部分，因此，字符串 &lt;code&gt;&#39;abc&#39;&lt;/code&gt; 只有a，b，c这3个字符。&lt;/li&gt;
+&lt;li&gt;notebook中只显示最后一个，所以这里用了两个print&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;这里所说的引号都是英文引号&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt; 或 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; 本身不是字符串的一部分，因此，字符串 &lt;code&gt;&#39;abc&#39;&lt;/code&gt; 只有a，b，c这3个字符。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;notebook中只显示最后一个，所以这里用了两个print&lt;br&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;拼接&#34;&gt;拼接+&lt;/h2&gt;
+&lt;p&gt;按顺序拼接&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = &#39;P&#39;
+b = &#39;ython&#39;
+
+print(a+b)
+print(b+a)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Python
+ythonP
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = &#39;P&#39;
+
+print(a+b)
+print(b+a)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;切片&#34;&gt;切片&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B4%A2%E5%BC%95.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name = &#39;My Name is Mike&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;M&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[-15]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;M&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[3:6]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Nam&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[-12:-9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Nam&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[0:2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;My&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[:2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;My&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[5:]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;me is Mike&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[-7:]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;is Mike&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;切片总结&#34;&gt;切片总结&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;切片表达式&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;解读&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;从左往右&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;索引值从0开始，0表示&amp;rsquo;第一个&amp;rsquo;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;从右向左&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-1表示倒数第一个，-2表示倒数第二个&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;a:b&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;选取列表索引位置为&lt;code&gt;a，a+1...b-2, b-1&lt;/code&gt;的值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;a:&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;选取列表中a之后的所有元素(含a)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;:b&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;选取列表中b之前的所有元素(不含b)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;字符串常用方法&#34;&gt;字符串常用方法&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;字符串常用方法&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;str.lower()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;变小写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;str.upper()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;变大写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;str.split(sep)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;使用sep将字符串分割，默认sep为空格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;str.replace(old, new)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;将str中的old替换为new&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;str.format()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;向str中填充内容&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words = &#39;Python is poweful!&#39;
+words.lower()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;python is poweful!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words.upper()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;PYTHON IS POWEFUL!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Python is poweful!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words.split(&#39; &#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Python&#39;, &#39;is&#39;, &#39;poweful!&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words.replace(&#39;Python&#39;, &#39;Python programing language&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Python programing language is poweful!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;需要发送每个员工的工资组成详情。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;张三,你这个月的工资是2310元；以下是你的工资详情。。。。&amp;quot;
+&amp;quot;李四,你这个月的工资是3456元；以下是你的工资详情。。。。&amp;quot;
+&amp;quot;王五,你这个月的工资是2431元；以下是你的工资详情。。。。&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如何自动化自动化填充?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;template = &#39;{name},你这个月的工资是{salary}元；以下是你的工资详情&#39;
+
+print(template.format(name=&#39;张三&#39;, salary=&#39;2310&#39;))
+print(template.format(name=&#39;李四&#39;, salary=&#39;3456&#39;))
+print(template.format(name=&#39;王五&#39;, salary=&#39;2431&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;张三,你这个月的工资是2310元；以下是你的工资详情
+李四,你这个月的工资是3456元；以下是你的工资详情
+王五,你这个月的工资是2431元；以下是你的工资详情
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;转义符&#34;&gt;转义符\&lt;/h1&gt;
+&lt;p&gt;如果字符串内部既包含 &lt;strong&gt;单引号&lt;/strong&gt; 又包含 &lt;strong&gt;双引号&lt;/strong&gt;， 会发生什么？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;I&#39;m &amp;quot;OK&amp;quot;!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-28-af5dc904b170&amp;gt;&amp;quot;, line 1
+    print(&#39;I&#39;m &amp;quot;OK&amp;quot;!&#39;)
+             ^
+SyntaxError: invalid syntax
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# 可以用 转义字符\ 来标识，比如：
+print(&#39;I\&#39;m \&amp;quot;OK\&amp;quot;!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;I&#39;m &amp;quot;OK&amp;quot;!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;常见的转义符还有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\n&lt;/code&gt; 换行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\t&lt;/code&gt; 制表符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;字符\&lt;/code&gt; 本身也要转义，所以 &lt;code&gt;\\&lt;/code&gt; 表示的字符就是 &lt;code&gt;\&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以试着自己运行下面代码，看看下面打印结果是?：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;Hello\tWorld!&#39;)
+print(&#39;转义\n换行!&#39;)
+print(&#39;反斜杠线\\&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;Hello\tWorld!&#39;)
+print(&#39;Hello World!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Hello	World!
+Hello World!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;转义\n换行!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;转义
+换行!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;反斜杠线\\&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;反斜杠线\
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;r&#34;&gt;r&lt;/h1&gt;
+&lt;p&gt;如果字符串里面有很多字符都需要转义，就需要加很多&lt;code&gt;\&lt;/code&gt;,&lt;/p&gt;
+&lt;p&gt;为了简化，Python还允许用&lt;code&gt;r&#39;&#39;&lt;/code&gt;表示&lt;code&gt;&#39;&#39;内部&lt;/code&gt;的字符串默认不转义,例如&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;\\\t\\&#39;)
+print(r&#39;\\\t\\&#39;)
+print(&#39;hello world!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;\\\t\\&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;\	\
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(r&#39;\\\t\\&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;\\\t\\
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>数据类型-布尔值&amp;None</title>
+      <link>https://thunderhit.github.io/post/05-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%B8%83%E5%B0%94%E5%80%BCnone/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/05-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%B8%83%E5%B0%94%E5%80%BCnone/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#布尔值boolean&#34;&gt;布尔值Boolean&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#布尔运算&#34;&gt;布尔运算&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#比较运算&#34;&gt;比较运算&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#成员运算符in&#34;&gt;成员运算符in&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#none&#34;&gt;None&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=7&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;h1 id=&#34;布尔值boolean&#34;&gt;布尔值Boolean&lt;/h1&gt;
+&lt;p&gt;用于逻辑判断，一般与if结合使用。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = True
+print(a)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;其他产生布尔值的方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;布尔运算&lt;/li&gt;
+&lt;li&gt;比较运算&lt;/li&gt;
+&lt;li&gt;成员运算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;布尔运算&#34;&gt;布尔运算&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;运算符号&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;例子&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;等于&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;x and y&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;且&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True and False&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;x or y&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;或&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True or False&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;not x&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;非&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;not True&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = True and False
+print(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = True or False
+print(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = not True
+print(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = not False
+print(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;比较运算&#34;&gt;比较运算&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;比较运算符号&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;例子&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;等于&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;==&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;相等&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;5==3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;!=&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;不等于&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;5!=3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;大于&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;5&amp;gt;3&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;小于&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;5&amp;lt;3&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;lt;=&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;小于等于&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;5&amp;lt;=3&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;gt;=&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;小于&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;5&amp;gt;=3&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = 5
+b = 3
+
+x = a&amp;lt;b
+print(x)
+print(type(x))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&amp;lt;class &#39;bool&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(5==5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(5!=5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    注意:比较符两侧必须为同样的数据类型
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = &#39;5&#39;
+b = 5
+
+print(a&amp;gt;b)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-15-861d7a553a1d&amp;gt; in &amp;lt;module&amp;gt;
+      2 b = 5
+      3 
+----&amp;gt; 4 print(a&amp;gt;b)
+TypeError: &#39;&amp;gt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = &#39;5&#39;
+b = &#39;5&#39;
+print(a==b)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;成员运算符in&#34;&gt;成员运算符in&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;案例&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;结果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;4 in [1,2,4]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;4 not in [1,2,4]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;3 in [1,2,4]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;3 not in [1,2,4]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = 4 in [1,2,4]
+x
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;y = 4 not in [1,2,4]
+y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;none&#34;&gt;None&lt;/h1&gt;
+&lt;p&gt;特殊的空值，类似于C语言中的Null。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;None
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code&gt;&#39;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dict()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(None)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;NoneType
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>理解函数</title>
+      <link>https://thunderhit.github.io/post/08-%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/08-%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#函数&#34;&gt;函数&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#位置参数&#34;&gt;位置参数&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#关键词参数&#34;&gt;关键词参数&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#默认参数&#34;&gt;默认参数&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=10&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;流水线每个环节都有质量要求，只有符合质量规范，才能流通到下一个环节。这样环环相扣，设计好后经过试运营就可以投产了。Python编程也一样，编程序其实也是设计流水线，而函数就是流水线上的一个个的环节。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;函数&#34;&gt;函数&lt;/h1&gt;
+&lt;p&gt;可重复使用的代码块&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;%E5%87%BD%E6%95%B0.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;def函数常见参数定义&amp;amp;调用方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;位置参数&lt;/li&gt;
+&lt;li&gt;关键词参数&lt;/li&gt;
+&lt;li&gt;默认参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;位置参数&#34;&gt;位置参数&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def hello1(name, age):
+    return &#39;我是{0},今年{1}&#39;.format(name, age)
+    
+hello1(&#39;张三&#39;, 25)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;我是张三,今年25&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;hello1(25,&#39;张三&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;我是25,今年张三&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;关键词参数&#34;&gt;关键词参数&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def hello2(name, age):
+    return &#39;我是{0},今年{1}&#39;.format(name, age)
+    
+    
+hello2(name=&#39;张三&#39;, age=25)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;我是张三,今年25&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;hello2(age=25, name=&#39;张三&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;我是张三,今年25&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;默认参数&#34;&gt;默认参数&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def hello3(name, age, gender=&#39;男&#39;):
+    return &#39;我是{0},今年{1}, 性别{2}&#39;.format(name, age, gender)
+
+    
+hello3(&#39;David&#39;, 25)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;我是David,今年25, 性别男&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;hello3(&#39;David&#39;, 25, gender=&#39;male&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;我是David,今年25, 性别male&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>程序语句-逻辑语句(if&amp;for&amp;tryexcept)</title>
+      <link>https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#if条件判断&#34;&gt;if条件判断&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#condition为布尔值布尔运算成员运算符&#34;&gt;condition为布尔值、布尔运算、成员运算符&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#特殊的conditon&#34;&gt;特殊的conditon&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#for循环&#34;&gt;for循环&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#上面这个图可以解读为&#34;&gt;上面这个图可以解读为&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#重复做某事&#34;&gt;重复做某事&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#问题1&#34;&gt;问题1&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#迭代出数据中的内容&#34;&gt;迭代出数据中的内容&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#try-except&#34;&gt;try-except&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#练习1&#34;&gt;练习1&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装包的方法&#34;&gt;安装包的方法&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#练习2&#34;&gt;练习2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=8&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;if条件判断&#34;&gt;if条件判断&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;if%E5%9B%BE.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;condition为布尔值布尔运算成员运算符&#34;&gt;condition为布尔值、布尔运算、成员运算符&lt;/h2&gt;
+&lt;p&gt;通常我们理解的condition为布尔值&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#Tab
+condition = True
+
+if condition:
+    print(&#39;condition为True&#39;)
+else:
+    print(&#39;condition为False&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;condition为True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;age = 17
+
+if age&amp;gt;=18:
+    print(&#39;你是成年人了&#39;)
+else:
+    print(&#39;你还是个孩子&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;你还是个孩子
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;age = 20
+
+if age&amp;gt;=55:
+    print(&#39;老年人&#39;)
+elif 35&amp;lt;=age&amp;lt;55:
+    print(&#39;中年&#39;)
+elif 18&amp;lt;=age&amp;lt;35:
+    print(&#39;青年&#39;)
+elif 0&amp;lt;=age&amp;lt;18:
+    print(&#39;儿童&#39;)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;青年
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特殊的conditon&#34;&gt;特殊的conditon&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;各种空值(空字符串、空列表等)作用等同于False&lt;/li&gt;
+&lt;li&gt;各种非空值，作用等同于True&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = None
+
+if a:
+    print(&#39;a是非空数据&#39;)
+else:
+    print(&#39;a是空数据&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;a是空数据
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;for循环&#34;&gt;for循环&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;重复做某件事&lt;/li&gt;
+&lt;li&gt;迭代出数据中的内容(元素)
+&lt;img src=&#34;for%E5%BE%AA%E7%8E%AF.png&#34; alt=&#34;&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;上面这个图可以解读为&#34;&gt;上面这个图可以解读为&lt;/h3&gt;
+&lt;p&gt;我们想对iterable这个集合中的每一个item:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;做点事(对item做操作)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;重复做某事&#34;&gt;重复做某事&lt;/h2&gt;
+&lt;h3 id=&#34;问题1&#34;&gt;问题1&lt;/h3&gt;
+&lt;p&gt;计算1+2+3+&amp;hellip;+97+98+99+100=?&lt;/p&gt;
+&lt;p&gt;1 + 2 = 3
+3 + 3 = 6
+6 + 4 = 10
+10 + 5 = 15&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;result = 0
+
+#int
+for i in range(1, 101):
+    result = result + i
+    
+print(result)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;5050
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;迭代出数据中的内容&#34;&gt;迭代出数据中的内容&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = [&#39;David&#39;, &#39;Henry&#39;, &#39;Mary&#39;]
+
+for name in names:
+    print(name)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;David
+Henry
+Mary
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name = &#39;David&#39;
+
+for s in name:
+    print(s)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;D
+a
+v
+i
+d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;infos =  {&#39;David&#39;:{&#39;age&#39;:25, 
+                   &#39;gender&#39;:&#39;Male&#39;},
+          &#39;Mary&#39;:{&#39;age&#39;:23,
+                  &#39;gender&#39;: &#39;Female&#39;},
+          &#39;Henry&#39;:{&#39;age&#39;:23,
+                  &#39;gender&#39;: &#39;Male&#39;}
+         }
+
+for item in infos.items():
+    print(item)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(&#39;David&#39;, {&#39;age&#39;: 25, &#39;gender&#39;: &#39;Male&#39;})
+(&#39;Mary&#39;, {&#39;age&#39;: 23, &#39;gender&#39;: &#39;Female&#39;})
+(&#39;Henry&#39;, {&#39;age&#39;: 23, &#39;gender&#39;: &#39;Male&#39;})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for name, info in infos.items():
+    print(name, info)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;David
+Mary
+Henry
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;try-except&#34;&gt;try-except&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for x in [1,2,0,2,1]:
+    print(10/x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;10.0
+5.0
+---------------------------------------------------------------------------
+
+ZeroDivisionError                         Traceback (most recent call last)
+
+&amp;lt;ipython-input-19-83bea9c92c0e&amp;gt; in &amp;lt;module&amp;gt;
+      1 for x in [1,2,0,2,1]:
+----&amp;gt; 2     print(10/x)
+ZeroDivisionError: division by zero
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for x in [1,2,0,2,1]:
+    try:
+        print(10/x)
+    except:
+        print(&#39;0除错误&#39;)
+        #pass
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;10.0
+5.0
+0除错误
+5.0
+10.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;练习1&#34;&gt;练习1&lt;/h2&gt;
+&lt;p&gt;假设现在某人的能力为1， 每天比前一天进步0.01， 一年后他的能力是多少？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ability = 1
+scale = 1.01
+
+records = []
+for i in range(365):
+    ability = ability * 1.01
+    records.append(ability)
+    
+print(records)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1.01, 1.0201, 1.030301, 1.04060401, 1.0510100501, 1.061520150601, 1.0721353521070098, 1.08285670562808, 1.0936852726843609, 1.1046221254112045, 1.1156683466653166, ...................36.30913774096189, 36.672229118371504, 37.03895140955522, 37.40934092365077, 37.783434332887275]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import math
+%matplotlib inline
+
+ability = 1
+scale = 1.02
+records = []
+
+days = range(1, 365)
+for day in days:
+    ability = ability*scale
+    records.append(ability)
+ 
+
+plt.plot(days, records)
+plt.title(&#39;Be better everyday!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Text(0.5, 1.0, &#39;Be better everyday!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_23_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;安装包的方法&#34;&gt;安装包的方法&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;命令行执行 &lt;code&gt;pip install packagename&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;jupyter notebook的Cell中执行&lt;code&gt;!pip install packagename&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;如果是mac，pip写成pip3&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;!pip install matplotlib
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Requirement already satisfied: matplotlib in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (3.2.1)
+Requirement already satisfied: kiwisolver&amp;gt;=1.0.1 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (1.2.0)
+Requirement already satisfied: python-dateutil&amp;gt;=2.1 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (2.8.1)
+Requirement already satisfied: cycler&amp;gt;=0.10 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: numpy&amp;gt;=1.11 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (1.18.2)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&amp;gt;=2.0.1 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (2.4.7)
+Requirement already satisfied: six&amp;gt;=1.5 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from python-dateutil&amp;gt;=2.1-&amp;gt;matplotlib) (1.14.0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;练习2&#34;&gt;练习2&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;打印九九乘法表格&lt;/strong&gt;
+&lt;img src=&#34;%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A82.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;用到的知识点:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;for循环&lt;/li&gt;
+&lt;li&gt;字符串format方法&lt;/li&gt;
+&lt;li&gt;print函数(涉及到end参数)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for row in range(1, 10):
+    #print(row)
+    for col in range(1, row+1):
+        formula = &#39;{col}*{row}={res}&#39;.format(col=col, row=row, res=col*row)
+        print(formula, end=&#39;\t&#39;)
+    print(&#39;&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1*1=1	
+1*2=2	2*2=4	
+1*3=3	2*3=6	3*3=9	
+1*4=4	2*4=8	3*4=12	4*4=16	
+1*5=5	2*5=10	3*5=15	4*5=20	5*5=25	
+1*6=6	2*6=12	3*6=18	4*6=24	5*6=30	6*6=36	
+1*7=7	2*7=14	3*7=21	4*7=28	5*7=35	6*7=42	7*7=49	
+1*8=8	2*8=16	3*8=24	4*8=32	5*8=40	6*8=48	7*8=56	8*8=64	
+1*9=9	2*9=18	3*9=27	4*9=36	5*9=45	6*9=54	7*9=63	8*9=72	9*9=81	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;help(print)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for row in range(1, 10):
+    for col in range(1, row+1):
+        formula = &#39;{col}*{row}={res}&#39;
+        content = formula.format(col=col, row=row, res=col*row)
+        print(content, end=&#39;\t&#39;)
+    print()
+    
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1*1=1	
+1*2=2	2*2=4	
+1*3=3	2*3=6	3*3=9	
+1*4=4	2*4=8	3*4=12	4*4=16	
+1*5=5	2*5=10	3*5=15	4*5=20	5*5=25	
+1*6=6	2*6=12	3*6=18	4*6=24	5*6=30	6*6=36	
+1*7=7	2*7=14	3*7=21	4*7=28	5*7=35	6*7=42	7*7=49	
+1*8=8	2*8=16	3*8=24	4*8=32	5*8=40	6*8=48	7*8=56	8*8=64	
+1*9=9	2*9=18	3*9=27	4*9=36	5*9=45	6*9=54	7*9=63	8*9=72	9*9=81	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
 &lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;

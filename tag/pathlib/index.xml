@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pathlib | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/pathlib/</link>
+      <atom:link href="https://thunderhit.github.io/tag/pathlib/index.xml" rel="self" type="application/rss+xml" />
+    <description>pathlib</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 19 Jun 2020 16:39:11 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>pathlib</title>
+      <link>https://thunderhit.github.io/tag/pathlib/</link>
+    </image>
+    
+    <item>
+      <title>内置库-文件路径pathlib库</title>
+      <link>https://thunderhit.github.io/post/10-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84pathlib%E5%BA%93/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/10-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84pathlib%E5%BA%93/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#绝对vs相对&#34;&gt;绝对vs相对&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#pathlibpath属性方法&#34;&gt;pathlib.Path()属性方法&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#cwd&#34;&gt;cwd()&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#joinpathgrandpadir-fatherdir-file&#34;&gt;joinpath(&amp;hellip;grandpadir, fatherdir, &amp;hellip;file)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#iterdir&#34;&gt;iterdir()&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#globpattern&#34;&gt;glob(pattern)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#is_file&#34;&gt;is_file()&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#is_dir&#34;&gt;is_dir()&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#exists&#34;&gt;exists()&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#mkdirparentstrue-exist_oktrue&#34;&gt;mkdir(parents=True, exist_ok=True)&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=12&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;绝对vs相对&#34;&gt;绝对vs相对&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;相对路径 &lt;code&gt;&#39;img&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;绝对路径  &lt;code&gt;&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/img&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pathlib
+
+#当前代码所在的文件夹的相对路径
+pathlib.Path()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;WindowsPath(&#39;.&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pathlib import Path
+
+#当前代码所在的文件夹的相对路径
+Path()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;WindowsPath(&#39;.&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;pathlibpath属性方法&#34;&gt;pathlib.Path()属性方法&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;方法&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;cwd()&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;获取代码所在的当前工作路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;joinpath(&amp;hellip;grandpadir, fatherdir, &amp;hellip;file)&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;生成路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;iterdir()&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;返回某路径下的文件(夹)目录&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;glob(pattern)&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;返回符合pattern的所有文件的文件路径&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;is_file()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;判断某路径是否为文件，返回布尔值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;is_dir()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;判断某路径是否为文件夹，返回布尔值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;exists()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;判断某路径是否存在，返回布尔值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;mkdir(parents=True, exist_ok=True)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;创建某路径对应的文件夹&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cwd&#34;&gt;cwd()&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获取当前代码所在文件夹的绝对路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Path().cwd()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;joinpathgrandpadir-fatherdir-file&#34;&gt;joinpath(&amp;hellip;grandpadir, fatherdir, &amp;hellip;file)&lt;/h3&gt;
+&lt;p&gt;把&amp;hellip;grandpadir, fatherdir, &amp;hellip;file加入到某路径中&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获得data文件夹的路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Path().cwd().joinpath(&#39;data&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获得data/test.txt文件的路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Path().cwd().joinpath(&#39;data&#39;, &#39;test.txt&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test.txt&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;iterdir&#34;&gt;iterdir()&lt;/h3&gt;
+&lt;p&gt;返回某路径下的文件(夹)目录&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;例：获得&lt;strong&gt;02-Python语法入门&lt;/strong&gt;文件夹里的所有文件(夹)路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;list(Path().cwd().iterdir())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/.ipynb_checkpoints&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/01-Python跟英语一样是一门语言.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/02-数据类型之字符串.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/03-数据类型之列表元组集合.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/04-数据类型之字典.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/05-数据类型之布尔值&amp;amp;None.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/06-逻辑语句(if&amp;amp;for&amp;amp;tryexcept).ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/07-列表推导式.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/08-理解函数.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/09-常用内置函数.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/09-常用函数.md&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/10-内置库之文件路径pathlib库.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/11-内置库之csv文件库.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/12. 内置库之正则表达式re库.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/13-初学python常出错误汇总.ipynb&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/img&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;globpattern&#34;&gt;glob(pattern)&lt;/h3&gt;
+&lt;p&gt;查找某路径内满足pattern的所有文件路径 。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pattern=&#39;*.*&#39;&lt;/code&gt; 匹配任意格式任意名字的文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pattern=&#39;*.txt&#39;&lt;/code&gt; 匹配出所有的txt文件&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获得data文件夹内的所有的文件路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;list(Path().cwd().joinpath(&#39;data&#39;).glob(&#39;*.*&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test.txt&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test2.csv&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test2.txt&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/twitter_sentiment.csv&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获得data文件夹内的所有的txt额路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;list(Path().cwd().joinpath(&#39;data&#39;).glob(&#39;*.txt&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test.txt&#39;),
+ WindowsPath(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test2.txt&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;：获得data/reports内的pdf路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dirs = Path().cwd().joinpath(&#39;data&#39;, &#39;reports&#39;).iterdir()
+dirs = list(dirs)
+for dir in dirs:
+    files = dir.glob(&#39;*.*&#39;)
+    for file in files:
+        print(file)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600000\600000_20010901_1.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600004\600004_2006_n.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600004\600004_2006_z.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600007\600007_2001_n.pdf
+.......
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600007\600007_2002_1.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\603937\603937_2018_z.pdf
+......
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\603937\603937_2019_3.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\603937\603937_2019_z.pdf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;例**：获得data/reports内的 含有&amp;rdquo;_n&amp;rdquo; 额pdf路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dirs = Path().cwd().joinpath(&#39;data&#39;, &#39;reports&#39;).iterdir()
+dirs = list(dirs)
+for dir in dirs:
+    files = dir.glob(&#39;*_n.pdf&#39;)
+    for file in files:
+        print(file)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600000\600000_2006_n.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\600000\600000_2008_n.pdf
+........
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\601872\601872_2014_n.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\601872\601872_2015_n.pdf
+C:\Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data\reports\601872\601872_2016_n.pdf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;is_file&#34;&gt;is_file()&lt;/h3&gt;
+&lt;p&gt;判断某路径是否为一个文件。返回布尔值：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;True 真实存在的文件路径&lt;/li&gt;
+&lt;li&gt;False 不真实存在或者文件夹路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt; &amp;lsquo;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test.txt&amp;rsquo;是文件路径？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test.txt&#39;)
+fpath.is_file()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt; &amp;lsquo;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test222.txt&amp;rsquo;是文件路径？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data/test222.txt&#39;)
+fpath.is_file()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&#39;)
+fpath.is_file()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;is_dir&#34;&gt;is_dir()&lt;/h3&gt;
+&lt;p&gt;判断某路径是否为一个文件夹。返回布尔值，True、False&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;例&lt;/strong&gt;： &amp;lsquo;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&amp;rsquo; 是 文件夹路径？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&#39;)
+fpath.is_dir()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;exists&#34;&gt;exists()&lt;/h3&gt;
+&lt;p&gt;判断某路径是否存在。返回布尔值，True、False&lt;/p&gt;
+&lt;p&gt;例： &amp;lsquo;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&amp;rsquo; 是否存在？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/data&#39;)
+fpath.exists()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fpath = Path(&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/datasss&#39;)
+fpath.exists()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;mkdirparentstrue-exist_oktrue&#34;&gt;mkdir(parents=True, exist_ok=True)&lt;/h3&gt;
+&lt;p&gt;创建某路径&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;path = Path().cwd().joinpath(&#39;data&#39;, &#39;stocks&#39;, &#39;800000&#39;)
+path.mkdir(parents=True, exist_ok=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

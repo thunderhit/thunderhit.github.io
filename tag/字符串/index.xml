@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>字符串 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <atom:link href="https://thunderhit.github.io/tag/%E5%AD%97%E7%AC%A6%E4%B8%B2/index.xml" rel="self" type="application/rss+xml" />
+    <description>字符串</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 19 Jun 2020 16:39:11 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>字符串</title>
+      <link>https://thunderhit.github.io/tag/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+    </image>
+    
+    <item>
+      <title>数据类型-字符串string</title>
+      <link>https://thunderhit.github.io/post/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#字符串string&#34;&gt;字符串string&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#定义&#34;&gt;定义&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#拼接&#34;&gt;拼接+&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#切片&#34;&gt;切片&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#切片总结&#34;&gt;切片总结&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#字符串常用方法&#34;&gt;字符串常用方法&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#转义符&#34;&gt;转义符\&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#r&#34;&gt;r&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=4&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;字符串string&#34;&gt;字符串string&lt;/h1&gt;
+&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;字符串是以  &lt;strong&gt;单引号&lt;/strong&gt;  或  &lt;strong&gt;双引号&lt;/strong&gt;  或 &lt;strong&gt;三引号&lt;/strong&gt; 括起来的任意文本，如&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lsquo;abc&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;abc&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&amp;lsquo;&amp;lsquo;abc&amp;rsquo;&amp;rsquo;&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;&amp;ldquo;&amp;ldquo;abc&amp;rdquo;&amp;rdquo;&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = &#39;abc&#39;
+a
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;abc&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;quot;abc&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;abc&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;&#39;&#39;abc&#39;&#39;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;abc&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&amp;quot;&amp;quot;&amp;quot;abc&amp;quot;&amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;abc&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;abc&#39;)
+print(&amp;quot;abc&amp;quot;)
+print(&#39;&#39;&#39;abc&#39;&#39;&#39;)
+print(&amp;quot;&amp;quot;&amp;quot;abc&amp;quot;&amp;quot;&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;abc
+abc
+abc
+abc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;abc&#39;)
+print(&#39;efg&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;abc
+efg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;注意**:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;这里所说的引号都是英文引号&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt; 或 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; 本身不是字符串的一部分，因此，字符串 &lt;code&gt;&#39;abc&#39;&lt;/code&gt; 只有a，b，c这3个字符。&lt;/li&gt;
+&lt;li&gt;notebook中只显示最后一个，所以这里用了两个print&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    &lt;p&gt;这里所说的引号都是英文引号&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt; 或 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; 本身不是字符串的一部分，因此，字符串 &lt;code&gt;&#39;abc&#39;&lt;/code&gt; 只有a，b，c这3个字符。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;notebook中只显示最后一个，所以这里用了两个print&lt;br&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;拼接&#34;&gt;拼接+&lt;/h2&gt;
+&lt;p&gt;按顺序拼接&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = &#39;P&#39;
+b = &#39;ython&#39;
+
+print(a+b)
+print(b+a)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Python
+ythonP
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = &#39;P&#39;
+
+print(a+b)
+print(b+a)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;切片&#34;&gt;切片&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B4%A2%E5%BC%95.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name = &#39;My Name is Mike&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;M&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[-15]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;M&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[3:6]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Nam&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[-12:-9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Nam&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[0:2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;My&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[:2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;My&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[5:]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;me is Mike&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name[-7:]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;is Mike&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;切片总结&#34;&gt;切片总结&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;切片表达式&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;解读&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;从左往右&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;索引值从0开始，0表示&amp;rsquo;第一个&amp;rsquo;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;从右向左&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-1表示倒数第一个，-2表示倒数第二个&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;a:b&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;选取列表索引位置为&lt;code&gt;a，a+1...b-2, b-1&lt;/code&gt;的值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;a:&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;选取列表中a之后的所有元素(含a)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;:b&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;选取列表中b之前的所有元素(不含b)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;字符串常用方法&#34;&gt;字符串常用方法&lt;/h1&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;字符串常用方法&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;str.lower()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;变小写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;str.upper()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;变大写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;str.split(sep)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;使用sep将字符串分割，默认sep为空格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;str.replace(old, new)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;将str中的old替换为new&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;str.format()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;向str中填充内容&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words = &#39;Python is poweful!&#39;
+words.lower()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;python is poweful!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words.upper()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;PYTHON IS POWEFUL!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Python is poweful!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words.split(&#39; &#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Python&#39;, &#39;is&#39;, &#39;poweful!&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words.replace(&#39;Python&#39;, &#39;Python programing language&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Python programing language is poweful!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;需要发送每个员工的工资组成详情。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;张三,你这个月的工资是2310元；以下是你的工资详情。。。。&amp;quot;
+&amp;quot;李四,你这个月的工资是3456元；以下是你的工资详情。。。。&amp;quot;
+&amp;quot;王五,你这个月的工资是2431元；以下是你的工资详情。。。。&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如何自动化自动化填充?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;template = &#39;{name},你这个月的工资是{salary}元；以下是你的工资详情&#39;
+
+print(template.format(name=&#39;张三&#39;, salary=&#39;2310&#39;))
+print(template.format(name=&#39;李四&#39;, salary=&#39;3456&#39;))
+print(template.format(name=&#39;王五&#39;, salary=&#39;2431&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;张三,你这个月的工资是2310元；以下是你的工资详情
+李四,你这个月的工资是3456元；以下是你的工资详情
+王五,你这个月的工资是2431元；以下是你的工资详情
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;转义符&#34;&gt;转义符\&lt;/h1&gt;
+&lt;p&gt;如果字符串内部既包含 &lt;strong&gt;单引号&lt;/strong&gt; 又包含 &lt;strong&gt;双引号&lt;/strong&gt;， 会发生什么？&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;I&#39;m &amp;quot;OK&amp;quot;!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  File &amp;quot;&amp;lt;ipython-input-28-af5dc904b170&amp;gt;&amp;quot;, line 1
+    print(&#39;I&#39;m &amp;quot;OK&amp;quot;!&#39;)
+             ^
+SyntaxError: invalid syntax
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# 可以用 转义字符\ 来标识，比如：
+print(&#39;I\&#39;m \&amp;quot;OK\&amp;quot;!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;I&#39;m &amp;quot;OK&amp;quot;!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;常见的转义符还有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\n&lt;/code&gt; 换行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\t&lt;/code&gt; 制表符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;字符\&lt;/code&gt; 本身也要转义，所以 &lt;code&gt;\\&lt;/code&gt; 表示的字符就是 &lt;code&gt;\&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以试着自己运行下面代码，看看下面打印结果是?：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;Hello\tWorld!&#39;)
+print(&#39;转义\n换行!&#39;)
+print(&#39;反斜杠线\\&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;Hello\tWorld!&#39;)
+print(&#39;Hello World!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Hello	World!
+Hello World!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;转义\n换行!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;转义
+换行!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;反斜杠线\\&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;反斜杠线\
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;r&#34;&gt;r&lt;/h1&gt;
+&lt;p&gt;如果字符串里面有很多字符都需要转义，就需要加很多&lt;code&gt;\&lt;/code&gt;,&lt;/p&gt;
+&lt;p&gt;为了简化，Python还允许用&lt;code&gt;r&#39;&#39;&lt;/code&gt;表示&lt;code&gt;&#39;&#39;内部&lt;/code&gt;的字符串默认不转义,例如&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;\\\t\\&#39;)
+print(r&#39;\\\t\\&#39;)
+print(&#39;hello world!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;\\\t\\&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;\	\
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(r&#39;\\\t\\&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;\\\t\\
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

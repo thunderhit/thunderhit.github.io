@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>布尔值 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/%E5%B8%83%E5%B0%94%E5%80%BC/</link>
+      <atom:link href="https://thunderhit.github.io/tag/%E5%B8%83%E5%B0%94%E5%80%BC/index.xml" rel="self" type="application/rss+xml" />
+    <description>布尔值</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 19 Jun 2020 16:39:11 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>布尔值</title>
+      <link>https://thunderhit.github.io/tag/%E5%B8%83%E5%B0%94%E5%80%BC/</link>
+    </image>
+    
+    <item>
+      <title>数据类型-布尔值&amp;None</title>
+      <link>https://thunderhit.github.io/post/05-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%B8%83%E5%B0%94%E5%80%BCnone/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/05-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%B8%83%E5%B0%94%E5%80%BCnone/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#布尔值boolean&#34;&gt;布尔值Boolean&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#布尔运算&#34;&gt;布尔运算&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#比较运算&#34;&gt;比较运算&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#成员运算符in&#34;&gt;成员运算符in&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#none&#34;&gt;None&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=7&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;h1 id=&#34;布尔值boolean&#34;&gt;布尔值Boolean&lt;/h1&gt;
+&lt;p&gt;用于逻辑判断，一般与if结合使用。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = True
+print(a)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;p&gt;其他产生布尔值的方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;布尔运算&lt;/li&gt;
+&lt;li&gt;比较运算&lt;/li&gt;
+&lt;li&gt;成员运算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;布尔运算&#34;&gt;布尔运算&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;运算符号&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;例子&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;等于&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;x and y&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;且&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True and False&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;x or y&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;或&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True or False&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;not x&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;非&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;not True&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = True and False
+print(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = True or False
+print(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = not True
+print(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = not False
+print(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;比较运算&#34;&gt;比较运算&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;比较运算符号&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;例子&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;等于&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;==&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;相等&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;5==3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;!=&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;不等于&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;5!=3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;大于&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;5&amp;gt;3&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;lt;&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;小于&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;5&amp;lt;3&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;lt;=&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;小于等于&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;5&amp;lt;=3&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&amp;gt;=&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;小于&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;5&amp;gt;=3&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = 5
+b = 3
+
+x = a&amp;lt;b
+print(x)
+print(type(x))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&amp;lt;class &#39;bool&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(5==5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(5!=5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    注意:比较符两侧必须为同样的数据类型
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = &#39;5&#39;
+b = 5
+
+print(a&amp;gt;b)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-15-861d7a553a1d&amp;gt; in &amp;lt;module&amp;gt;
+      2 b = 5
+      3 
+----&amp;gt; 4 print(a&amp;gt;b)
+TypeError: &#39;&amp;gt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = &#39;5&#39;
+b = &#39;5&#39;
+print(a==b)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;成员运算符in&#34;&gt;成员运算符in&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;案例&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;结果&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;4 in [1,2,4]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;4 not in [1,2,4]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;3 in [1,2,4]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;False&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;3 not in [1,2,4]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;True&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = 4 in [1,2,4]
+x
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;y = 4 not in [1,2,4]
+y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;none&#34;&gt;None&lt;/h1&gt;
+&lt;p&gt;特殊的空值，类似于C语言中的Null。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;None
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code&gt;&#39;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dict()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(None)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;NoneType
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

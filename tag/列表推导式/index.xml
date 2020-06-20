@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>列表推导式 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/</link>
+      <atom:link href="https://thunderhit.github.io/tag/%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <description>列表推导式</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 19 Jun 2020 16:39:11 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>列表推导式</title>
+      <link>https://thunderhit.github.io/tag/%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/</link>
+    </image>
+    
+    <item>
+      <title>列表推导式</title>
+      <link>https://thunderhit.github.io/post/07-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/07-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#问题1-用列表表示集合x&#34;&gt;问题1 用列表表示集合X&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#问题2-表示集合y&#34;&gt;问题2 表示集合Y&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#列表推导式&#34;&gt;列表推导式&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#理解列表推导式&#34;&gt;理解列表推导式&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#带条件的列表推导式&#34;&gt;带条件的列表推导式&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#问题3-全部小写&#34;&gt;问题3 全部小写&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#问题4-计算lower_words列表数据的单词词频&#34;&gt;问题4 计算lower_words列表数据的单词词频&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#问题5&#34;&gt;问题5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=9&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题1-用列表表示集合x&#34;&gt;问题1 用列表表示集合X&lt;/h2&gt;
+&lt;p&gt;$X= {x| x \in [1,2,3,4,5,6,7,8,9,10]}$&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X = [1,2,3,4,5,6,7,8,9,10]
+X
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X = list(range(1, 10))
+X
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 2, 3, 4, 5, 6, 7, 8, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题2-表示集合y&#34;&gt;问题2 表示集合Y&lt;/h2&gt;
+&lt;p&gt;$Y = {x^2| x \in [1,2,3,4,5,6,7,8,9,10]}$&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Y = []
+
+for x in X:
+    Y.append(x*x)
+    
+Y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 4, 9, 16, 25, 36, 49, 64, 81]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;列表推导式&#34;&gt;列表推导式&lt;/h1&gt;
+&lt;p&gt;实现步骤&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先复制X&lt;/li&gt;
+&lt;li&gt;再对X中的元素x进行操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#先复制X
+[x for x in X]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 2, 3, 4, 5, 6, 7, 8, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#再对x进行操作
+[x*x for x in X]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 4, 9, 16, 25, 36, 49, 64, 81]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;理解列表推导式&#34;&gt;理解列表推导式&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F%E7%90%86%E8%A7%A3.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;带条件的列表推导式&#34;&gt;带条件的列表推导式&lt;/h2&gt;
+&lt;p&gt;$C= {x^2 | (x \in X) \cap (x&amp;gt;5)}$&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#复制X
+[x 
+ for x in X]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 2, 3, 4, 5, 6, 7, 8, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#X中的要大于5
+#[x for x in X if x&amp;gt;5]
+
+
+[x 
+ for x in X 
+ if x&amp;gt;5]
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[6, 7, 8, 9]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#对满足条件的x进行操作
+#[x*x for x in X if x&amp;gt;5]
+
+[x*x 
+ for x in X 
+ if x&amp;gt;5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[36, 49, 64, 81]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题3-全部小写&#34;&gt;问题3 全部小写&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words = [&#39;Life&#39;, &#39;is&#39;, &#39;short&#39;, &#39;so&#39;, &#39;we&#39;, &#39;use&#39;, &#39;Python&#39;, &#39;python&#39;, 
+         &#39;is&#39;, &#39;easy&#39;, &#39;to&#39;, &#39;learn&#39;, &#39;and&#39;, &#39;easy&#39;, &#39;to&#39;, &#39;use&#39;]
+words
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Life&#39;,
+ &#39;is&#39;,
+ &#39;short&#39;,
+ &#39;so&#39;,
+ &#39;we&#39;,
+ &#39;use&#39;,
+ &#39;Python&#39;,
+ &#39;python&#39;,
+ &#39;is&#39;,
+ &#39;easy&#39;,
+ &#39;to&#39;,
+ &#39;learn&#39;,
+ &#39;and&#39;,
+ &#39;easy&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lower_words = [w.lower() for w in words]
+lower_words
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;life&#39;,
+ &#39;is&#39;,
+ &#39;short&#39;,
+ &#39;so&#39;,
+ &#39;we&#39;,
+ &#39;use&#39;,
+ &#39;python&#39;,
+ &#39;python&#39;,
+ &#39;is&#39;,
+ &#39;easy&#39;,
+ &#39;to&#39;,
+ &#39;learn&#39;,
+ &#39;and&#39;,
+ &#39;easy&#39;,
+ &#39;to&#39;,
+ &#39;use&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题4-计算lower_words列表数据的单词词频&#34;&gt;问题4 计算lower_words列表数据的单词词频&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;wordset = set(lower_words)
+[(w, lower_words.count(w)) for w in wordset]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;so&#39;, 1),
+ (&#39;and&#39;, 1),
+ (&#39;learn&#39;, 1),
+ (&#39;use&#39;, 2),
+ (&#39;to&#39;, 2),
+ (&#39;we&#39;, 1),
+ (&#39;easy&#39;, 2),
+ (&#39;python&#39;, 2),
+ (&#39;is&#39;, 2),
+ (&#39;short&#39;, 1),
+ (&#39;life&#39;, 1)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#1 生产词语集合
+wordset = set(lower_words)
+print(wordset)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;so&#39;, &#39;and&#39;, &#39;learn&#39;, &#39;use&#39;, &#39;to&#39;, &#39;we&#39;, &#39;easy&#39;, &#39;python&#39;, &#39;is&#39;, &#39;short&#39;, &#39;life&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#2. wordset复制wordset自己
+[w for w in wordset]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#3. 对wordset中每个词语w进行一些操作
+[lower_words.count(w) for w in wordset]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1, 1, 1, 2, 2, 1, 2, 2, 2, 1, 1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#3. 词频和词语一起显示
+[(w,lower_words.count(w)) for w in wordset]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;so&#39;, 1),
+ (&#39;and&#39;, 1),
+ (&#39;learn&#39;, 1),
+ (&#39;use&#39;, 2),
+ (&#39;to&#39;, 2),
+ (&#39;we&#39;, 1),
+ (&#39;easy&#39;, 2),
+ (&#39;python&#39;, 2),
+ (&#39;is&#39;, 2),
+ (&#39;short&#39;, 1),
+ (&#39;life&#39;, 1)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;问题5&#34;&gt;问题5&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d = {&#39;x&#39;: &#39;A&#39;, 
+     &#39;y&#39;: &#39;B&#39;, 
+     &#39;z&#39;: &#39;C&#39; }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如何将d中的 键值对 拼接,输出为&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[&#39;xA&#39;, &#39;yB&#39;, &#39;zC]&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d = {&#39;x&#39;: &#39;A&#39;, 
+     &#39;y&#39;: &#39;B&#39;, 
+     &#39;z&#39;: &#39;C&#39; }
+
+d.items()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dict_items([(&#39;x&#39;, &#39;A&#39;), (&#39;y&#39;, &#39;B&#39;), (&#39;z&#39;, &#39;C&#39;)])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#1 自己复制d.items()自己
+[i for i in d.items()]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;x&#39;, &#39;A&#39;), (&#39;y&#39;, &#39;B&#39;), (&#39;z&#39;, &#39;C&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#2 对任何一个元素都要进行字符串的拼接操作
+[i[0]+i[1] for i in d.items()]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;xA&#39;, &#39;yB&#39;, &#39;zC&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1529 @@
+<!DOCTYPE html><html lang="zh-Hans" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="大邓">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="简单实用">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Thunderhit">
+  <meta property="og:url" content="https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
+  <meta property="og:title" content="Python内置常用函数 | Thunderhit">
+  <meta property="og:description" content="简单实用"><meta property="og:image" content="https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="zh-Hans">
+  
+    
+      <meta property="article:published_time" content="2020-06-19T16:39:11&#43;08:00">
+    
+    <meta property="article:modified_time" content="2020-06-19T16:39:11&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/"
+  },
+  "headline": "Python内置常用函数",
+  
+  "datePublished": "2020-06-19T16:39:11+08:00",
+  "dateModified": "2020-06-19T16:39:11+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "大邓"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Thunderhit",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "简单实用"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Python内置常用函数 | Thunderhit</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/authors/"><span>Authors</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#skills"><span>Skills</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Packages</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post"><span>Articles</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tags"><span>Topics</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Python内置常用函数</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/%E5%A4%A7%E9%82%93/">大邓</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2020-06-19
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/%E6%95%99%E7%A8%8B/">教程</a>, <a href="/category/%E8%A7%86%E9%A2%91/">视频</a>, <a href="/category/python%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">python语法入门</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2>目录</h2>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading"></a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#数学相关">数学相关</a></li>
+            <li><a href="#类型转换">类型转换</a></li>
+            <li><a href="#功能函数">功能函数</a></li>
+            <li><a href="#eval">eval()</a></li>
+            <li><a href="#ziplst1-lst2lst3">zip(lst1, lst2,lst3&hellip;)</a></li>
+            <li><a href="#typehelp">type/help</a></li>
+            <li><a href="#mapfunc-lst映射运算">map(func, lst)映射运算</a></li>
+            <li><a href="#printvalue-endn">print(value, end=&rsquo;\n&rsquo;)</a></li>
+            <li><a href="#openfile-moder-encodingnone">open(file, mode='r&rsquo;, encoding=None)</a></li>
+            <li><a href="#重点函数">重点函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#支持">支持</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<iframe
+    src="//player.bilibili.com/player.html?bvid=BV1eb411h7sP&page=11"
+    scrolling="no"
+    height="768px"
+    width="1024px"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+>
+</iframe>
+
+<p><br><br></p>
+<h1 id="heading"></h1>
+<p>有三大类</p>
+<ul>
+<li>数学相关函数</li>
+<li>类型转化函数</li>
+<li>功能函数</li>
+</ul>
+<br>
+<h3 id="数学相关">数学相关</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+<th>例子</th>
+<th>运行结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abs(a)</td>
+<td>对a取绝对值</td>
+<td>abs(-1)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>max(lst)、min(lst)</td>
+<td>寻找lst中的最大、最小值</td>
+<td>max([3, 2, 9])</td>
+<td>9</td>
+</tr>
+<tr>
+<td>sum(lst)</td>
+<td>对lst内所有数字求和</td>
+<td>sum([3, 2, 9])</td>
+<td>14</td>
+</tr>
+<tr>
+<td><strong>sorted(lst， reverse)</strong></td>
+<td>对lst排序； 参数reverse为布尔值控制升降序</td>
+<td>sorted([3, 2, 9])</td>
+<td>[2, 3, 9]</td>
+</tr>
+<tr>
+<td><strong>range(start, end, step)</strong></td>
+<td>生成以步长step，生成从start到end的数列,默认step=1，结果取不到end</td>
+<td>list(range(1,5))</td>
+<td>[1, 2, 3,4]</td>
+</tr>
+</tbody>
+</table>
+<br>
+<pre><code class="language-python">#取绝对值
+abs(-1)
+</code></pre>
+<pre><code>1
+</code></pre>
+<br>
+<pre><code class="language-python">#取最大
+max([3, 2, 9])
+</code></pre>
+<pre><code>9
+</code></pre>
+<br>
+<pre><code class="language-python">#取最小
+min([3, 2, 9])
+</code></pre>
+<pre><code>2
+</code></pre>
+<br>
+<pre><code class="language-python">#求和
+sum([3, 2, 9])
+</code></pre>
+<pre><code>14
+</code></pre>
+<br>
+<pre><code class="language-python">#排序
+sorted([3,2,9])
+</code></pre>
+<pre><code>[2, 3, 9]
+</code></pre>
+<br>
+<pre><code class="language-python">#排序(方向调整)
+sorted([3,2,9], reverse=True)
+</code></pre>
+<pre><code>[9, 3, 2]
+</code></pre>
+<br>
+<pre><code class="language-python">#生成序列
+list(range(1, 10))
+</code></pre>
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+<br>
+<pre><code class="language-python">list(range(1, 10, 2))
+</code></pre>
+<pre><code>[1, 3, 5, 7, 9]
+</code></pre>
+<p><br><br></p>
+<h3 id="类型转换">类型转换</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+<th>例子</th>
+<th>运行结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int(string)</td>
+<td>将字符串数改为整数型</td>
+<td>int(&lsquo;9&rsquo;)</td>
+<td>9</td>
+</tr>
+<tr>
+<td>float(int/str)</td>
+<td>将int或str改为浮点型</td>
+<td>float(9)、float(&lsquo;9&rsquo;)</td>
+<td>9.0</td>
+</tr>
+<tr>
+<td>list(iterable)</td>
+<td>将可迭代对象为列表。这里的iterable可以为字符串，可以是列表</td>
+<td>list(range(1,5))</td>
+<td><code>[1,2,3,4] </code></td>
+</tr>
+<tr>
+<td>enumerate(lst)</td>
+<td>返回带有索引值的序列seq,<strong>需要list(seq)处理后才能看到seq</strong></td>
+<td>list(enumerate([&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;]))</td>
+<td>[(0,&lsquo;a&rsquo;), (1, &lsquo;b&rsquo;), (2, &lsquo;c&rsquo;)]</td>
+</tr>
+<tr>
+<td>tuple(lst)</td>
+<td>将lst变为tuple</td>
+<td>tuple([1,2,3])</td>
+<td>(1,2,3)</td>
+</tr>
+<tr>
+<td>set(lst)</td>
+<td>将lst变为集合</td>
+<td>set([1,4,4,4,3])</td>
+<td>{1,3,4}</td>
+</tr>
+</tbody>
+</table>
+<br>
+<pre><code class="language-python">a = 9
+b = 9
+
+a+b
+</code></pre>
+<pre><code>18
+</code></pre>
+<br>
+<pre><code class="language-python">#变转化为整数
+int('9')
+</code></pre>
+<pre><code>9
+</code></pre>
+<br>
+<pre><code class="language-python">#转化为小数
+float('9')
+</code></pre>
+<pre><code>9.0
+</code></pre>
+<br>
+<pre><code class="language-python">float(9)
+</code></pre>
+<pre><code>9.0
+</code></pre>
+<br>
+<pre><code class="language-python">#转化为列表
+list(range(1, 5))
+</code></pre>
+<pre><code>[1, 2, 3, 4]
+</code></pre>
+<br>
+<pre><code class="language-python">#给列表中每个元素分配一个索引值
+names = ['张三', '李四', '王五']
+
+list(enumerate(names))
+</code></pre>
+<pre><code>[(0, '张三'), (1, '李四'), (2, '王五')]
+</code></pre>
+<p><br><br></p>
+<h3 id="功能函数">功能函数</h3>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+<th>例子</th>
+<th>运行结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>eval(expression)</strong></td>
+<td>执行一个字符串表达式</td>
+<td>eval(&lsquo;1+1&rsquo;)</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>zip(lst1,lst2&hellip;)</strong></td>
+<td>将lst1,lst2&hellip;合并,返回zip对象。<strong>需要list处理一下zip对象</strong></td>
+<td>list(zip([1,2,3],[4,5,6]))</td>
+<td>[(1, 4), (2, 5), (3, 6)]</td>
+</tr>
+<tr>
+<td><strong>type(x)</strong></td>
+<td>查看X的类型</td>
+<td>type(&lsquo;2&rsquo;)</td>
+<td>&lt;class &lsquo;str'&gt;</td>
+</tr>
+<tr>
+<td><strong>help(x)</strong></td>
+<td>查看X的相关信息</td>
+<td>help([1, 2])</td>
+<td>Help on list object..</td>
+</tr>
+<tr>
+<td><strong>map(func, lst)</strong></td>
+<td>对lst中的每一个个体都进行func操作</td>
+<td>list(map(sum, [[1,1], [1,2]]))</td>
+<td>[2, 3]</td>
+</tr>
+<tr>
+<td><strong>print(value, end=&rsquo;\n&rsquo;)</strong></td>
+<td>打印value</td>
+<td>print(&lsquo;abc&rsquo;)</td>
+<td>abc</td>
+</tr>
+<tr>
+<td><strong>open(file， encoding)</strong></td>
+<td>打开file文件， encoding是file的文件编码</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><br><br></p>
+<h3 id="eval">eval()</h3>
+<p>eval(str_expression)</p>
+<p>str_expression 是字符串表达式，可以是变量、函数等</p>
+<pre><code class="language-python">a = 9
+b = 9
+c = 'a+b'
+
+print(a+b)
+print(c)
+print(eval(c))
+</code></pre>
+<pre><code>18
+a+b
+18
+</code></pre>
+<br>
+<pre><code class="language-python">eval('a+b')
+</code></pre>
+<pre><code>18
+</code></pre>
+<br>
+<pre><code class="language-python">d = 'hello world'
+print('d')
+print(eval('d'))
+</code></pre>
+<pre><code>d
+hello world
+</code></pre>
+<br>
+<pre><code class="language-python">def hello():
+    print('hello python')
+    
+print('hello()')
+
+</code></pre>
+<pre><code>hello()
+</code></pre>
+<br>
+<pre><code class="language-python">eval('hello()')
+</code></pre>
+<pre><code>hello python
+</code></pre>
+<p><br><br></p>
+<h3 id="ziplst1-lst2lst3">zip(lst1, lst2,lst3&hellip;)</h3>
+<p>将lst1， lst2， lst3按照顺序进行合并</p>
+<pre><code class="language-python">names = ['David', 'Mary', 'Henry', 'Unique']
+sexs = ['male', 'femal', 'male', 'male']
+ages = [25, 22, 30, 40]
+
+list(zip(names, sexs, ages))
+</code></pre>
+<pre><code>[('David', 'male', 25),
+ ('Mary', 'femal', 22),
+ ('Henry', 'male', 30),
+ ('Unique', 'male', 40)]
+</code></pre>
+<p><br><br></p>
+<h3 id="typehelp">type/help</h3>
+<p>查看数据类型、查看感兴趣对象的介绍</p>
+<pre><code class="language-python">a = [1,3,5]
+type(a)
+</code></pre>
+<pre><code>list
+</code></pre>
+<br>
+<pre><code class="language-python">help(a)
+</code></pre>
+<pre><code>Help on list object:
+
+class list(object)
+ |  list(iterable=(), /)
+ |  
+ |  Built-in mutable sequence.
+ |  
+ |  If no argument is given, the constructor creates a new empty list.
+ |  The argument must be an iterable if specified.
+ |  
+ |  Methods defined here:
+ |  
+.........
+ |  append(self, object, /)
+ |      Append object to the end of the list.
+ |  
+ |  
+ |  count(self, value, /)
+ |      Return number of occurrences of value.
+ |  
+ |  extend(self, iterable, /)
+ |      Extend list by appending elements from the iterable.
+ |  
+</code></pre>
+<pre><code class="language-python">type(print)
+</code></pre>
+<pre><code>builtin_function_or_method
+</code></pre>
+<br>
+<pre><code class="language-python">help(print)
+</code></pre>
+<pre><code>Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+</code></pre>
+<br>
+<h3 id="mapfunc-lst映射运算">map(func, lst)映射运算</h3>
+<p>将func运算映射到lst上每个元素</p>
+<pre><code class="language-python">lst = [[1,1], [1,2], [1,2], [1,2], [1,2], [1,2], [1,2]]
+
+res = map(sum, lst)
+list(res)
+</code></pre>
+<pre><code>[2, 3, 3, 3, 3, 3, 3]
+</code></pre>
+<p><br><br></p>
+<h3 id="printvalue-endn">print(value, end=&rsquo;\n&rsquo;)</h3>
+<p>打印value，默认使用换行结束</p>
+<pre><code class="language-python">help(print)
+</code></pre>
+<pre><code>Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+</code></pre>
+<br>
+<pre><code class="language-python">print('hello world!')
+print('hello python!')
+</code></pre>
+<pre><code>hello world!
+hello python!
+</code></pre>
+<br>
+<pre><code class="language-python">print('hello world!', end='\t')
+print('hello python!')
+</code></pre>
+<pre><code>hello world!	hello python!
+</code></pre>
+<p><br><br></p>
+<h3 id="openfile-moder-encodingnone">open(file, mode='r&rsquo;, encoding=None)</h3>
+<ul>
+<li>file 文件路径</li>
+<li>mode 操作方式们，最常用的是r和a+。r读取， a+是追加写入</li>
+<li>encoding 编码方式 ，常见的文件编码方式主要是utf-8和gbk</li>
+</ul>
+<p>读取返回io对象</p>
+<p>io对象有read()方法</p>
+<blockquote>
+<p>相对路径</p>
+<p>data</p>
+</blockquote>
+<blockquote>
+<p>绝对路径</p>
+<p>C:Users\thunderhit\Desktop\Python数据分析入门\02-Python语法入门\data</p>
+</blockquote>
+<div class="alert alert-note">
+  <div>
+    建议大家都要用相对路径
+  </div>
+</div>
+<pre><code class="language-python"># 读取数据
+open('data/test.txt', encoding='utf-8').read()
+</code></pre>
+<pre><code>'章节设计\n\n第一部分  环境配置\n第二部分  快速入门python\n第三部分  网络爬虫\n第四部分  简单的文本分析\n第五部分  进阶文本分析'
+</code></pre>
+<br>
+<pre><code class="language-python"># 新建文件/在已有的文件内插入内容
+f = open('data/test2.txt', mode='a+', encoding='utf-8')
+f.write('我在学python，现在是下午五点')
+f.close()
+</code></pre>
+<br>
+<pre><code class="language-python"># 新建文件/在已有的文件内插入内容
+f = open('data/test2.txt', mode='a+', encoding='utf-8')
+f.write('\nLife is short, so to learn Python')
+f.close()
+</code></pre>
+<br>
+<pre><code class="language-python"># 新建文件/在已有的文件内插入内容
+f = open('data/test2.txt', mode='a+', encoding='utf-8')
+f.write('\nLife is short, so to learn Python')
+f.write('\nLife is short, so to learn music')
+f.write('\nLife is short, so to learn english')
+f.close()
+</code></pre>
+<p><br><br></p>
+<h3 id="重点函数">重点函数</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> sorted(lst， ascending)</li>
+<li><input checked="" disabled="" type="checkbox"> range(start, end, step)</li>
+<li><input checked="" disabled="" type="checkbox"> enumerate(lst)</li>
+<li><input checked="" disabled="" type="checkbox"> eval(expression)</li>
+<li><input checked="" disabled="" type="checkbox"> zip(lst1, lst2..)</li>
+<li><input checked="" disabled="" type="checkbox"> map(func, lst)</li>
+<li><input checked="" disabled="" type="checkbox"> print(x)</li>
+<li><input checked="" disabled="" type="checkbox"> open(file, mode, encoding)</li>
+</ul>
+<h2 id="支持">支持</h2>
+<p>分享不易，谢谢大家分享（或红包）支持^_^</p>
+<p><img src="../../img/my_zanshang_qrcode.jpg" alt=""></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/python/">python</a>
+  
+  <a class="badge badge-light" href="/tag/%E5%87%BD%E6%95%B0/">函数</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/&amp;text=Python%e5%86%85%e7%bd%ae%e5%b8%b8%e7%94%a8%e5%87%bd%e6%95%b0" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/&amp;t=Python%e5%86%85%e7%bd%ae%e5%b8%b8%e7%94%a8%e5%87%bd%e6%95%b0" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Python%e5%86%85%e7%bd%ae%e5%b8%b8%e7%94%a8%e5%87%bd%e6%95%b0&amp;body=https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/&amp;title=Python%e5%86%85%e7%bd%ae%e5%b8%b8%e7%94%a8%e5%87%bd%e6%95%b0" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Python%e5%86%85%e7%bd%ae%e5%b8%b8%e7%94%a8%e5%87%bd%e6%95%b0%20https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/&amp;title=Python%e5%86%85%e7%bd%ae%e5%b8%b8%e7%94%a8%e5%87%bd%e6%95%b0" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>相关</h3>
+    <ul>
+      
+      <li><a href="/post/08-%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0/">理解函数</a></li>
+      
+      <li><a href="/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEmac/">Mac电脑Python环境配置</a></li>
+      
+      <li><a href="/post/01-python%E8%B7%9F%E8%8B%B1%E8%AF%AD%E4%B8%80%E6%A0%B7%E6%98%AF%E4%B8%80%E9%97%A8%E8%AF%AD%E8%A8%80/">Python跟英语一样是一门语言</a></li>
+      
+      <li><a href="/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEwin/">Windows电脑Python环境配置</a></li>
+      
+      <li><a href="/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/">python常见错误及其解决办法</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲",
+        'slides' : "演示文稿"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

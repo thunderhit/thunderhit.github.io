@@ -1,0 +1,1636 @@
+<!DOCTYPE html><html lang="zh-Hans" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="大邓">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="读懂错误提示，轻松学习python">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Thunderhit">
+  <meta property="og:url" content="https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/">
+  <meta property="og:title" content="python常见错误及其解决办法 | Thunderhit">
+  <meta property="og:description" content="读懂错误提示，轻松学习python"><meta property="og:image" content="https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/featured.jpg">
+  <meta property="twitter:image" content="https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/featured.jpg"><meta property="og:locale" content="zh-Hans">
+  
+    
+      <meta property="article:published_time" content="2020-06-19T16:39:11&#43;08:00">
+    
+    <meta property="article:modified_time" content="2020-06-19T16:39:11&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/"
+  },
+  "headline": "python常见错误及其解决办法",
+  
+  "image": [
+    "https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/featured.jpg"
+  ],
+  
+  "datePublished": "2020-06-19T16:39:11+08:00",
+  "dateModified": "2020-06-19T16:39:11+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "大邓"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Thunderhit",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "读懂错误提示，轻松学习python"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>python常见错误及其解决办法 | Thunderhit</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/authors/"><span>Authors</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#skills"><span>Skills</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Packages</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post"><span>Articles</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tags"><span>Topics</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>python常见错误及其解决办法</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/%E5%A4%A7%E9%82%93/">大邓</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2020-06-19
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/%E6%95%99%E7%A8%8B/">教程</a>, <a href="/category/%E8%A7%86%E9%A2%91/">视频</a>, <a href="/category/python%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">python语法入门</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 257px;">
+  <div style="position: relative">
+    <img src="/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/featured_hu8c75c712354c54d4beaa2aab43e08a70_117965_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2>目录</h2>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1-忘记写冒号">1. 忘记写冒号</a></li>
+            <li><a href="#2-误用-">2. 误用 <code>=</code></a></li>
+            <li><a href="#3-错误的缩进">3. 错误的缩进</a></li>
+            <li><a href="#4-变量没有定义">4. 变量没有定义</a></li>
+            <li><a href="#5-中英文输入法导致的错误">5. 中英文输入法导致的错误</a></li>
+            <li><a href="#6-不同数据类型的拼接">6. 不同数据类型的拼接</a></li>
+            <li><a href="#7-索引位置问题">7. 索引位置问题</a></li>
+            <li><a href="#8-使用字典中不存在的键">8. 使用字典中不存在的键</a></li>
+            <li><a href="#9-忘了括号">9. 忘了括号</a></li>
+            <li><a href="#10-漏传参数">10. 漏传参数</a></li>
+            <li><a href="#11-缺失依赖库">11. 缺失依赖库</a></li>
+            <li><a href="#12-使用了python中的关键词">12. 使用了python中的关键词</a></li>
+            <li><a href="#13-文件编码问题">13. 文件编码问题</a></li>
+            <li><a href="#那怎么找到正确的编码参数呢">那怎么找到正确的编码参数呢？</a></li>
+          </ul>
+        </li>
+        <li><a href="#14-路径字符串写法">14. 路径字符串写法</a></li>
+        <li><a href="#支持">支持</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<iframe
+    src="//player.bilibili.com/player.html?bvid=BV1eb411h7sP&page=15"
+    scrolling="no"
+    height="768px"
+    width="1024px"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+>
+</iframe>
+
+<br>
+<h3 id="1-忘记写冒号">1. 忘记写冒号</h3>
+<p>在 if、elif、else、for、while、def语句后面忘记添加 <code>:</code></p>
+<pre><code class="language-python">age = 42
+
+if age == 42
+    print('Hello!')
+</code></pre>
+<pre><code>  File &quot;&lt;ipython-input-10-1f5acea116cf&gt;&quot;, line 3
+    if age == 42
+                ^
+SyntaxError: invalid syntax
+</code></pre>
+<br>
+<pre><code class="language-python">age = 42
+
+if age == 42:
+    print('Hello!')
+</code></pre>
+<pre><code>Hello!
+</code></pre>
+<p><br><br></p>
+<h3 id="2-误用-">2. 误用 <code>=</code></h3>
+<p><code>=</code> 是赋值操作，而判断两个值是否相等是 <code>==</code></p>
+<pre><code class="language-python">gender = '男'
+
+if gender = '男':
+    print('Man')
+</code></pre>
+<pre><code>  File &quot;&lt;ipython-input-12-c3ceea5a9004&gt;&quot;, line 3
+    if gender = '男':
+              ^
+SyntaxError: invalid syntax
+</code></pre>
+<br>
+<pre><code class="language-python">gender = '男'
+
+if gender == '男':
+    print('Man')
+</code></pre>
+<pre><code>Man
+</code></pre>
+<p><br><br></p>
+<h3 id="3-错误的缩进">3. 错误的缩进</h3>
+<p>Python用缩进区分代码块，常见的错误用法：</p>
+<pre><code class="language-python">print('Hello!')
+ print('Howdy!')
+</code></pre>
+<pre><code>  File &quot;&lt;ipython-input-14-784bdb6e1df5&gt;&quot;, line 2
+    print('Howdy!')
+    ^
+IndentationError: unexpected indent
+</code></pre>
+<br>
+<pre><code class="language-python">print('Hello!')
+print('Howdy!')
+</code></pre>
+<pre><code>Hello!
+Howdy!
+</code></pre>
+<br>
+<pre><code class="language-python">num = 25
+if num == 25:
+print('Hello!')
+</code></pre>
+<pre><code>  File &quot;&lt;ipython-input-16-8e4debcdf119&gt;&quot;, line 3
+    print('Hello!')
+        ^
+IndentationError: expected an indented block
+</code></pre>
+<br>
+<pre><code class="language-python">num = 25
+if num == 25:
+    print('Hello!')
+</code></pre>
+<pre><code>Hello!
+</code></pre>
+<p><br><br></p>
+<h3 id="4-变量没有定义">4. 变量没有定义</h3>
+<pre><code class="language-python">if c in ['New York', 'Bei Jing', 'Tokyo']:
+    print('This is a mega city')
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-21-d91d0b36da73&gt; in &lt;module&gt;
+----&gt; 1 if c in ['New York', 'Bei Jing', 'Tokyo']:
+      2     print('This is a mega c')
+
+
+NameError: name 'c' is not defined
+</code></pre>
+<br>
+<pre><code class="language-python">city ='New York'
+if city in ['New York', 'Bei Jing', 'Tokyo']:
+    print('This is a mega city')
+</code></pre>
+<pre><code>This is a mega city
+</code></pre>
+<p><br><br></p>
+<h3 id="5-中英文输入法导致的错误">5. 中英文输入法导致的错误</h3>
+<ul>
+<li>英文冒号</li>
+<li>英文括号</li>
+<li>英文逗号</li>
+<li>英文单双引号</li>
+</ul>
+<pre><code class="language-python">if 5&gt;3：
+    print('5比3大')
+</code></pre>
+<pre><code>  File &quot;&lt;ipython-input-23-47f8b985b82d&gt;&quot;, line 1
+    if 5&gt;3：
+          ^
+SyntaxError: invalid character in identifier
+</code></pre>
+<br>
+<pre><code class="language-python">if 5&gt;3:
+    print('5比3大')
+</code></pre>
+<pre><code>5比3大
+</code></pre>
+<br>
+<pre><code class="language-python">spam = [1, 2， 3]
+</code></pre>
+<pre><code>  File &quot;&lt;ipython-input-26-a003060d051a&gt;&quot;, line 1
+    spam = [1, 2， 3]
+                ^
+SyntaxError: invalid character in identifier
+</code></pre>
+<br>
+<pre><code class="language-python">spam = [1, 2, 3]
+spam
+</code></pre>
+<pre><code>[1, 2, 3]
+</code></pre>
+<br>
+<pre><code class="language-python">if 5&gt;3:
+    print('5比3大’)
+</code></pre>
+<pre><code>  File &quot;&lt;ipython-input-30-ac2e4eb87092&gt;&quot;, line 2
+    print('5比3大’)
+                 ^
+SyntaxError: EOL while scanning string literal
+</code></pre>
+<br>
+<pre><code class="language-python">if 5&gt;3:
+    print('5比3大')
+</code></pre>
+<pre><code>5比3大
+</code></pre>
+<p><br><br></p>
+<h3 id="6-不同数据类型的拼接">6. 不同数据类型的拼接</h3>
+<p>同种数据类型  <strong>字符串/列表/元组</strong>   支持拼接</p>
+<p><strong>字典/集合</strong>不支持拼接</p>
+<pre><code class="language-python">'I have ' + 12 + ' eggs.'
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-32-20c7c89a2ec6&gt; in &lt;module&gt;
+----&gt; 1 'I have ' + 12 + ' eggs.'
+
+
+TypeError: can only concatenate str (not &quot;int&quot;) to str
+</code></pre>
+<br>
+<pre><code class="language-python">'I have {} eggs.'.format(12)
+</code></pre>
+<pre><code>'I have 12 eggs.'
+</code></pre>
+<br>
+<pre><code class="language-python">['a', 'b', 'c']+'def'
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-35-0e8919333d6b&gt; in &lt;module&gt;
+----&gt; 1 ['a', 'b', 'c']+'def'
+
+
+TypeError: can only concatenate list (not &quot;str&quot;) to list
+</code></pre>
+<br>
+<pre><code class="language-python">('a', 'b', 'c')+['a', 'b', 'c']
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-36-90742621216d&gt; in &lt;module&gt;
+----&gt; 1 ('a', 'b', 'c')+['a', 'b', 'c']
+
+
+TypeError: can only concatenate tuple (not &quot;list&quot;) to tuple
+</code></pre>
+<br>
+<pre><code class="language-python">set(['a', 'b', 'c'])+set(['d', 'e'])
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-37-ddf5fb1e6c8c&gt; in &lt;module&gt;
+----&gt; 1 set(['a', 'b', 'c'])+set(['d', 'e'])
+
+
+TypeError: unsupported operand type(s) for +: 'set' and 'set'
+</code></pre>
+<br>
+<pre><code class="language-python">grades1 = {'Mary':99, 'Henry':77}
+grades2 = {'David':88, 'Unique':89}
+
+grades1+grades2
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-38-1b1456844331&gt; in &lt;module&gt;
+      2 grades2 = {'David':88, 'Unique':89}
+      3 
+----&gt; 4 grades1+grades2
+
+
+TypeError: unsupported operand type(s) for +: 'dict' and 'dict'
+</code></pre>
+<p><br><br></p>
+<h3 id="7-索引位置问题">7. 索引位置问题</h3>
+<pre><code class="language-python">spam = ['cat', 'dog', 'mouse']
+print(spam[5])
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+IndexError                                Traceback (most recent call last)
+
+&lt;ipython-input-41-e0a79346266d&gt; in &lt;module&gt;
+      1 spam = ['cat', 'dog', 'mouse']
+----&gt; 2 print(spam[5])
+
+
+IndexError: list index out of range
+</code></pre>
+<p><br><br></p>
+<h3 id="8-使用字典中不存在的键">8. 使用字典中不存在的键</h3>
+<p>在字典对象中访问 key 可以使用 <code>[]</code>，</p>
+<p>但是如果该 key 不存在，就会导致：KeyError: &lsquo;zebra&rsquo;</p>
+<pre><code class="language-python">spam = {'cat': 'Zophie', 
+        'dog': 'Basil', 
+        'mouse': 'Whiskers'}
+
+print(spam['zebra'])
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+KeyError                                  Traceback (most recent call last)
+
+&lt;ipython-input-42-92c9b44ff034&gt; in &lt;module&gt;
+      3         'mouse': 'Whiskers'}
+      4 
+----&gt; 5 print(spam['zebra'])
+
+
+KeyError: 'zebra'
+</code></pre>
+<p>为了避免这种情况，可以使用 get 方法</p>
+<pre><code class="language-python">spam = {'cat': 'Zophie', 
+        'dog': 'Basil', 
+        'mouse': 'Whiskers'}
+
+print(spam.get('zebra'))
+</code></pre>
+<pre><code>None
+</code></pre>
+<p>key 不存在时，get 默认返回 None</p>
+<br>
+<br>
+<h3 id="9-忘了括号">9. 忘了括号</h3>
+<p>当函数中传入的是函数或者方法时，容易漏写括号</p>
+<pre><code class="language-python">spam = {'cat': 'Zophie', 
+        'dog': 'Basil', 
+        'mouse': 'Whiskers'}
+
+print(spam.get('zebra')  #end of funtion
+</code></pre>
+<pre><code>  File &quot;&lt;ipython-input-44-d105cc86097c&gt;&quot;, line 5
+    print(spam.get('zebra')  #end of funtion
+                                            ^
+SyntaxError: unexpected EOF while parsing
+</code></pre>
+<br>
+<pre><code class="language-python">spam = {'cat': 'Zophie', 
+        'dog': 'Basil', 
+        'mouse': 'Whiskers'}
+
+print(spam.get('zebra')) 
+</code></pre>
+<pre><code>None
+</code></pre>
+<p><br><br></p>
+<h3 id="10-漏传参数">10. 漏传参数</h3>
+<pre><code class="language-python">def diyadd(x, y, z):
+    return x+y+z
+
+diyadd(1, 2)
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-46-7184f3f906ca&gt; in &lt;module&gt;
+      2     return x+y+z
+      3 
+----&gt; 4 diyadd(1, 2)
+
+
+TypeError: diyadd() missing 1 required positional argument: 'z'
+</code></pre>
+<br>
+<pre><code class="language-python">diyadd(1, 2, 4)
+</code></pre>
+<pre><code>7
+</code></pre>
+<p><br><br></p>
+<h3 id="11-缺失依赖库">11. 缺失依赖库</h3>
+<p>电脑中没有相关的库</p>
+<pre><code class="language-python">import packagename
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+ModuleNotFoundError                       Traceback (most recent call last)
+
+&lt;ipython-input-48-6d7d6f569116&gt; in &lt;module&gt;
+----&gt; 1 import packagename
+
+
+ModuleNotFoundError: No module named 'packagename'
+</code></pre>
+<pre><code class="language-python">!pip install packagename
+</code></pre>
+<p><br><br></p>
+<h3 id="12-使用了python中的关键词">12. 使用了python中的关键词</h3>
+<p>如try、except、def、class、object、None、True、False等</p>
+<pre><code class="language-python">try = 5
+print(try)
+</code></pre>
+<pre><code>  File &quot;&lt;ipython-input-49-508e87fe2ff3&gt;&quot;, line 1
+    try = 5
+        ^
+SyntaxError: invalid syntax
+</code></pre>
+<br>
+<pre><code class="language-python">a = 5
+print(a)
+</code></pre>
+<pre><code>5
+</code></pre>
+<br>
+<pre><code class="language-python">def = 6
+print(def)
+</code></pre>
+<pre><code>  File &quot;&lt;ipython-input-51-c797890e9b85&gt;&quot;, line 1
+    def = 6
+        ^
+SyntaxError: invalid syntax
+</code></pre>
+<br>
+<pre><code class="language-python">d = 6
+print(d)
+</code></pre>
+<pre><code>6
+</code></pre>
+<br>
+<br>
+<h3 id="13-文件编码问题">13. 文件编码问题</h3>
+<pre><code class="language-python">import pandas as pd
+
+df = pd.read_csv('data/twitter_sentiment.csv')
+df.head()
+</code></pre>
+<pre><code>UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 7-8: invalid continuation byte
+UnicodeDecodeError                        Traceback (most recent call last)
+
+&lt;ipython-input-53-f7ee81cff3e5&gt; in &lt;module&gt;
+      1 import pandas as pd
+      2 
+----&gt; 3 df = pd.read_csv('data/twitter_sentiment.csv')
+      4 df.head()
+pandas\_libs\parsers.pyx in pandas._libs.parsers._string_box_utf8()
+UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 7-8: invalid continuation byte
+</code></pre>
+<br>
+<pre><code class="language-python">import pandas as pd
+
+#gbk/utf-8只能解决大部分编码问题，但不能解决全部问题
+df = pd.read_csv('data/twitter_sentiment.csv', encoding='gbk')
+df.head()
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+UnicodeDecodeError                        Traceback (most recent call last)
+
+&lt;ipython-input-55-6aa161f42239&gt; in &lt;module&gt;
+      2 
+      3 #gbk/utf-8只能解决大部分编码问题，但不能解决全部问题
+----&gt; 4 df = pd.read_csv('data/twitter_sentiment.csv', encoding='gbk')
+      5 df.head()
+
+
+c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages\pandas\io\parsers.py in parser_f(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)
+    674         )
+    675 
+-&gt; 1891         self._reader = parsers.TextReader(src, **kwds)
+   1892         self.unnamed_cols = self._reader.unnamed_cols
+   1893 
+   pandas\_libs\parsers.pyx in pandas._libs.parsers.TextReader.__cinit__()
+    pandas\_libs\parsers.pyx in pandas._libs.parsers.TextReader._get_header()
+    pandas\_libs\parsers.pyx in pandas._libs.parsers.TextReader._tokenize_rows()
+    pandas\_libs\parsers.pyx in pandas._libs.parsers.raise_parser_error()
+    UnicodeDecodeError: 'gbk' codec can't decode byte 0xbd in position 10717: 	illegal multibyte sequence
+</code></pre>
+<p>上面的程序会提示编码错误， 尝试encoding编码参数传入utf-8、gbk，也没有解决问题。</p>
+<br>
+<h3 id="那怎么找到正确的编码参数呢">那怎么找到正确的编码参数呢？</h3>
+<pre><code class="language-python">import chardet
+
+#读取为二进制数据
+binary_data = open('data/twitter_sentiment.csv', 'rb').read()
+
+#传给chardet.detect，稍等片刻
+chardet.detect(binary_data)
+</code></pre>
+<pre><code>{'encoding': 'Windows-1252', 'confidence': 0.7291192008535122, 'language': ''}
+</code></pre>
+<br>
+<pre><code class="language-python">import pandas as pd
+
+
+df = pd.read_csv('data/twitter_sentiment.csv', encoding='Windows-1252')
+df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ItemID</th>
+      <th>Sentiment</th>
+      <th>SentimentText</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>is so sad for my APL frie...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>0</td>
+      <td>I missed the New Moon trail...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>omg its already 7:30 :O</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>0</td>
+      <td>.. Omgaga. Im sooo  im gunna CRy. I'...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>i think mi bf is cheating on me!!!   ...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p><br><br></p>
+<h2 id="14-路径字符串写法">14. 路径字符串写法</h2>
+<ul>
+<li>Mac&amp;Win 推荐使用 <code>/</code> 写法</li>
+<li>如果使用<code>\</code> 写法，安全起见，请换成<code>\\</code>  （Mac不支持<code>\\</code> ）</li>
+</ul>
+<pre><code>\n
+\t
+\d
+</code></pre>
+<pre><code class="language-python">open('data/test.txt', encoding='utf-8').read()
+</code></pre>
+<pre><code>'章节设计\n\n第一部分  环境配置\n第二部分  快速入门python\n第三部分  网络爬虫\n第四部分  简单的文本分析\n第五部分  进阶文本分析'
+</code></pre>
+<br>
+<pre><code class="language-python">open('data\test.txt', encoding='utf-8').read()
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+OSError                                   Traceback (most recent call last)
+
+&lt;ipython-input-59-d855ed58b500&gt; in &lt;module&gt;
+----&gt; 1 open('data\test.txt', encoding='utf-8').read()
+
+
+OSError: [Errno 22] Invalid argument: 'data\test.txt'
+</code></pre>
+<br>
+<pre><code class="language-python">open('data\\test.txt', encoding='utf-8').read()
+</code></pre>
+<pre><code>'章节设计\n\n第一部分  环境配置\n第二部分  快速入门python\n第三部分  网络爬虫\n第四部分  简单的文本分析\n第五部分  进阶文本分析'
+</code></pre>
+<br>
+<pre><code class="language-python">open('data\Test.txt', encoding='utf-8').read()
+</code></pre>
+<pre><code>'章节设计\n\n第一部分  环境配置\n第二部分  快速入门python\n第三部分  网络爬虫\n第四部分  简单的文本分析\n第五部分  进阶文本分析'
+</code></pre>
+<p><br><br></p>
+<h2 id="支持">支持</h2>
+<p>分享不易，谢谢大家分享（或红包）支持^_^</p>
+<p><img src="../../img/my_zanshang_qrcode.jpg" alt=""></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/python/">python</a>
+  
+  <a class="badge badge-light" href="/tag/%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/">常见错误</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/&amp;text=python%e5%b8%b8%e8%a7%81%e9%94%99%e8%af%af%e5%8f%8a%e5%85%b6%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/&amp;t=python%e5%b8%b8%e8%a7%81%e9%94%99%e8%af%af%e5%8f%8a%e5%85%b6%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=python%e5%b8%b8%e8%a7%81%e9%94%99%e8%af%af%e5%8f%8a%e5%85%b6%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95&amp;body=https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/&amp;title=python%e5%b8%b8%e8%a7%81%e9%94%99%e8%af%af%e5%8f%8a%e5%85%b6%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=python%e5%b8%b8%e8%a7%81%e9%94%99%e8%af%af%e5%8f%8a%e5%85%b6%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95%20https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/&amp;title=python%e5%b8%b8%e8%a7%81%e9%94%99%e8%af%af%e5%8f%8a%e5%85%b6%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>相关</h3>
+    <ul>
+      
+      <li><a href="/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEmac/">Mac电脑Python环境配置</a></li>
+      
+      <li><a href="/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">Python内置常用函数</a></li>
+      
+      <li><a href="/post/01-python%E8%B7%9F%E8%8B%B1%E8%AF%AD%E4%B8%80%E6%A0%B7%E6%98%AF%E4%B8%80%E9%97%A8%E8%AF%AD%E8%A8%80/">Python跟英语一样是一门语言</a></li>
+      
+      <li><a href="/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEwin/">Windows电脑Python环境配置</a></li>
+      
+      <li><a href="/post/11-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8Bcsv%E6%96%87%E4%BB%B6%E5%BA%93/">内置库-数据存储csv库</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲",
+        'slides' : "演示文稿"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

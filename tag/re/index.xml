@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>re | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/re/</link>
+      <atom:link href="https://thunderhit.github.io/tag/re/index.xml" rel="self" type="application/rss+xml" />
+    <description>re</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 19 Jun 2020 16:39:11 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>re</title>
+      <link>https://thunderhit.github.io/tag/re/</link>
+    </image>
+    
+    <item>
+      <title>内置库-正则表达式re库</title>
+      <link>https://thunderhit.github.io/post/12.-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre%E5%BA%93/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/12.-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre%E5%BA%93/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#一正则表达式中的符号&#34;&gt;一、正则表达式中的符号&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#11-正则字符&#34;&gt;1.1 正则字符&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#12-限定字符&#34;&gt;1.2 限定字符&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#13-定位字符&#34;&gt;1.3 定位字符&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#二re库常用方法&#34;&gt;二、re库常用方法&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#三只需要掌握&#34;&gt;三、只需要掌握&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#31-检索找到自己需要的正则表达式&#34;&gt;3.1 检索找到自己需要的正则表达式&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#32-最简单最好用表达式&#34;&gt;3.2 最简单最好用表达式(.*?)&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#四案例&#34;&gt;四、案例&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#41-找出文本中出现的年份&#34;&gt;4.1 找出文本中出现的年份&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#42-resplitpattern-string&#34;&gt;4.2 re.split(pattern, string)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#43-resubpattern-repl-string&#34;&gt;4.3 re.sub(pattern, repl, string)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#44--统一表达&#34;&gt;4.4 . 统一表达&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#45-分割文本数据的章节&#34;&gt;4.5 分割文本数据的章节&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#46-抽取出数字&#34;&gt;4.6 抽取出数字&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=14&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;一正则表达式中的符号&#34;&gt;一、正则表达式中的符号&lt;/h2&gt;
+&lt;p&gt;按照符号的功能，我将其分为三类，一般情况下表达式都是由这三种符号组成的。&lt;/p&gt;
+&lt;h3 id=&#34;11-正则字符&#34;&gt;1.1 正则字符&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;正则符号&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;描述&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;匹配自己时&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;转义字符。例如， &amp;lsquo;n&amp;rsquo; 匹配字符 &amp;lsquo;n&amp;rsquo;。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;&#39;\n&#39;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;( )&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;标记一个子表达式的开始和结束位置。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\(   \)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;.&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配除换行符 &lt;code&gt;\n&lt;/code&gt; 之外的任何单字符。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\. &lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;|&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;|左右两侧均可参与匹配&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\d&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配字符串中的单个数字&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;a-zA-Z&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配全部英文字符&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;0-9&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配全部数字&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\s&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配字符串中的&lt;code&gt;\n&lt;/code&gt;,&lt;code&gt;\t&lt;/code&gt;,&lt;code&gt;空格&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;[]&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;中括号内任意正则符号均可参与匹配&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\[   \]&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;^&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;当在方括号表达式中使用，^对其后的正则表达式进行了反义表达。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\^&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;12-限定字符&#34;&gt;1.2 限定字符&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;正则符号&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;描述&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;匹配自己时&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;*&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配前面的子表达式零次或多次。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\*&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;?&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配前面的子表达式零次或一次&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;\?&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;+&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配前面的子表达式一次或多次。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\+&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;{m}&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;n 是一个非负整数。匹配确定的 m 次。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;{m,}&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;m 是一个非负整数。至少匹配m 次。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;{m, n}&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;m 和 n 均为非负整数，其中m &amp;lt;= n。最少匹配 m 次且最多匹配 n 次。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;13-定位字符&#34;&gt;1.3 定位字符&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;正则符号&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;描述&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;匹配自己时&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;^&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配输入字符串的开始位置。&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\^&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;$&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配输入字符串的结尾位置&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;\$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\b&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;匹配一个单词边界，即字与空格间的位置&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;\B&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;非单词边界匹配&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;二re库常用方法&#34;&gt;二、re库常用方法&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;re库常用函数&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;re.findall(pattern, string)&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;根据pattern返回匹配结果（列表）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;|&lt;code&gt;re.split(pattern, string)&lt;/code&gt; |使用pattern分割string，返回列表     &lt;br&gt;
+|&lt;code&gt;re.sub(pattern, repl, string)&lt;/code&gt;|使用repl替换string中的pattern|&lt;/p&gt;
+&lt;p&gt;&lt;br&gt; &lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;三只需要掌握&#34;&gt;三、只需要掌握&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;搜索引擎检索到自己需要的正则表达式&lt;/li&gt;
+&lt;li&gt;最简单最好用表达式&lt;code&gt;(.*?)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在
+&lt;a href=&#34;http://c.runoob.com/front-end/854&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;正则表达式测试网站&lt;/a&gt;验证自己的正则表达式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;31-检索找到自己需要的正则表达式&#34;&gt;3.1 检索找到自己需要的正则表达式&lt;/h3&gt;
+&lt;p&gt;比如我只需要中文，其余字符统统不要。&lt;/p&gt;
+&lt;p&gt;我会在百度搜&lt;strong&gt;中文正则表达式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;发现很多网页中网友提到````，于是&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[\u4e00-\u9fa5]&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+pattern = &#39;[\u4e00-\u9fa5]+&#39;
+
+string = &amp;quot;&amp;quot;&amp;quot;Python是一门面向对象的编程语言，诞生于1991年。\
+目前以广泛应用在网站开发、游戏软件开发、数据采集、机器学习等多个领域。\
+一般情况下Python是Java的20%，所以说人生苦短，我用Python。&amp;quot;&amp;quot;&amp;quot;
+
+chinese_words = re.findall(pattern, string)
+chinese_text = &#39;&#39;.join(chinese_words)
+chinese_text
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;是一门面向对象的编程语言诞生于年目前以广泛应用在网站开发游戏软件开发数据采集机器学习等多个领域一般情况下是的所以说人生苦短我用&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;32-最简单最好用表达式&#34;&gt;3.2 最简单最好用表达式(.*?)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;pattern设计步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;正则符号&lt;/strong&gt;组成&lt;strong&gt;正则表达式&lt;/strong&gt;，用于&lt;strong&gt;匹配&lt;/strong&gt;需要的字符。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;找到重复的一致的规律&lt;/li&gt;
+&lt;li&gt;复制粘贴到pattern中&lt;/li&gt;
+&lt;li&gt;扣掉&lt;strong&gt;想要的数据&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;替换为&lt;code&gt;(.*?)&lt;/code&gt;  或者&lt;code&gt;相应的正则符号表达式*&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;比如现在需要快速挖掘出intros中的姓名、籍贯和年龄&lt;/p&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+
+pattern = &#39;我叫(.*?)，来自(.*?)，今年(.*?)岁。&#39;
+
+intros = [&#39;我叫张三，来自山东，今年25岁。&#39;,
+          &#39;我叫李四，来自河北，今年28岁。&#39;,
+          &#39;我叫王五，来自河南，今年24岁。&#39;]
+
+for intro in intros:
+    info = re.findall(pattern, intro)
+    print(info)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;张三&#39;, &#39;山东&#39;, &#39;25&#39;)]
+[(&#39;李四&#39;, &#39;河北&#39;, &#39;28&#39;)]
+[(&#39;王五&#39;, &#39;河南&#39;, &#39;24&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    特别需要注意的是pattern中的(.*?)左右两侧必须有字符，否则匹配失败
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+
+pattern = &#39;(.*?)，来自(.*?)，今年(.*?)&#39;
+
+intros = [&#39;我叫张三，来自山东，今年25岁。&#39;,
+          &#39;我叫李四，来自河北，今年28岁。&#39;,
+          &#39;我叫王五，来自河南，今年24岁。&#39;]
+
+for intro in intros:
+    info = re.findall(pattern, intro)
+    print(info)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;我叫张三&#39;, &#39;山东&#39;, &#39;&#39;)]
+[(&#39;我叫李四&#39;, &#39;河北&#39;, &#39;&#39;)]
+[(&#39;我叫王五&#39;, &#39;河南&#39;, &#39;&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&#39;(.*?)，来自(.*?)，今年(.*?)&#39;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;中最左侧和最右侧的&lt;code&gt;(.*?)&lt;/code&gt;没有被其他字符左右包裹，导致匹配姓名和年龄失败。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+
+pattern = &#39;叫(.*?)，来自(.*?)，今年(.*?)岁&#39;
+
+intros = [&#39;我叫张三，来自山东，今年25岁。&#39;,
+          &#39;我叫李四，来自河北，今年28岁。&#39;,
+          &#39;我叫王五，来自河南，今年24岁。&#39;]
+
+for intro in intros:
+    info = re.findall(pattern, intro)
+    print(info)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;张三&#39;, &#39;山东&#39;, &#39;25&#39;)]
+[(&#39;李四&#39;, &#39;河北&#39;, &#39;28&#39;)]
+[(&#39;王五&#39;, &#39;河南&#39;, &#39;24&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;四案例&#34;&gt;四、案例&lt;/h2&gt;
+&lt;h3 id=&#34;41-找出文本中出现的年份&#34;&gt;4.1 找出文本中出现的年份&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+
+pattern = &#39;\d{4}&#39;
+string = &amp;quot;&amp;quot;&amp;quot;Python是一门面向对象的编程语言，诞生于1991年。\
+目前以广泛应用在网站开发、游戏软件开发、数据采集、机器学习等多个领域。\
+一般情况下Python是Java的20%，所以说人生苦短，我用Python。&amp;quot;&amp;quot;&amp;quot;
+
+re.findall(pattern, string)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;1991&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;42-resplitpattern-string&#34;&gt;4.2 re.split(pattern, string)&lt;/h3&gt;
+&lt;p&gt;断句&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pattern = &#39;；|。&#39;
+
+string = &amp;quot;&amp;quot;&amp;quot;Python是一门面向对象的编程语言，诞生于1991年；\
+目前以广泛应用在网站开发、游戏软件开发、数据采集、机器学习等多个领域。\
+一般情况下Python是Java的20%，所以说人生苦短，我用Python。&amp;quot;&amp;quot;&amp;quot;
+
+res = re.split(pattern, string)
+res = [r for r in res if r]
+res
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Python是一门面向对象的编程语言，诞生于1991年&#39;,
+ &#39;目前以广泛应用在网站开发、游戏软件开发、数据采集、机器学习等多个领域&#39;,
+ &#39;一般情况下Python是Java的20%，所以说人生苦短，我用Python&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;43-resubpattern-repl-string&#34;&gt;4.3 re.sub(pattern, repl, string)&lt;/h3&gt;
+&lt;p&gt;将数字替换为NUM&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pattern = &#39;\d+&#39;
+
+repl = &#39;NUM&#39;
+
+string = &amp;quot;&amp;quot;&amp;quot;Python是一门面向对象的编程语言，诞生于1991年。\
+一般情况下Python是Java的20%，所以说人生苦短，我用Python。&amp;quot;&amp;quot;&amp;quot;
+
+re.sub(pattern, repl, string)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Python是一门面向对象的编程语言，诞生于NUM年。一般情况下Python是Java的NUM%，所以说人生苦短，我用Python。&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;44--统一表达&#34;&gt;4.4 . 统一表达&lt;/h3&gt;
+&lt;p&gt;将指代同一个主体的不同表达词语统一为同一个词&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;text = &#39;中国铁路工程集团有限公司成立于1950年3月，总部位于北京。目前中国中铁已经发展成中国和亚洲最大的多功能综合型建设集团。&#39;
+
+pattern = &#39;中国铁路工程集团有限公司|中国中铁&#39;
+
+repl = &#39;中铁&#39;
+
+re.sub(pattern, repl, text)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;中铁成立于1950年3月，总部位于北京。目前中铁已经发展成中国和亚洲最大的多功能综合型建设集团。&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;text = &#39;中国铁路工程集团有限公司成立于1950年3月，总部位于北京。目前中国中铁已经发展成中国和亚洲最大的多功能综合型建设集团。&#39;
+
+pattern = &#39;[中国铁路工程集团有限公司|中国中铁]+&#39;
+
+repl = &#39;中铁&#39;
+
+re.sub(pattern, repl, text)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;中铁成立于1950年3月，总部位于北京。目前中铁已经发展成中铁和亚洲最大的多功能综合型建设中铁。&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;45-分割文本数据的章节&#34;&gt;4.5 分割文本数据的章节&lt;/h3&gt;
+&lt;p&gt;一二三四五六七八九十零百&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;text = &amp;quot;&amp;quot;&amp;quot; 第一篇 Python简介 第二篇 Python入门语法 第三篇 Python网络爬虫 第四篇 文本数据编码 第五篇 数据分析 第六篇 可视化&amp;quot;&amp;quot;&amp;quot;
+
+pattern = &#39;第[一二三四五六七八九十零百]+篇&#39;
+
+res = re.split(pattern, text)
+res = [r.replace(&#39; &#39;, &#39;&#39;) for r in res if &#39; &#39;!=r]
+res
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Python简介&#39;, &#39;Python入门语法&#39;, &#39;Python网络爬虫&#39;, &#39;文本数据编码&#39;, &#39;数据分析&#39;, &#39;可视化&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;46-抽取出数字&#34;&gt;4.6 抽取出数字&lt;/h3&gt;
+&lt;p&gt;比如日期数据&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;text = &#39;中国铁路工程集团有限公司成立于1950年3月，总部位于北京。目前中国中铁已经发展成中国和亚洲最大的多功能综合型建设集团。&#39;
+
+pattern = &#39;\d+&#39;
+
+&#39;-&#39;.join(re.findall(pattern, text))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;1950-3&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

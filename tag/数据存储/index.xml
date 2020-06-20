@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据存储 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/</link>
+      <atom:link href="https://thunderhit.github.io/tag/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/index.xml" rel="self" type="application/rss+xml" />
+    <description>数据存储</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 19 Jun 2020 16:39:11 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>数据存储</title>
+      <link>https://thunderhit.github.io/tag/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/</link>
+    </image>
+    
+    <item>
+      <title>内置库-数据存储csv库</title>
+      <link>https://thunderhit.github.io/post/11-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8Bcsv%E6%96%87%E4%BB%B6%E5%BA%93/</link>
+      <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/11-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8Bcsv%E6%96%87%E4%BB%B6%E5%BA%93/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#csv存储数据代码步骤&#34;&gt;csv存储数据代码步骤&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#很多数据的存储&#34;&gt;很多数据的存储&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=13&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;csv存储数据代码步骤&#34;&gt;csv存储数据代码步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;新建一个csv文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import csv
+path = &#39;data/test.csv&#39;
+csvf = open(path, &#39;a+&#39;, encoding=&#39;utf-8&#39;, newline=&#39;&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;定义字段名，并初始化csv文件为writer&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fieldnames = [&#39;name&#39;, &#39;age&#39;]
+writer = csv.DictWriter(csvf, fieldnames=fieldnames)
+writer.writeheader()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;将待存储数据整理为字典格式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;test_data = {&#39;name&#39;: &#39;David&#39;,
+             &#39;age&#39;: 25}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;用writer往csv中存储数据&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;writer.writerow(test_data)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;最后记得关闭csv文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;csvf.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import csv
+
+csvf = open(&#39;data/test1.csv&#39;, &#39;a+&#39;, encoding=&#39;utf-8&#39;, newline=&#39;&#39;)
+fieldnames = [&#39;name&#39;, &#39;age&#39;]
+writer = csv.DictWriter(csvf, fieldnames=fieldnames)
+writer.writeheader()
+
+
+csvf.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import csv
+
+csvf = open(&#39;data/test2.csv&#39;, &#39;a+&#39;, encoding=&#39;utf-8&#39;, newline=&#39;&#39;)
+fieldnames = [&#39;name&#39;, &#39;age&#39;]
+writer = csv.DictWriter(csvf, fieldnames=fieldnames)
+writer.writeheader()
+
+test_data = {&#39;name&#39;: &#39;David&#39;,
+             &#39;age&#39;: 25}
+writer.writerow(test_data)
+
+csvf.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;很多数据的存储&#34;&gt;很多数据的存储&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;datas = [{&#39;name&#39;: &#39;David&#39;, &#39;age&#39;: 25}, 
+         {&#39;name&#39;: &#39;Mary&#39;, &#39;age&#39;: 30},
+         {&#39;name&#39;: &#39;Henry&#39;, &#39;age&#39;: 35}]
+
+datas
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[{&#39;name&#39;: &#39;David&#39;, &#39;age&#39;: 25},
+ {&#39;name&#39;: &#39;Mary&#39;, &#39;age&#39;: 30},
+ {&#39;name&#39;: &#39;Henry&#39;, &#39;age&#39;: 35}]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import csv
+
+csvf = open(&#39;data/test2.csv&#39;, &#39;a+&#39;, encoding=&#39;utf-8&#39;, newline=&#39;&#39;)
+fieldnames = [&#39;name&#39;, &#39;age&#39;]
+writer = csv.DictWriter(csvf, fieldnames=fieldnames)
+writer.writeheader()
+
+for data in datas:
+    writer.writerow(data)
+
+csvf.close()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

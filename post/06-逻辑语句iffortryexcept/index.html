@@ -1,0 +1,1382 @@
+<!DOCTYPE html><html lang="zh-Hans" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="大邓">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="python编程语言中的逻辑">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Thunderhit">
+  <meta property="og:url" content="https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/">
+  <meta property="og:title" content="程序语句-逻辑语句(if&amp;for&amp;tryexcept) | Thunderhit">
+  <meta property="og:description" content="python编程语言中的逻辑"><meta property="og:image" content="https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/featured.jpg">
+  <meta property="twitter:image" content="https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/featured.jpg"><meta property="og:locale" content="zh-Hans">
+  
+    
+      <meta property="article:published_time" content="2020-06-19T16:39:11&#43;08:00">
+    
+    <meta property="article:modified_time" content="2020-06-19T16:39:11&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/"
+  },
+  "headline": "程序语句-逻辑语句(if\u0026for\u0026tryexcept)",
+  
+  "image": [
+    "https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/featured.jpg"
+  ],
+  
+  "datePublished": "2020-06-19T16:39:11+08:00",
+  "dateModified": "2020-06-19T16:39:11+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "大邓"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Thunderhit",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "python编程语言中的逻辑"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>程序语句-逻辑语句(if&amp;for&amp;tryexcept) | Thunderhit</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/authors/"><span>Authors</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#skills"><span>Skills</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Packages</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post"><span>Articles</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tags"><span>Topics</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>程序语句-逻辑语句(if&amp;for&amp;tryexcept)</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/%E5%A4%A7%E9%82%93/">大邓</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2020-06-19
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/%E6%95%99%E7%A8%8B/">教程</a>, <a href="/category/%E8%A7%86%E9%A2%91/">视频</a>, <a href="/category/python%E8%AF%AD%E6%B3%95%E5%85%A5%E9%97%A8/">python语法入门</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 404px;">
+  <div style="position: relative">
+    <img src="/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/featured_hub8a44e51034817339ca2cf9eb9e02ed7_28286_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2>目录</h2>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#if条件判断">if条件判断</a>
+      <ul>
+        <li><a href="#condition为布尔值布尔运算成员运算符">condition为布尔值、布尔运算、成员运算符</a></li>
+        <li><a href="#特殊的conditon">特殊的conditon</a></li>
+      </ul>
+    </li>
+    <li><a href="#for循环">for循环</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#上面这个图可以解读为">上面这个图可以解读为</a></li>
+          </ul>
+        </li>
+        <li><a href="#重复做某事">重复做某事</a>
+          <ul>
+            <li><a href="#问题1">问题1</a></li>
+          </ul>
+        </li>
+        <li><a href="#迭代出数据中的内容">迭代出数据中的内容</a></li>
+      </ul>
+    </li>
+    <li><a href="#try-except">try-except</a>
+      <ul>
+        <li><a href="#练习1">练习1</a></li>
+      </ul>
+    </li>
+    <li><a href="#安装包的方法">安装包的方法</a>
+      <ul>
+        <li><a href="#练习2">练习2</a></li>
+        <li><a href="#支持">支持</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<iframe
+    src="//player.bilibili.com/player.html?bvid=BV1eb411h7sP&page=8"
+    scrolling="no"
+    height="768px"
+    width="1024px"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+>
+</iframe>
+
+<p><br><br></p>
+<h1 id="if条件判断">if条件判断</h1>
+<p><img src="if%E5%9B%BE.png" alt=""></p>
+<h2 id="condition为布尔值布尔运算成员运算符">condition为布尔值、布尔运算、成员运算符</h2>
+<p>通常我们理解的condition为布尔值</p>
+<pre><code class="language-python">#Tab
+condition = True
+
+if condition:
+    print('condition为True')
+else:
+    print('condition为False')
+</code></pre>
+<pre><code>condition为True
+</code></pre>
+<br>
+<pre><code class="language-python">age = 17
+
+if age&gt;=18:
+    print('你是成年人了')
+else:
+    print('你还是个孩子')
+</code></pre>
+<pre><code>你还是个孩子
+</code></pre>
+<br>
+<pre><code class="language-python">age = 20
+
+if age&gt;=55:
+    print('老年人')
+elif 35&lt;=age&lt;55:
+    print('中年')
+elif 18&lt;=age&lt;35:
+    print('青年')
+elif 0&lt;=age&lt;18:
+    print('儿童')
+
+</code></pre>
+<pre><code>青年
+</code></pre>
+<p><br><br></p>
+<h2 id="特殊的conditon">特殊的conditon</h2>
+<ul>
+<li>各种空值(空字符串、空列表等)作用等同于False</li>
+<li>各种非空值，作用等同于True</li>
+</ul>
+<pre><code class="language-python">a = None
+
+if a:
+    print('a是非空数据')
+else:
+    print('a是空数据')
+</code></pre>
+<pre><code>a是空数据
+</code></pre>
+<p><br><br></p>
+<h1 id="for循环">for循环</h1>
+<ul>
+<li>重复做某件事</li>
+<li>迭代出数据中的内容(元素)
+<img src="for%E5%BE%AA%E7%8E%AF.png" alt=""></li>
+</ul>
+<h3 id="上面这个图可以解读为">上面这个图可以解读为</h3>
+<p>我们想对iterable这个集合中的每一个item:</p>
+<pre><code>做点事(对item做操作)
+</code></pre>
+<br>
+<h2 id="重复做某事">重复做某事</h2>
+<h3 id="问题1">问题1</h3>
+<p>计算1+2+3+&hellip;+97+98+99+100=?</p>
+<p>1 + 2 = 3
+3 + 3 = 6
+6 + 4 = 10
+10 + 5 = 15</p>
+<pre><code class="language-python">result = 0
+
+#int
+for i in range(1, 101):
+    result = result + i
+    
+print(result)
+</code></pre>
+<pre><code>5050
+</code></pre>
+<br>
+<h2 id="迭代出数据中的内容">迭代出数据中的内容</h2>
+<pre><code class="language-python">names = ['David', 'Henry', 'Mary']
+
+for name in names:
+    print(name)
+</code></pre>
+<pre><code>David
+Henry
+Mary
+</code></pre>
+<br>
+<pre><code class="language-python">name = 'David'
+
+for s in name:
+    print(s)
+</code></pre>
+<pre><code>D
+a
+v
+i
+d
+</code></pre>
+<br>
+<pre><code class="language-python">infos =  {'David':{'age':25, 
+                   'gender':'Male'},
+          'Mary':{'age':23,
+                  'gender': 'Female'},
+          'Henry':{'age':23,
+                  'gender': 'Male'}
+         }
+
+for item in infos.items():
+    print(item)
+</code></pre>
+<pre><code>('David', {'age': 25, 'gender': 'Male'})
+('Mary', {'age': 23, 'gender': 'Female'})
+('Henry', {'age': 23, 'gender': 'Male'})
+</code></pre>
+<br>
+<pre><code class="language-python">for name, info in infos.items():
+    print(name, info)
+</code></pre>
+<pre><code>David
+Mary
+Henry
+</code></pre>
+<p><br><br></p>
+<h1 id="try-except">try-except</h1>
+<pre><code class="language-python">for x in [1,2,0,2,1]:
+    print(10/x)
+</code></pre>
+<pre><code>10.0
+5.0
+---------------------------------------------------------------------------
+
+ZeroDivisionError                         Traceback (most recent call last)
+
+&lt;ipython-input-19-83bea9c92c0e&gt; in &lt;module&gt;
+      1 for x in [1,2,0,2,1]:
+----&gt; 2     print(10/x)
+ZeroDivisionError: division by zero
+</code></pre>
+<br>
+<pre><code class="language-python">for x in [1,2,0,2,1]:
+    try:
+        print(10/x)
+    except:
+        print('0除错误')
+        #pass
+</code></pre>
+<pre><code>10.0
+5.0
+0除错误
+5.0
+10.0
+</code></pre>
+<p><br><br></p>
+<h2 id="练习1">练习1</h2>
+<p>假设现在某人的能力为1， 每天比前一天进步0.01， 一年后他的能力是多少？</p>
+<pre><code class="language-python">ability = 1
+scale = 1.01
+
+records = []
+for i in range(365):
+    ability = ability * 1.01
+    records.append(ability)
+    
+print(records)
+</code></pre>
+<pre><code>[1.01, 1.0201, 1.030301, 1.04060401, 1.0510100501, 1.061520150601, 1.0721353521070098, 1.08285670562808, 1.0936852726843609, 1.1046221254112045, 1.1156683466653166, ...................36.30913774096189, 36.672229118371504, 37.03895140955522, 37.40934092365077, 37.783434332887275]
+</code></pre>
+<br>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import math
+%matplotlib inline
+
+ability = 1
+scale = 1.02
+records = []
+
+days = range(1, 365)
+for day in days:
+    ability = ability*scale
+    records.append(ability)
+ 
+
+plt.plot(days, records)
+plt.title('Be better everyday!')
+</code></pre>
+<pre><code>Text(0.5, 1.0, 'Be better everyday!')
+</code></pre>
+<p><img src="output_23_1.png" alt="png"></p>
+<p><br><br></p>
+<h1 id="安装包的方法">安装包的方法</h1>
+<ol>
+<li>命令行执行 <code>pip install packagename</code></li>
+<li>jupyter notebook的Cell中执行<code>!pip install packagename</code></li>
+<li>如果是mac，pip写成pip3</li>
+</ol>
+<pre><code class="language-python">!pip install matplotlib
+</code></pre>
+<pre><code>Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Requirement already satisfied: matplotlib in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (3.2.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (1.2.0)
+Requirement already satisfied: python-dateutil&gt;=2.1 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (2.8.1)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (0.10.0)
+Requirement already satisfied: numpy&gt;=1.11 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (1.18.2)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.1 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from matplotlib) (2.4.7)
+Requirement already satisfied: six&gt;=1.5 in c:\users\thunderhit\appdata\local\programs\python\python37-32\lib\site-packages (from python-dateutil&gt;=2.1-&gt;matplotlib) (1.14.0)
+</code></pre>
+<h2 id="练习2">练习2</h2>
+<p><strong>打印九九乘法表格</strong>
+<img src="%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A82.png" alt=""></p>
+<p>用到的知识点:</p>
+<ul>
+<li>for循环</li>
+<li>字符串format方法</li>
+<li>print函数(涉及到end参数)</li>
+</ul>
+<pre><code class="language-python">for row in range(1, 10):
+    #print(row)
+    for col in range(1, row+1):
+        formula = '{col}*{row}={res}'.format(col=col, row=row, res=col*row)
+        print(formula, end='\t')
+    print('')
+</code></pre>
+<pre><code>1*1=1	
+1*2=2	2*2=4	
+1*3=3	2*3=6	3*3=9	
+1*4=4	2*4=8	3*4=12	4*4=16	
+1*5=5	2*5=10	3*5=15	4*5=20	5*5=25	
+1*6=6	2*6=12	3*6=18	4*6=24	5*6=30	6*6=36	
+1*7=7	2*7=14	3*7=21	4*7=28	5*7=35	6*7=42	7*7=49	
+1*8=8	2*8=16	3*8=24	4*8=32	5*8=40	6*8=48	7*8=56	8*8=64	
+1*9=9	2*9=18	3*9=27	4*9=36	5*9=45	6*9=54	7*9=63	8*9=72	9*9=81	
+</code></pre>
+<br>
+<pre><code class="language-python">help(print)
+</code></pre>
+<pre><code>Help on built-in function print in module builtins:
+
+print(...)
+    print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+    
+    Prints the values to a stream, or to sys.stdout by default.
+    Optional keyword arguments:
+    file:  a file-like object (stream); defaults to the current sys.stdout.
+    sep:   string inserted between values, default a space.
+    end:   string appended after the last value, default a newline.
+    flush: whether to forcibly flush the stream.
+</code></pre>
+<br>
+<pre><code class="language-python">for row in range(1, 10):
+    for col in range(1, row+1):
+        formula = '{col}*{row}={res}'
+        content = formula.format(col=col, row=row, res=col*row)
+        print(content, end='\t')
+    print()
+    
+</code></pre>
+<pre><code>1*1=1	
+1*2=2	2*2=4	
+1*3=3	2*3=6	3*3=9	
+1*4=4	2*4=8	3*4=12	4*4=16	
+1*5=5	2*5=10	3*5=15	4*5=20	5*5=25	
+1*6=6	2*6=12	3*6=18	4*6=24	5*6=30	6*6=36	
+1*7=7	2*7=14	3*7=21	4*7=28	5*7=35	6*7=42	7*7=49	
+1*8=8	2*8=16	3*8=24	4*8=32	5*8=40	6*8=48	7*8=56	8*8=64	
+1*9=9	2*9=18	3*9=27	4*9=36	5*9=45	6*9=54	7*9=63	8*9=72	9*9=81	
+</code></pre>
+<p><br><br></p>
+<h2 id="支持">支持</h2>
+<p>分享不易，谢谢大家分享（或红包）支持^_^</p>
+<p><img src="../../img/my_zanshang_qrcode.jpg" alt=""></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/python/">python</a>
+  
+  <a class="badge badge-light" href="/tag/%E7%A8%8B%E5%BA%8F%E8%AF%AD%E5%8F%A5/">程序语句</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/&amp;text=%e7%a8%8b%e5%ba%8f%e8%af%ad%e5%8f%a5-%e9%80%bb%e8%be%91%e8%af%ad%e5%8f%a5%28if&amp;amp;for&amp;amp;tryexcept%29" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/&amp;t=%e7%a8%8b%e5%ba%8f%e8%af%ad%e5%8f%a5-%e9%80%bb%e8%be%91%e8%af%ad%e5%8f%a5%28if&amp;amp;for&amp;amp;tryexcept%29" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%e7%a8%8b%e5%ba%8f%e8%af%ad%e5%8f%a5-%e9%80%bb%e8%be%91%e8%af%ad%e5%8f%a5%28if&amp;amp;for&amp;amp;tryexcept%29&amp;body=https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/&amp;title=%e7%a8%8b%e5%ba%8f%e8%af%ad%e5%8f%a5-%e9%80%bb%e8%be%91%e8%af%ad%e5%8f%a5%28if&amp;amp;for&amp;amp;tryexcept%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=%e7%a8%8b%e5%ba%8f%e8%af%ad%e5%8f%a5-%e9%80%bb%e8%be%91%e8%af%ad%e5%8f%a5%28if&amp;amp;for&amp;amp;tryexcept%29%20https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://thunderhit.github.io/post/06-%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5iffortryexcept/&amp;title=%e7%a8%8b%e5%ba%8f%e8%af%ad%e5%8f%a5-%e9%80%bb%e8%be%91%e8%af%ad%e5%8f%a5%28if&amp;amp;for&amp;amp;tryexcept%29" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>相关</h3>
+    <ul>
+      
+      <li><a href="/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEmac/">Mac电脑Python环境配置</a></li>
+      
+      <li><a href="/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">Python内置常用函数</a></li>
+      
+      <li><a href="/post/01-python%E8%B7%9F%E8%8B%B1%E8%AF%AD%E4%B8%80%E6%A0%B7%E6%98%AF%E4%B8%80%E9%97%A8%E8%AF%AD%E8%A8%80/">Python跟英语一样是一门语言</a></li>
+      
+      <li><a href="/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEwin/">Windows电脑Python环境配置</a></li>
+      
+      <li><a href="/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/">python常见错误及其解决办法</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲",
+        'slides' : "演示文稿"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
