@@ -151,6 +151,7 @@ print(result)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;迭代出数据中的内容&#34;&gt;迭代出数据中的内容&lt;/h2&gt;
+&lt;p&gt;从某种“集合”（这个“集合”可以使list、set、tuple等），只要“集合”内部有多个成员就可以使用for循环迭代出内部的成员&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = [&#39;David&#39;, &#39;Henry&#39;, &#39;Mary&#39;]
 
 for name in names:
@@ -198,6 +199,11 @@ Henry
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;try-except&#34;&gt;try-except&lt;/h1&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    遇到无关紧要的bug，不会停下来，让程序有一定的容错能力
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for x in [1,2,0,2,1]:
     print(10/x)
 &lt;/code&gt;&lt;/pre&gt;

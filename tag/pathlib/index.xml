@@ -17,7 +17,20 @@
       <link>https://thunderhit.github.io/post/10-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84pathlib%E5%BA%93/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/10-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84pathlib%E5%BA%93/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;路径是可以让程序知道待操作的文件在哪里，python中有os和pathlib两个内置的路径库，而pathlib是python中目前最好用的路径库。&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=12&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#绝对vs相对&#34;&gt;绝对vs相对&lt;/a&gt;&lt;/li&gt;
@@ -40,23 +53,17 @@
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=12&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;绝对vs相对&#34;&gt;绝对vs相对&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;相对路径 &lt;code&gt;&#39;img&#39;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;绝对路径  &lt;code&gt;&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/img&#39;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    当移动文件夹位置或者将代码分享给朋友使用时，你的代码再次运行就会出错。为了避免这个问题，强烈建议用相对路径
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pathlib
 
 #当前代码所在的文件夹的相对路径
@@ -74,6 +81,11 @@ Path()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;pathlibpath属性方法&#34;&gt;pathlib.Path()属性方法&lt;/h1&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    下表加粗的都是常用的方法，其他了解即可
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;

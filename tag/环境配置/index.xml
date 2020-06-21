@@ -17,7 +17,12 @@
       <link>https://thunderhit.github.io/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEmac/</link>
       <pubDate>Fri, 19 Jun 2020 16:41:32 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEmac/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    Anaconda和Python都是python。一定要记住二选其一，不要都安装，不然在学习python第三方包安装的时，你会遇到一些麻烦。如果之前没安装过两个软件，建议从头到尾按照我的视频进行电脑配置
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#mac环境配置&#34;&gt;Mac环境配置&lt;/a&gt;
@@ -182,6 +187,11 @@
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    Anaconda和Python都是python。一定要记住二选其一，不要都安装，不然在学习python第三方包安装的时，你会遇到一些麻烦。如果之前没安装过两个软件，建议从头到尾按照我的视频进行电脑配置
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;h1 id=&#34;win环境配置&#34;&gt;Win环境配置&lt;/h1&gt;
 &lt;h2 id=&#34;软件包下载&#34;&gt;软件包下载&lt;/h2&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;

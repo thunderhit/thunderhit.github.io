@@ -833,6 +833,7 @@ print(result)
 </code></pre>
 <br>
 <h2 id="迭代出数据中的内容">迭代出数据中的内容</h2>
+<p>从某种“集合”（这个“集合”可以使list、set、tuple等），只要“集合”内部有多个成员就可以使用for循环迭代出内部的成员</p>
 <pre><code class="language-python">names = ['David', 'Henry', 'Mary']
 
 for name in names:
@@ -880,6 +881,11 @@ Henry
 </code></pre>
 <p><br><br></p>
 <h1 id="try-except">try-except</h1>
+<div class="alert alert-note">
+  <div>
+    遇到无关紧要的bug，不会停下来，让程序有一定的容错能力
+  </div>
+</div>
 <pre><code class="language-python">for x in [1,2,0,2,1]:
     print(10/x)
 </code></pre>

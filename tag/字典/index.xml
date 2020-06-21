@@ -17,7 +17,23 @@
       <link>https://thunderhit.github.io/post/04-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E5%85%B8/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/04-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E5%85%B8/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    最有层次感的数据类型，特别干净整洁。在写爬虫时，我们最希望遇到的数据类型就是ta
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=6&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#字典&#34;&gt;字典&lt;/a&gt;
@@ -36,17 +52,6 @@
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=6&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;字典&#34;&gt;字典&lt;/h1&gt;
 &lt;p&gt;字典是有key，有value的 key-value-pair类型数据（键-值对）&lt;/p&gt;

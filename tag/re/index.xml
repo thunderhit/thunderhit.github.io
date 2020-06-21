@@ -17,7 +17,20 @@
       <link>https://thunderhit.github.io/post/12.-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre%E5%BA%93/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/12.-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre%E5%BA%93/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;正则表达式主要用于数据清洗，比如从脏乱差的文本中抽取出自己需要的信息。常见于爬虫和文本分析。&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=14&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;
@@ -51,21 +64,17 @@
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=14&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;一正则表达式中的符号&#34;&gt;一、正则表达式中的符号&lt;/h2&gt;
 &lt;p&gt;按照符号的功能，我将其分为三类，一般情况下表达式都是由这三种符号组成的。&lt;/p&gt;
 &lt;h3 id=&#34;11-正则字符&#34;&gt;1.1 正则字符&lt;/h3&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    预警，听不懂不要绞尽脑汁，本节后面会柳暗花明的
+  &lt;/div&gt;
+&lt;/div&gt;
+%}}
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -129,6 +138,12 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;12-限定字符&#34;&gt;1.2 限定字符&lt;/h3&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    提前预警，听不懂不要绞尽脑汁，本节后面会柳暗花明的
+  &lt;/div&gt;
+&lt;/div&gt;
+%}}
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -172,6 +187,12 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;13-定位字符&#34;&gt;1.3 定位字符&lt;/h3&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    预警，听不懂不要绞尽脑汁，本节后面会柳暗花明的
+  &lt;/div&gt;
+&lt;/div&gt;
+%}}
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -205,6 +226,12 @@
 &lt;/table&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;二re库常用方法&#34;&gt;二、re库常用方法&lt;/h2&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    至暗时刻已过，光来了
+  &lt;/div&gt;
+&lt;/div&gt;
+%}}
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -223,6 +250,12 @@
 |&lt;code&gt;re.sub(pattern, repl, string)&lt;/code&gt;|使用repl替换string中的pattern|&lt;/p&gt;
 &lt;p&gt;&lt;br&gt; &lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;三只需要掌握&#34;&gt;三、只需要掌握&lt;/h2&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    万能的百度谷歌+你的尝试，比什么都强大
+  &lt;/div&gt;
+&lt;/div&gt;
+%}}
 &lt;ul&gt;
 &lt;li&gt;搜索引擎检索到自己需要的正则表达式&lt;/li&gt;
 &lt;li&gt;最简单最好用表达式&lt;code&gt;(.*?)&lt;/code&gt;&lt;/li&gt;
@@ -250,6 +283,11 @@ chinese_text
 &lt;/code&gt;&lt;/pre&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;32-最简单最好用表达式&#34;&gt;3.2 最简单最好用表达式(.*?)&lt;/h3&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    (.*?)特别好用，ta的暗号及使用口诀一定要背过
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;pattern设计步骤：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;正则符号&lt;/strong&gt;组成&lt;strong&gt;正则表达式&lt;/strong&gt;，用于&lt;strong&gt;匹配&lt;/strong&gt;需要的字符。&lt;/p&gt;
 &lt;ol&gt;

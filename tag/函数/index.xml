@@ -17,10 +17,21 @@
       <link>https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;有三大类内置函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数学相关函数&lt;/li&gt;
+&lt;li&gt;类型转化函数&lt;/li&gt;
+&lt;li&gt;功能函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    函数名加粗的是都是重点
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#heading&#34;&gt;&lt;/a&gt;
+    &lt;li&gt;
       &lt;ul&gt;
         &lt;li&gt;
           &lt;ul&gt;
@@ -53,14 +64,6 @@
 &lt;/iframe&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
-&lt;p&gt;有三大类&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;数学相关函数&lt;/li&gt;
-&lt;li&gt;类型转化函数&lt;/li&gt;
-&lt;li&gt;功能函数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
 &lt;h3 id=&#34;数学相关&#34;&gt;数学相关&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -517,7 +520,10 @@ f.close()
       <link>https://thunderhit.github.io/post/08-%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/08-%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;流水线每个环节都有质量要求，只有符合质量规范，才能流通到下一个环节。这样环环相扣，设计好后经过试运营就可以投产了。Python编程也一样，编程序其实也是设计流水线，而函数就是流水线上的一个个的环节。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#函数&#34;&gt;函数&lt;/a&gt;
@@ -541,9 +547,6 @@ f.close()
 &gt;
 &lt;/iframe&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;流水线每个环节都有质量要求，只有符合质量规范，才能流通到下一个环节。这样环环相扣，设计好后经过试运营就可以投产了。Python编程也一样，编程序其实也是设计流水线，而函数就是流水线上的一个个的环节。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;函数&#34;&gt;函数&lt;/h1&gt;
 &lt;p&gt;可重复使用的代码块&lt;/p&gt;

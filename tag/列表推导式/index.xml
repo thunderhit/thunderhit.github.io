@@ -17,7 +17,19 @@
       <link>https://thunderhit.github.io/post/07-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/07-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;列表推导式唯一的用处就是增强代码的可阅读性，初次接触可能比较难理解，但是大家一定要理解，文本分析中经常会用到ta。&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=9&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;
@@ -38,17 +50,6 @@
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=9&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;问题1-用列表表示集合x&#34;&gt;问题1 用列表表示集合X&lt;/h2&gt;
 &lt;p&gt;$X= {x| x \in [1,2,3,4,5,6,7,8,9,10]}$&lt;/p&gt;

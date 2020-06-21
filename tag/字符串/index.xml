@@ -17,7 +17,23 @@
       <link>https://thunderhit.github.io/post/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    文本分析实际上就是对字符串做的处理，一定要熟悉字符串哦
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=4&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#字符串string&#34;&gt;字符串string&lt;/a&gt;
@@ -40,17 +56,6 @@
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=4&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;字符串string&#34;&gt;字符串string&lt;/h1&gt;
 &lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
@@ -100,7 +105,7 @@ print(&#39;efg&#39;)
 efg
 &lt;/code&gt;&lt;/pre&gt;
 &lt;br&gt;
-&lt;p&gt;注意**:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;这里所说的引号都是英文引号&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt; 或 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; 本身不是字符串的一部分，因此，字符串 &lt;code&gt;&#39;abc&#39;&lt;/code&gt; 只有a，b，c这3个字符。&lt;/li&gt;
@@ -135,6 +140,7 @@ print(b+a)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;切片&#34;&gt;切片&lt;/h2&gt;
+&lt;p&gt;切片就像切糕，把自己想要的那块切下来&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B4%A2%E5%BC%95.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name = &#39;My Name is Mike&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -211,6 +217,11 @@ print(b+a)
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h1 id=&#34;字符串常用方法&#34;&gt;字符串常用方法&lt;/h1&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    再次强调，数据类(型)与猪牛羊不同的动物类型一样，都有满足人类需要的特殊本领(方法)。方法可以理解为数据类(型)一种特殊的本性、属性、特性
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;

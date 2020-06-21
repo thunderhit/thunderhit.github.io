@@ -13,13 +13,18 @@
     </image>
     
     <item>
-      <title>Python基础入门教程汇总贴</title>
+      <title>Python基础入门视频教程汇总贴</title>
       <link>https://thunderhit.github.io/post/python%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</link>
       <pubDate>Sun, 21 Jun 2020 16:14:32 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/python%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</guid>
       <description>&lt;p&gt;课程代码关注【公众号：大邓和他的Python】，回复关键词【python入门】&lt;/p&gt;
 &lt;br&gt;
-&lt;p&gt;下面我用用星星表示难易程度&lt;/p&gt;
+&lt;p&gt;视频观看时间加起来不超过3.5小时&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    如果有遇到看不懂的地方，大家不需要纠结，很多时候自己照着代码操作一下，看看代码英文的意思，再看看代码运行前后的对比，就会自己有自己对代码独特的见解。
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;
@@ -35,15 +40,15 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thunderhit.github.io/post/02-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%ad%97%e7%ac%a6%e4%b8%b2/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-字符串&lt;/a&gt;⭐⭐⭐&lt;/p&gt;
+&lt;a href=&#34;https://thunderhit.github.io/post/02-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%ad%97%e7%ac%a6%e4%b8%b2/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-字符串&lt;/a&gt;⭐⭐⭐⭐&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thunderhit.github.io/post/03-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%88%97%e8%a1%a8%e5%85%83%e7%bb%84%e9%9b%86%e5%90%88/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-列表元组集合&lt;/a&gt;⭐⭐⭐&lt;/p&gt;
+&lt;a href=&#34;https://thunderhit.github.io/post/03-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%88%97%e8%a1%a8%e5%85%83%e7%bb%84%e9%9b%86%e5%90%88/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-列表元组集合&lt;/a&gt;⭐⭐&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thunderhit.github.io/post/04-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%ad%97%e5%85%b8/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-字典&lt;/a&gt;⭐⭐&lt;/p&gt;
+&lt;a href=&#34;https://thunderhit.github.io/post/04-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%ad%97%e5%85%b8/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-字典&lt;/a&gt;⭐&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
@@ -51,7 +56,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thunderhit.github.io/post/06-%e9%80%bb%e8%be%91%e8%af%ad%e5%8f%a5iffortryexcept/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;逻辑语句&lt;/a&gt;⭐⭐⭐&lt;/p&gt;
+&lt;a href=&#34;https://thunderhit.github.io/post/06-%e9%80%bb%e8%be%91%e8%af%ad%e5%8f%a5iffortryexcept/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;逻辑语句&lt;/a&gt;⭐⭐⭐⭐&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;

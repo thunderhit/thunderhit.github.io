@@ -72,6 +72,11 @@ print(a)
 &lt;/ul&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;布尔运算&#34;&gt;布尔运算&lt;/h2&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    中学数学课里的且或非
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -128,6 +133,11 @@ print(x)
 &lt;br&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;比较运算&#34;&gt;比较运算&lt;/h2&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    注意=和&lt;code&gt;==&lt;/code&gt;的区别，=用来把某个值传给某个变量(赋值操作)，&lt;code&gt;==&lt;/code&gt;用来判断两个值(变量)是否相等(判断操作)
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -225,6 +235,7 @@ print(a==b)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;成员运算符in&#34;&gt;成员运算符in&lt;/h2&gt;
+&lt;p&gt;用来判断某个值是否在集合中（这个集合可以使列表、元组、字符串等)&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;

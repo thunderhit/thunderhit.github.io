@@ -699,7 +699,23 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h2>目录</h2>
+      <div class="alert alert-note">
+  <div>
+    当你不知道用什么数据类型的时候，一定要记住list，大多数的脏活累活ta都帮你搞定
+  </div>
+</div>
+<iframe
+    src="//player.bilibili.com/player.html?bvid=BV1eb411h7sP&page=5"
+    scrolling="no"
+    height="768px"
+    width="1024px"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"
+>
+</iframe>
+
+<h2>目录</h2>
 <nav id="TableOfContents">
   <ul>
     <li><a href="#列表list">列表list</a>
@@ -723,21 +739,10 @@
     </li>
   </ul>
 </nav>
-<iframe
-    src="//player.bilibili.com/player.html?bvid=BV1eb411h7sP&page=5"
-    scrolling="no"
-    height="768px"
-    width="1024px"
-    frameborder="no"
-    framespacing="0"
-    allowfullscreen="true"
->
-</iframe>
-
 <p><br><br></p>
 <h1 id="列表list">列表list</h1>
 <h2 id="定义">定义</h2>
-<p>list是一种有序的集合,内部可以由任何数据类型的组成的</p>
+<p>list是一种<strong>有序</strong>的集合,内部可以由任何数据类型的组成的</p>
 <p>现在有5位员工的汇总信息，</p>
 <table>
 <thead>
@@ -787,6 +792,7 @@
 </tr>
 </tbody>
 </table>
+<p>现在我们需要用一种格式去组织5位员工的信息，以列表为例</p>
 <pre><code class="language-python">names = ['David', 'Mary', 'Henry', 'Swift', 'Lenard']
 
 ages = [25, 23, 23, 21, 26]
@@ -812,6 +818,11 @@ print(hobbies)
 [25, 23, 23, 21, 26]
 [['Basketball', 'Pingpang', 'Hiking'], ['Reading', 'Movies'], ['Diving', 'Hiking'], ['Football', 'Music'], ['Stay at Home']]
 </code></pre>
+<div class="alert alert-note">
+  <div>
+    组织数据的方式有很多种，list也可以用不同的方式去组织，大家可以自己想一想
+  </div>
+</div>
 <p><br><br></p>
 <h2 id="拼接">拼接</h2>
 <pre><code class="language-python">a1 = ['Michael', 'Bob']
@@ -825,7 +836,11 @@ print(a2 + a1)
 </code></pre>
 <p><br><br></p>
 <h2 id="拆包">拆包</h2>
-<p>等号两边长度相同</p>
+<div class="alert alert-note">
+  <div>
+    等号两边长度相同
+  </div>
+</div>
 <pre><code class="language-python">name, age = ['David', 25]
 print(name)
 print(age)

@@ -13,13 +13,18 @@
     </image>
     
     <item>
-      <title>Python基础入门教程汇总贴</title>
+      <title>Python基础入门视频教程汇总贴</title>
       <link>https://thunderhit.github.io/post/python%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</link>
       <pubDate>Sun, 21 Jun 2020 16:14:32 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/python%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</guid>
       <description>&lt;p&gt;课程代码关注【公众号：大邓和他的Python】，回复关键词【python入门】&lt;/p&gt;
 &lt;br&gt;
-&lt;p&gt;下面我用用星星表示难易程度&lt;/p&gt;
+&lt;p&gt;视频观看时间加起来不超过3.5小时&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    如果有遇到看不懂的地方，大家不需要纠结，很多时候自己照着代码操作一下，看看代码英文的意思，再看看代码运行前后的对比，就会自己有自己对代码独特的见解。
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;
@@ -35,15 +40,15 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thunderhit.github.io/post/02-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%ad%97%e7%ac%a6%e4%b8%b2/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-字符串&lt;/a&gt;⭐⭐⭐&lt;/p&gt;
+&lt;a href=&#34;https://thunderhit.github.io/post/02-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%ad%97%e7%ac%a6%e4%b8%b2/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-字符串&lt;/a&gt;⭐⭐⭐⭐&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thunderhit.github.io/post/03-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%88%97%e8%a1%a8%e5%85%83%e7%bb%84%e9%9b%86%e5%90%88/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-列表元组集合&lt;/a&gt;⭐⭐⭐&lt;/p&gt;
+&lt;a href=&#34;https://thunderhit.github.io/post/03-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%88%97%e8%a1%a8%e5%85%83%e7%bb%84%e9%9b%86%e5%90%88/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-列表元组集合&lt;/a&gt;⭐⭐&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thunderhit.github.io/post/04-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%ad%97%e5%85%b8/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-字典&lt;/a&gt;⭐⭐&lt;/p&gt;
+&lt;a href=&#34;https://thunderhit.github.io/post/04-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%b9%8b%e5%ad%97%e5%85%b8/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据类型-字典&lt;/a&gt;⭐&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
@@ -51,7 +56,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thunderhit.github.io/post/06-%e9%80%bb%e8%be%91%e8%af%ad%e5%8f%a5iffortryexcept/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;逻辑语句&lt;/a&gt;⭐⭐⭐&lt;/p&gt;
+&lt;a href=&#34;https://thunderhit.github.io/post/06-%e9%80%bb%e8%be%91%e8%af%ad%e5%8f%a5iffortryexcept/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;逻辑语句&lt;/a&gt;⭐⭐⭐⭐&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
@@ -405,7 +410,12 @@ graph LR
       <link>https://thunderhit.github.io/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEmac/</link>
       <pubDate>Fri, 19 Jun 2020 16:41:32 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEmac/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    Anaconda和Python都是python。一定要记住二选其一，不要都安装，不然在学习python第三方包安装的时，你会遇到一些麻烦。如果之前没安装过两个软件，建议从头到尾按照我的视频进行电脑配置
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#mac环境配置&#34;&gt;Mac环境配置&lt;/a&gt;
@@ -540,10 +550,21 @@ graph LR
       <link>https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/09-%E5%B8%B8%E7%94%A8%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;有三大类内置函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数学相关函数&lt;/li&gt;
+&lt;li&gt;类型转化函数&lt;/li&gt;
+&lt;li&gt;功能函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    函数名加粗的是都是重点
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;a href=&#34;#heading&#34;&gt;&lt;/a&gt;
+    &lt;li&gt;
       &lt;ul&gt;
         &lt;li&gt;
           &lt;ul&gt;
@@ -576,14 +597,6 @@ graph LR
 &lt;/iframe&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
-&lt;p&gt;有三大类&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;数学相关函数&lt;/li&gt;
-&lt;li&gt;类型转化函数&lt;/li&gt;
-&lt;li&gt;功能函数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;br&gt;
 &lt;h3 id=&#34;数学相关&#34;&gt;数学相关&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1040,7 +1053,21 @@ f.close()
       <link>https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/13-%E5%88%9D%E5%AD%A6python%E5%B8%B8%E5%87%BA%E9%94%99%E8%AF%AF%E6%B1%87%E6%80%BB/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;学习编程就是在遇到错误、认识错误、解决错误的过程。遇到错误，大家要发挥主观能动性，用自己的英文阅读能力去先读一下英文报错提示，一般情况下错误提示会告诉你是什么类型的错误，错误出在哪一行。&lt;/p&gt;
+&lt;p&gt;再结合百度谷歌，80%以上的问题都能解决。现在我们了解一下常见的问题都有哪些，如何克服这些问题。&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=15&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;
@@ -1069,18 +1096,6 @@ f.close()
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=15&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
-&lt;br&gt;
 &lt;h3 id=&#34;1-忘记写冒号&#34;&gt;1. 忘记写冒号&lt;/h3&gt;
 &lt;p&gt;在 if、elif、else、for、while、def语句后面忘记添加 &lt;code&gt;:&lt;/code&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;age = 42
@@ -1638,7 +1653,7 @@ OSError: [Errno 22] Invalid argument: &#39;data\test.txt&#39;
           &lt;ul&gt;
             &lt;li&gt;&lt;a href=&#34;#输出数字a的绝对数&#34;&gt;输出数字a的绝对数&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href=&#34;#python与英语对比&#34;&gt;Python与英语对比&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href=&#34;#每天进步一点点&#34;&gt;每天进步一点点&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#每天积累一点点&#34;&gt;每天积累一点点&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href=&#34;#python是面向对象的编程语言&#34;&gt;Python是面向对象的编程语言&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href=&#34;#python中的数据类型&#34;&gt;Python中的数据类型&lt;/a&gt;&lt;/li&gt;
           &lt;/ul&gt;
@@ -1648,6 +1663,11 @@ OSError: [Errno 22] Invalid argument: &#39;data\test.txt&#39;
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Python中流行这样一句话“Life is short, so we learn Python! ”恭喜你选择Python这门性感的语言，你一定会在学习的过程中感叹“Python大法就是好”~
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;iframe
     src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=3&#34;
     scrolling=&#34;no&#34;
@@ -1661,6 +1681,11 @@ OSError: [Errno 22] Invalid argument: &#39;data\test.txt&#39;
 
 &lt;br&gt;
 &lt;h3 id=&#34;输出数字a的绝对数&#34;&gt;输出数字a的绝对数&lt;/h3&gt;
+&lt;p&gt;在学习代码之前，我给大家看一段话&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There is such a number a, if a is greater than or equal to 0, we will print a; if a is less than 0, we will print -a&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;相信大家一看就明白了这是求某数的绝对值方法的英文描述。下面我们用精炼的Python语言表示&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = -50
 
 if a &amp;gt;= 0:
@@ -1670,9 +1695,14 @@ else:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;50
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;There is such a number a, if a is greater than or equal to 0, we will print a; if a is less than 0, we will print -a&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Python号称是最说&lt;strong&gt;人话&lt;/strong&gt;的编程语言，&lt;strong&gt;人话&lt;/strong&gt;意思就是最接近人类自然语言的表达方式构建代码。
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;python与英语对比&#34;&gt;Python与英语对比&lt;/h3&gt;
+&lt;p&gt;从上面的例子中，我们已经知道了Python和英语一样都是一种语言，学习语言就需要学习基本的知识点，包括背单词和了解语法。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1695,7 +1725,8 @@ else:
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;br&gt;
-&lt;h3 id=&#34;每天进步一点点&#34;&gt;每天进步一点点&lt;/h3&gt;
+&lt;h3 id=&#34;每天积累一点点&#34;&gt;每天积累一点点&lt;/h3&gt;
+&lt;p&gt;本部分非必须，仅仅为了展示python也可以作图&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#mac
 #!pip3 install matplotlib
 
@@ -1735,6 +1766,11 @@ plt.title(&#39;Be better everyday!&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;python是面向对象的编程语言&#34;&gt;Python是面向对象的编程语言&lt;/h3&gt;
+&lt;p&gt;面向对象是最难理解的部分，这里大家只需要记住&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;类型和对象是紧密绑定的，说对象就是在说类型。&lt;/li&gt;
+&lt;li&gt;不同的类型有不同的功能，都是为了更高效的实现人类需求或者数据分析需求&lt;/li&gt;
+&lt;/ol&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1785,6 +1821,7 @@ plt.title(&#39;Be better everyday!&#39;)
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;python中的数据类型&#34;&gt;Python中的数据类型&lt;/h3&gt;
+&lt;p&gt;不同的数据类型适合处理不同的数据，有不同的应用场景。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1861,6 +1898,11 @@ plt.title(&#39;Be better everyday!&#39;)
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    Anaconda和Python都是python。一定要记住二选其一，不要都安装，不然在学习python第三方包安装的时，你会遇到一些麻烦。如果之前没安装过两个软件，建议从头到尾按照我的视频进行电脑配置
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;h1 id=&#34;win环境配置&#34;&gt;Win环境配置&lt;/h1&gt;
 &lt;h2 id=&#34;软件包下载&#34;&gt;软件包下载&lt;/h2&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
@@ -1962,7 +2004,20 @@ plt.title(&#39;Be better everyday!&#39;)
       <link>https://thunderhit.github.io/post/11-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8Bcsv%E6%96%87%E4%BB%B6%E5%BA%93/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/11-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8Bcsv%E6%96%87%E4%BB%B6%E5%BA%93/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;在编程中一般不适用excel，而是用一种很像excel的csv来存储数据。而且Excel软件可以打开csv的。&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=13&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;
@@ -1978,19 +2033,13 @@ plt.title(&#39;Be better everyday!&#39;)
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=13&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h3 id=&#34;csv存储数据代码步骤&#34;&gt;csv存储数据代码步骤&lt;/h3&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    代码看不懂没关系，能背过最好。背不过也没关系，能理解代码功能，而且亲自上手调试过，调试正常无误的代码可以加入你的代码笔记本中，然后以后需要的时候复制粘贴修改参数即可
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;ol&gt;
 &lt;li&gt;新建一个csv文件&lt;/li&gt;
 &lt;/ol&gt;
@@ -2083,7 +2132,20 @@ csvf.close()
       <link>https://thunderhit.github.io/post/10-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84pathlib%E5%BA%93/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/10-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84pathlib%E5%BA%93/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;路径是可以让程序知道待操作的文件在哪里，python中有os和pathlib两个内置的路径库，而pathlib是python中目前最好用的路径库。&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=12&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#绝对vs相对&#34;&gt;绝对vs相对&lt;/a&gt;&lt;/li&gt;
@@ -2106,23 +2168,17 @@ csvf.close()
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=12&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;绝对vs相对&#34;&gt;绝对vs相对&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;相对路径 &lt;code&gt;&#39;img&#39;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;绝对路径  &lt;code&gt;&#39;C:/Users/thunderhit/Desktop/Python数据分析入门/02-Python语法入门/img&#39;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    当移动文件夹位置或者将代码分享给朋友使用时，你的代码再次运行就会出错。为了避免这个问题，强烈建议用相对路径
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pathlib
 
 #当前代码所在的文件夹的相对路径
@@ -2140,6 +2196,11 @@ Path()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;pathlibpath属性方法&#34;&gt;pathlib.Path()属性方法&lt;/h1&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    下表加粗的都是常用的方法，其他了解即可
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2355,7 +2416,20 @@ path.mkdir(parents=True, exist_ok=True)
       <link>https://thunderhit.github.io/post/12.-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre%E5%BA%93/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/12.-%E5%86%85%E7%BD%AE%E5%BA%93%E4%B9%8B%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8Fre%E5%BA%93/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;正则表达式主要用于数据清洗，比如从脏乱差的文本中抽取出自己需要的信息。常见于爬虫和文本分析。&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=14&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;br&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;
@@ -2389,21 +2463,17 @@ path.mkdir(parents=True, exist_ok=True)
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=14&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;一正则表达式中的符号&#34;&gt;一、正则表达式中的符号&lt;/h2&gt;
 &lt;p&gt;按照符号的功能，我将其分为三类，一般情况下表达式都是由这三种符号组成的。&lt;/p&gt;
 &lt;h3 id=&#34;11-正则字符&#34;&gt;1.1 正则字符&lt;/h3&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    预警，听不懂不要绞尽脑汁，本节后面会柳暗花明的
+  &lt;/div&gt;
+&lt;/div&gt;
+%}}
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2467,6 +2537,12 @@ path.mkdir(parents=True, exist_ok=True)
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;12-限定字符&#34;&gt;1.2 限定字符&lt;/h3&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    提前预警，听不懂不要绞尽脑汁，本节后面会柳暗花明的
+  &lt;/div&gt;
+&lt;/div&gt;
+%}}
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2510,6 +2586,12 @@ path.mkdir(parents=True, exist_ok=True)
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;13-定位字符&#34;&gt;1.3 定位字符&lt;/h3&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    预警，听不懂不要绞尽脑汁，本节后面会柳暗花明的
+  &lt;/div&gt;
+&lt;/div&gt;
+%}}
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2543,6 +2625,12 @@ path.mkdir(parents=True, exist_ok=True)
 &lt;/table&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;二re库常用方法&#34;&gt;二、re库常用方法&lt;/h2&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    至暗时刻已过，光来了
+  &lt;/div&gt;
+&lt;/div&gt;
+%}}
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2561,6 +2649,12 @@ path.mkdir(parents=True, exist_ok=True)
 |&lt;code&gt;re.sub(pattern, repl, string)&lt;/code&gt;|使用repl替换string中的pattern|&lt;/p&gt;
 &lt;p&gt;&lt;br&gt; &lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;三只需要掌握&#34;&gt;三、只需要掌握&lt;/h2&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    万能的百度谷歌+你的尝试，比什么都强大
+  &lt;/div&gt;
+&lt;/div&gt;
+%}}
 &lt;ul&gt;
 &lt;li&gt;搜索引擎检索到自己需要的正则表达式&lt;/li&gt;
 &lt;li&gt;最简单最好用表达式&lt;code&gt;(.*?)&lt;/code&gt;&lt;/li&gt;
@@ -2588,6 +2682,11 @@ chinese_text
 &lt;/code&gt;&lt;/pre&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;32-最简单最好用表达式&#34;&gt;3.2 最简单最好用表达式(.*?)&lt;/h3&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    (.*?)特别好用，ta的暗号及使用口诀一定要背过
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;pattern设计步骤：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;正则符号&lt;/strong&gt;组成&lt;strong&gt;正则表达式&lt;/strong&gt;，用于&lt;strong&gt;匹配&lt;/strong&gt;需要的字符。&lt;/p&gt;
 &lt;ol&gt;
@@ -2765,7 +2864,19 @@ pattern = &#39;\d+&#39;
       <link>https://thunderhit.github.io/post/07-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/07-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;列表推导式唯一的用处就是增强代码的可阅读性，初次接触可能比较难理解，但是大家一定要理解，文本分析中经常会用到ta。&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=9&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;
@@ -2786,17 +2897,6 @@ pattern = &#39;\d+&#39;
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=9&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;问题1-用列表表示集合x&#34;&gt;问题1 用列表表示集合X&lt;/h2&gt;
 &lt;p&gt;$X= {x| x \in [1,2,3,4,5,6,7,8,9,10]}$&lt;/p&gt;
@@ -3009,7 +3109,23 @@ d.items()
       <link>https://thunderhit.github.io/post/03-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%88%97%E8%A1%A8%E5%85%83%E7%BB%84%E9%9B%86%E5%90%88/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/03-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%88%97%E8%A1%A8%E5%85%83%E7%BB%84%E9%9B%86%E5%90%88/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    当你不知道用什么数据类型的时候，一定要记住list，大多数的脏活累活ta都帮你搞定
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=5&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#列表list&#34;&gt;列表list&lt;/a&gt;
@@ -3033,21 +3149,10 @@ d.items()
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=5&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;列表list&#34;&gt;列表list&lt;/h1&gt;
 &lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
-&lt;p&gt;list是一种有序的集合,内部可以由任何数据类型的组成的&lt;/p&gt;
+&lt;p&gt;list是一种&lt;strong&gt;有序&lt;/strong&gt;的集合,内部可以由任何数据类型的组成的&lt;/p&gt;
 &lt;p&gt;现在有5位员工的汇总信息，&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -3097,6 +3202,7 @@ d.items()
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;现在我们需要用一种格式去组织5位员工的信息，以列表为例&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = [&#39;David&#39;, &#39;Mary&#39;, &#39;Henry&#39;, &#39;Swift&#39;, &#39;Lenard&#39;]
 
 ages = [25, 23, 23, 21, 26]
@@ -3122,6 +3228,11 @@ print(hobbies)
 [25, 23, 23, 21, 26]
 [[&#39;Basketball&#39;, &#39;Pingpang&#39;, &#39;Hiking&#39;], [&#39;Reading&#39;, &#39;Movies&#39;], [&#39;Diving&#39;, &#39;Hiking&#39;], [&#39;Football&#39;, &#39;Music&#39;], [&#39;Stay at Home&#39;]]
 &lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    组织数据的方式有很多种，list也可以用不同的方式去组织，大家可以自己想一想
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;拼接&#34;&gt;拼接&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a1 = [&#39;Michael&#39;, &#39;Bob&#39;]
@@ -3135,7 +3246,11 @@ print(a2 + a1)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;拆包&#34;&gt;拆包&lt;/h2&gt;
-&lt;p&gt;等号两边长度相同&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    等号两边长度相同
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name, age = [&#39;David&#39;, 25]
 print(name)
 print(age)
@@ -3381,7 +3496,23 @@ TypeError: &#39;set&#39; object is not subscriptable
       <link>https://thunderhit.github.io/post/04-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E5%85%B8/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/04-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E5%85%B8/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    最有层次感的数据类型，特别干净整洁。在写爬虫时，我们最希望遇到的数据类型就是ta
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=6&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#字典&#34;&gt;字典&lt;/a&gt;
@@ -3400,17 +3531,6 @@ TypeError: &#39;set&#39; object is not subscriptable
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=6&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;字典&#34;&gt;字典&lt;/h1&gt;
 &lt;p&gt;字典是有key，有value的 key-value-pair类型数据（键-值对）&lt;/p&gt;
@@ -3599,7 +3719,23 @@ KeyError: &#39;Will&#39;
       <link>https://thunderhit.github.io/post/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/02-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    文本分析实际上就是对字符串做的处理，一定要熟悉字符串哦
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=4&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#字符串string&#34;&gt;字符串string&lt;/a&gt;
@@ -3622,17 +3758,6 @@ KeyError: &#39;Will&#39;
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
-&lt;iframe
-    src=&#34;//player.bilibili.com/player.html?bvid=BV1eb411h7sP&amp;page=4&#34;
-    scrolling=&#34;no&#34;
-    height=&#34;768px&#34;
-    width=&#34;1024px&#34;
-    frameborder=&#34;no&#34;
-    framespacing=&#34;0&#34;
-    allowfullscreen=&#34;true&#34;
-&gt;
-&lt;/iframe&gt;
-
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;字符串string&#34;&gt;字符串string&lt;/h1&gt;
 &lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
@@ -3682,7 +3807,7 @@ print(&#39;efg&#39;)
 efg
 &lt;/code&gt;&lt;/pre&gt;
 &lt;br&gt;
-&lt;p&gt;注意**:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;这里所说的引号都是英文引号&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;&#39;&#39;&lt;/code&gt; 或 &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; 本身不是字符串的一部分，因此，字符串 &lt;code&gt;&#39;abc&#39;&lt;/code&gt; 只有a，b，c这3个字符。&lt;/li&gt;
@@ -3717,6 +3842,7 @@ print(b+a)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;切片&#34;&gt;切片&lt;/h2&gt;
+&lt;p&gt;切片就像切糕，把自己想要的那块切下来&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B4%A2%E5%BC%95.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name = &#39;My Name is Mike&#39;
 &lt;/code&gt;&lt;/pre&gt;
@@ -3793,6 +3919,11 @@ print(b+a)
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h1 id=&#34;字符串常用方法&#34;&gt;字符串常用方法&lt;/h1&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    再次强调，数据类(型)与猪牛羊不同的动物类型一样，都有满足人类需要的特殊本领(方法)。方法可以理解为数据类(型)一种特殊的本性、属性、特性
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -3995,6 +4126,11 @@ print(a)
 &lt;/ul&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;布尔运算&#34;&gt;布尔运算&lt;/h2&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    中学数学课里的且或非
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -4051,6 +4187,11 @@ print(x)
 &lt;br&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;比较运算&#34;&gt;比较运算&lt;/h2&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    注意=和&lt;code&gt;==&lt;/code&gt;的区别，=用来把某个值传给某个变量(赋值操作)，&lt;code&gt;==&lt;/code&gt;用来判断两个值(变量)是否相等(判断操作)
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -4148,6 +4289,7 @@ print(a==b)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;成员运算符in&#34;&gt;成员运算符in&lt;/h2&gt;
+&lt;p&gt;用来判断某个值是否在集合中（这个集合可以使列表、元组、字符串等)&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -4227,7 +4369,10 @@ y
       <link>https://thunderhit.github.io/post/08-%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0/</link>
       <pubDate>Fri, 19 Jun 2020 16:39:11 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/08-%E7%90%86%E8%A7%A3%E5%87%BD%E6%95%B0/</guid>
-      <description>&lt;h2&gt;目录&lt;/h2&gt;
+      <description>&lt;p&gt;流水线每个环节都有质量要求，只有符合质量规范，才能流通到下一个环节。这样环环相扣，设计好后经过试运营就可以投产了。Python编程也一样，编程序其实也是设计流水线，而函数就是流水线上的一个个的环节。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2&gt;目录&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
   &lt;ul&gt;
     &lt;li&gt;&lt;a href=&#34;#函数&#34;&gt;函数&lt;/a&gt;
@@ -4251,9 +4396,6 @@ y
 &gt;
 &lt;/iframe&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;流水线每个环节都有质量要求，只有符合质量规范，才能流通到下一个环节。这样环环相扣，设计好后经过试运营就可以投产了。Python编程也一样，编程序其实也是设计流水线，而函数就是流水线上的一个个的环节。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;featured.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;函数&#34;&gt;函数&lt;/h1&gt;
 &lt;p&gt;可重复使用的代码块&lt;/p&gt;
@@ -4454,6 +4596,7 @@ print(result)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;迭代出数据中的内容&#34;&gt;迭代出数据中的内容&lt;/h2&gt;
+&lt;p&gt;从某种“集合”（这个“集合”可以使list、set、tuple等），只要“集合”内部有多个成员就可以使用for循环迭代出内部的成员&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = [&#39;David&#39;, &#39;Henry&#39;, &#39;Mary&#39;]
 
 for name in names:
@@ -4501,6 +4644,11 @@ Henry
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;try-except&#34;&gt;try-except&lt;/h1&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    遇到无关紧要的bug，不会停下来，让程序有一定的容错能力
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for x in [1,2,0,2,1]:
     print(10/x)
 &lt;/code&gt;&lt;/pre&gt;
