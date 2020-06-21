@@ -4640,5 +4640,59 @@ print(...)
 </description>
     </item>
     
+    <item>
+      <title>Python语法快速入门视频课</title>
+      <link>https://thunderhit.github.io/courses/python%E8%AF%AD%E6%B3%95%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://thunderhit.github.io/courses/python%E8%AF%AD%E6%B3%95%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
+      <description>&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;课程代码关注【公众号：大邓和他的Python】，回复关键词【python入门】
+
+&amp;lt;br&amp;gt;
+
+视频观看时间加起来不超过3.5小时
+
+&amp;lt;div class=&amp;quot;alert alert-note&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;div&gt;
+    如果有遇到看不懂的地方，大家不需要纠结，很多时候自己照着代码操作一下，看看代码英文的意思，再看看代码运行前后的对比，就会自己有自己对代码独特的见解。
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;1. [Win环境配置](https://thunderhit.github.io/post/python环境配置win/)⭐
+
+2. [Mac环境配置](https://thunderhit.github.io/post/python环境配置mac/)⭐
+
+3. [python跟英语一样是一门语言](https://thunderhit.github.io/post/01-python跟英语一样是一门语言/)⭐
+
+4. [数据类型-字符串](https://thunderhit.github.io/post/02-数据类型之字符串/)⭐⭐⭐⭐
+
+5. [数据类型-列表元组集合](https://thunderhit.github.io/post/03-数据类型之列表元组集合/)⭐⭐
+
+6. [数据类型-字典](https://thunderhit.github.io/post/04-数据类型之字典/)⭐
+
+7. [数据类型-布尔值&amp;amp;None](https://thunderhit.github.io/post/05-数据类型之布尔值none/)⭐
+
+8. [逻辑语句](https://thunderhit.github.io/post/06-逻辑语句iffortryexcept/)⭐⭐⭐⭐
+
+9. [列表推导式](https://thunderhit.github.io/post/07-列表推导式/)⭐⭐⭐
+
+10. [理解函数](https://thunderhit.github.io/post/08-理解函数/)⭐
+
+11. [常用内置函数](https://thunderhit.github.io/post/09-常用内置函数/)⭐⭐⭐
+
+12. [内置库之文件路径pathlib库](https://thunderhit.github.io/post/10-内置库之文件路径pathlib库/)⭐⭐⭐ 
+
+13. [内置库之csv文件库](https://thunderhit.github.io/post/11-内置库之csv文件库/)⭐⭐
+
+14. [内置库之正则表达式re库](https://thunderhit.github.io/post/12.-内置库之正则表达式re库/)⭐⭐⭐⭐⭐
+
+15. [初学python常出错误汇总](https://thunderhit.github.io/post/13-初学python常出错误汇总/)⭐⭐⭐
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
