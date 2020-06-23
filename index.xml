@@ -27,6 +27,265 @@
     </item>
     
     <item>
+      <title>小案例: Pandas的apply方法</title>
+      <link>https://thunderhit.github.io/post/pandas%E7%9A%84apply%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Tue, 23 Jun 2020 11:24:26 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/pandas%E7%9A%84apply%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;p&gt;pandas中有一个特别好用的apply方法，包括&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;列内计算，只对某列进行某种计算&lt;/li&gt;
+&lt;li&gt;列间计算，对多个列之间进行复杂的计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面我们看实验数据&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import numpy as np
+
+matrix = [
+    [&#39;张三&#39;, &#39;1995-12-31&#39;, &#39;山东&#39;, &#39;本科&#39;],
+    [&#39;李四&#39;, &#39;1993-05-29&#39;, &#39;河北&#39;, &#39;大专&#39;],
+    [&#39;王五&#39;, &#39;1995-03-14&#39;, &#39;山西&#39;, &#39;硕士&#39;],
+    [&#39;赵六&#39;, &#39;1992-07-08&#39;, &#39;内蒙古&#39;, &#39;本科&#39;],
+]
+
+df = pd.DataFrame(matrix, columns=[&#39;Name&#39;, &#39;Birthday&#39;, &#39;From&#39;, &#39;Edu&#39;])
+df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Birthday&lt;/th&gt;
+      &lt;th&gt;From&lt;/th&gt;
+      &lt;th&gt;Edu&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;张三&lt;/td&gt;
+      &lt;td&gt;1995-12-31&lt;/td&gt;
+      &lt;td&gt;山东&lt;/td&gt;
+      &lt;td&gt;本科&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;李四&lt;/td&gt;
+      &lt;td&gt;1993-05-29&lt;/td&gt;
+      &lt;td&gt;河北&lt;/td&gt;
+      &lt;td&gt;大专&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;王五&lt;/td&gt;
+      &lt;td&gt;1995-03-14&lt;/td&gt;
+      &lt;td&gt;山西&lt;/td&gt;
+      &lt;td&gt;硕士&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;赵六&lt;/td&gt;
+      &lt;td&gt;1992-07-08&lt;/td&gt;
+      &lt;td&gt;内蒙古&lt;/td&gt;
+      &lt;td&gt;本科&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;dfapplyfunc或seriesapplyfunc&#34;&gt;df.apply(func)或series.apply(func)&lt;/h1&gt;
+&lt;p&gt;axis控制操作方向&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0 表示列方向&lt;/li&gt;
+&lt;li&gt;1 表示行方向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;列内计算&#34;&gt;列内计算&lt;/h3&gt;
+&lt;p&gt;一般列内计算，实际上主要是对series做的操作，比如选中dataframe某列。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;df[&#39;colname&#39;].apply(func)&lt;/code&gt; 默认只对&lt;strong&gt;列方向&lt;/strong&gt;对colname列做func操作，例如计算每个员工的出生年份、年龄。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def year(birthday):
+    #截取birthday字符串的年份
+    return int(birthday[:4])
+
+
+#对birthday列使用year函数操作
+df[&#39;Year&#39;] = df[&#39;Birthday&#39;].apply(year)
+
+#年龄
+df[&#39;Age&#39;] = 2020-df[&#39;Year&#39;]
+
+df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Birthday&lt;/th&gt;
+      &lt;th&gt;From&lt;/th&gt;
+      &lt;th&gt;Edu&lt;/th&gt;
+      &lt;th&gt;Year&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;张三&lt;/td&gt;
+      &lt;td&gt;1995-12-31&lt;/td&gt;
+      &lt;td&gt;山东&lt;/td&gt;
+      &lt;td&gt;本科&lt;/td&gt;
+      &lt;td&gt;1995&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;李四&lt;/td&gt;
+      &lt;td&gt;1993-05-29&lt;/td&gt;
+      &lt;td&gt;河北&lt;/td&gt;
+      &lt;td&gt;大专&lt;/td&gt;
+      &lt;td&gt;1993&lt;/td&gt;
+      &lt;td&gt;27&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;王五&lt;/td&gt;
+      &lt;td&gt;1995-03-14&lt;/td&gt;
+      &lt;td&gt;山西&lt;/td&gt;
+      &lt;td&gt;硕士&lt;/td&gt;
+      &lt;td&gt;1995&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;赵六&lt;/td&gt;
+      &lt;td&gt;1992-07-08&lt;/td&gt;
+      &lt;td&gt;内蒙古&lt;/td&gt;
+      &lt;td&gt;本科&lt;/td&gt;
+      &lt;td&gt;1992&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;列间计算&#34;&gt;列间计算&lt;/h3&gt;
+&lt;p&gt;df.apply(func, axis=1)不同列之间可以有复杂的计算，比如想计算 设计自我介绍模板&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def intro(r):
+    #r代指dataframe中的任意行，是series类型数据，拥有类似字典的使用方法。
+    return &#39;大家好，我是{name},\
+            来自{province}省，\
+            今年{age}岁了！&#39;.format(name=r[&#39;Name&#39;], 
+                                 province=r[&#39;From&#39;],
+                                 age=r[&#39;Age&#39;])
+
+df[&#39;Intro&#39;] = df.apply(intro, axis=1)
+df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Birthday&lt;/th&gt;
+      &lt;th&gt;From&lt;/th&gt;
+      &lt;th&gt;Edu&lt;/th&gt;
+      &lt;th&gt;Year&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+      &lt;th&gt;Intro&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;张三&lt;/td&gt;
+      &lt;td&gt;1995-12-31&lt;/td&gt;
+      &lt;td&gt;山东&lt;/td&gt;
+      &lt;td&gt;本科&lt;/td&gt;
+      &lt;td&gt;1995&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;大家好，我是张三,            来自山东省，            今年25岁了！&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;李四&lt;/td&gt;
+      &lt;td&gt;1993-05-29&lt;/td&gt;
+      &lt;td&gt;河北&lt;/td&gt;
+      &lt;td&gt;大专&lt;/td&gt;
+      &lt;td&gt;1993&lt;/td&gt;
+      &lt;td&gt;27&lt;/td&gt;
+      &lt;td&gt;大家好，我是李四,            来自河北省，            今年27岁了！&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;王五&lt;/td&gt;
+      &lt;td&gt;1995-03-14&lt;/td&gt;
+      &lt;td&gt;山西&lt;/td&gt;
+      &lt;td&gt;硕士&lt;/td&gt;
+      &lt;td&gt;1995&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;大家好，我是王五,            来自山西省，            今年25岁了！&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;赵六&lt;/td&gt;
+      &lt;td&gt;1992-07-08&lt;/td&gt;
+      &lt;td&gt;内蒙古&lt;/td&gt;
+      &lt;td&gt;本科&lt;/td&gt;
+      &lt;td&gt;1992&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;大家好，我是赵六,            来自内蒙古省，            今年28岁了！&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Python语法快速入门</title>
       <link>https://thunderhit.github.io/post/python%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</link>
       <pubDate>Sun, 21 Jun 2020 16:14:32 +0800</pubDate>
