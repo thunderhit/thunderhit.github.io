@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R语言 | Thunderhit</title>
+    <link>https://thunderhit.github.io/tag/r%E8%AF%AD%E8%A8%80/</link>
+      <atom:link href="https://thunderhit.github.io/tag/r%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    <description>R语言</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Wed, 24 Jun 2020 10:10:32 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>R语言</title>
+      <link>https://thunderhit.github.io/tag/r%E8%AF%AD%E8%A8%80/</link>
+    </image>
+    
+    <item>
+      <title>R语言dply包实操</title>
+      <link>https://thunderhit.github.io/post/%E5%AE%9E%E6%88%98dplyr%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Wed, 24 Jun 2020 10:10:32 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/%E5%AE%9E%E6%88%98dplyr%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#1-dplyr简介&#34;&gt;1. dplyr简介&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#2-安装并导入dplyr库&#34;&gt;2. 安装并导入dplyr库&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#3-读取数据&#34;&gt;3. 读取数据&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#4-dplyr常用函数&#34;&gt;4. dplyr常用函数&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#41-arrange&#34;&gt;4.1 Arrange&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#42-select&#34;&gt;4.2 Select&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#43-filter&#34;&gt;4.3 Filter&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#44-mutate&#34;&gt;4.4 Mutate&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#45-group_by&#34;&gt;4.5 Group_By&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    实验数据及代码下载链接:https://pan.baidu.com/s/1Tg2D7ZEgJGOuaGAlMcHO2Q  密码:mag6
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    课程代码关注【公众号：大邓和他的Python】，回复关键词【python入门】
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;1-dplyr简介&#34;&gt;1. dplyr简介&lt;/h1&gt;
+&lt;p&gt;dplyr是R语言的数据分析包，类似于python中的pandas，能对dataframe类型的数据做很方便的数据处理和分析操作。最初我也很奇怪dplyr这个奇怪的名字，我查到其中一种解释 - d代表dataframe - plyr是英文钳子plier的谐音&lt;/p&gt;
+&lt;p&gt;dplyr如同R的大多数包，都是函数式编程，这点跟Python面向对象编程区别很大。优点是初学者比较容易接受这种函数式思维，有点类似于流水线，每个函数就是一个车间，多个车间共同完成一个生产（数据分析）任务。&lt;/p&gt;
+&lt;p&gt;而在dplyr中，就有一个管道符 %&amp;gt;% ，符号左侧表示数据的输入，右侧表示下游数据处理环节。&lt;/p&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;2-安装并导入dplyr库&#34;&gt;2. 安装并导入dplyr库&lt;/h1&gt;
+&lt;p&gt;pacman库的p_load函数功能包含了&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;install.packages(“dplyr”)&lt;/li&gt;
+&lt;li&gt;library(dplyr)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;该写法更简单易用&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;pacman::p_load(&amp;quot;dplyr&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;3-读取数据&#34;&gt;3. 读取数据&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;#设置工作目录
+setwd(&amp;quot;/Users/thunderhit/Desktop/dplyr_learn&amp;quot;)
+
+#导入csv数据
+aapl &amp;lt;- read.csv(&#39;aapl.csv&#39;, 
+                 header=TRUE,
+                 sep=&#39;,&#39;,
+                 stringsAsFactors = FALSE) %&amp;gt;% as_tibble()
+head(aapl)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 6 × 6&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;Date&lt;/th&gt;&lt;th scope=col&gt;Open&lt;/th&gt;&lt;th scope=col&gt;High&lt;/th&gt;&lt;th scope=col&gt;Low&lt;/th&gt;&lt;th scope=col&gt;Close&lt;/th&gt;&lt;th scope=col&gt;Volume&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;7-Jul-17 &lt;/td&gt;&lt;td&gt;142.90&lt;/td&gt;&lt;td&gt;144.75&lt;/td&gt;&lt;td&gt;142.90&lt;/td&gt;&lt;td&gt;144.18&lt;/td&gt;&lt;td&gt;19201712&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;6-Jul-17 &lt;/td&gt;&lt;td&gt;143.02&lt;/td&gt;&lt;td&gt;143.50&lt;/td&gt;&lt;td&gt;142.41&lt;/td&gt;&lt;td&gt;142.73&lt;/td&gt;&lt;td&gt;24128782&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;5-Jul-17 &lt;/td&gt;&lt;td&gt;143.69&lt;/td&gt;&lt;td&gt;144.79&lt;/td&gt;&lt;td&gt;142.72&lt;/td&gt;&lt;td&gt;144.09&lt;/td&gt;&lt;td&gt;21569557&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;3-Jul-17 &lt;/td&gt;&lt;td&gt;144.88&lt;/td&gt;&lt;td&gt;145.30&lt;/td&gt;&lt;td&gt;143.10&lt;/td&gt;&lt;td&gt;143.50&lt;/td&gt;&lt;td&gt;14277848&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;30-Jun-17&lt;/td&gt;&lt;td&gt;144.45&lt;/td&gt;&lt;td&gt;144.96&lt;/td&gt;&lt;td&gt;143.78&lt;/td&gt;&lt;td&gt;144.02&lt;/td&gt;&lt;td&gt;23024107&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;29-Jun-17&lt;/td&gt;&lt;td&gt;144.71&lt;/td&gt;&lt;td&gt;145.13&lt;/td&gt;&lt;td&gt;142.28&lt;/td&gt;&lt;td&gt;143.68&lt;/td&gt;&lt;td&gt;31499368&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;查看数据类型&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;class(aapl)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;style&gt;
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline&gt;li {display: inline-block}
+.list-inline&gt;li:not(:last-child)::after {content: &#34;\00b7&#34;; padding: 0 .5ex}
+&lt;/style&gt;
+&lt;ol class=list-inline&gt;&lt;li&gt;&#39;tbl_df&#39;&lt;/li&gt;&lt;li&gt;&#39;tbl&#39;&lt;/li&gt;&lt;li&gt;&#39;data.frame&#39;&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;查看数据的字段&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;colnames(aapl)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;style&gt;
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline&gt;li {display: inline-block}
+.list-inline&gt;li:not(:last-child)::after {content: &#34;\00b7&#34;; padding: 0 .5ex}
+&lt;/style&gt;
+&lt;ol class=list-inline&gt;&lt;li&gt;&#39;Date&#39;&lt;/li&gt;&lt;li&gt;&#39;Open&#39;&lt;/li&gt;&lt;li&gt;&#39;High&#39;&lt;/li&gt;&lt;li&gt;&#39;Low&#39;&lt;/li&gt;&lt;li&gt;&#39;Close&#39;&lt;/li&gt;&lt;li&gt;&#39;Volume&#39;&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;查看记录数、字段数&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;dim(aapl)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;style&gt;
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline&gt;li {display: inline-block}
+.list-inline&gt;li:not(:last-child)::after {content: &#34;\00b7&#34;; padding: 0 .5ex}
+&lt;/style&gt;
+&lt;ol class=list-inline&gt;&lt;li&gt;251&lt;/li&gt;&lt;li&gt;6&lt;/li&gt;&lt;/ol&gt;
+&lt;br&gt;
+&lt;h1 id=&#34;4-dplyr常用函数&#34;&gt;4. dplyr常用函数&lt;/h1&gt;
+&lt;h2 id=&#34;41-arrange&#34;&gt;4.1 Arrange&lt;/h2&gt;
+&lt;p&gt;对appl数据按照字段Volume进行降序排序&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;arrange(aapl, -Volume)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 6 × 6&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;Date&lt;/th&gt;&lt;th scope=col&gt;Open&lt;/th&gt;&lt;th scope=col&gt;High&lt;/th&gt;&lt;th scope=col&gt;Low&lt;/th&gt;&lt;th scope=col&gt;Close&lt;/th&gt;&lt;th scope=col&gt;Volume&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;14-Sep-16&lt;/td&gt;&lt;td&gt;108.73&lt;/td&gt;&lt;td&gt;113.03&lt;/td&gt;&lt;td&gt;108.60&lt;/td&gt;&lt;td&gt;111.77&lt;/td&gt;&lt;td&gt;112340318&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1-Feb-17 &lt;/td&gt;&lt;td&gt;127.03&lt;/td&gt;&lt;td&gt;130.49&lt;/td&gt;&lt;td&gt;127.01&lt;/td&gt;&lt;td&gt;128.75&lt;/td&gt;&lt;td&gt;111985040&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;27-Jul-16&lt;/td&gt;&lt;td&gt;104.26&lt;/td&gt;&lt;td&gt;104.35&lt;/td&gt;&lt;td&gt;102.75&lt;/td&gt;&lt;td&gt;102.95&lt;/td&gt;&lt;td&gt; 92344820&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;15-Sep-16&lt;/td&gt;&lt;td&gt;113.86&lt;/td&gt;&lt;td&gt;115.73&lt;/td&gt;&lt;td&gt;113.49&lt;/td&gt;&lt;td&gt;115.57&lt;/td&gt;&lt;td&gt; 90613177&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;16-Sep-16&lt;/td&gt;&lt;td&gt;115.12&lt;/td&gt;&lt;td&gt;116.13&lt;/td&gt;&lt;td&gt;114.04&lt;/td&gt;&lt;td&gt;114.92&lt;/td&gt;&lt;td&gt; 79886911&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;12-Jun-17&lt;/td&gt;&lt;td&gt;145.74&lt;/td&gt;&lt;td&gt;146.09&lt;/td&gt;&lt;td&gt;142.51&lt;/td&gt;&lt;td&gt;145.42&lt;/td&gt;&lt;td&gt; 72307330&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;我们也可以用管道符 %&amp;gt;% ，两种写法得到的运行结果是一致的，可能用久了会觉得管道符 %&amp;gt;% 可读性更强，后面我们都会用 %&amp;gt;% 来写代码。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;aapl %&amp;gt;% arrange(-Volume)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 6 × 6&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;Date&lt;/th&gt;&lt;th scope=col&gt;Open&lt;/th&gt;&lt;th scope=col&gt;High&lt;/th&gt;&lt;th scope=col&gt;Low&lt;/th&gt;&lt;th scope=col&gt;Close&lt;/th&gt;&lt;th scope=col&gt;Volume&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;14-Sep-16&lt;/td&gt;&lt;td&gt;108.73&lt;/td&gt;&lt;td&gt;113.03&lt;/td&gt;&lt;td&gt;108.60&lt;/td&gt;&lt;td&gt;111.77&lt;/td&gt;&lt;td&gt;112340318&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1-Feb-17 &lt;/td&gt;&lt;td&gt;127.03&lt;/td&gt;&lt;td&gt;130.49&lt;/td&gt;&lt;td&gt;127.01&lt;/td&gt;&lt;td&gt;128.75&lt;/td&gt;&lt;td&gt;111985040&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;27-Jul-16&lt;/td&gt;&lt;td&gt;104.26&lt;/td&gt;&lt;td&gt;104.35&lt;/td&gt;&lt;td&gt;102.75&lt;/td&gt;&lt;td&gt;102.95&lt;/td&gt;&lt;td&gt; 92344820&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;15-Sep-16&lt;/td&gt;&lt;td&gt;113.86&lt;/td&gt;&lt;td&gt;115.73&lt;/td&gt;&lt;td&gt;113.49&lt;/td&gt;&lt;td&gt;115.57&lt;/td&gt;&lt;td&gt; 90613177&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;16-Sep-16&lt;/td&gt;&lt;td&gt;115.12&lt;/td&gt;&lt;td&gt;116.13&lt;/td&gt;&lt;td&gt;114.04&lt;/td&gt;&lt;td&gt;114.92&lt;/td&gt;&lt;td&gt; 79886911&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;12-Jun-17&lt;/td&gt;&lt;td&gt;145.74&lt;/td&gt;&lt;td&gt;146.09&lt;/td&gt;&lt;td&gt;142.51&lt;/td&gt;&lt;td&gt;145.42&lt;/td&gt;&lt;td&gt; 72307330&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;42-select&#34;&gt;4.2 Select&lt;/h2&gt;
+&lt;p&gt;选取 Date、Close和Volume三列&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;aapl %&amp;gt;% select(Date, Close, Volume)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 6 × 3&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;Date&lt;/th&gt;&lt;th scope=col&gt;Close&lt;/th&gt;&lt;th scope=col&gt;Volume&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;7-Jul-17 &lt;/td&gt;&lt;td&gt;144.18&lt;/td&gt;&lt;td&gt;19201712&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;6-Jul-17 &lt;/td&gt;&lt;td&gt;142.73&lt;/td&gt;&lt;td&gt;24128782&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;5-Jul-17 &lt;/td&gt;&lt;td&gt;144.09&lt;/td&gt;&lt;td&gt;21569557&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;3-Jul-17 &lt;/td&gt;&lt;td&gt;143.50&lt;/td&gt;&lt;td&gt;14277848&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;30-Jun-17&lt;/td&gt;&lt;td&gt;144.02&lt;/td&gt;&lt;td&gt;23024107&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;29-Jun-17&lt;/td&gt;&lt;td&gt;143.68&lt;/td&gt;&lt;td&gt;31499368&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;只选取Date、Close和Volume三列，其实另外一种表达方式是“排除Open、High、Low，选择剩下的字段的数据”。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;aapl %&amp;gt;% select(-c(&amp;quot;Open&amp;quot;, &amp;quot;High&amp;quot;, &amp;quot;Low&amp;quot;)) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 6 × 3&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;Date&lt;/th&gt;&lt;th scope=col&gt;Close&lt;/th&gt;&lt;th scope=col&gt;Volume&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;7-Jul-17 &lt;/td&gt;&lt;td&gt;144.18&lt;/td&gt;&lt;td&gt;19201712&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;6-Jul-17 &lt;/td&gt;&lt;td&gt;142.73&lt;/td&gt;&lt;td&gt;24128782&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;5-Jul-17 &lt;/td&gt;&lt;td&gt;144.09&lt;/td&gt;&lt;td&gt;21569557&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;3-Jul-17 &lt;/td&gt;&lt;td&gt;143.50&lt;/td&gt;&lt;td&gt;14277848&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;30-Jun-17&lt;/td&gt;&lt;td&gt;144.02&lt;/td&gt;&lt;td&gt;23024107&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;29-Jun-17&lt;/td&gt;&lt;td&gt;143.68&lt;/td&gt;&lt;td&gt;31499368&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;43-filter&#34;&gt;4.3 Filter&lt;/h2&gt;
+&lt;p&gt;按照筛选条件选择数据&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;#从数据中选择appl股价大于150美元的交易数据
+aapl %&amp;gt;% filter(Close&amp;gt;=150) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 6 × 6&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;Date&lt;/th&gt;&lt;th scope=col&gt;Open&lt;/th&gt;&lt;th scope=col&gt;High&lt;/th&gt;&lt;th scope=col&gt;Low&lt;/th&gt;&lt;th scope=col&gt;Close&lt;/th&gt;&lt;th scope=col&gt;Volume&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;8-Jun-17&lt;/td&gt;&lt;td&gt;155.25&lt;/td&gt;&lt;td&gt;155.54&lt;/td&gt;&lt;td&gt;154.40&lt;/td&gt;&lt;td&gt;154.99&lt;/td&gt;&lt;td&gt;21250798&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;7-Jun-17&lt;/td&gt;&lt;td&gt;155.02&lt;/td&gt;&lt;td&gt;155.98&lt;/td&gt;&lt;td&gt;154.48&lt;/td&gt;&lt;td&gt;155.37&lt;/td&gt;&lt;td&gt;21069647&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;6-Jun-17&lt;/td&gt;&lt;td&gt;153.90&lt;/td&gt;&lt;td&gt;155.81&lt;/td&gt;&lt;td&gt;153.78&lt;/td&gt;&lt;td&gt;154.45&lt;/td&gt;&lt;td&gt;26624926&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;5-Jun-17&lt;/td&gt;&lt;td&gt;154.34&lt;/td&gt;&lt;td&gt;154.45&lt;/td&gt;&lt;td&gt;153.46&lt;/td&gt;&lt;td&gt;153.93&lt;/td&gt;&lt;td&gt;25331662&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;2-Jun-17&lt;/td&gt;&lt;td&gt;153.58&lt;/td&gt;&lt;td&gt;155.45&lt;/td&gt;&lt;td&gt;152.89&lt;/td&gt;&lt;td&gt;155.45&lt;/td&gt;&lt;td&gt;27770715&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1-Jun-17&lt;/td&gt;&lt;td&gt;153.17&lt;/td&gt;&lt;td&gt;153.33&lt;/td&gt;&lt;td&gt;152.22&lt;/td&gt;&lt;td&gt;153.18&lt;/td&gt;&lt;td&gt;16404088&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;从数据中选择appl - 股价大于150美元 且 收盘价大于开盘价
+的交易数据&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;aapl %&amp;gt;% filter((Close&amp;gt;=150) &amp;amp; (Close&amp;gt;Open))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 11 × 6&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;Date&lt;/th&gt;&lt;th scope=col&gt;Open&lt;/th&gt;&lt;th scope=col&gt;High&lt;/th&gt;&lt;th scope=col&gt;Low&lt;/th&gt;&lt;th scope=col&gt;Close&lt;/th&gt;&lt;th scope=col&gt;Volume&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;7-Jun-17 &lt;/td&gt;&lt;td&gt;155.02&lt;/td&gt;&lt;td&gt;155.98&lt;/td&gt;&lt;td&gt;154.48&lt;/td&gt;&lt;td&gt;155.37&lt;/td&gt;&lt;td&gt;21069647&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;6-Jun-17 &lt;/td&gt;&lt;td&gt;153.90&lt;/td&gt;&lt;td&gt;155.81&lt;/td&gt;&lt;td&gt;153.78&lt;/td&gt;&lt;td&gt;154.45&lt;/td&gt;&lt;td&gt;26624926&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;2-Jun-17 &lt;/td&gt;&lt;td&gt;153.58&lt;/td&gt;&lt;td&gt;155.45&lt;/td&gt;&lt;td&gt;152.89&lt;/td&gt;&lt;td&gt;155.45&lt;/td&gt;&lt;td&gt;27770715&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1-Jun-17 &lt;/td&gt;&lt;td&gt;153.17&lt;/td&gt;&lt;td&gt;153.33&lt;/td&gt;&lt;td&gt;152.22&lt;/td&gt;&lt;td&gt;153.18&lt;/td&gt;&lt;td&gt;16404088&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;30-May-17&lt;/td&gt;&lt;td&gt;153.42&lt;/td&gt;&lt;td&gt;154.43&lt;/td&gt;&lt;td&gt;153.33&lt;/td&gt;&lt;td&gt;153.67&lt;/td&gt;&lt;td&gt;20126851&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;25-May-17&lt;/td&gt;&lt;td&gt;153.73&lt;/td&gt;&lt;td&gt;154.35&lt;/td&gt;&lt;td&gt;153.03&lt;/td&gt;&lt;td&gt;153.87&lt;/td&gt;&lt;td&gt;19235598&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;18-May-17&lt;/td&gt;&lt;td&gt;151.27&lt;/td&gt;&lt;td&gt;153.34&lt;/td&gt;&lt;td&gt;151.13&lt;/td&gt;&lt;td&gt;152.54&lt;/td&gt;&lt;td&gt;33568215&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;12-May-17&lt;/td&gt;&lt;td&gt;154.70&lt;/td&gt;&lt;td&gt;156.42&lt;/td&gt;&lt;td&gt;154.67&lt;/td&gt;&lt;td&gt;156.10&lt;/td&gt;&lt;td&gt;32527017&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;11-May-17&lt;/td&gt;&lt;td&gt;152.45&lt;/td&gt;&lt;td&gt;154.07&lt;/td&gt;&lt;td&gt;152.31&lt;/td&gt;&lt;td&gt;153.95&lt;/td&gt;&lt;td&gt;27255058&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;9-May-17 &lt;/td&gt;&lt;td&gt;153.87&lt;/td&gt;&lt;td&gt;154.88&lt;/td&gt;&lt;td&gt;153.45&lt;/td&gt;&lt;td&gt;153.99&lt;/td&gt;&lt;td&gt;39130363&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;8-May-17 &lt;/td&gt;&lt;td&gt;149.03&lt;/td&gt;&lt;td&gt;153.70&lt;/td&gt;&lt;td&gt;149.03&lt;/td&gt;&lt;td&gt;153.01&lt;/td&gt;&lt;td&gt;48752413&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;44-mutate&#34;&gt;4.4 Mutate&lt;/h2&gt;
+&lt;p&gt;将现有的字段经过计算后生成新字段。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;#将最好价High减去最低价Low的结果定义为maxDif，并取log
+aapl %&amp;gt;% mutate(maxDif = High-Low,
+                log_maxDif=log(maxDif)) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 6 × 8&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;Date&lt;/th&gt;&lt;th scope=col&gt;Open&lt;/th&gt;&lt;th scope=col&gt;High&lt;/th&gt;&lt;th scope=col&gt;Low&lt;/th&gt;&lt;th scope=col&gt;Close&lt;/th&gt;&lt;th scope=col&gt;Volume&lt;/th&gt;&lt;th scope=col&gt;maxDif&lt;/th&gt;&lt;th scope=col&gt;log_maxDif&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;7-Jul-17 &lt;/td&gt;&lt;td&gt;142.90&lt;/td&gt;&lt;td&gt;144.75&lt;/td&gt;&lt;td&gt;142.90&lt;/td&gt;&lt;td&gt;144.18&lt;/td&gt;&lt;td&gt;19201712&lt;/td&gt;&lt;td&gt;1.85&lt;/td&gt;&lt;td&gt;0.6151856&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;6-Jul-17 &lt;/td&gt;&lt;td&gt;143.02&lt;/td&gt;&lt;td&gt;143.50&lt;/td&gt;&lt;td&gt;142.41&lt;/td&gt;&lt;td&gt;142.73&lt;/td&gt;&lt;td&gt;24128782&lt;/td&gt;&lt;td&gt;1.09&lt;/td&gt;&lt;td&gt;0.0861777&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;5-Jul-17 &lt;/td&gt;&lt;td&gt;143.69&lt;/td&gt;&lt;td&gt;144.79&lt;/td&gt;&lt;td&gt;142.72&lt;/td&gt;&lt;td&gt;144.09&lt;/td&gt;&lt;td&gt;21569557&lt;/td&gt;&lt;td&gt;2.07&lt;/td&gt;&lt;td&gt;0.7275486&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;3-Jul-17 &lt;/td&gt;&lt;td&gt;144.88&lt;/td&gt;&lt;td&gt;145.30&lt;/td&gt;&lt;td&gt;143.10&lt;/td&gt;&lt;td&gt;143.50&lt;/td&gt;&lt;td&gt;14277848&lt;/td&gt;&lt;td&gt;2.20&lt;/td&gt;&lt;td&gt;0.7884574&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;30-Jun-17&lt;/td&gt;&lt;td&gt;144.45&lt;/td&gt;&lt;td&gt;144.96&lt;/td&gt;&lt;td&gt;143.78&lt;/td&gt;&lt;td&gt;144.02&lt;/td&gt;&lt;td&gt;23024107&lt;/td&gt;&lt;td&gt;1.18&lt;/td&gt;&lt;td&gt;0.1655144&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;29-Jun-17&lt;/td&gt;&lt;td&gt;144.71&lt;/td&gt;&lt;td&gt;145.13&lt;/td&gt;&lt;td&gt;142.28&lt;/td&gt;&lt;td&gt;143.68&lt;/td&gt;&lt;td&gt;31499368&lt;/td&gt;&lt;td&gt;2.85&lt;/td&gt;&lt;td&gt;1.0473190&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;得到记录的位置(行数)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;aapl  %&amp;gt;% mutate(n=row_number())  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 6 × 7&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;Date&lt;/th&gt;&lt;th scope=col&gt;Open&lt;/th&gt;&lt;th scope=col&gt;High&lt;/th&gt;&lt;th scope=col&gt;Low&lt;/th&gt;&lt;th scope=col&gt;Close&lt;/th&gt;&lt;th scope=col&gt;Volume&lt;/th&gt;&lt;th scope=col&gt;n&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;7-Jul-17 &lt;/td&gt;&lt;td&gt;142.90&lt;/td&gt;&lt;td&gt;144.75&lt;/td&gt;&lt;td&gt;142.90&lt;/td&gt;&lt;td&gt;144.18&lt;/td&gt;&lt;td&gt;19201712&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;6-Jul-17 &lt;/td&gt;&lt;td&gt;143.02&lt;/td&gt;&lt;td&gt;143.50&lt;/td&gt;&lt;td&gt;142.41&lt;/td&gt;&lt;td&gt;142.73&lt;/td&gt;&lt;td&gt;24128782&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;5-Jul-17 &lt;/td&gt;&lt;td&gt;143.69&lt;/td&gt;&lt;td&gt;144.79&lt;/td&gt;&lt;td&gt;142.72&lt;/td&gt;&lt;td&gt;144.09&lt;/td&gt;&lt;td&gt;21569557&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;3-Jul-17 &lt;/td&gt;&lt;td&gt;144.88&lt;/td&gt;&lt;td&gt;145.30&lt;/td&gt;&lt;td&gt;143.10&lt;/td&gt;&lt;td&gt;143.50&lt;/td&gt;&lt;td&gt;14277848&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;30-Jun-17&lt;/td&gt;&lt;td&gt;144.45&lt;/td&gt;&lt;td&gt;144.96&lt;/td&gt;&lt;td&gt;143.78&lt;/td&gt;&lt;td&gt;144.02&lt;/td&gt;&lt;td&gt;23024107&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;29-Jun-17&lt;/td&gt;&lt;td&gt;144.71&lt;/td&gt;&lt;td&gt;145.13&lt;/td&gt;&lt;td&gt;142.28&lt;/td&gt;&lt;td&gt;143.68&lt;/td&gt;&lt;td&gt;31499368&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;45-group_by&#34;&gt;4.5 Group_By&lt;/h2&gt;
+&lt;p&gt;对资料进行分组，这里导入新的 数据集 weather&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;#导入csv数据
+weather &amp;lt;- read.csv(&#39;weather.csv&#39;, 
+                    header=TRUE,
+                    sep=&#39;,&#39;,
+                    stringsAsFactors = FALSE) %&amp;gt;% as_tibble()  
+weather 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 6 × 5&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;Date&lt;/th&gt;&lt;th scope=col&gt;city&lt;/th&gt;&lt;th scope=col&gt;temperature&lt;/th&gt;&lt;th scope=col&gt;windspeed&lt;/th&gt;&lt;th scope=col&gt;event&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;1/1/2017&lt;/td&gt;&lt;td&gt;new york&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt; 6&lt;/td&gt;&lt;td&gt;Rain  &lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1/1/2017&lt;/td&gt;&lt;td&gt;mumbai  &lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;td&gt; 5&lt;/td&gt;&lt;td&gt;Sunny &lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1/1/2017&lt;/td&gt;&lt;td&gt;paris   &lt;/td&gt;&lt;td&gt;45&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;Sunny &lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1/2/2017&lt;/td&gt;&lt;td&gt;new york&lt;/td&gt;&lt;td&gt;36&lt;/td&gt;&lt;td&gt; 7&lt;/td&gt;&lt;td&gt;Sunny &lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1/2/2017&lt;/td&gt;&lt;td&gt;mumbai  &lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;Fog   &lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1/2/2017&lt;/td&gt;&lt;td&gt;paris   &lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;13&lt;/td&gt;&lt;td&gt;Cloudy&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;按照城市分组&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;weather %&amp;gt;% group_by(city) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A grouped_df: 6 × 5&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;Date&lt;/th&gt;&lt;th scope=col&gt;city&lt;/th&gt;&lt;th scope=col&gt;temperature&lt;/th&gt;&lt;th scope=col&gt;windspeed&lt;/th&gt;&lt;th scope=col&gt;event&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;int&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;1/1/2017&lt;/td&gt;&lt;td&gt;new york&lt;/td&gt;&lt;td&gt;32&lt;/td&gt;&lt;td&gt; 6&lt;/td&gt;&lt;td&gt;Rain  &lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1/1/2017&lt;/td&gt;&lt;td&gt;mumbai  &lt;/td&gt;&lt;td&gt;90&lt;/td&gt;&lt;td&gt; 5&lt;/td&gt;&lt;td&gt;Sunny &lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1/1/2017&lt;/td&gt;&lt;td&gt;paris   &lt;/td&gt;&lt;td&gt;45&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;Sunny &lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1/2/2017&lt;/td&gt;&lt;td&gt;new york&lt;/td&gt;&lt;td&gt;36&lt;/td&gt;&lt;td&gt; 7&lt;/td&gt;&lt;td&gt;Sunny &lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1/2/2017&lt;/td&gt;&lt;td&gt;mumbai  &lt;/td&gt;&lt;td&gt;85&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;Fog   &lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;1/2/2017&lt;/td&gt;&lt;td&gt;paris   &lt;/td&gt;&lt;td&gt;50&lt;/td&gt;&lt;td&gt;13&lt;/td&gt;&lt;td&gt;Cloudy&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;为了让大家看到分组的功效，咱们按照城市分别计算平均温度&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;weather %&amp;gt;% group_by(city) %&amp;gt;% summarise(mean_temperature = mean(temperature))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;`summarise()` ungrouping output (override with `.groups` argument)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 3 × 2&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;city&lt;/th&gt;&lt;th scope=col&gt;mean_temperature&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;chr&amp;gt;&lt;/th&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;mumbai  &lt;/td&gt;&lt;td&gt;87.5&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;new york&lt;/td&gt;&lt;td&gt;34.0&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;td&gt;paris   &lt;/td&gt;&lt;td&gt;47.5&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-R&#34;&gt;weather %&amp;gt;%  summarise(mean_temperature = mean(temperature))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;table&gt;
+&lt;caption&gt;A tibble: 1 × 1&lt;/caption&gt;
+&lt;thead&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;mean_temperature&lt;/th&gt;&lt;/tr&gt;
+	&lt;tr&gt;&lt;th scope=col&gt;&amp;lt;dbl&amp;gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+	&lt;tr&gt;&lt;td&gt;56.33333&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;#支持&lt;/p&gt;
+&lt;p&gt;分享不易，谢谢大家点赞分享和红包^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
