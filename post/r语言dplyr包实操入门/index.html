@@ -1,0 +1,1386 @@
+<!DOCTYPE html><html lang="zh-Hans" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="大邓">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="R中的pandas库">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Thunderhit">
+  <meta property="og:url" content="https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/">
+  <meta property="og:title" content="R语言dplyr包快速入门 | Thunderhit">
+  <meta property="og:description" content="R中的pandas库"><meta property="og:image" content="https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/featured.png">
+  <meta property="twitter:image" content="https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/featured.png"><meta property="og:locale" content="zh-Hans">
+  
+    
+      <meta property="article:published_time" content="2020-06-24T15:44:39&#43;08:00">
+    
+    <meta property="article:modified_time" content="2020-06-24T15:44:39&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/"
+  },
+  "headline": "R语言dplyr包快速入门",
+  
+  "image": [
+    "https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/featured.png"
+  ],
+  
+  "datePublished": "2020-06-24T15:44:39+08:00",
+  "dateModified": "2020-06-24T15:44:39+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "大邓"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Thunderhit",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "R中的pandas库"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>R语言dplyr包快速入门 | Thunderhit</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/authors/"><span>Authors</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#skills"><span>Skills</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Packages</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post"><span>Articles</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tags"><span>Topics</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>R语言dplyr包快速入门</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/%E5%A4%A7%E9%82%93/">大邓</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2020-06-24
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/r%E8%AF%AD%E8%A8%80/">R语言</a>, <a href="/category/%E6%95%99%E7%A8%8B/">教程</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 353px;">
+  <div style="position: relative">
+    <img src="/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/featured_huc6cb812a974a6c490d204a904fc530a4_320762_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2>目录</h2>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-dplyr简介">1. dplyr简介</a></li>
+    <li><a href="#2-安装并导入dplyr库">2. 安装并导入dplyr库</a></li>
+    <li><a href="#3-读取数据">3. 读取数据</a></li>
+    <li><a href="#4-dplyr常用函数">4. dplyr常用函数</a>
+      <ul>
+        <li><a href="#41-arrange">4.1 Arrange</a></li>
+        <li><a href="#42-select">4.2 Select</a></li>
+        <li><a href="#43-filter">4.3 Filter</a></li>
+        <li><a href="#44-mutate">4.4 Mutate</a></li>
+        <li><a href="#45-group_by">4.5 Group_By</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<div class="alert alert-note">
+  <div>
+    实验数据及代码下载链接:https://pan.baidu.com/s/1Tg2D7ZEgJGOuaGAlMcHO2Q  密码:mag6
+  </div>
+</div>
+<div class="alert alert-note">
+  <div>
+    课程代码关注【公众号：大邓和他的Python】，回复关键词【python入门】
+  </div>
+</div>
+<br>
+<h1 id="1-dplyr简介">1. dplyr简介</h1>
+<p>dplyr是R语言的数据分析包，类似于python中的pandas，能对dataframe类型的数据做很方便的数据处理和分析操作。最初我也很奇怪dplyr这个奇怪的名字，我查到其中一种解释 - d代表dataframe - plyr是英文钳子plier的谐音</p>
+<p>dplyr如同R的大多数包，都是函数式编程，这点跟Python面向对象编程区别很大。优点是初学者比较容易接受这种函数式思维，有点类似于流水线，每个函数就是一个车间，多个车间共同完成一个生产（数据分析）任务。</p>
+<p>而在dplyr中，就有一个管道符 %&gt;% ，符号左侧表示数据的输入，右侧表示下游数据处理环节。</p>
+<br>
+<h1 id="2-安装并导入dplyr库">2. 安装并导入dplyr库</h1>
+<p>pacman库的p_load函数功能包含了</p>
+<ol>
+<li>install.packages(“dplyr”)</li>
+<li>library(dplyr)</li>
+</ol>
+<p>该写法更简单易用</p>
+<pre><code class="language-R">pacman::p_load(&quot;dplyr&quot;)
+</code></pre>
+<br>
+<h1 id="3-读取数据">3. 读取数据</h1>
+<pre><code class="language-R">#设置工作目录
+setwd(&quot;/Users/thunderhit/Desktop/dplyr_learn&quot;)
+
+#导入csv数据
+aapl &lt;- read.csv('aapl.csv', 
+                 header=TRUE,
+                 sep=',',
+                 stringsAsFactors = FALSE) %&gt;% as_tibble()
+head(aapl)
+</code></pre>
+<table>
+<caption>A tibble: 6 × 6</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>Open</th><th scope=col>High</th><th scope=col>Low</th><th scope=col>Close</th><th scope=col>Volume</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>7-Jul-17 </td><td>142.90</td><td>144.75</td><td>142.90</td><td>144.18</td><td>19201712</td></tr>
+	<tr><td>6-Jul-17 </td><td>143.02</td><td>143.50</td><td>142.41</td><td>142.73</td><td>24128782</td></tr>
+	<tr><td>5-Jul-17 </td><td>143.69</td><td>144.79</td><td>142.72</td><td>144.09</td><td>21569557</td></tr>
+	<tr><td>3-Jul-17 </td><td>144.88</td><td>145.30</td><td>143.10</td><td>143.50</td><td>14277848</td></tr>
+	<tr><td>30-Jun-17</td><td>144.45</td><td>144.96</td><td>143.78</td><td>144.02</td><td>23024107</td></tr>
+	<tr><td>29-Jun-17</td><td>144.71</td><td>145.13</td><td>142.28</td><td>143.68</td><td>31499368</td></tr>
+</tbody>
+</table>
+<p>查看数据类型</p>
+<pre><code class="language-R">class(aapl)
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'tbl_df'</li><li>'tbl'</li><li>'data.frame'</li></ol>
+<p>查看数据的字段</p>
+<pre><code class="language-R">colnames(aapl)
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'Date'</li><li>'Open'</li><li>'High'</li><li>'Low'</li><li>'Close'</li><li>'Volume'</li></ol>
+<p>查看记录数、字段数</p>
+<pre><code class="language-R">dim(aapl)
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>251</li><li>6</li></ol>
+<br>
+<h1 id="4-dplyr常用函数">4. dplyr常用函数</h1>
+<h2 id="41-arrange">4.1 Arrange</h2>
+<p>对appl数据按照字段Volume进行降序排序</p>
+<pre><code class="language-R">arrange(aapl, -Volume)
+</code></pre>
+<table>
+<caption>A tibble: 6 × 6</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>Open</th><th scope=col>High</th><th scope=col>Low</th><th scope=col>Close</th><th scope=col>Volume</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>14-Sep-16</td><td>108.73</td><td>113.03</td><td>108.60</td><td>111.77</td><td>112340318</td></tr>
+	<tr><td>1-Feb-17 </td><td>127.03</td><td>130.49</td><td>127.01</td><td>128.75</td><td>111985040</td></tr>
+	<tr><td>27-Jul-16</td><td>104.26</td><td>104.35</td><td>102.75</td><td>102.95</td><td> 92344820</td></tr>
+	<tr><td>15-Sep-16</td><td>113.86</td><td>115.73</td><td>113.49</td><td>115.57</td><td> 90613177</td></tr>
+	<tr><td>16-Sep-16</td><td>115.12</td><td>116.13</td><td>114.04</td><td>114.92</td><td> 79886911</td></tr>
+	<tr><td>12-Jun-17</td><td>145.74</td><td>146.09</td><td>142.51</td><td>145.42</td><td> 72307330</td></tr>
+</tbody>
+</table>
+<p>我们也可以用管道符 %&gt;% ，两种写法得到的运行结果是一致的，可能用久了会觉得管道符 %&gt;% 可读性更强，后面我们都会用 %&gt;% 来写代码。</p>
+<pre><code class="language-R">aapl %&gt;% arrange(-Volume)
+</code></pre>
+<table>
+<caption>A tibble: 6 × 6</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>Open</th><th scope=col>High</th><th scope=col>Low</th><th scope=col>Close</th><th scope=col>Volume</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>14-Sep-16</td><td>108.73</td><td>113.03</td><td>108.60</td><td>111.77</td><td>112340318</td></tr>
+	<tr><td>1-Feb-17 </td><td>127.03</td><td>130.49</td><td>127.01</td><td>128.75</td><td>111985040</td></tr>
+	<tr><td>27-Jul-16</td><td>104.26</td><td>104.35</td><td>102.75</td><td>102.95</td><td> 92344820</td></tr>
+	<tr><td>15-Sep-16</td><td>113.86</td><td>115.73</td><td>113.49</td><td>115.57</td><td> 90613177</td></tr>
+	<tr><td>16-Sep-16</td><td>115.12</td><td>116.13</td><td>114.04</td><td>114.92</td><td> 79886911</td></tr>
+	<tr><td>12-Jun-17</td><td>145.74</td><td>146.09</td><td>142.51</td><td>145.42</td><td> 72307330</td></tr>
+</tbody>
+</table>
+<h2 id="42-select">4.2 Select</h2>
+<p>选取 Date、Close和Volume三列</p>
+<pre><code class="language-R">aapl %&gt;% select(Date, Close, Volume)
+</code></pre>
+<table>
+<caption>A tibble: 6 × 3</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>Close</th><th scope=col>Volume</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>7-Jul-17 </td><td>144.18</td><td>19201712</td></tr>
+	<tr><td>6-Jul-17 </td><td>142.73</td><td>24128782</td></tr>
+	<tr><td>5-Jul-17 </td><td>144.09</td><td>21569557</td></tr>
+	<tr><td>3-Jul-17 </td><td>143.50</td><td>14277848</td></tr>
+	<tr><td>30-Jun-17</td><td>144.02</td><td>23024107</td></tr>
+	<tr><td>29-Jun-17</td><td>143.68</td><td>31499368</td></tr>
+</tbody>
+</table>
+<p>只选取Date、Close和Volume三列，其实另外一种表达方式是“排除Open、High、Low，选择剩下的字段的数据”。</p>
+<pre><code class="language-R">aapl %&gt;% select(-c(&quot;Open&quot;, &quot;High&quot;, &quot;Low&quot;)) 
+</code></pre>
+<table>
+<caption>A tibble: 6 × 3</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>Close</th><th scope=col>Volume</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>7-Jul-17 </td><td>144.18</td><td>19201712</td></tr>
+	<tr><td>6-Jul-17 </td><td>142.73</td><td>24128782</td></tr>
+	<tr><td>5-Jul-17 </td><td>144.09</td><td>21569557</td></tr>
+	<tr><td>3-Jul-17 </td><td>143.50</td><td>14277848</td></tr>
+	<tr><td>30-Jun-17</td><td>144.02</td><td>23024107</td></tr>
+	<tr><td>29-Jun-17</td><td>143.68</td><td>31499368</td></tr>
+</tbody>
+</table>
+<h2 id="43-filter">4.3 Filter</h2>
+<p>按照筛选条件选择数据</p>
+<pre><code class="language-R">#从数据中选择appl股价大于150美元的交易数据
+aapl %&gt;% filter(Close&gt;=150) 
+</code></pre>
+<table>
+<caption>A tibble: 6 × 6</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>Open</th><th scope=col>High</th><th scope=col>Low</th><th scope=col>Close</th><th scope=col>Volume</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>8-Jun-17</td><td>155.25</td><td>155.54</td><td>154.40</td><td>154.99</td><td>21250798</td></tr>
+	<tr><td>7-Jun-17</td><td>155.02</td><td>155.98</td><td>154.48</td><td>155.37</td><td>21069647</td></tr>
+	<tr><td>6-Jun-17</td><td>153.90</td><td>155.81</td><td>153.78</td><td>154.45</td><td>26624926</td></tr>
+	<tr><td>5-Jun-17</td><td>154.34</td><td>154.45</td><td>153.46</td><td>153.93</td><td>25331662</td></tr>
+	<tr><td>2-Jun-17</td><td>153.58</td><td>155.45</td><td>152.89</td><td>155.45</td><td>27770715</td></tr>
+	<tr><td>1-Jun-17</td><td>153.17</td><td>153.33</td><td>152.22</td><td>153.18</td><td>16404088</td></tr>
+</tbody>
+</table>
+<p>从数据中选择appl - 股价大于150美元 且 收盘价大于开盘价
+的交易数据</p>
+<pre><code class="language-R">aapl %&gt;% filter((Close&gt;=150) &amp; (Close&gt;Open))
+</code></pre>
+<table>
+<caption>A tibble: 11 × 6</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>Open</th><th scope=col>High</th><th scope=col>Low</th><th scope=col>Close</th><th scope=col>Volume</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>7-Jun-17 </td><td>155.02</td><td>155.98</td><td>154.48</td><td>155.37</td><td>21069647</td></tr>
+	<tr><td>6-Jun-17 </td><td>153.90</td><td>155.81</td><td>153.78</td><td>154.45</td><td>26624926</td></tr>
+	<tr><td>2-Jun-17 </td><td>153.58</td><td>155.45</td><td>152.89</td><td>155.45</td><td>27770715</td></tr>
+	<tr><td>1-Jun-17 </td><td>153.17</td><td>153.33</td><td>152.22</td><td>153.18</td><td>16404088</td></tr>
+	<tr><td>30-May-17</td><td>153.42</td><td>154.43</td><td>153.33</td><td>153.67</td><td>20126851</td></tr>
+	<tr><td>25-May-17</td><td>153.73</td><td>154.35</td><td>153.03</td><td>153.87</td><td>19235598</td></tr>
+	<tr><td>18-May-17</td><td>151.27</td><td>153.34</td><td>151.13</td><td>152.54</td><td>33568215</td></tr>
+	<tr><td>12-May-17</td><td>154.70</td><td>156.42</td><td>154.67</td><td>156.10</td><td>32527017</td></tr>
+	<tr><td>11-May-17</td><td>152.45</td><td>154.07</td><td>152.31</td><td>153.95</td><td>27255058</td></tr>
+	<tr><td>9-May-17 </td><td>153.87</td><td>154.88</td><td>153.45</td><td>153.99</td><td>39130363</td></tr>
+	<tr><td>8-May-17 </td><td>149.03</td><td>153.70</td><td>149.03</td><td>153.01</td><td>48752413</td></tr>
+</tbody>
+</table>
+<h2 id="44-mutate">4.4 Mutate</h2>
+<p>将现有的字段经过计算后生成新字段。</p>
+<pre><code class="language-R">#将最好价High减去最低价Low的结果定义为maxDif，并取log
+aapl %&gt;% mutate(maxDif = High-Low,
+                log_maxDif=log(maxDif)) 
+</code></pre>
+<table>
+<caption>A tibble: 6 × 8</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>Open</th><th scope=col>High</th><th scope=col>Low</th><th scope=col>Close</th><th scope=col>Volume</th><th scope=col>maxDif</th><th scope=col>log_maxDif</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>7-Jul-17 </td><td>142.90</td><td>144.75</td><td>142.90</td><td>144.18</td><td>19201712</td><td>1.85</td><td>0.6151856</td></tr>
+	<tr><td>6-Jul-17 </td><td>143.02</td><td>143.50</td><td>142.41</td><td>142.73</td><td>24128782</td><td>1.09</td><td>0.0861777</td></tr>
+	<tr><td>5-Jul-17 </td><td>143.69</td><td>144.79</td><td>142.72</td><td>144.09</td><td>21569557</td><td>2.07</td><td>0.7275486</td></tr>
+	<tr><td>3-Jul-17 </td><td>144.88</td><td>145.30</td><td>143.10</td><td>143.50</td><td>14277848</td><td>2.20</td><td>0.7884574</td></tr>
+	<tr><td>30-Jun-17</td><td>144.45</td><td>144.96</td><td>143.78</td><td>144.02</td><td>23024107</td><td>1.18</td><td>0.1655144</td></tr>
+	<tr><td>29-Jun-17</td><td>144.71</td><td>145.13</td><td>142.28</td><td>143.68</td><td>31499368</td><td>2.85</td><td>1.0473190</td></tr>
+</tbody>
+</table>
+<p>得到记录的位置(行数)</p>
+<pre><code class="language-R">aapl  %&gt;% mutate(n=row_number())  
+</code></pre>
+<table>
+<caption>A tibble: 6 × 7</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>Open</th><th scope=col>High</th><th scope=col>Low</th><th scope=col>Close</th><th scope=col>Volume</th><th scope=col>n</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>7-Jul-17 </td><td>142.90</td><td>144.75</td><td>142.90</td><td>144.18</td><td>19201712</td><td>1</td></tr>
+	<tr><td>6-Jul-17 </td><td>143.02</td><td>143.50</td><td>142.41</td><td>142.73</td><td>24128782</td><td>2</td></tr>
+	<tr><td>5-Jul-17 </td><td>143.69</td><td>144.79</td><td>142.72</td><td>144.09</td><td>21569557</td><td>3</td></tr>
+	<tr><td>3-Jul-17 </td><td>144.88</td><td>145.30</td><td>143.10</td><td>143.50</td><td>14277848</td><td>4</td></tr>
+	<tr><td>30-Jun-17</td><td>144.45</td><td>144.96</td><td>143.78</td><td>144.02</td><td>23024107</td><td>5</td></tr>
+	<tr><td>29-Jun-17</td><td>144.71</td><td>145.13</td><td>142.28</td><td>143.68</td><td>31499368</td><td>6</td></tr>
+</tbody>
+</table>
+<h2 id="45-group_by">4.5 Group_By</h2>
+<p>对资料进行分组，这里导入新的 数据集 weather</p>
+<pre><code class="language-R">#导入csv数据
+weather &lt;- read.csv('weather.csv', 
+                    header=TRUE,
+                    sep=',',
+                    stringsAsFactors = FALSE) %&gt;% as_tibble()  
+weather 
+</code></pre>
+<table>
+<caption>A tibble: 6 × 5</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>city</th><th scope=col>temperature</th><th scope=col>windspeed</th><th scope=col>event</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>1/1/2017</td><td>new york</td><td>32</td><td> 6</td><td>Rain  </td></tr>
+	<tr><td>1/1/2017</td><td>mumbai  </td><td>90</td><td> 5</td><td>Sunny </td></tr>
+	<tr><td>1/1/2017</td><td>paris   </td><td>45</td><td>20</td><td>Sunny </td></tr>
+	<tr><td>1/2/2017</td><td>new york</td><td>36</td><td> 7</td><td>Sunny </td></tr>
+	<tr><td>1/2/2017</td><td>mumbai  </td><td>85</td><td>12</td><td>Fog   </td></tr>
+	<tr><td>1/2/2017</td><td>paris   </td><td>50</td><td>13</td><td>Cloudy</td></tr>
+</tbody>
+</table>
+<p>按照城市分组</p>
+<pre><code class="language-R">weather %&gt;% group_by(city) 
+</code></pre>
+<table>
+<caption>A grouped_df: 6 × 5</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>city</th><th scope=col>temperature</th><th scope=col>windspeed</th><th scope=col>event</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>1/1/2017</td><td>new york</td><td>32</td><td> 6</td><td>Rain  </td></tr>
+	<tr><td>1/1/2017</td><td>mumbai  </td><td>90</td><td> 5</td><td>Sunny </td></tr>
+	<tr><td>1/1/2017</td><td>paris   </td><td>45</td><td>20</td><td>Sunny </td></tr>
+	<tr><td>1/2/2017</td><td>new york</td><td>36</td><td> 7</td><td>Sunny </td></tr>
+	<tr><td>1/2/2017</td><td>mumbai  </td><td>85</td><td>12</td><td>Fog   </td></tr>
+	<tr><td>1/2/2017</td><td>paris   </td><td>50</td><td>13</td><td>Cloudy</td></tr>
+</tbody>
+</table>
+<p>为了让大家看到分组的功效，咱们按照城市分别计算平均温度</p>
+<pre><code class="language-R">weather %&gt;% group_by(city) %&gt;% summarise(mean_temperature = mean(temperature))
+</code></pre>
+<pre><code>`summarise()` ungrouping output (override with `.groups` argument)
+</code></pre>
+<table>
+<caption>A tibble: 3 × 2</caption>
+<thead>
+	<tr><th scope=col>city</th><th scope=col>mean_temperature</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>mumbai  </td><td>87.5</td></tr>
+	<tr><td>new york</td><td>34.0</td></tr>
+	<tr><td>paris   </td><td>47.5</td></tr>
+</tbody>
+</table>
+<pre><code class="language-R">weather %&gt;%  summarise(mean_temperature = mean(temperature))
+</code></pre>
+<table>
+<caption>A tibble: 1 × 1</caption>
+<thead>
+	<tr><th scope=col>mean_temperature</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>56.33333</td></tr>
+</tbody>
+</table>
+<p>#支持</p>
+<p>分享不易，谢谢大家点赞分享和红包^_^</p>
+<p><img src="../../img/my_zanshang_qrcode.jpg" alt=""></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/dplyr/">dplyr</a>
+  
+  <a class="badge badge-light" href="/tag/r%E8%AF%AD%E8%A8%80/">R语言</a>
+  
+  <a class="badge badge-light" href="/tag/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/&amp;text=R%e8%af%ad%e8%a8%80dplyr%e5%8c%85%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/&amp;t=R%e8%af%ad%e8%a8%80dplyr%e5%8c%85%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=R%e8%af%ad%e8%a8%80dplyr%e5%8c%85%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8&amp;body=https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/&amp;title=R%e8%af%ad%e8%a8%80dplyr%e5%8c%85%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=R%e8%af%ad%e8%a8%80dplyr%e5%8c%85%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8%20https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://thunderhit.github.io/post/r%E8%AF%AD%E8%A8%80dplyr%E5%8C%85%E5%AE%9E%E6%93%8D%E5%85%A5%E9%97%A8/&amp;title=R%e8%af%ad%e8%a8%80dplyr%e5%8c%85%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>相关</h3>
+    <ul>
+      
+      <li><a href="/post/pandas%E7%9A%84apply%E6%96%B9%E6%B3%95/">小案例: Pandas的apply方法</a></li>
+      
+      <li><a href="/post/python%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/">Python语法快速入门</a></li>
+      
+      <li><a href="/post/nlp_resources/">文本分析(自然语言处理)相关视频汇总</a></li>
+      
+      <li><a href="/post/typora%E6%9C%80%E5%A5%BD%E7%94%A8%E7%9A%84%E5%85%8D%E8%B4%B9markdown%E8%BD%AF%E4%BB%B6/">半小时学会Markdown标记语法</a></li>
+      
+      <li><a href="/post/python%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEmac/">Mac电脑Python环境配置</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲",
+        'slides' : "演示文稿"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
