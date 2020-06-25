@@ -41,9 +41,8 @@
         &lt;li&gt;&lt;a href=&#34;#二如何使用文本数据&#34;&gt;二、如何使用文本数据&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#三文本信息的指标&#34;&gt;三、文本信息的指标&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#四文本分析步骤&#34;&gt;四、文本分析步骤&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#文本分析技术对比&#34;&gt;文本分析技术对比&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#五文本分析技术对比&#34;&gt;五、文本分析技术对比&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&#34;#相关文献&#34;&gt;相关文献&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&#34;#课程&#34;&gt;课程&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
@@ -53,26 +52,9 @@
 &lt;li&gt;How text &lt;strong&gt;reflects&lt;/strong&gt; its producer？&lt;/li&gt;
 &lt;li&gt;How text &lt;strong&gt;impacts&lt;/strong&gt; its receiver？&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph LR
-   Text_Producer --&amp;gt; Text
-   Text --&amp;gt; Text_Receiver
-   Text_Receiver --&amp;gt;Text
-   Text --&amp;gt; Text_Producer
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;文本信息的&lt;strong&gt;生产者producer&lt;/strong&gt;与&lt;strong&gt;消费者receiver&lt;/strong&gt;，涵盖**个人、公司(组织)、国家(社会)**三个层面。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-mermaid&#34;&gt;graph LR
-    Consumers --&amp;gt; Firms
-    Consumers --&amp;gt; Investors
-    Consumers --&amp;gt; Society
-    Firms --&amp;gt; Consumers
-    Firms --&amp;gt; Investors
-    Investors --&amp;gt; Firms
-    Investors --&amp;gt; Society
-    Firms --&amp;gt; Society
-    Society --&amp;gt; Investors
-    Society --&amp;gt; Consumers
-    
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../../%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90%E6%A6%82%E8%BF%B0/img/%E7%94%9F%E4%BA%A7%E4%B8%8E%E6%B6%88%E8%B4%B9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;需要注意的是文本的&lt;strong&gt;反映reflects&lt;/strong&gt;和&lt;strong&gt;影响impacts&lt;/strong&gt;并不是非此即彼，往往会同时起作用。&lt;/p&gt;
@@ -248,7 +230,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;文本分析技术对比&#34;&gt;文本分析技术对比&lt;/h2&gt;
+&lt;h2 id=&#34;五文本分析技术对比&#34;&gt;五、文本分析技术对比&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;../../../../../%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90%E6%A6%82%E8%BF%B0/img/%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -312,7 +294,8 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;据被压缩成词组频数，定性的文本数据转化为定量的频数。本课程中会涉及到的内容&lt;/p&gt;
+&lt;p&gt;据被压缩成词组频数，定性的文本数据转化为定量的频数。
+&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯课堂《Python网络爬虫与文本数据分析》https://ke.qq.com/course/482241?tuin=163164df&lt;/a&gt;中会涉及到的内容&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Thematic Analysis 定性&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Content Analysis&lt;/li&gt;
@@ -335,9 +318,6 @@
 &lt;p&gt;[3]Banks, George C., Haley M. Woznyj, Ryan S. Wesslen, and Roxanne L. Ross. &amp;ldquo;A review of best practice recommendations for text analysis in R (and a user-friendly app).&amp;rdquo; &lt;em&gt;Journal of Business and Psychology&lt;/em&gt; 33, no. 4 (2018): 445-459.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;课程&#34;&gt;课程&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://ke.qq.com/course/482241?tuin=163164df&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯课堂《Python网络爬虫与文本数据分析》https://ke.qq.com/course/482241?tuin=163164df&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
