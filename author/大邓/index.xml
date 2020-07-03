@@ -17,9 +17,17 @@
       <link>https://thunderhit.github.io/post/bar_chart_race_cn/</link>
       <pubDate>Fri, 03 Jul 2020 13:58:04 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/bar_chart_race_cn/</guid>
-      <description>&lt;video id=&#34;video&#34; controls=&#34;&#34; preload=&#34;none&#34;&gt;
-    &lt;source id=&#34;mp4&#34; src=&#34;近20年各省财政收入.mp4&#34; type=&#34;video/mp4&#34;&gt;
-&lt;/video&gt;
+      <description>&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1kD4y1Q7Ve&amp;page=1&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
 &lt;p&gt;bar_chart_race_cn是对bar_chart_race库的汉化版，具体文档可查看
 &lt;a href=&#34;https://www.dexplo.org/bar_chart_race&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;原创作者的文档&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
@@ -177,9 +185,20 @@ bcr.bar_chart_race(df=df,
                   )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;效果&lt;/p&gt;
-&lt;video id=&#34;video&#34; controls=&#34;&#34; preload=&#34;none&#34;&gt;
-    &lt;source id=&#34;mp4&#34; src=&#34;近20年各省财政收入.mp4&#34; type=&#34;video/mp4&#34;&gt;
-&lt;/video&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1kD4y1Q7Ve&amp;page=1&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     

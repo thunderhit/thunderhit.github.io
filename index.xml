@@ -5,7 +5,7 @@
     <link>https://thunderhit.github.io/</link>
       <atom:link href="https://thunderhit.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Thunderhit</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 03 Jul 2020 13:58:04 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 03 Jul 2020 22:58:04 +0800</lastBuildDate>
     <image>
       <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Thunderhit</title>
@@ -13,13 +13,213 @@
     </image>
     
     <item>
+      <title>Pandas也能修改样式？快速给你的数据换个Style</title>
+      <link>https://thunderhit.github.io/post/pandas_style/</link>
+      <pubDate>Fri, 03 Jul 2020 22:58:04 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/pandas_style/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;作者:刘早起&lt;/p&gt;
+&lt;p&gt;公众号: 早起Python
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    本文数据和代码下载链接:https://pan.baidu.com/s/1sFPXqa65BFVOT8jTmpqxYA  密码:gjua
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;在Pandas中每一个DataFrame都有一个Style属性，我们可以通过修改该属性来给数据添加一些基本的样式。
+&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;使用说明&#34;&gt;使用说明&lt;/h1&gt;
+&lt;p&gt;通过修改Styler对象的属性，将样式传递给DataFrame，主要有两种传递方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Styler.applymap&lt;/strong&gt;：对所有的单元格操作样式&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Styler.apply&lt;/strong&gt;：对列/行/表操作样式
+&lt;br&gt;&lt;br&gt;
+Styler.applymap通过DataFrame对所有的单元格操作样式。
+&lt;br&gt;
+Styler.apply根据axis参数，按列使用axis=0，按行使用axis=1，以及axis=None作用于整个表。所以&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;若使用Styler.applymap，我们的函数应返回带有&lt;strong&gt;CSS属性-值对&lt;/strong&gt;的单个字符串。&lt;/li&gt;
+&lt;li&gt;若使用Styler.apply，我们的函数应返回具有相同形状的Series或DataFrame，其中每个值都是具有CSS属性值对的字符串。
+&lt;br&gt;&lt;br&gt;
+不会CSS？没关系，作为调包侠的我们大多是改改HTML颜色代码即可完成样式修改，下面看一些示例。
+&lt;br&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;一些例子&#34;&gt;一些例子&lt;/h1&gt;
+&lt;h3 id=&#34;基本样式&#34;&gt;基本样式&lt;/h3&gt;
+&lt;p&gt;首先我们创建一组没有任何样式的数据&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+df = pd.read_csv(&#39;test.csv&#39;)
+df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我们之前说过，DataFrame是有style属性的，所以在没有做任何修改的情况下，使用df.style应该和上图一样&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.style
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;现在让我们编写一个简单的样式函数，该函数可以将负数变为红色，使正数保持黑色。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def color_negative_red(val):
+    color = &#39;red&#39; if val&amp;lt; 0 else &#39;black&#39;
+    return &#39;color: {}&#39;.format(color)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在来应用这段函数&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.style.applymap(color_negative_red)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;现在如果我们想突出显示&lt;strong&gt;每列&lt;/strong&gt;中的最大值，需要重新定义一个函数。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def highlight_max(series):
+    is_max = series==series.max()
+    return [&#39;background-color: yellow&#39; if v else &#39;&#39; 
+            for v in is_max]
+
+#测试一下
+highlight_max(df[&#39;E&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;&#39;, &#39;&#39;, &#39;background-color: yellow&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;, &#39;&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;之前我们是以单元格为单位进行操作，使用的是.applymap。现在我们待操作的对象是列，所以这里用的是.apply方法&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.style.apply(highlight_max)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;现在可以使用&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.style.applymap(color_negative_red).apply(highlight_max)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;当然我们也可以通过修改样式函数并使用.apply来高亮整个DataFrame的最大值，&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+
+def highlight_max(data, color=&#39;yellow&#39;):
+    attr = &#39;background-color: {}&#39;.format(color)
+    if data.ndim ==1:
+        is_max = data==data.max()
+        return [attr if v else &#39;&#39; for v in is_max]
+    else:
+        is_max = data==data.max().max()
+        return pd.DataFrame(np.where(is_max, attr, &#39;&#39;),
+                           index=data.index, 
+                           columns=data.columns)
+    
+df.style.apply(highlight_max, 
+               color=&#39;darkorange&#39;, 
+               axis=None)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;选择某列&#34;&gt;选择某列&lt;/h3&gt;
+&lt;p&gt;我们也可以通过&lt;strong&gt;subset&lt;/strong&gt;对选中的某列或某几列进行样式修饰&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.style.apply(highlight_max, 
+               axis=0, #列方向
+               subset=[&#39;B&#39;, &#39;C&#39;, &#39;D&#39;]) #选择BCD列
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;格式化输出&#34;&gt;格式化输出&lt;/h3&gt;
+&lt;p&gt;我们也可以使用Styler.format来快速格式化输出，比如将小数格式化为百分数&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.style.format(&amp;quot;{:.2%}&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;也支持使用字典或lambda表达式来更灵活的使用&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.style.format({&#39;B&#39;: &amp;quot;{:.3f}&amp;quot;, #保留小数点后3位
+                &#39;D&#39;: &#39;{:+.3f}&#39;})#带符号，保留小数点后三位
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;style内置方法&#34;&gt;style内置方法&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;方法&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;style.format()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;格式化&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;style.hide_columns(subset)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;隐藏某列&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;style.hide_index()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;隐藏行索引&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;style.background_gradient()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;梯度下降着色&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;style.bar()&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;每个数值型单元格显示横向条形图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;style.highlight_max(color=&#39;yellow&amp;rsquo;)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;df中每列最大的值着色&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;style.highlight_min(color=&#39;yellow&amp;rsquo;)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;df中每列最小的值着色&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;style.highlight_null(null_color=&#39;red&amp;rsquo;)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;df中缺失值着色&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;style.to_excel(xlsxfile)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;将dataframe带着样式存到xlsx文件中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#隐藏A列
+df.style.hide_columns(&#39;A&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#隐藏行索引
+df.style.hide_index()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#梯度下降着色
+df.style.background_gradient()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/11.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# 最大值着色
+#df.style.highlight_max()
+
+#最小值着色
+df.style.highlight_min()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/12.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#保存样式到xlsx文件中
+new_df = df.style.background_gradient()
+new_df.to_excel(&#39;test.xlsx&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用MS Excel打开test.xlsx文件，&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/13.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>用Python绘制近20年地方财政收入变迁史视频</title>
       <link>https://thunderhit.github.io/post/bar_chart_race_cn/</link>
       <pubDate>Fri, 03 Jul 2020 13:58:04 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/bar_chart_race_cn/</guid>
-      <description>&lt;video id=&#34;video&#34; controls=&#34;&#34; preload=&#34;none&#34;&gt;
-    &lt;source id=&#34;mp4&#34; src=&#34;近20年各省财政收入.mp4&#34; type=&#34;video/mp4&#34;&gt;
-&lt;/video&gt;
+      <description>&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1kD4y1Q7Ve&amp;page=1&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
 &lt;p&gt;bar_chart_race_cn是对bar_chart_race库的汉化版，具体文档可查看
 &lt;a href=&#34;https://www.dexplo.org/bar_chart_race&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;原创作者的文档&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
@@ -177,9 +377,20 @@ bcr.bar_chart_race(df=df,
                   )
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;效果&lt;/p&gt;
-&lt;video id=&#34;video&#34; controls=&#34;&#34; preload=&#34;none&#34;&gt;
-    &lt;source id=&#34;mp4&#34; src=&#34;近20年各省财政收入.mp4&#34; type=&#34;video/mp4&#34;&gt;
-&lt;/video&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1kD4y1Q7Ve&amp;page=1&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
