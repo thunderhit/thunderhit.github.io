@@ -5,12 +5,183 @@
     <link>https://thunderhit.github.io/category/%E6%95%99%E7%A8%8B/</link>
       <atom:link href="https://thunderhit.github.io/category/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <description>教程</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Thu, 25 Jun 2020 16:23:30 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 03 Jul 2020 13:58:04 +0800</lastBuildDate>
     <image>
       <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>教程</title>
       <link>https://thunderhit.github.io/category/%E6%95%99%E7%A8%8B/</link>
     </image>
+    
+    <item>
+      <title>用Python绘制近20年地方财政收入变迁史视频</title>
+      <link>https://thunderhit.github.io/post/bar_chart_race_cn/</link>
+      <pubDate>Fri, 03 Jul 2020 13:58:04 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/bar_chart_race_cn/</guid>
+      <description>&lt;video id=&#34;video&#34; controls=&#34;&#34; preload=&#34;none&#34;&gt;
+    &lt;source id=&#34;mp4&#34; src=&#34;近20年各省财政收入.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;p&gt;bar_chart_race_cn是对bar_chart_race库的汉化版，具体文档可查看
+&lt;a href=&#34;https://www.dexplo.org/bar_chart_race&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;原创作者的文档&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;pip install bar_chart_race_cn
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;快速上手&#34;&gt;快速上手&lt;/h1&gt;
+&lt;h3 id=&#34;可视化&#34;&gt;可视化&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import bar_chart_race_cn as bcr
+
+bcr.bar_chart_race(df=df,
+                   filename=&#39;近20年各省财政收入.mp4&#39;,
+                   title=&#39;近20年各省财政收入(单位: 亿元)&#39;
+                  )
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;数据准备&#34;&gt;数据准备&lt;/h3&gt;
+&lt;p&gt;数据自国家统计局，以&lt;strong&gt;财政收入.csv&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+df = pd.read_csv(&#39;data/财政收入.csv&#39;)
+
+def year2timestamp(year):
+    #转为可比较大小的日期格式
+    return pd.Timestamp(str(year))
+
+#把year转化为可比较日期大小的行索引index
+df[&#39;year&#39;] = df[&#39;year&#39;].apply(year2timestamp)
+df.set_index(&#39;year&#39;, inplace=True)
+df.sort_index(inplace=True)
+df.head(2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;北京市&lt;/th&gt;
+      &lt;th&gt;天津市&lt;/th&gt;
+      &lt;th&gt;河北省&lt;/th&gt;
+      &lt;th&gt;山西省&lt;/th&gt;
+      &lt;th&gt;内蒙古自治区&lt;/th&gt;
+      &lt;th&gt;辽宁省&lt;/th&gt;
+      &lt;th&gt;吉林省&lt;/th&gt;
+      &lt;th&gt;黑龙江省&lt;/th&gt;
+      &lt;th&gt;上海市&lt;/th&gt;
+      &lt;th&gt;江苏省&lt;/th&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;th&gt;重庆市&lt;/th&gt;
+      &lt;th&gt;四川省&lt;/th&gt;
+      &lt;th&gt;贵州省&lt;/th&gt;
+      &lt;th&gt;云南省&lt;/th&gt;
+      &lt;th&gt;西藏自治区&lt;/th&gt;
+      &lt;th&gt;陕西省&lt;/th&gt;
+      &lt;th&gt;甘肃省&lt;/th&gt;
+      &lt;th&gt;青海省&lt;/th&gt;
+      &lt;th&gt;宁夏回族自治区&lt;/th&gt;
+      &lt;th&gt;新疆维吾尔自治区&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;year&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2000-01-01&lt;/th&gt;
+      &lt;td&gt;345.00&lt;/td&gt;
+      &lt;td&gt;133.61&lt;/td&gt;
+      &lt;td&gt;248.76&lt;/td&gt;
+      &lt;td&gt;114.48&lt;/td&gt;
+      &lt;td&gt;95.03&lt;/td&gt;
+      &lt;td&gt;295.63&lt;/td&gt;
+      &lt;td&gt;103.83&lt;/td&gt;
+      &lt;td&gt;185.34&lt;/td&gt;
+      &lt;td&gt;485.38&lt;/td&gt;
+      &lt;td&gt;448.31&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;87.24&lt;/td&gt;
+      &lt;td&gt;233.86&lt;/td&gt;
+      &lt;td&gt;85.23&lt;/td&gt;
+      &lt;td&gt;180.75&lt;/td&gt;
+      &lt;td&gt;5.38&lt;/td&gt;
+      &lt;td&gt;114.97&lt;/td&gt;
+      &lt;td&gt;61.28&lt;/td&gt;
+      &lt;td&gt;16.58&lt;/td&gt;
+      &lt;td&gt;20.82&lt;/td&gt;
+      &lt;td&gt;79.07&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2001-01-01&lt;/th&gt;
+      &lt;td&gt;454.17&lt;/td&gt;
+      &lt;td&gt;163.64&lt;/td&gt;
+      &lt;td&gt;283.50&lt;/td&gt;
+      &lt;td&gt;132.76&lt;/td&gt;
+      &lt;td&gt;99.43&lt;/td&gt;
+      &lt;td&gt;370.44&lt;/td&gt;
+      &lt;td&gt;121.10&lt;/td&gt;
+      &lt;td&gt;213.64&lt;/td&gt;
+      &lt;td&gt;609.47&lt;/td&gt;
+      &lt;td&gt;572.15&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;106.12&lt;/td&gt;
+      &lt;td&gt;271.12&lt;/td&gt;
+      &lt;td&gt;99.75&lt;/td&gt;
+      &lt;td&gt;191.28&lt;/td&gt;
+      &lt;td&gt;6.11&lt;/td&gt;
+      &lt;td&gt;135.81&lt;/td&gt;
+      &lt;td&gt;69.95&lt;/td&gt;
+      &lt;td&gt;19.82&lt;/td&gt;
+      &lt;td&gt;27.57&lt;/td&gt;
+      &lt;td&gt;95.09&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;2 rows × 31 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;可视化-1&#34;&gt;可视化&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import bar_chart_race_cn as bcr
+
+bcr.bar_chart_race(df=df,
+                   filename=&#39;近20年各省财政收入.mp4&#39;,
+                   title=&#39;近20年各省财政收入(单位: 亿元)&#39;
+                  )
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;效果&lt;/p&gt;
+&lt;video id=&#34;video&#34; controls=&#34;&#34; preload=&#34;none&#34;&gt;
+    &lt;source id=&#34;mp4&#34; src=&#34;近20年各省财政收入.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+</description>
+    </item>
     
     <item>
       <title>文本分析在经管领域中的应用概述</title>
