@@ -5,7 +5,7 @@
     <link>https://thunderhit.github.io/author/%E5%A4%A7%E9%82%93/</link>
       <atom:link href="https://thunderhit.github.io/author/%E5%A4%A7%E9%82%93/index.xml" rel="self" type="application/rss+xml" />
     <description>大邓</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Fri, 03 Jul 2020 13:58:04 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 05 Jul 2020 09:20:06 +0800</lastBuildDate>
     <image>
       <url>https://thunderhit.github.io/author/%E5%A4%A7%E9%82%93/avatar_hub1a932ecad1e9f051365858858ed9d18_107884_270x270_fill_q90_lanczos_center.jpg</url>
       <title>大邓</title>
@@ -13,11 +13,272 @@
     </image>
     
     <item>
+      <title>使用Pandas对Python岗位需求进行分析</title>
+      <link>https://thunderhit.github.io/post/pandas_boss_analysis/</link>
+      <pubDate>Sun, 05 Jul 2020 09:20:06 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/pandas_boss_analysis/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#1-读取数据&#34;&gt;1. 读取数据&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#2-新增city字段&#34;&gt;2. 新增city字段&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#3-三个字段公用一个apply函数&#34;&gt;3. 三个字段公用一个apply函数&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#4-薪资&#34;&gt;4. 薪资&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#5-工作年限&#34;&gt;5. 工作年限&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#6-员工人数&#34;&gt;6. 员工人数&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#7-教育&#34;&gt;7. 教育&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#8-城市薪酬关系&#34;&gt;8. 城市/薪酬关系&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#9-学历薪酬关系&#34;&gt;9. 学历/薪酬关系&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#10-城市学历薪酬关系&#34;&gt;10. 城市/学历/薪酬关系&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;iframe
+    src=&#34;//player.bilibili.com/player.html?bvid=BV1St4y117Ls&amp;page=1&#34;
+    scrolling=&#34;no&#34;
+    height=&#34;768px&#34;
+    width=&#34;1024px&#34;
+    frameborder=&#34;no&#34;
+    framespacing=&#34;0&#34;
+    allowfullscreen=&#34;true&#34;
+&gt;
+&lt;/iframe&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    数据代码下载链接:https://pan.baidu.com/s/1kz2slEYpW0FU2XsPd2lbkQ  密码:hwsi
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;1-读取数据&#34;&gt;1. 读取数据&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import numpy as np
+df = pd.read_csv(&#39;data/Jobs.csv&#39;)
+df.head(2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# 总数
+len(df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;356
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;2-新增city字段&#34;&gt;2. 新增city字段&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;job_area&#39;].unique()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([&#39;深圳·南山区&#39;, &#39;深圳·龙岗区&#39;, &#39;深圳&#39;, &#39;深圳·福田区&#39;, &#39;深圳·光明区&#39;, &#39;深圳·龙华区&#39;, &#39;深圳·宝安区&#39;,
+       &#39;job_area&#39;, &#39;北京&#39;, &#39;北京·朝阳区&#39;, &#39;北京·海淀区&#39;, &#39;北京·通州区&#39;, &#39;北京·东城区&#39;, &#39;北京·丰台区&#39;,
+       &#39;北京·大兴区&#39;, &#39;北京·昌平区&#39;, &#39;北京·西城区&#39;, &#39;上海&#39;, &#39;上海·杨浦区&#39;, &#39;上海·浦东新区&#39;, &#39;上海·徐汇区&#39;,
+       &#39;上海·长宁区&#39;, &#39;上海·青浦区&#39;, &#39;上海·静安区&#39;, &#39;上海·普陀区&#39;, &#39;上海·黄浦区&#39;, &#39;上海·闵行区&#39;,
+       &#39;上海·虹口区&#39;, &#39;上海·松江区&#39;, &#39;广州·增城区&#39;, &#39;广州·黄埔区&#39;, &#39;广州·越秀区&#39;, &#39;广州·番禺区&#39;,
+       &#39;广州·天河区&#39;, &#39;广州&#39;, &#39;广州·海珠区&#39;, &#39;广州·荔湾区&#39;, &#39;广州·白云区&#39;], dtype=object)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def extract_city(job_area):
+    if &#39;深圳&#39; in job_area:
+        return &#39;深圳&#39;
+    elif &#39;广州&#39; in job_area:
+        return &#39;广州&#39;
+    elif &#39;北京&#39; in job_area:
+        return &#39;北京&#39;
+    elif &#39;上海&#39; in job_area:
+        return &#39;上海&#39;
+    else:
+        return None
+    
+extract_city(&#39;上海-静安区&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;上海&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;job_area&#39;].apply(extract_city)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0      深圳
+1      深圳
+2      深圳
+3      深圳
+4      深圳
+       ..
+351    广州
+352    广州
+353    广州
+354    广州
+355    广州
+Name: job_area, Length: 356, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;city&#39;]=df[&#39;job_area&#39;].apply(extract_city)
+df.head(2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;3-三个字段公用一个apply函数&#34;&gt;3. 三个字段公用一个apply函数&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;salary&lt;/li&gt;
+&lt;li&gt;experience&lt;/li&gt;
+&lt;li&gt;population&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;步骤:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;正则表达式抽取出数字列表&lt;/li&gt;
+&lt;li&gt;求均值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+text = &#39;300-1000人&#39;
+
+def avg(text):
+    nums = re.findall(&#39;\d+&#39;, text)
+    nums = [float(x) for x in nums]
+    if nums:
+        return np.mean(nums)
+    else:
+        return 0
+
+    
+avg(&#39;300-1000人&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;650.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;4-薪资&#34;&gt;4. 薪资&lt;/h2&gt;
+&lt;p&gt;salary&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;new_salary&#39;] = df[&#39;salary&#39;].apply(avg)
+df.head(2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;5-工作年限&#34;&gt;5. 工作年限&lt;/h2&gt;
+&lt;p&gt;experience&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;experience&#39;].apply(avg)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0      2.0
+1      4.0
+2      0.0
+3      7.5
+4      4.0
+      ... 
+351    4.0
+352    2.0
+353    6.0
+354    4.0
+355    0.0
+Name: experience, Length: 356, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;new_experience&#39;] = df[&#39;experience&#39;].apply(avg)
+df.head(2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;6-员工人数&#34;&gt;6. 员工人数&lt;/h2&gt;
+&lt;p&gt;population&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;population&#39;].apply(avg)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0      10000.0
+1      10000.0
+2      10000.0
+3      10000.0
+4      10000.0
+        ...   
+351      299.5
+352       59.5
+353       59.5
+354      299.5
+355       10.0
+Name: population, Length: 356, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;new_population&#39;] = df[&#39;population&#39;].apply(avg)
+df.head(2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;7-教育&#34;&gt;7. 教育&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;设计一个函数，出现正规学历，返回True(包括”不限“)&lt;/li&gt;
+&lt;li&gt;使用逻辑索引，把正规学历的招聘信息都保留&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;edu&#39;].unique()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([&#39;本科&#39;, &#39;博士&#39;, &#39;硕士&#39;, &#39;大专&#39;, &#39;不限&#39;, &#39;edu&#39;, &#39;6个月&#39;, &#39;3个月&#39;, &#39;7个月&#39;, &#39;4天/周&#39;],
+      dtype=object)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def edu_bool(level):
+    if level in [&#39;本科&#39;, &#39;博士&#39;, &#39;硕士&#39;, &#39;大专&#39;, &#39;不限&#39;]:
+        return True
+    else:
+        return False
+    
+edu_bool(&#39;博士&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;Edu_bool&#39;] =  df[&#39;edu&#39;].apply(edu_bool)
+df.head(2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/6.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# 逻辑索引
+new_df = df[df[&#39;Edu_bool&#39;]==True]
+new_df.head(2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;8-城市薪酬关系&#34;&gt;8. 城市/薪酬关系&lt;/h2&gt;
+&lt;p&gt;city/salary&lt;/p&gt;
+&lt;p&gt;会用到df.groupby&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;new_df.groupby(&#39;city&#39;).mean()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;9-学历薪酬关系&#34;&gt;9. 学历/薪酬关系&lt;/h2&gt;
+&lt;p&gt;edu/salary&lt;/p&gt;
+&lt;p&gt;会用到df.groupby&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;new_df.groupby(&#39;edu&#39;).mean()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;10-城市学历薪酬关系&#34;&gt;10. 城市/学历/薪酬关系&lt;/h2&gt;
+&lt;p&gt;透视表&lt;/p&gt;
+&lt;p&gt;pd.pivot_table(df, index, columns, values, aggfunc, margins)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pd.pivot_table(new_df, 
+               index=&#39;city&#39;, 
+               columns=&#39;edu&#39;, 
+               values=&#39;new_salary&#39;, 
+               aggfunc=np.mean, 
+               margins=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;img/10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>用Python绘制近20年地方财政收入变迁史视频</title>
       <link>https://thunderhit.github.io/post/bar_chart_race_cn/</link>
       <pubDate>Fri, 03 Jul 2020 13:58:04 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/bar_chart_race_cn/</guid>
-      <description>&lt;iframe
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#快速上手&#34;&gt;快速上手&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#可视化&#34;&gt;可视化&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#数据准备&#34;&gt;数据准备&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#可视化-1&#34;&gt;可视化&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;br&gt;
+&lt;iframe
     src=&#34;//player.bilibili.com/player.html?bvid=BV1kD4y1Q7Ve&amp;page=1&#34;
     scrolling=&#34;no&#34;
     height=&#34;768px&#34;

@@ -17,7 +17,27 @@
       <link>https://thunderhit.github.io/post/pandas_style/</link>
       <pubDate>Fri, 03 Jul 2020 22:58:04 +0800</pubDate>
       <guid>https://thunderhit.github.io/post/pandas_style/</guid>
-      <description>&lt;blockquote&gt;
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#前言&#34;&gt;前言&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#使用说明&#34;&gt;使用说明&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#一些例子&#34;&gt;一些例子&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&#34;#基本样式&#34;&gt;基本样式&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#选择某列&#34;&gt;选择某列&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#格式化输出&#34;&gt;格式化输出&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&#34;#style内置方法&#34;&gt;style内置方法&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;blockquote&gt;
 &lt;p&gt;作者:刘早起&lt;/p&gt;
 &lt;p&gt;公众号: 早起Python
 &lt;br&gt;&lt;br&gt;&lt;/p&gt;
