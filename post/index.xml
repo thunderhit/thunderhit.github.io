@@ -5,12 +5,232 @@
     <link>https://thunderhit.github.io/post/</link>
       <atom:link href="https://thunderhit.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Sun, 05 Jul 2020 09:20:06 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Tue, 07 Jul 2020 12:56:45 +0800</lastBuildDate>
     <image>
       <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>https://thunderhit.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Stylecloud:简洁易用的词云图制作库</title>
+      <link>https://thunderhit.github.io/post/stylecloud/</link>
+      <pubDate>Tue, 07 Jul 2020 12:56:45 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/stylecloud/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#数据&#34;&gt;数据&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#快速上手&#34;&gt;快速上手&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#stylecloud参数介绍&#34;&gt;stylecloud参数介绍&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#图标形状设置&#34;&gt;图标形状设置&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;br&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    本文数据代码链接:https://pan.baidu.com/s/1G0aGRg4lpi_InVSUrAZ4uQ  密码:jf41
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;stylecloud基于wordcloud库，使用方法更简单一些。该库的特点有&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持词云图图标形状设置&lt;/li&gt;
+&lt;li&gt;可直接读取csv文件（csv有两列，word和freq）&lt;/li&gt;
+&lt;li&gt;可调色&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pip install stylecloud
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;数据&#34;&gt;数据&lt;/h1&gt;
+&lt;p&gt;csv为词频统计结果，两个字段，分别为&lt;strong&gt;word和freq&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;今天准备了两个csv&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;data/高考.csv&lt;/li&gt;
+&lt;li&gt;data/股市.csv&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+df1 = pd.read_csv(&#39;data/高考.csv&#39;)
+df1.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;word&lt;/th&gt;
+      &lt;th&gt;freq&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;高考&lt;/td&gt;
+      &lt;td&gt;2198&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;未来&lt;/td&gt;
+      &lt;td&gt;1549&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;决定&lt;/td&gt;
+      &lt;td&gt;1443&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;一个&lt;/td&gt;
+      &lt;td&gt;806&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;可以&lt;/td&gt;
+      &lt;td&gt;644&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df2 = pd.read_csv(&#39;data/股市.csv&#39;)
+df2.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;word&lt;/th&gt;
+      &lt;th&gt;freq&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;牛市&lt;/td&gt;
+      &lt;td&gt;1993&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;图片&lt;/td&gt;
+      &lt;td&gt;649&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;市场&lt;/td&gt;
+      &lt;td&gt;530&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;A股&lt;/td&gt;
+      &lt;td&gt;527&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;股市&lt;/td&gt;
+      &lt;td&gt;520&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;快速上手&#34;&gt;快速上手&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import stylecloud
+
+stopwords = open(&#39;data/stopwords.txt&#39;, encoding=&#39;utf-8&#39;).read().split(&#39;\n&#39;)
+
+stylecloud.gen_stylecloud(file_path=&#39;data/高考.csv&#39;,
+                          font_path=&#39;data/SourceHanSansCN-Regular.otf&#39;,
+                          output_name=&#39;output/高考1.png&#39;,
+                          size=500,
+                          custom_stopwords=stopwords)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output/%E9%AB%98%E8%80%831.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import stylecloud
+stopwords = open(&#39;data/stopwords.txt&#39;, encoding=&#39;utf-8&#39;).read().split(&#39;\n&#39;)
+
+stylecloud.gen_stylecloud(file_path=&#39;data/股市.csv&#39;,
+                          font_path=&#39;data/SourceHanSansCN-Regular.otf&#39;,
+                          output_name=&#39;output/股市1.png&#39;,
+                          size=500,
+                          custom_stopwords=stopwords)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output/%E8%82%A1%E5%B8%821.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;stylecloud参数介绍&#34;&gt;stylecloud参数介绍&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;file_path&lt;/strong&gt;：CSV的文件路径,需要注意的是csv文件格式为两列(word, freq)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;size&lt;/strong&gt;：词云图尺寸[默认值:512]&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;custom_stopwords&lt;/strong&gt;： 自定义停用词列表&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;output_name&lt;/strong&gt;：输出的词云图路径&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;font_path&lt;/strong&gt;：字体路径&lt;/li&gt;
+&lt;li&gt;icon_name：图标名（fas fa-iconname）只需要改iconname,[默认值: fas fa-flag]&lt;/li&gt;
+&lt;li&gt;palette：调色板（通过 palettable 实现）[默认值:cartocolors.qualitative.Bold_6]&lt;/li&gt;
+&lt;li&gt;background_color：词云图背景色[默认值:white]&lt;/li&gt;
+&lt;li&gt;max_font_size：词云图最大字号[默认值:200]&lt;/li&gt;
+&lt;li&gt;random_state：控制单词和颜色的随机状态,如不设置，每次运行的效果会发生变化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;图标形状设置&#34;&gt;图标形状设置&lt;/h1&gt;
+&lt;p&gt;icon_name参数的模板【fas fa-iconname】只需要改动iconname即可。&lt;/p&gt;
+&lt;p&gt;iconname并不是随便起的，必须能在https://fontawesome.com/license/free 搜到才可以。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;output/icon.png&#34; alt=&#34;&#34;&gt;
+比如以&lt;strong&gt;高考&lt;/strong&gt;为例，我会在搜索框搜索跟&lt;strong&gt;教育&lt;/strong&gt;相关的关键词&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;university&lt;/li&gt;
+&lt;li&gt;education
+等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;截图中找到最能体现文本主题的图标&lt;strong&gt;user-graduate&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;所以&lt;strong&gt;icon_name = &amp;lsquo;fas fa-user-graduate&amp;rsquo;&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import stylecloud
+stopwords = open(&#39;data/stopwords.txt&#39;, encoding=&#39;utf-8&#39;).read().split(&#39;\n&#39;)
+
+stylecloud.gen_stylecloud(file_path=&#39;data/高考.csv&#39;,
+                          font_path=&#39;data/SourceHanSansCN-Regular.otf&#39;,
+                          output_name=&#39;output/高考2.png&#39;,
+                          icon_name=&#39;fas fa-user-graduate&#39;,
+                          size=500,
+                          custom_stopwords=stopwords)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output/%E9%AB%98%E8%80%832.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import stylecloud
+stopwords = open(&#39;data/stopwords.txt&#39;, encoding=&#39;utf-8&#39;).read().split(&#39;\n&#39;)
+
+stylecloud.gen_stylecloud(file_path=&#39;data/股市.csv&#39;,
+                          font_path=&#39;data/SourceHanSansCN-Regular.otf&#39;,
+                          output_name=&#39;output/股市2.png&#39;,
+                          icon_name=&#39;fas fa-question-circle&#39;,
+                          size=500,
+                          custom_stopwords=stopwords)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output/%E8%82%A1%E5%B8%822.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>使用Pandas对Python岗位需求进行分析</title>
