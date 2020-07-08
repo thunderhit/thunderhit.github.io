@@ -5,12 +5,54 @@
     <link>https://thunderhit.github.io/</link>
       <atom:link href="https://thunderhit.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Thunderhit</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Wed, 08 Jul 2020 19:14:32 +0800</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Thu, 09 Jul 2020 00:19:10 +0800</lastBuildDate>
     <image>
       <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Thunderhit</title>
       <link>https://thunderhit.github.io/</link>
     </image>
+    
+    <item>
+      <title>如何批量更新已安装的库</title>
+      <link>https://thunderhit.github.io/post/upgrade_packages/</link>
+      <pubDate>Thu, 09 Jul 2020 00:19:10 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/upgrade_packages/</guid>
+      <description>&lt;p&gt;如何批量更新已安装的库&lt;/p&gt;
+&lt;h3 id=&#34;方法1-pip&#34;&gt;方法1: pip&lt;/h3&gt;
+&lt;p&gt;命令行切换到桌面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd desktop
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在桌面生成requirements.txt，该文件主要记录本地安装的包及其版本号&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip freeze &amp;gt; requirements.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在桌面找到requirements.txt，将该txt文件中 &amp;ldquo;==&amp;rdquo; 改为 &amp;ldquo;&amp;gt;=&amp;rdquo;，命令行执行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install -r requirements.txt --upgrade
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;方法2-pip-review&#34;&gt;方法2: pip-review&lt;/h3&gt;
+&lt;p&gt;首先在电脑中安装pip-review包&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install pip-review
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pip-review有两种更新方式&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;更新方式&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;自动(批量)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;pip-review --auto&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;逐个手动确认&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;pip-review --interactive&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
     
     <item>
       <title>Plotnine:Python版的ggplot2绘图包</title>
