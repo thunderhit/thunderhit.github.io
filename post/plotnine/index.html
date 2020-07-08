@@ -1,0 +1,1476 @@
+<!DOCTYPE html><html lang="zh-Hans" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="大邓">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="目录 安装 准备数据 快速作图qplot ggplot图层 图层叠加 color">
+
+  
+  <link rel="alternate" hreflang="zh-Hans" href="https://thunderhit.github.io/post/plotnine/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://thunderhit.github.io/post/plotnine/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Thunderhit">
+  <meta property="og:url" content="https://thunderhit.github.io/post/plotnine/">
+  <meta property="og:title" content="Plotnine:Python版的ggplot2绘图包 | Thunderhit">
+  <meta property="og:description" content="目录 安装 准备数据 快速作图qplot ggplot图层 图层叠加 color"><meta property="og:image" content="https://thunderhit.github.io/post/plotnine/featured.png">
+  <meta property="twitter:image" content="https://thunderhit.github.io/post/plotnine/featured.png"><meta property="og:locale" content="zh-Hans">
+  
+    
+      <meta property="article:published_time" content="2020-07-08T19:14:32&#43;08:00">
+    
+    <meta property="article:modified_time" content="2020-07-08T19:14:32&#43;08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://thunderhit.github.io/post/plotnine/"
+  },
+  "headline": "Plotnine:Python版的ggplot2绘图包",
+  
+  "image": [
+    "https://thunderhit.github.io/post/plotnine/featured.png"
+  ],
+  
+  "datePublished": "2020-07-08T19:14:32+08:00",
+  "dateModified": "2020-07-08T19:14:32+08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "大邓"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Thunderhit",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "目录 安装 准备数据 快速作图qplot ggplot图层 图层叠加 color"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Plotnine:Python版的ggplot2绘图包 | Thunderhit</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="切换导航">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Thunderhit</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/authors/"><span>Authors</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#skills"><span>Skills</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Packages</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/post"><span>Articles</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#tags"><span>Topics</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>Plotnine:Python版的ggplot2绘图包</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  
+  <span ><a href="/author/%E5%A4%A7%E9%82%93/">大邓</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    2020-07-08
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/plotnine/">plotnine</a>, <a href="/category/python/">python</a>, <a href="/category/r/">R</a>, <a href="/category/%E5%8F%AF%E8%A7%86%E5%8C%96/">可视化</a>, <a href="/category/%E6%95%99%E7%A8%8B/">教程</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 219px;">
+  <div style="position: relative">
+    <img src="/post/plotnine/featured_huc2835c9fadd56ebb95f850f5ce2b33b6_131693_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2>目录</h2>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#准备数据">准备数据</a></li>
+    <li><a href="#快速作图qplot">快速作图qplot</a></li>
+    <li><a href="#ggplot图层">ggplot图层</a></li>
+    <li><a href="#图层叠加">图层叠加</a></li>
+    <li><a href="#color">color</a></li>
+    <li><a href="#size">size</a></li>
+    <li><a href="#梯度色">梯度色</a></li>
+    <li><a href="#条形图">条形图</a>
+      <ul>
+        <li><a href="#支持">支持</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<div class="alert alert-note">
+  <div>
+    本文代码下载链接:https://pan.baidu.com/s/1QpLvCTcjECZ1OcjHmcLgyg  密码:2vtb
+  </div>
+</div>
+<p>R语言的ggplot2绘图能力超强，python虽有matplotlib，但是语法臃肿，使用复杂，入门极难，seaborn的出现稍微改善了matplotlib代码量问题，但是定制化程度依然需要借助matplotlib，使用难度依然很大。</p>
+<p>好消息是python中有一个plotnine包，可以实现绝大多数ggplot2的绘图功能，两者语法十分相似，R和Python的语法转换成本大大降低。</p>
+<ul>
+<li>plotnine文档 <a href="https://plotnine.readthedocs.io/en/latest/">https://plotnine.readthedocs.io/en/latest/</a></li>
+<li>R语言ggplot2文档 <a href="https://ggplot2.tidyverse.org/reference/index.html">https://ggplot2.tidyverse.org/reference/index.html</a></li>
+</ul>
+<h1 id="安装">安装</h1>
+<pre><code>!pip3 install plotnine
+</code></pre>
+<h1 id="准备数据">准备数据</h1>
+<pre><code>from plotnine.data import mpg
+
+#dataframe
+mpg.head()
+</code></pre>
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>manufacturer</th>
+<th>model</th>
+<th>displ</th>
+<th>year</th>
+<th>cyl</th>
+<th>trans</th>
+<th>drv</th>
+<th>cty</th>
+<th>hwy</th>
+<th>fl</th>
+<th>class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>audi</td>
+<td>a4</td>
+<td>1.8</td>
+<td>1999</td>
+<td>4</td>
+<td>auto(l5)</td>
+<td>f</td>
+<td>18</td>
+<td>29</td>
+<td>p</td>
+<td>compact</td>
+</tr>
+<tr>
+<td>1</td>
+<td>audi</td>
+<td>a4</td>
+<td>1.8</td>
+<td>1999</td>
+<td>4</td>
+<td>manual(m5)</td>
+<td>f</td>
+<td>21</td>
+<td>29</td>
+<td>p</td>
+<td>compact</td>
+</tr>
+<tr>
+<td>2</td>
+<td>audi</td>
+<td>a4</td>
+<td>2.0</td>
+<td>2008</td>
+<td>4</td>
+<td>manual(m6)</td>
+<td>f</td>
+<td>20</td>
+<td>31</td>
+<td>p</td>
+<td>compact</td>
+</tr>
+<tr>
+<td>3</td>
+<td>audi</td>
+<td>a4</td>
+<td>2.0</td>
+<td>2008</td>
+<td>4</td>
+<td>auto(av)</td>
+<td>f</td>
+<td>21</td>
+<td>30</td>
+<td>p</td>
+<td>compact</td>
+</tr>
+<tr>
+<td>4</td>
+<td>audi</td>
+<td>a4</td>
+<td>2.8</td>
+<td>1999</td>
+<td>6</td>
+<td>auto(l5)</td>
+<td>f</td>
+<td>16</td>
+<td>26</td>
+<td>p</td>
+<td>compact</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="快速作图qplot">快速作图qplot</h1>
+<p>我们先直接看最简单好用的快速作图函数qplot(x, y, data)</p>
+<ul>
+<li>横坐标displ</li>
+<li>纵坐标cty</li>
+<li>数据mpg</li>
+</ul>
+<pre><code>from plotnine import qplot
+
+qplot(x='displ', 
+      y='cty',
+      data=mpg)
+</code></pre>
+<p><img src="output_5_0.png" alt="png"></p>
+<pre><code>&lt;ggplot: (322851325)&gt;
+</code></pre>
+<h1 id="ggplot图层">ggplot图层</h1>
+<p>qplot是快速作图函数，如果想让图更好看，进行私人订制，那么我们需要进行图层设计</p>
+<p>首先设置ggplot图层（相当于买了一个高级画布），</p>
+<ul>
+<li>数据mpg</li>
+<li>横坐标x轴为displ</li>
+<li>纵坐标y轴cty</li>
+</ul>
+<p>在plotnine中，变量所对应的数据均可通过字段名调用</p>
+<pre><code>from plotnine import ggplot, geom_point, aes
+
+ggplot(aes(x='displ', y='cty'), mpg)
+</code></pre>
+<p><img src="output_7_0.png" alt="png"></p>
+<pre><code>&lt;ggplot: (321957793)&gt;
+</code></pre>
+<h1 id="图层叠加">图层叠加</h1>
+<p>我们可以看到，已经绘制出一个空的ggplot图层，x轴为displ，y轴为cty。</p>
+<p>接下来我们给这个图层上加上数据对应的散点，使用geom_point()直接追加在ggplot图层之上即可。</p>
+<pre><code>(
+    ggplot(aes(x='displ', y='cty'), mpg)
+    + geom_point()
+)
+</code></pre>
+<p><img src="output_9_0.png" alt="png"></p>
+<pre><code>&lt;ggplot: (322466061)&gt;
+</code></pre>
+<h1 id="color">color</h1>
+<p>在上图中，散点是没有区分每辆车的气缸数cyl。</p>
+<p>在geom_point()中，我们可以按照气缸数cyl分门别类，按照颜色显示出来</p>
+<pre><code>(
+    ggplot(aes(x='displ', y='cty'), mpg)
+    + geom_point(aes(color='cyl'))
+)
+</code></pre>
+<p><img src="output_11_0.png" alt="png"></p>
+<pre><code>&lt;ggplot: (323647173)&gt;
+</code></pre>
+<p>上图挺好看的，有时候需要绘制的字段是离散型数值，但是上色后可能不够明显，需要声明该字段为离散型。这时候用factor()来告诉plotnine，这个字段是离散型数值</p>
+<pre><code>(
+    ggplot(aes(x='displ', y='cty'), mpg)
+    + geom_point(aes(color='factor(cyl)')) 
+)
+</code></pre>
+<p><img src="output_13_0.png" alt="png"></p>
+<pre><code>&lt;ggplot: (321918425)&gt;
+</code></pre>
+<h1 id="size">size</h1>
+<p>有时候为了增加可视化显示的维度数，还可以考虑加入点的大小size</p>
+<pre><code>(
+    ggplot(aes(x='displ', y='cty'), mpg)
+    + geom_point(aes(size='hwy'))
+)
+</code></pre>
+<p><img src="output_15_0.png" alt="png"></p>
+<pre><code>&lt;ggplot: (323399013)&gt;
+</code></pre>
+<h1 id="梯度色">梯度色</h1>
+<p>如果你想自己设置颜色的梯度，可以通过scale_color_gradient设置</p>
+<pre><code>from plotnine import scale_color_gradient
+
+(
+    ggplot(aes(x='displ', y='cty'), mpg)
+    + geom_point(aes(color='hwy'))
+    + scale_color_gradient(low='blue', high='red')
+)
+</code></pre>
+<p><img src="output_17_0.png" alt="png"></p>
+<pre><code>&lt;ggplot: (323622897)&gt;
+</code></pre>
+<h1 id="条形图">条形图</h1>
+<p>plotnine中可绘制的图有很多，刚刚已经讲了散点图，接下来我们看看plotnine中的条形图。</p>
+<p>首先准备一下数据</p>
+<pre><code>import pandas as pd
+
+df = pd.DataFrame({
+    'variable': ['gender', 'gender', 'age', 'age', 'age', 'income', 'income', 'income', 'income'],
+    'category': ['Female', 'Male', '1-24', '25-54', '55+', 'Lo', 'Lo-Med', 'Med', 'High'],
+    'value': [60, 40, 50, 30, 20, 10, 25, 25, 40],
+})
+df['variable'] = pd.Categorical(df['variable'], categories=['gender', 'age', 'income'])
+df['category'] = pd.Categorical(df['category'], categories=df['category'])
+
+df
+</code></pre>
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>variable</th>
+<th>category</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>gender</td>
+<td>Female</td>
+<td>60</td>
+</tr>
+<tr>
+<td>1</td>
+<td>gender</td>
+<td>Male</td>
+<td>40</td>
+</tr>
+<tr>
+<td>2</td>
+<td>age</td>
+<td>1-24</td>
+<td>50</td>
+</tr>
+<tr>
+<td>3</td>
+<td>age</td>
+<td>25-54</td>
+<td>30</td>
+</tr>
+<tr>
+<td>4</td>
+<td>age</td>
+<td>55+</td>
+<td>20</td>
+</tr>
+<tr>
+<td>5</td>
+<td>income</td>
+<td>Lo</td>
+<td>10</td>
+</tr>
+<tr>
+<td>6</td>
+<td>income</td>
+<td>Lo-Med</td>
+<td>25</td>
+</tr>
+<tr>
+<td>7</td>
+<td>income</td>
+<td>Med</td>
+<td>25</td>
+</tr>
+<tr>
+<td>8</td>
+<td>income</td>
+<td>High</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>from plotnine import ggplot, aes, geom_text, position_dodge, geom_point
+
+#调整文本位置
+dodge_text = position_dodge(width=0.9)                              # new
+
+(
+    ggplot(df, aes(x='variable', 
+                   y='value', 
+                   fill='category')) #类别填充颜色
+    + geom_col(position='dodge', 
+               show_legend=False)   # modified
+    + geom_text(aes(y=-.5, label='category'),                          # new
+                position=dodge_text,
+                color='gray',  #文本颜色
+                size=8,   #字号
+                angle=30, #文本的角度
+                va='top')
+    
+ + lims(y=(-5, 60))                                                 # new
+)
+</code></pre>
+<p><img src="output_20_0.png" alt="png"></p>
+<pre><code>&lt;ggplot: (334727813)&gt;
+</code></pre>
+<pre><code>from plotnine.data import economics_long
+
+economics_long.head()
+</code></pre>
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>date</th>
+<th>variable</th>
+<th>value</th>
+<th>value01</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1967-07-01</td>
+<td>pce</td>
+<td>507.4</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1967-08-01</td>
+<td>pce</td>
+<td>510.5</td>
+<td>0.000266</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1967-09-01</td>
+<td>pce</td>
+<td>516.3</td>
+<td>0.000764</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1967-10-01</td>
+<td>pce</td>
+<td>512.9</td>
+<td>0.000472</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1967-11-01</td>
+<td>pce</td>
+<td>518.1</td>
+<td>0.000918</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>from plotnine import ggplot, aes, geom_line
+
+(
+    ggplot(economics_long, aes(x='date', y='value01', color='variable'))
+    + geom_line()
+)
+</code></pre>
+<p><img src="output_22_0.png" alt="png"></p>
+<pre><code>&lt;ggplot: (334895445)&gt;
+</code></pre>
+<p>plotnine目前已经支持绝大多数ggplot2，但是文档方面没有ggplot2全，所以学习plotnine时可以参考ggplot2。</p>
+<ul>
+<li>plotnine文档 <a href="https://plotnine.readthedocs.io/en/latest/">https://plotnine.readthedocs.io/en/latest/</a></li>
+<li>R语言ggplot2文档 <a href="https://ggplot2.tidyverse.org/reference/index.html">https://ggplot2.tidyverse.org/reference/index.html</a></li>
+</ul>
+<h2 id="支持">支持</h2>
+<p>分享不易，谢谢大家分享（或红包）支持^_^</p>
+<p><img src="../../img/my_zanshang_qrcode.jpg" alt=""></p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/ggplot2/">ggplot2</a>
+  
+  <a class="badge badge-light" href="/tag/plotnine/">plotnine</a>
+  
+  <a class="badge badge-light" href="/tag/%E5%8F%AF%E8%A7%86%E5%8C%96/">可视化</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://thunderhit.github.io/post/plotnine/&amp;text=Plotnine:Python%e7%89%88%e7%9a%84ggplot2%e7%bb%98%e5%9b%be%e5%8c%85" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://thunderhit.github.io/post/plotnine/&amp;t=Plotnine:Python%e7%89%88%e7%9a%84ggplot2%e7%bb%98%e5%9b%be%e5%8c%85" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Plotnine:Python%e7%89%88%e7%9a%84ggplot2%e7%bb%98%e5%9b%be%e5%8c%85&amp;body=https://thunderhit.github.io/post/plotnine/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://thunderhit.github.io/post/plotnine/&amp;title=Plotnine:Python%e7%89%88%e7%9a%84ggplot2%e7%bb%98%e5%9b%be%e5%8c%85" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Plotnine:Python%e7%89%88%e7%9a%84ggplot2%e7%bb%98%e5%9b%be%e5%8c%85%20https://thunderhit.github.io/post/plotnine/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://thunderhit.github.io/post/plotnine/&amp;title=Plotnine:Python%e7%89%88%e7%9a%84ggplot2%e7%bb%98%e5%9b%be%e5%8c%85" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>相关</h3>
+    <ul>
+      
+      <li><a href="/post/bar_chart_race_cn/">用Python绘制近20年地方财政收入变迁史视频</a></li>
+      
+      <li><a href="/post/stylecloud/">Stylecloud:简洁易用的词云图制作库</a></li>
+      
+      <li><a href="/post/pandas%E7%9A%84apply%E6%96%B9%E6%B3%95/">小案例: Pandas的apply方法</a></li>
+      
+      <li><a href="/post/pandas_style/">Pandas也能修改样式？快速给你的数据换个Style</a></li>
+      
+      <li><a href="/project/cntopic/">cntopic:LDA话题库</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js" integrity="sha256-lyWCDMnMeZiXRi7Zl54sZGKYmgQs4izcT7+tKc+KUBk=" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"没有找到结果","placeholder":"搜索...","results":"搜索结果"};
+      const content_type = {
+        'post': "文章",
+        'project': "项目",
+        'publication' : "出版物",
+        'talk' : "演讲",
+        'slides' : "演示文稿"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

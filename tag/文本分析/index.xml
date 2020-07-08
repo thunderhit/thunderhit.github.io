@@ -24,7 +24,11 @@
     &lt;li&gt;&lt;a href=&#34;#数据&#34;&gt;数据&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#快速上手&#34;&gt;快速上手&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#stylecloud参数介绍&#34;&gt;stylecloud参数介绍&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#图标形状设置&#34;&gt;图标形状设置&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#图标形状设置&#34;&gt;图标形状设置&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;br&gt;
@@ -229,6 +233,9 @@ stylecloud.gen_stylecloud(file_path=&#39;data/股市.csv&#39;,
                           custom_stopwords=stopwords)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;output/%E8%82%A1%E5%B8%822.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     

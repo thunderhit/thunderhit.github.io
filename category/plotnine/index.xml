@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>plotnine | Thunderhit</title>
+    <link>https://thunderhit.github.io/category/plotnine/</link>
+      <atom:link href="https://thunderhit.github.io/category/plotnine/index.xml" rel="self" type="application/rss+xml" />
+    <description>plotnine</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>zh-Hans</language><lastBuildDate>Wed, 08 Jul 2020 19:14:32 +0800</lastBuildDate>
+    <image>
+      <url>https://thunderhit.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>plotnine</title>
+      <link>https://thunderhit.github.io/category/plotnine/</link>
+    </image>
+    
+    <item>
+      <title>Plotnine:Python版的ggplot2绘图包</title>
+      <link>https://thunderhit.github.io/post/plotnine/</link>
+      <pubDate>Wed, 08 Jul 2020 19:14:32 +0800</pubDate>
+      <guid>https://thunderhit.github.io/post/plotnine/</guid>
+      <description>&lt;h2&gt;目录&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#安装&#34;&gt;安装&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#准备数据&#34;&gt;准备数据&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#快速作图qplot&#34;&gt;快速作图qplot&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#ggplot图层&#34;&gt;ggplot图层&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#图层叠加&#34;&gt;图层叠加&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#color&#34;&gt;color&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#size&#34;&gt;size&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#梯度色&#34;&gt;梯度色&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#条形图&#34;&gt;条形图&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#支持&#34;&gt;支持&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    本文代码下载链接:https://pan.baidu.com/s/1QpLvCTcjECZ1OcjHmcLgyg  密码:2vtb
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;R语言的ggplot2绘图能力超强，python虽有matplotlib，但是语法臃肿，使用复杂，入门极难，seaborn的出现稍微改善了matplotlib代码量问题，但是定制化程度依然需要借助matplotlib，使用难度依然很大。&lt;/p&gt;
+&lt;p&gt;好消息是python中有一个plotnine包，可以实现绝大多数ggplot2的绘图功能，两者语法十分相似，R和Python的语法转换成本大大降低。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;plotnine文档 &lt;a href=&#34;https://plotnine.readthedocs.io/en/latest/&#34;&gt;https://plotnine.readthedocs.io/en/latest/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;R语言ggplot2文档 &lt;a href=&#34;https://ggplot2.tidyverse.org/reference/index.html&#34;&gt;https://ggplot2.tidyverse.org/reference/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;!pip3 install plotnine
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;准备数据&#34;&gt;准备数据&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;from plotnine.data import mpg
+
+#dataframe
+mpg.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;manufacturer&lt;/th&gt;
+&lt;th&gt;model&lt;/th&gt;
+&lt;th&gt;displ&lt;/th&gt;
+&lt;th&gt;year&lt;/th&gt;
+&lt;th&gt;cyl&lt;/th&gt;
+&lt;th&gt;trans&lt;/th&gt;
+&lt;th&gt;drv&lt;/th&gt;
+&lt;th&gt;cty&lt;/th&gt;
+&lt;th&gt;hwy&lt;/th&gt;
+&lt;th&gt;fl&lt;/th&gt;
+&lt;th&gt;class&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;audi&lt;/td&gt;
+&lt;td&gt;a4&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;1999&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;auto(l5)&lt;/td&gt;
+&lt;td&gt;f&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;td&gt;p&lt;/td&gt;
+&lt;td&gt;compact&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;audi&lt;/td&gt;
+&lt;td&gt;a4&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;1999&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;manual(m5)&lt;/td&gt;
+&lt;td&gt;f&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;td&gt;p&lt;/td&gt;
+&lt;td&gt;compact&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;audi&lt;/td&gt;
+&lt;td&gt;a4&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;manual(m6)&lt;/td&gt;
+&lt;td&gt;f&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;31&lt;/td&gt;
+&lt;td&gt;p&lt;/td&gt;
+&lt;td&gt;compact&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;audi&lt;/td&gt;
+&lt;td&gt;a4&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;auto(av)&lt;/td&gt;
+&lt;td&gt;f&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;p&lt;/td&gt;
+&lt;td&gt;compact&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;audi&lt;/td&gt;
+&lt;td&gt;a4&lt;/td&gt;
+&lt;td&gt;2.8&lt;/td&gt;
+&lt;td&gt;1999&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;auto(l5)&lt;/td&gt;
+&lt;td&gt;f&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;26&lt;/td&gt;
+&lt;td&gt;p&lt;/td&gt;
+&lt;td&gt;compact&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;快速作图qplot&#34;&gt;快速作图qplot&lt;/h1&gt;
+&lt;p&gt;我们先直接看最简单好用的快速作图函数qplot(x, y, data)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;横坐标displ&lt;/li&gt;
+&lt;li&gt;纵坐标cty&lt;/li&gt;
+&lt;li&gt;数据mpg&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;from plotnine import qplot
+
+qplot(x=&#39;displ&#39;, 
+      y=&#39;cty&#39;,
+      data=mpg)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_5_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ggplot: (322851325)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;ggplot图层&#34;&gt;ggplot图层&lt;/h1&gt;
+&lt;p&gt;qplot是快速作图函数，如果想让图更好看，进行私人订制，那么我们需要进行图层设计&lt;/p&gt;
+&lt;p&gt;首先设置ggplot图层（相当于买了一个高级画布），&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据mpg&lt;/li&gt;
+&lt;li&gt;横坐标x轴为displ&lt;/li&gt;
+&lt;li&gt;纵坐标y轴cty&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在plotnine中，变量所对应的数据均可通过字段名调用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from plotnine import ggplot, geom_point, aes
+
+ggplot(aes(x=&#39;displ&#39;, y=&#39;cty&#39;), mpg)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_7_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ggplot: (321957793)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;图层叠加&#34;&gt;图层叠加&lt;/h1&gt;
+&lt;p&gt;我们可以看到，已经绘制出一个空的ggplot图层，x轴为displ，y轴为cty。&lt;/p&gt;
+&lt;p&gt;接下来我们给这个图层上加上数据对应的散点，使用geom_point()直接追加在ggplot图层之上即可。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(
+    ggplot(aes(x=&#39;displ&#39;, y=&#39;cty&#39;), mpg)
+    + geom_point()
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_9_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ggplot: (322466061)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;color&#34;&gt;color&lt;/h1&gt;
+&lt;p&gt;在上图中，散点是没有区分每辆车的气缸数cyl。&lt;/p&gt;
+&lt;p&gt;在geom_point()中，我们可以按照气缸数cyl分门别类，按照颜色显示出来&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(
+    ggplot(aes(x=&#39;displ&#39;, y=&#39;cty&#39;), mpg)
+    + geom_point(aes(color=&#39;cyl&#39;))
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_11_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ggplot: (323647173)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上图挺好看的，有时候需要绘制的字段是离散型数值，但是上色后可能不够明显，需要声明该字段为离散型。这时候用factor()来告诉plotnine，这个字段是离散型数值&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(
+    ggplot(aes(x=&#39;displ&#39;, y=&#39;cty&#39;), mpg)
+    + geom_point(aes(color=&#39;factor(cyl)&#39;)) 
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_13_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ggplot: (321918425)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;size&#34;&gt;size&lt;/h1&gt;
+&lt;p&gt;有时候为了增加可视化显示的维度数，还可以考虑加入点的大小size&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(
+    ggplot(aes(x=&#39;displ&#39;, y=&#39;cty&#39;), mpg)
+    + geom_point(aes(size=&#39;hwy&#39;))
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_15_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ggplot: (323399013)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;梯度色&#34;&gt;梯度色&lt;/h1&gt;
+&lt;p&gt;如果你想自己设置颜色的梯度，可以通过scale_color_gradient设置&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from plotnine import scale_color_gradient
+
+(
+    ggplot(aes(x=&#39;displ&#39;, y=&#39;cty&#39;), mpg)
+    + geom_point(aes(color=&#39;hwy&#39;))
+    + scale_color_gradient(low=&#39;blue&#39;, high=&#39;red&#39;)
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_17_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ggplot: (323622897)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;条形图&#34;&gt;条形图&lt;/h1&gt;
+&lt;p&gt;plotnine中可绘制的图有很多，刚刚已经讲了散点图，接下来我们看看plotnine中的条形图。&lt;/p&gt;
+&lt;p&gt;首先准备一下数据&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import pandas as pd
+
+df = pd.DataFrame({
+    &#39;variable&#39;: [&#39;gender&#39;, &#39;gender&#39;, &#39;age&#39;, &#39;age&#39;, &#39;age&#39;, &#39;income&#39;, &#39;income&#39;, &#39;income&#39;, &#39;income&#39;],
+    &#39;category&#39;: [&#39;Female&#39;, &#39;Male&#39;, &#39;1-24&#39;, &#39;25-54&#39;, &#39;55+&#39;, &#39;Lo&#39;, &#39;Lo-Med&#39;, &#39;Med&#39;, &#39;High&#39;],
+    &#39;value&#39;: [60, 40, 50, 30, 20, 10, 25, 25, 40],
+})
+df[&#39;variable&#39;] = pd.Categorical(df[&#39;variable&#39;], categories=[&#39;gender&#39;, &#39;age&#39;, &#39;income&#39;])
+df[&#39;category&#39;] = pd.Categorical(df[&#39;category&#39;], categories=df[&#39;category&#39;])
+
+df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;variable&lt;/th&gt;
+&lt;th&gt;category&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;gender&lt;/td&gt;
+&lt;td&gt;Female&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;gender&lt;/td&gt;
+&lt;td&gt;Male&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;age&lt;/td&gt;
+&lt;td&gt;1-24&lt;/td&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;age&lt;/td&gt;
+&lt;td&gt;25-54&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;age&lt;/td&gt;
+&lt;td&gt;55+&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;income&lt;/td&gt;
+&lt;td&gt;Lo&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;income&lt;/td&gt;
+&lt;td&gt;Lo-Med&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;income&lt;/td&gt;
+&lt;td&gt;Med&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;income&lt;/td&gt;
+&lt;td&gt;High&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;from plotnine import ggplot, aes, geom_text, position_dodge, geom_point
+
+#调整文本位置
+dodge_text = position_dodge(width=0.9)                              # new
+
+(
+    ggplot(df, aes(x=&#39;variable&#39;, 
+                   y=&#39;value&#39;, 
+                   fill=&#39;category&#39;)) #类别填充颜色
+    + geom_col(position=&#39;dodge&#39;, 
+               show_legend=False)   # modified
+    + geom_text(aes(y=-.5, label=&#39;category&#39;),                          # new
+                position=dodge_text,
+                color=&#39;gray&#39;,  #文本颜色
+                size=8,   #字号
+                angle=30, #文本的角度
+                va=&#39;top&#39;)
+    
+ + lims(y=(-5, 60))                                                 # new
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_20_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ggplot: (334727813)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;from plotnine.data import economics_long
+
+economics_long.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;date&lt;/th&gt;
+&lt;th&gt;variable&lt;/th&gt;
+&lt;th&gt;value&lt;/th&gt;
+&lt;th&gt;value01&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1967-07-01&lt;/td&gt;
+&lt;td&gt;pce&lt;/td&gt;
+&lt;td&gt;507.4&lt;/td&gt;
+&lt;td&gt;0.000000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1967-08-01&lt;/td&gt;
+&lt;td&gt;pce&lt;/td&gt;
+&lt;td&gt;510.5&lt;/td&gt;
+&lt;td&gt;0.000266&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;1967-09-01&lt;/td&gt;
+&lt;td&gt;pce&lt;/td&gt;
+&lt;td&gt;516.3&lt;/td&gt;
+&lt;td&gt;0.000764&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;1967-10-01&lt;/td&gt;
+&lt;td&gt;pce&lt;/td&gt;
+&lt;td&gt;512.9&lt;/td&gt;
+&lt;td&gt;0.000472&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;1967-11-01&lt;/td&gt;
+&lt;td&gt;pce&lt;/td&gt;
+&lt;td&gt;518.1&lt;/td&gt;
+&lt;td&gt;0.000918&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;from plotnine import ggplot, aes, geom_line
+
+(
+    ggplot(economics_long, aes(x=&#39;date&#39;, y=&#39;value01&#39;, color=&#39;variable&#39;))
+    + geom_line()
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;output_22_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;ggplot: (334895445)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;plotnine目前已经支持绝大多数ggplot2，但是文档方面没有ggplot2全，所以学习plotnine时可以参考ggplot2。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;plotnine文档 &lt;a href=&#34;https://plotnine.readthedocs.io/en/latest/&#34;&gt;https://plotnine.readthedocs.io/en/latest/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;R语言ggplot2文档 &lt;a href=&#34;https://ggplot2.tidyverse.org/reference/index.html&#34;&gt;https://ggplot2.tidyverse.org/reference/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;支持&#34;&gt;支持&lt;/h2&gt;
+&lt;p&gt;分享不易，谢谢大家分享（或红包）支持^_^&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../img/my_zanshang_qrcode.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
