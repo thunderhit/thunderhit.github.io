@@ -844,11 +844,14 @@ mpg.head()
 <li>纵坐标cty</li>
 <li>数据mpg</li>
 </ul>
-<pre><code>from plotnine import qplot
+<pre><code>from plotnine import qplot, xlab, ylab, theme, element_text
 
-qplot(x='displ', 
-      y='cty',
-      data=mpg)
+(
+    qplot(x='displ', y='cty', data=mpg)
+    + theme(text=element_text(family=['SimHei', 'Arial Unicode MS']))
+    + xlab('引擎大小')
+    + ylab('气缸数')
+)
 </code></pre>
 <p><img src="output_5_0.png" alt="png"></p>
 <pre><code>&lt;ggplot: (322851325)&gt;
